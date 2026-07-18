@@ -18,7 +18,7 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 
 ## Phase 1 — Solvers (all through the Phase-0 interface)
 
-- [ ] 1.1 Port FH-GA (`src/solvers/fhga.py`) from `legacy/.../algorithm/fhga.py`: Fast and Thorough configs, all five mechanisms + WBF-Repair, adapted to the interface and protocol.
+- [x] 1.1 Port FH-GA (`src/solvers/fhga.py`) from `legacy/.../algorithm/fhga.py`: Fast and Thorough configs, all five mechanisms + WBF-Repair, adapted to the interface and protocol.
 - [ ] 1.2 `dp_bitset.py` — exact DP (start from legacy `dp_exact.py`; add subset reconstruction; document n/target feasibility limits). (R2.7, R3.3)
 - [ ] 1.3 `mitm.py` — meet-in-the-middle, exact for small/medium n; document the n ceiling. (R2.7, R3.3)
 - [ ] 1.4 `cpsat.py` — OR-Tools CP-SAT, piecewise-linear μ maximization, time-limited, returns incumbent subset. (R2.7, R3.3)

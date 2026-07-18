@@ -14,8 +14,10 @@ from src.solvers.base import Solver
 
 
 def default_solvers() -> List[Solver]:
-    solvers: List[Solver] = []
-    # Phase 1: append solvers here as they are implemented, e.g.
-    # from src.solvers.fhga import FHGA
-    # solvers.append(FHGA(config="fast"))
+    from src.solvers.fhga import FHGA
+
+    solvers: List[Solver] = [
+        FHGA(variant="fast"),
+        FHGA(variant="thorough"),
+    ]
     return solvers
