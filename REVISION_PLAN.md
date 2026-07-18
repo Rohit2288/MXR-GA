@@ -13,7 +13,7 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 0.3 `src/core/evaluate.py`: THE single scorer. Input: instance + subset indices → validates indices, sums actual items, returns μ. Nothing else in the codebase computes reported quality.
 - [x] 0.4 Solver interface (`src/solvers/base.py`): every solver implements `solve(instance, budget, rng) -> SolverResult(subset_indices, evals_used, wall_time)`. Quality is NEVER in the result.
 - [x] 0.5 `src/protocol/budget.py`: shared evaluation-budget counter + shared plateau early-exit (identical tolerance and patience for every solver). `src/protocol/runner.py`: multi-seed runner writing CSVs + `manifest.json` (git commit, seeds, date).
-- [ ] 0.6 `tests/`: (a) subset validity for all solvers, (b) μ(any solver) ≤ μ(DP-exact) on small instances, (c) evals ≤ budget, (d) determinism given seed.
+- [x] 0.6 `tests/`: (a) subset validity for all solvers, (b) μ(any solver) ≤ μ(DP-exact) on small instances, (c) evals ≤ budget, (d) determinism given seed.
 - [ ] 0.7 Fresh Suite U ground-truth verification: new enumeration script re-derives exact optima for all 384 Suite U instances; report min/max/mean/median n + full distribution + feasibility argument + numerical precision. Output a LaTeX table fragment. (R3.2)
 
 ## Phase 1 — Solvers (all through the Phase-0 interface)
