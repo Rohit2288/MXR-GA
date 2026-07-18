@@ -14,10 +14,12 @@ from src.solvers.base import Solver
 
 
 def default_solvers() -> List[Solver]:
+    from src.solvers.dp_bitset import DPBitset
     from src.solvers.fhga import FHGA
 
     solvers: List[Solver] = [
         FHGA(variant="fast"),
         FHGA(variant="thorough"),
+        DPBitset(),
     ]
     return solvers
