@@ -22,7 +22,7 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 1.2 `dp_bitset.py` — exact DP (start from legacy `dp_exact.py`; add subset reconstruction; document n/target feasibility limits). (R2.7, R3.3)
 - [x] 1.3 `mitm.py` — meet-in-the-middle, exact for small/medium n; document the n ceiling. (R2.7, R3.3)
 - [x] 1.4 `cpsat.py` — OR-Tools CP-SAT, piecewise-linear μ maximization, time-limited, returns incumbent subset. (R2.7, R3.3)
-- [ ] 1.5 `sim_anneal.py` — simulated annealing; tuning on a held-out slice, documented. (R2.7)
+- [x] 1.5 `sim_anneal.py` — simulated annealing; tuning on a held-out slice, documented. (R2.7)
 - [x] 1.6 `ils.py` — iterated local search (flip/swap neighborhood + perturbation). (R2.7)
 - [ ] 1.7 `alpha_cut.py` — REWRITE with subset certification: DP with parent pointers over scaled sums, reconstruct explicit subset, harness scores true unscaled sum. Verify Suite-U overshoot is now 0% by construction; record before/after. Write the formal spec (α-grid, interval construction, rounding, reconstruction) as a LaTeX fragment for the paper. (R2.5, R3.1)
 - [x] 1.8 Port `vanilla_ga.py`, `random_search.py`, `greedy.py` to the interface (equal budgets, shared early-exit — fixes legacy asymmetries). (R4.3)
