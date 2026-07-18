@@ -14,10 +14,13 @@ from src.solvers.base import Solver
 
 
 def default_solvers() -> List[Solver]:
+    from src.solvers.baselines import GreedyCenter, RandomSearch, VanillaGA
     from src.solvers.cpsat import CPSAT
     from src.solvers.dp_bitset import DPBitset
     from src.solvers.fhga import FHGA
+    from src.solvers.ils import ILS
     from src.solvers.mitm import MITM
+    from src.solvers.sim_anneal import SimAnneal
 
     solvers: List[Solver] = [
         FHGA(variant="fast"),
@@ -25,5 +28,10 @@ def default_solvers() -> List[Solver]:
         DPBitset(),
         MITM(),
         CPSAT(max_time_s=5.0),
+        SimAnneal(),
+        ILS(),
+        VanillaGA(),
+        RandomSearch(),
+        GreedyCenter(),
     ]
     return solvers
