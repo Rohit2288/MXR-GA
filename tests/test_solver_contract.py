@@ -60,6 +60,9 @@ class TestSolverContract:
         assert mu <= optima[inst.instance_id] + 1e-12  # (b)
 
     def test_determinism_given_seed(self, solver, inst):
+        if not solver.deterministic:
+            pytest.skip(f"{solver.name} is wall-clock-limited (anytime); "
+                        "incumbent is not a pure function of the seed")
         r1 = solver.solve(inst, BUDGET, np.random.default_rng(123))
         r2 = solver.solve(inst, BUDGET, np.random.default_rng(123))
         assert r1.subset_indices == r2.subset_indices  # (d)

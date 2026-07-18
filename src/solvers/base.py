@@ -35,6 +35,9 @@ class Solver(ABC):
     """Base class for all solvers."""
 
     name: str = "unnamed"
+    # False for wall-clock-limited anytime solvers (e.g. CP-SAT), whose
+    # incumbent at the time limit is not a pure function of the seed.
+    deterministic: bool = True
 
     @abstractmethod
     def search(self, instance: Instance, objective: BudgetedObjective,
