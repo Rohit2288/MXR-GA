@@ -1,0 +1,22 @@
+{
+  "git_commit": "461c41391e1f821f83a0dbcda0f3d32e74ee77ab",
+  "script": "experiments/01_suite_u_ground_truth.py",
+  "date_utc": "2026-07-18T14:21:04.492703+00:00",
+  "tolerance": 1e-12,
+  "summary": {
+    "count": 384,
+    "n_min": 15,
+    "n_max": 22,
+    "n_mean": 18.75,
+    "n_median": 19.0,
+    "n_distribution": {
+      "15": 96,
+      "18": 96,
+      "20": 96,
+      "22": 96
+    },
+    "n_verified_against_recorded": 384,
+    "mismatches": [],
+    "total_enum_seconds": 3.8
+  }
+}
