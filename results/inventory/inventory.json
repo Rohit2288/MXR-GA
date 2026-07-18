@@ -1,0 +1,69 @@
+{
+  "FSSP-1": {
+    "total": 3238,
+    "by_suite": {
+      "-": 3238
+    },
+    "by_distribution": {
+      "bimodal": 750,
+      "geometric": 750,
+      "hard_ssp": 238,
+      "heavy_tail": 750,
+      "uniform": 750
+    },
+    "by_n": {
+      "20": 600,
+      "50": 598,
+      "100": 520,
+      "200": 520,
+      "500": 520,
+      "1000": 480
+    },
+    "by_difficulty_category": {
+      "medium": 3161,
+      "hard": 17,
+      "easy": 56,
+      "very_hard": 4
+    },
+    "manifest_total": 3238,
+    "manifest_entries": 3238
+  },
+  "FSSP-2": {
+    "total": 866,
+    "by_suite": {
+      "A": 360,
+      "T": 122,
+      "U": 384
+    },
+    "by_distribution": {
+      "avis_lai": 144,
+      "density_doubled_hard_ssp": 72,
+      "near_equal": 144,
+      "bimodal": 123,
+      "geometric": 139,
+      "heavy_tail": 121,
+      "uniform": 123
+    },
+    "by_n": {
+      "15": 96,
+      "18": 96,
+      "20": 96,
+      "22": 96,
+      "50": 108,
+      "100": 108,
+      "200": 72,
+      "500": 132,
+      "1000": 62
+    },
+    "by_difficulty_category": {
+      "tbd": 866
+    },
+    "manifest_total": 866,
+    "manifest_entries": 866
+  },
+  "paper_claims": {
+    "fssp2_total": 866,
+    "fssp2_suite_U": 384
+  },
+  "discrepancies": []
+}
