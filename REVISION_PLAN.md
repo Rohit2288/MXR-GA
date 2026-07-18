@@ -26,8 +26,8 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 1.6 `ils.py` — iterated local search (flip/swap neighborhood + perturbation). (R2.7)
 - [x] 1.7 `alpha_cut.py` — REWRITE with subset certification: DP with parent pointers over scaled sums, reconstruct explicit subset, harness scores true unscaled sum. Verify Suite-U overshoot is now 0% by construction; record before/after. Write the formal spec (α-grid, interval construction, rounding, reconstruction) as a LaTeX fragment for the paper. (R2.5, R3.1)
 - [x] 1.8 Port `vanilla_ga.py`, `random_search.py`, `greedy.py` to the interface (equal budgets, shared early-exit — fixes legacy asymmetries). (R4.3)
-- [ ] 1.9 `fhga_crisp.py` — FH-GA with identical operators but a crisp asymmetric weighted-distance objective. The fuzzy-vs-crisp control. (R4.1, R2.1)
-- [ ] 1.10 Local-search controls: standard best-improvement and swap-based local search variants to compare against gradient-guided LS under equal budgets. (R2.3)
+- [x] 1.9 `fhga_crisp.py` — FH-GA with identical operators but a crisp asymmetric weighted-distance objective. The fuzzy-vs-crisp control. (R4.1, R2.1)
+- [x] 1.10 Local-search controls: standard best-improvement and swap-based local search variants to compare against gradient-guided LS under equal budgets. (R2.3)
 - [ ] 1.11 DECISION(Rohit): a published SoTA memetic/evolutionary knapsack or subset-sum solver with available code to include verbatim (R1.4). If impractical, document justification; DP/MITM/CP-SAT stand as the strong exact baselines.
 
 ## Phase 2 — Main comparison (R2.6, R3.4, R4.2, E)

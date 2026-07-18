@@ -58,6 +58,7 @@ class FHGAConfig:
     G_stag: int = 20
     fitness_change_eps: float = 1e-6
     uniform_xover: bool = False          # True = plain uniform crossover (ablation)
+    ls_mode: str = "gradient"            # "gradient" | "best_flip" | "swap" (R2.3 controls)
 
     def materialize(self, n: int) -> "FHGAConfig":
         return replace(
@@ -92,22 +93,33 @@ class FHGA(Solver):
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
-        run = _Run(instance, objective, rng, self.cfg.materialize(instance.n))
+        run = _Run(instance, objective, rng, self.cfg.materialize(instance.n),
+                   guide=self._make_guide(instance))
         self.last_stats = run.stats
         run.run()
+
+    def _make_guide(self, instance: Instance):
+        """Internal search-guidance signal g(S, mu) -> float.
+
+        Default: the membership mu itself. FHGACrisp overrides this with an
+        unclamped crisp distance (task 1.9). The guide steers selection and
+        local search ONLY; reported quality is always the protocol-tracked,
+        harness-rescored mu, identically for every variant."""
+        return None
 
 
 class _Run:
     """State of one FH-GA run. All mu values come from objective.evaluate."""
 
     def __init__(self, instance: Instance, objective: BudgetedObjective,
-                 rng: np.random.Generator, cfg: FHGAConfig):
+                 rng: np.random.Generator, cfg: FHGAConfig, guide=None):
         self.items = list(instance.items)
         self.n = instance.n
         self.target = instance.target
         self.objective = objective
         self.rng = rng
         self.cfg = cfg
+        self.guide = guide  # None -> fitness is mu; else g(S, mu) -> float
         min_spread = max(min(self.target.delta_L, self.target.delta_R), 1e-9)
         self.rho = [a / min_spread for a in self.items]
         self.rho_max = max(self.rho)
@@ -122,7 +134,16 @@ class _Run:
 
     def _eval_chrom(self, chrom: List[int]) -> _Ind:
         idx = [i for i, b in enumerate(chrom) if b]
-        return _Ind(chrom, self.objective.evaluate(idx))
+        mu = self.objective.evaluate(idx)
+        if self.guide is None:
+            return _Ind(chrom, mu)
+        return _Ind(chrom, self.guide(sum(self.items[i] for i in idx), mu))
+
+    def _fit(self, idx: List[int]) -> float:
+        mu = self.objective.evaluate(idx)
+        if self.guide is None:
+            return mu
+        return self.guide(sum(self.items[i] for i in idx), mu)
 
     def _sum(self, chrom: List[int]) -> int:
         return sum(a for a, b in zip(self.items, chrom) if b)
@@ -155,14 +176,14 @@ class _Run:
                     self._gradient_local_search(ind)
             if cfg.w_max > 0:
                 for ind in Q:
-                    if ind.f == 0.0:
-                        self._wbf_repair(ind)
+                    self._wbf_repair(ind)  # no-op when the sum is in-support
             population = self._elitist_replace(population, Q)
             gen_best = max(population, key=lambda ind: ind.f)
             if gen_best.f > best_ever.f:
                 best_ever = gen_best.clone()
             diversity = self._diversity(population)
-            self._fuzzy_controller(diversity, best_ever.f)
+            self._fuzzy_controller(
+                diversity, max(0.0, min(1.0, best_ever.f)))
             if best_ever.f - prev_best_f < cfg.fitness_change_eps:
                 stagnation += 1
             else:
@@ -260,8 +281,7 @@ class _Run:
                 ind.chrom[i] = 1 - ind.chrom[i]
                 flipped = True
         if flipped:
-            ind.f = self.objective.evaluate(
-                [i for i, b in enumerate(ind.chrom) if b])
+            ind.f = self._fit([i for i, b in enumerate(ind.chrom) if b])
 
     # -- local search -------------------------------------------------------
 
@@ -272,25 +292,29 @@ class _Run:
         cfg = self.cfg
         self.stats["ls_invocations"] += 1
         T_M = self.target.T_M
+        mode = cfg.ls_mode  # "gradient" | "best_flip" | "swap" (R2.3)
         for _ in range(cfg.ls_max_iters):
-            S = self._sum(ind.chrom)
-            best_gain = 0.0
-            best_i = -1
-            best_f = ind.f
-            for i in range(self.n):
-                sign = 1 if ind.chrom[i] == 0 else -1
-                new_S = S + sign * self.items[i]
-                if (S < T_M < new_S) or (S > T_M > new_S):
-                    self.stats["apex_crossings"] += 1
-                new_f = self.objective.evaluate(self._flip_candidate(ind, i))
-                if new_f - ind.f > best_gain + 1e-12:
-                    best_gain = new_f - ind.f
-                    best_i = i
-                    best_f = new_f
-            if best_i >= 0:
-                ind.chrom[best_i] = 1 - ind.chrom[best_i]
-                ind.f = best_f
-                continue
+            if mode in ("gradient", "best_flip"):
+                S = self._sum(ind.chrom)
+                best_gain = 0.0
+                best_i = -1
+                best_f = ind.f
+                for i in range(self.n):
+                    sign = 1 if ind.chrom[i] == 0 else -1
+                    new_S = S + sign * self.items[i]
+                    if (S < T_M < new_S) or (S > T_M > new_S):
+                        self.stats["apex_crossings"] += 1
+                    new_f = self._fit(self._flip_candidate(ind, i))
+                    if new_f - ind.f > best_gain + 1e-12:
+                        best_gain = new_f - ind.f
+                        best_i = i
+                        best_f = new_f
+                if best_i >= 0:
+                    ind.chrom[best_i] = 1 - ind.chrom[best_i]
+                    ind.f = best_f
+                    continue
+                if mode == "best_flip":
+                    break
             ones = [i for i, b in enumerate(ind.chrom) if b == 1]
             zeros = [i for i, b in enumerate(ind.chrom) if b == 0]
             K = min(20, self.n)
@@ -303,7 +327,7 @@ class _Run:
                 for j in zeros_sorted:
                     cand = [k for k, b in enumerate(ind.chrom)
                             if (b and k != i) or k == j]
-                    new_f = self.objective.evaluate(cand)
+                    new_f = self._fit(cand)
                     if new_f - ind.f > best_gain + 1e-12:
                         best_gain = new_f - ind.f
                         best_pair = (i, j)
@@ -314,6 +338,8 @@ class _Run:
                 ind.chrom[j] = 1
                 ind.f = best_f
                 continue
+            if mode == "swap":
+                break
             if self.rng.random() < cfg.p_kick:
                 i = int(self.rng.integers(0, self.n))
                 j = int(self.rng.integers(0, self.n))
@@ -322,8 +348,7 @@ class _Run:
                 cand_chrom = list(ind.chrom)
                 cand_chrom[i] = 1 - cand_chrom[i]
                 cand_chrom[j] = 1 - cand_chrom[j]
-                new_f = self.objective.evaluate(
-                    [k for k, b in enumerate(cand_chrom) if b])
+                new_f = self._fit([k for k, b in enumerate(cand_chrom) if b])
                 if new_f > ind.f + 1e-12:
                     ind.chrom = cand_chrom
                     ind.f = new_f
@@ -351,7 +376,7 @@ class _Run:
         try:
             for mask in range(1 << w):
                 cand = fixed + [window[k] for k in range(w) if mask & (1 << k)]
-                f = self.objective.evaluate(cand)
+                f = self._fit(cand)
                 if f > best_f + 1e-12:
                     best_f = f
                     best_mask = mask

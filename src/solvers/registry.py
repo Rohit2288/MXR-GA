@@ -18,7 +18,8 @@ def default_solvers() -> List[Solver]:
     from src.solvers.baselines import GreedyCenter, RandomSearch, VanillaGA
     from src.solvers.cpsat import CPSAT
     from src.solvers.dp_bitset import DPBitset
-    from src.solvers.fhga import FHGA
+    from src.solvers.fhga import FHGA, FHGAConfig
+    from src.solvers.fhga_crisp import FHGACrisp
     from src.solvers.ils import ILS
     from src.solvers.mitm import MITM
     from src.solvers.sim_anneal import SimAnneal
@@ -35,5 +36,13 @@ def default_solvers() -> List[Solver]:
         RandomSearch(),
         GreedyCenter(),
         AlphaCut(),
+        FHGACrisp(variant="fast"),
+        FHGACrisp(variant="thorough"),
+        # R2.3 local-search controls (task 1.10): FH-GA with the gradient LS
+        # replaced by standard best-improvement / swap-only local search.
+        FHGA(variant="fast", config=FHGAConfig(ls_mode="best_flip"),
+             name="fhga_ls_bestflip"),
+        FHGA(variant="fast", config=FHGAConfig(ls_mode="swap"),
+             name="fhga_ls_swap"),
     ]
     return solvers
