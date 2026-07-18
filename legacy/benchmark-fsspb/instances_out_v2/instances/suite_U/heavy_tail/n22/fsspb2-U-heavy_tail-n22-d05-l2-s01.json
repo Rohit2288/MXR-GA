@@ -1,0 +1,84 @@
+{
+  "checksum_sha256": "654bb4b82c5e3784c63a02e9d93320d3f9a222d67d96487a09addad060f98a30",
+  "difficulty": {
+    "category": "tbd",
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0
+  },
+  "instance_id": "fsspb2-U-heavy_tail-n22-d05-l2-s01",
+  "items": [
+    124,
+    303,
+    126,
+    291,
+    169,
+    132,
+    353,
+    377,
+    131,
+    141,
+    148,
+    268,
+    1000,
+    157,
+    152,
+    303,
+    142,
+    101,
+    614,
+    189,
+    174,
+    130
+  ],
+  "metadata": {
+    "asymmetry": 2.0,
+    "construction": {
+      "v2_axes": {
+        "TM_unreachable": true,
+        "n_subsets_at_optimum": 1,
+        "nearest_reachable_gap": 1,
+        "true_optimum_mu": 0.9942857142857143
+      },
+      "v2_description": "unreachable_TM",
+      "v2_suite": "U"
+    },
+    "distribution": "heavy_tail",
+    "generated_utc": "2026-05-18T02:04:58Z",
+    "generator_version": "2.0.0",
+    "n": 22,
+    "seed": 1,
+    "spread_ratio": 0.05
+  },
+  "schema_version": "1.1",
+  "target": {
+    "T_L": 5064,
+    "T_M": 5239,
+    "T_R": 5326
+  },
+  "witness": {
+    "mu_value": 0.9942857142857143,
+    "subset_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "subset_sum": 5238
+  }
+}

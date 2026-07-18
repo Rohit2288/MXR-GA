@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb2-U-bimodal-n15-d05-r2-s02",
+  "metadata": {
+    "n": 15,
+    "distribution": "bimodal",
+    "spread_ratio": 0.05,
+    "asymmetry": 0.5,
+    "seed": 2,
+    "generator_version": "2.0.0",
+    "generated_utc": "2026-05-19T06:25:09Z",
+    "construction": {
+      "v2_suite": "U",
+      "v2_description": "unreachable_TM",
+      "v2_axes": {
+        "TM_unreachable": true,
+        "nearest_reachable_gap": 7,
+        "true_optimum_mu": 0.9631578947368421,
+        "n_subsets_at_optimum": 1
+      }
+    }
+  },
+  "items": [
+    13,
+    13,
+    897,
+    519,
+    566,
+    24,
+    34,
+    19,
+    929,
+    816,
+    48,
+    32,
+    952,
+    872,
+    846
+  ],
+  "target": {
+    "T_L": 6284,
+    "T_M": 6390,
+    "T_R": 6580
+  },
+  "witness": {
+    "subset_indices": [
+      2,
+      3,
+      4,
+      8,
+      9,
+      12,
+      13,
+      14
+    ],
+    "subset_sum": 6397,
+    "mu_value": 0.9631578947368421
+  },
+  "difficulty": {
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0,
+    "category": "tbd"
+  },
+  "checksum_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

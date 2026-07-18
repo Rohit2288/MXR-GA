@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb2-U-geometric-n15-d01-r2-s01",
+  "metadata": {
+    "n": 15,
+    "distribution": "geometric",
+    "spread_ratio": 0.01,
+    "asymmetry": 0.5,
+    "seed": 1,
+    "generator_version": "2.0.0",
+    "generated_utc": "2026-05-19T06:25:09Z",
+    "construction": {
+      "v2_suite": "U",
+      "v2_description": "unreachable_TM",
+      "v2_axes": {
+        "TM_unreachable": true,
+        "nearest_reachable_gap": 1,
+        "true_optimum_mu": 0.8571428571428571,
+        "n_subsets_at_optimum": 1
+      }
+    }
+  },
+  "items": [
+    849,
+    121,
+    521,
+    167,
+    230,
+    720,
+    612,
+    998,
+    142,
+    100,
+    319,
+    272,
+    196,
+    445,
+    377
+  ],
+  "target": {
+    "T_L": 1116,
+    "T_M": 1120,
+    "T_R": 1127
+  },
+  "witness": {
+    "subset_indices": [
+      1,
+      7
+    ],
+    "subset_sum": 1119,
+    "mu_value": 0.75
+  },
+  "difficulty": {
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0,
+    "category": "tbd"
+  },
+  "checksum_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,62 @@
+{
+  "checksum_sha256": "7704c598a5b9d846d4e5fbbc3db6a971b5c5207590402fee7b296f9b0052101e",
+  "difficulty": {
+    "category": "tbd",
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0
+  },
+  "instance_id": "fsspb2-U-geometric-n18-d05-l2-s00",
+  "items": [
+    64,
+    614,
+    229,
+    441,
+    168,
+    119,
+    141,
+    852,
+    723,
+    1001,
+    197,
+    87,
+    321,
+    272,
+    379,
+    104,
+    521,
+    76
+  ],
+  "metadata": {
+    "asymmetry": 2.0,
+    "construction": {
+      "v2_axes": {
+        "TM_unreachable": true,
+        "n_subsets_at_optimum": 1,
+        "nearest_reachable_gap": 1,
+        "true_optimum_mu": 0.9
+      },
+      "v2_description": "unreachable_TM",
+      "v2_suite": "U"
+    },
+    "distribution": "geometric",
+    "generated_utc": "2026-05-18T02:04:55Z",
+    "generator_version": "2.0.0",
+    "n": 18,
+    "seed": 0,
+    "spread_ratio": 0.05
+  },
+  "schema_version": "1.1",
+  "target": {
+    "T_L": 292,
+    "T_M": 302,
+    "T_R": 307
+  },
+  "witness": {
+    "mu_value": 0.9,
+    "subset_indices": [
+      10,
+      15
+    ],
+    "subset_sum": 301
+  }
+}

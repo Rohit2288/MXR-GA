@@ -1,0 +1,64 @@
+{
+  "checksum_sha256": "60083819af2c38f059c2d1595d5f93390b79a98597234d5bbb1643826dd1a543",
+  "difficulty": {
+    "alpha_fptas_mu": 1.0,
+    "calibration_budget": 10000,
+    "category": "medium",
+    "greedy_mu": 0.0,
+    "optimum_known": false,
+    "random_search_mu": 0.9939514122303976,
+    "vanilla_ga_max_mu": 0.9968187490907977,
+    "vanilla_ga_median_mu": 0.9916429955056696
+  },
+  "instance_id": "fsspb-hard_ssp-n20-d01-l2-s09",
+  "items": [
+    3070092,
+    1169207,
+    10597104,
+    4483597,
+    2477899,
+    6654096,
+    9420307,
+    4586927,
+    8597333,
+    6079325,
+    4030484,
+    10184967,
+    3410489,
+    7774737,
+    4113925,
+    9706538,
+    5005861,
+    5170752,
+    8255232,
+    10509913
+  ],
+  "metadata": {
+    "asymmetry": 2.0,
+    "distribution": "hard_ssp",
+    "generated_utc": "2026-05-12T13:52:33Z",
+    "generator_version": "1.0.0",
+    "n": 20,
+    "seed": 9,
+    "spread_ratio": 0.01
+  },
+  "schema_version": "1.0",
+  "target": {
+    "T_L": 38921469,
+    "T_M": 39182687,
+    "T_R": 39313296
+  },
+  "witness": {
+    "mu_value": 0.7030143405125221,
+    "subset_indices": [
+      0,
+      1,
+      5,
+      6,
+      10,
+      15,
+      17
+    ],
+    "subset_sum": 39221476
+  }
+}

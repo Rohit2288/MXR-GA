@@ -1,0 +1,67 @@
+{
+  "checksum_sha256": "b854169a585b4796425a388fd2bd511e51b00f49de2081c652b19f047c71d3f4",
+  "difficulty": {
+    "calibration_budget": 10000,
+    "category": "medium",
+    "dp_exact_mu": 1.0,
+    "greedy_mu": 0.714448236632537,
+    "optimum_known": true,
+    "random_search_mu": 1.0,
+    "vanilla_ga_max_mu": 1.0,
+    "vanilla_ga_median_mu": 1.0
+  },
+  "instance_id": "fsspb-uniform-n20-d25-l2-s01",
+  "items": [
+    998,
+    968,
+    791,
+    869,
+    100,
+    997,
+    216,
+    853,
+    748,
+    415,
+    389,
+    482,
+    558,
+    539,
+    721,
+    521,
+    461,
+    27,
+    592,
+    760
+  ],
+  "metadata": {
+    "asymmetry": 2.0,
+    "distribution": "uniform",
+    "generated_utc": "2026-05-12T13:51:20Z",
+    "generator_version": "1.0.0",
+    "n": 20,
+    "seed": 1,
+    "spread_ratio": 0.25
+  },
+  "schema_version": "1.0",
+  "target": {
+    "T_L": 4393,
+    "T_M": 5272,
+    "T_R": 5711
+  },
+  "witness": {
+    "mu_value": 0.944254835039818,
+    "subset_indices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      11,
+      17,
+      18,
+      19
+    ],
+    "subset_sum": 5223
+  }
+}

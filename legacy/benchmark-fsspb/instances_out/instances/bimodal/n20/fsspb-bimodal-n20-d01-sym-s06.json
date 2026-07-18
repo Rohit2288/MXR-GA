@@ -1,0 +1,68 @@
+{
+  "checksum_sha256": "64a4929b4b6aaec1c565ee153e92d76c4429055d98d60a9f33ccaa51f0f91288",
+  "difficulty": {
+    "calibration_budget": 10000,
+    "category": "medium",
+    "dp_exact_mu": 1.0,
+    "greedy_mu": 0.0,
+    "optimum_known": true,
+    "random_search_mu": 1.0,
+    "vanilla_ga_max_mu": 1.0,
+    "vanilla_ga_median_mu": 1.0
+  },
+  "instance_id": "fsspb-bimodal-n20-d01-sym-s06",
+  "items": [
+    21,
+    9,
+    19,
+    892,
+    573,
+    577,
+    36,
+    12,
+    943,
+    722,
+    952,
+    49,
+    20,
+    873,
+    741,
+    565,
+    47,
+    48,
+    24,
+    692
+  ],
+  "metadata": {
+    "asymmetry": 1.0,
+    "distribution": "bimodal",
+    "generated_utc": "2026-05-12T13:51:35Z",
+    "generator_version": "1.0.0",
+    "n": 20,
+    "seed": 6,
+    "spread_ratio": 0.01
+  },
+  "schema_version": "1.0",
+  "target": {
+    "T_L": 4621,
+    "T_M": 4644,
+    "T_R": 4667
+  },
+  "witness": {
+    "mu_value": 0.8260869565217391,
+    "subset_indices": [
+      0,
+      5,
+      6,
+      8,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19
+    ],
+    "subset_sum": 4648
+  }
+}

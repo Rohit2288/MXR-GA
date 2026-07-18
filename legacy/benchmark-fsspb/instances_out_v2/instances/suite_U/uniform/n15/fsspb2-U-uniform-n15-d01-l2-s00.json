@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb2-U-uniform-n15-d01-l2-s00",
+  "metadata": {
+    "n": 15,
+    "distribution": "uniform",
+    "spread_ratio": 0.01,
+    "asymmetry": 2.0,
+    "seed": 0,
+    "generator_version": "2.0.0",
+    "generated_utc": "2026-05-19T06:25:10Z",
+    "construction": {
+      "v2_suite": "U",
+      "v2_description": "unreachable_TM",
+      "v2_axes": {
+        "TM_unreachable": true,
+        "nearest_reachable_gap": 1,
+        "true_optimum_mu": 0.9,
+        "n_subsets_at_optimum": 1
+      }
+    }
+  },
+  "items": [
+    386,
+    802,
+    587,
+    482,
+    323,
+    349,
+    15,
+    680,
+    130,
+    260,
+    427,
+    769,
+    443,
+    475,
+    941
+  ],
+  "target": {
+    "T_L": 1548,
+    "T_M": 1558,
+    "T_R": 1563
+  },
+  "witness": {
+    "subset_indices": [
+      0,
+      4,
+      6,
+      8,
+      9,
+      12
+    ],
+    "subset_sum": 1557,
+    "mu_value": 0.9
+  },
+  "difficulty": {
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0,
+    "category": "tbd"
+  },
+  "checksum_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -1,0 +1,74 @@
+{
+  "checksum_sha256": "5705247d32b5dbccc4a15ee3aedd356c2b63e2731e13f6c7eb9d53916f5a5795",
+  "difficulty": {
+    "calibration_budget": 10000,
+    "category": "medium",
+    "dp_exact_mu": 1.0,
+    "greedy_mu": 0.36818181818181817,
+    "optimum_known": true,
+    "random_search_mu": 1.0,
+    "vanilla_ga_max_mu": 1.0,
+    "vanilla_ga_median_mu": 1.0
+  },
+  "instance_id": "fsspb-geometric-n20-d10-sym-s06",
+  "items": [
+    850,
+    273,
+    45,
+    722,
+    103,
+    165,
+    443,
+    615,
+    87,
+    119,
+    524,
+    64,
+    318,
+    379,
+    1001,
+    72,
+    230,
+    141,
+    51,
+    195
+  ],
+  "metadata": {
+    "asymmetry": 1.0,
+    "distribution": "geometric",
+    "generated_utc": "2026-05-12T13:51:30Z",
+    "generator_version": "1.0.0",
+    "n": 20,
+    "seed": 6,
+    "spread_ratio": 0.1
+  },
+  "schema_version": "1.0",
+  "target": {
+    "T_L": 4187,
+    "T_M": 4407,
+    "T_R": 4627
+  },
+  "witness": {
+    "mu_value": 0.9772727272727273,
+    "subset_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "subset_sum": 4402
+  }
+}

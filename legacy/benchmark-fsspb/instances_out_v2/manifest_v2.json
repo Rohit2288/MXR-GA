@@ -1,0 +1,4342 @@
+{
+  "schema_version": "1.1",
+  "generator_version": "2.0.0",
+  "total_instances": 866,
+  "suites_generated": [
+    "A",
+    "U",
+    "T"
+  ],
+  "instances": [
+    {
+      "id": "fsspb2-T-uniform-n500-d0001-sym-s01",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0001-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0001-r2-s01",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0001-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0001-l2-s01",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0001-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0001-l2-s02",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0001-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0001-l2-s04",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0001-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-sym-s00",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-sym-s01",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-sym-s02",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-sym-s04",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-r2-s00",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-r2-s02",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-r2-s03",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-r2-s04",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-l2-s01",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n500-d0005-l2-s02",
+      "path": "instances/suite_T/uniform/n500/fsspb2-T-uniform-n500-d0005-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-sym-s00",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-sym-s02",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-sym-s03",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-r2-s01",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-r2-s02",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-r2-s03",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-r2-s04",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0001-l2-s00",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0001-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-sym-s00",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-sym-s01",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-sym-s02",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-sym-s03",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-sym-s04",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-r2-s01",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-r2-s02",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-r2-s03",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-r2-s04",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-l2-s00",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-l2-s01",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-l2-s02",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-l2-s03",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n500-d0005-l2-s04",
+      "path": "instances/suite_T/geometric/n500/fsspb2-T-geometric-n500-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0001-sym-s02",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0001-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0001-r2-s01",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0001-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0001-r2-s03",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0001-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0001-l2-s01",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0001-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0001-l2-s04",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0001-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-sym-s00",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-sym-s01",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-sym-s02",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-sym-s04",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-r2-s01",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-r2-s02",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-r2-s04",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-l2-s00",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n500-d0005-l2-s04",
+      "path": "instances/suite_T/bimodal/n500/fsspb2-T-bimodal-n500-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0001-l2-s00",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0001-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-sym-s00",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-sym-s02",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-r2-s00",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-r2-s01",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-r2-s03",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-r2-s04",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-l2-s03",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n500-d0005-l2-s04",
+      "path": "instances/suite_T/heavy_tail/n500/fsspb2-T-heavy_tail-n500-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0001-r2-s00",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0001-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0001-l2-s01",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0001-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-sym-s02",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-sym-s03",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-sym-s04",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-r2-s00",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-r2-s01",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-r2-s03",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-r2-s04",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-l2-s00",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-l2-s03",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-uniform-n1000-d0005-l2-s04",
+      "path": "instances/suite_T/uniform/n1000/fsspb2-T-uniform-n1000-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-sym-s00",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-sym-s02",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-sym-s03",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-r2-s04",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-l2-s00",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-l2-s01",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-l2-s03",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0001-l2-s04",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0001-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-sym-s00",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-sym-s01",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-sym-s02",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-sym-s03",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-sym-s04",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-r2-s00",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-r2-s01",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-r2-s03",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-r2-s04",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-l2-s00",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-l2-s02",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-l2-s03",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-geometric-n1000-d0005-l2-s04",
+      "path": "instances/suite_T/geometric/n1000/fsspb2-T-geometric-n1000-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0001-sym-s02",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0001-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0001-l2-s04",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0001-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-sym-s00",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-sym-s01",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-sym-s02",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-sym-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-sym-s03",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-r2-s01",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-r2-s02",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-r2-s03",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-l2-s00",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-l2-s01",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-l2-s02",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-bimodal-n1000-d0005-l2-s03",
+      "path": "instances/suite_T/bimodal/n1000/fsspb2-T-bimodal-n1000-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0001-r2-s02",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0001-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0001-l2-s00",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0001-l2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0001-l2-s04",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0001-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-sym-s00",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-sym-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-sym-s01",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-sym-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-sym-s03",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-sym-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-sym-s04",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-sym-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-r2-s00",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-r2-s00.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-r2-s01",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-r2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-r2-s02",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-r2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-r2-s03",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-r2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-r2-s04",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-r2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-l2-s01",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-l2-s01.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-l2-s02",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-l2-s02.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-l2-s03",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-l2-s03.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-T-heavy_tail-n1000-d0005-l2-s04",
+      "path": "instances/suite_T/heavy_tail/n1000/fsspb2-T-heavy_tail-n1000-d0005-l2-s04.json",
+      "suite": "T"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-sym-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-sym-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-sym-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-sym-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-r2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-r2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-r2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-r2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-l2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-l2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-l2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d01-l2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-sym-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-sym-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-sym-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-sym-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-r2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-r2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-r2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-r2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-l2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-l2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-l2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d05-l2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-sym-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-sym-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-sym-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-sym-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-r2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-r2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-r2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-r2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-l2-s00",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-l2-s01",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-l2-s02",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n50-d10-l2-s03",
+      "path": "instances/suite_A/near_equal/n50/fsspb2-A-near_equal-n50-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-sym-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-sym-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-sym-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-sym-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-r2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-r2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-r2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-r2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-l2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-l2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-l2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d01-l2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-sym-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-sym-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-sym-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-sym-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-r2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-r2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-r2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-r2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-l2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-l2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-l2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d05-l2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-sym-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-sym-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-sym-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-sym-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-r2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-r2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-r2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-r2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-l2-s00",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-l2-s01",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-l2-s02",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n50-d10-l2-s03",
+      "path": "instances/suite_A/avis_lai/n50/fsspb2-A-avis_lai-n50-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n50/fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-sym-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-sym-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-sym-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-sym-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-r2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-r2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-r2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-r2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-l2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-l2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-l2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d01-l2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-sym-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-sym-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-sym-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-sym-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-r2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-r2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-r2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-r2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-l2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-l2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-l2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d05-l2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-sym-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-sym-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-sym-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-sym-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-r2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-r2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-r2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-r2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-l2-s00",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-l2-s01",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-l2-s02",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n100-d10-l2-s03",
+      "path": "instances/suite_A/near_equal/n100/fsspb2-A-near_equal-n100-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-sym-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-sym-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-sym-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-sym-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-r2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-r2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-r2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-r2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-l2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-l2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-l2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d01-l2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-sym-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-sym-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-sym-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-sym-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-r2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-r2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-r2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-r2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-l2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-l2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-l2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d05-l2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-sym-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-sym-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-sym-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-sym-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-r2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-r2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-r2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-r2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-l2-s00",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-l2-s01",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-l2-s02",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n100-d10-l2-s03",
+      "path": "instances/suite_A/avis_lai/n100/fsspb2-A-avis_lai-n100-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s00",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s01",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s02",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s03",
+      "path": "instances/suite_A/density_doubled_hard_ssp/n100/fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-sym-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-sym-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-sym-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-sym-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-r2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-r2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-r2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-r2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-l2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-l2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-l2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d01-l2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-sym-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-sym-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-sym-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-sym-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-r2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-r2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-r2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-r2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-l2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-l2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-l2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d05-l2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-sym-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-sym-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-sym-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-sym-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-r2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-r2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-r2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-r2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-l2-s00",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-l2-s01",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-l2-s02",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n200-d10-l2-s03",
+      "path": "instances/suite_A/near_equal/n200/fsspb2-A-near_equal-n200-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-sym-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-sym-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-sym-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-sym-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-r2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-r2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-r2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-r2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-l2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-l2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-l2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d01-l2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-sym-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-sym-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-sym-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-sym-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-r2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-r2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-r2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-r2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-l2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-l2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-l2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d05-l2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-sym-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-sym-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-sym-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-sym-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-r2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-r2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-r2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-r2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-l2-s00",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-l2-s01",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-l2-s02",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n200-d10-l2-s03",
+      "path": "instances/suite_A/avis_lai/n200/fsspb2-A-avis_lai-n200-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-sym-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-sym-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-sym-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-sym-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-r2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-r2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-r2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-r2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-l2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-l2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-l2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d01-l2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-sym-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-sym-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-sym-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-sym-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-r2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-r2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-r2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-r2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-l2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-l2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-l2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d05-l2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-sym-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-sym-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-sym-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-sym-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-r2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-r2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-r2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-r2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-l2-s00",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-l2-s01",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-l2-s02",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-near_equal-n500-d10-l2-s03",
+      "path": "instances/suite_A/near_equal/n500/fsspb2-A-near_equal-n500-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-sym-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-sym-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-sym-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-sym-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-r2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-r2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-r2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-r2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-l2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-l2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-l2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d01-l2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d01-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-sym-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-sym-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-sym-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-sym-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-r2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-r2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-r2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-r2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-l2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-l2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-l2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d05-l2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d05-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-sym-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-sym-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-sym-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-sym-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-sym-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-sym-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-sym-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-sym-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-r2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-r2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-r2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-r2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-r2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-r2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-r2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-r2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-l2-s00",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-l2-s00.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-l2-s01",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-l2-s01.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-l2-s02",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-l2-s02.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-A-avis_lai-n500-d10-l2-s03",
+      "path": "instances/suite_A/avis_lai/n500/fsspb2-A-avis_lai-n500-d10-l2-s03.json",
+      "suite": "A"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-sym-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-sym-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-sym-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-sym-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-r2-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-r2-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-r2-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-r2-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-l2-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-l2-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-l2-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d01-l2-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-sym-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-sym-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-sym-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-sym-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-r2-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-r2-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-r2-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-r2-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-l2-s00",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-l2-s01",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-l2-s02",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n15-d05-l2-s03",
+      "path": "instances/suite_U/uniform/n15/fsspb2-U-uniform-n15-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-sym-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-sym-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-sym-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-sym-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-r2-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-r2-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-r2-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-r2-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-l2-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-l2-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-l2-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d01-l2-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-sym-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-sym-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-sym-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-sym-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-r2-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-r2-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-r2-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-r2-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-l2-s00",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-l2-s01",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-l2-s02",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n15-d05-l2-s03",
+      "path": "instances/suite_U/geometric/n15/fsspb2-U-geometric-n15-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d01-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n15-d05-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n15/fsspb2-U-heavy_tail-n15-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-sym-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-sym-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-sym-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-sym-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-r2-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-r2-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-r2-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-r2-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-l2-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-l2-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-l2-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d01-l2-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-sym-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-sym-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-sym-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-sym-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-r2-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-r2-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-r2-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-r2-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-l2-s00",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-l2-s01",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-l2-s02",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n15-d05-l2-s03",
+      "path": "instances/suite_U/bimodal/n15/fsspb2-U-bimodal-n15-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-sym-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-sym-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-sym-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-sym-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-r2-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-r2-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-r2-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-r2-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-l2-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-l2-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-l2-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d01-l2-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-sym-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-sym-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-sym-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-sym-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-r2-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-r2-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-r2-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-r2-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-l2-s00",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-l2-s01",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-l2-s02",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n18-d05-l2-s03",
+      "path": "instances/suite_U/uniform/n18/fsspb2-U-uniform-n18-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-sym-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-sym-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-sym-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-sym-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-r2-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-r2-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-r2-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-r2-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-l2-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-l2-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-l2-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d01-l2-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-sym-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-sym-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-sym-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-sym-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-r2-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-r2-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-r2-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-r2-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-l2-s00",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-l2-s01",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-l2-s02",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n18-d05-l2-s03",
+      "path": "instances/suite_U/geometric/n18/fsspb2-U-geometric-n18-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d01-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n18-d05-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n18/fsspb2-U-heavy_tail-n18-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-sym-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-sym-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-sym-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-sym-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-r2-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-r2-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-r2-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-r2-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-l2-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-l2-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-l2-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d01-l2-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-sym-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-sym-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-sym-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-sym-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-r2-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-r2-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-r2-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-r2-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-l2-s00",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-l2-s01",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-l2-s02",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n18-d05-l2-s03",
+      "path": "instances/suite_U/bimodal/n18/fsspb2-U-bimodal-n18-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-sym-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-sym-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-sym-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-sym-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-r2-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-r2-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-r2-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-r2-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-l2-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-l2-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-l2-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d01-l2-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-sym-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-sym-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-sym-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-sym-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-r2-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-r2-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-r2-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-r2-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-l2-s00",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-l2-s01",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-l2-s02",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n20-d05-l2-s03",
+      "path": "instances/suite_U/uniform/n20/fsspb2-U-uniform-n20-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-sym-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-sym-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-sym-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-sym-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-r2-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-r2-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-r2-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-r2-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-l2-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-l2-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-l2-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d01-l2-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-sym-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-sym-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-sym-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-sym-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-r2-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-r2-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-r2-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-r2-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-l2-s00",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-l2-s01",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-l2-s02",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n20-d05-l2-s03",
+      "path": "instances/suite_U/geometric/n20/fsspb2-U-geometric-n20-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d01-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n20-d05-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n20/fsspb2-U-heavy_tail-n20-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-sym-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-sym-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-sym-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-sym-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-r2-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-r2-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-r2-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-r2-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-l2-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-l2-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-l2-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d01-l2-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-sym-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-sym-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-sym-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-sym-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-r2-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-r2-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-r2-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-r2-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-l2-s00",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-l2-s01",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-l2-s02",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n20-d05-l2-s03",
+      "path": "instances/suite_U/bimodal/n20/fsspb2-U-bimodal-n20-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-sym-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-sym-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-sym-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-sym-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-r2-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-r2-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-r2-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-r2-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-l2-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-l2-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-l2-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d01-l2-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-sym-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-sym-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-sym-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-sym-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-r2-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-r2-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-r2-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-r2-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-l2-s00",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-l2-s01",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-l2-s02",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-uniform-n22-d05-l2-s03",
+      "path": "instances/suite_U/uniform/n22/fsspb2-U-uniform-n22-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-sym-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-sym-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-sym-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-sym-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-r2-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-r2-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-r2-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-r2-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-l2-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-l2-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-l2-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d01-l2-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-sym-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-sym-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-sym-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-sym-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-r2-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-r2-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-r2-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-r2-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-l2-s00",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-l2-s01",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-l2-s02",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-geometric-n22-d05-l2-s03",
+      "path": "instances/suite_U/geometric/n22/fsspb2-U-geometric-n22-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d01-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-sym-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-sym-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-sym-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-sym-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-r2-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-r2-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-r2-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-r2-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-l2-s00",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-l2-s01",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-l2-s02",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-heavy_tail-n22-d05-l2-s03",
+      "path": "instances/suite_U/heavy_tail/n22/fsspb2-U-heavy_tail-n22-d05-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-sym-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-sym-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-sym-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-sym-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-r2-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-r2-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-r2-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-r2-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-l2-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-l2-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-l2-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d01-l2-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d01-l2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-sym-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-sym-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-sym-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-sym-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-sym-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-sym-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-sym-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-sym-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-r2-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-r2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-r2-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-r2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-r2-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-r2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-r2-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-r2-s03.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-l2-s00",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-l2-s00.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-l2-s01",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-l2-s01.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-l2-s02",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-l2-s02.json",
+      "suite": "U"
+    },
+    {
+      "id": "fsspb2-U-bimodal-n22-d05-l2-s03",
+      "path": "instances/suite_U/bimodal/n22/fsspb2-U-bimodal-n22-d05-l2-s03.json",
+      "suite": "U"
+    }
+  ]
+}

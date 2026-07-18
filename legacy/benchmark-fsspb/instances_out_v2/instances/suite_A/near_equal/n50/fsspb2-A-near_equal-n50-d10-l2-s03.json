@@ -1,0 +1,103 @@
+{
+  "checksum_sha256": "0ccacd72cd469d169b43a16b4532a4ca12cc5d606250bdf3998431676183ece4",
+  "difficulty": {
+    "category": "tbd",
+    "greedy_mu": 0.0,
+    "vanilla_ga_median_mu": 0.0
+  },
+  "instance_id": "fsspb2-A-near_equal-n50-d10-l2-s03",
+  "items": [
+    999,
+    997,
+    995,
+    994,
+    990,
+    992,
+    1010,
+    1002,
+    1007,
+    1003,
+    995,
+    995,
+    1005,
+    992,
+    991,
+    1010,
+    998,
+    1004,
+    1002,
+    1004,
+    991,
+    990,
+    998,
+    1004,
+    998,
+    999,
+    1004,
+    997,
+    998,
+    1002,
+    991,
+    1004,
+    1000,
+    1003,
+    1003,
+    995,
+    990,
+    997,
+    995,
+    997,
+    994,
+    996,
+    999,
+    1002,
+    1006,
+    1005,
+    992,
+    1010,
+    1010,
+    999
+  ],
+  "metadata": {
+    "asymmetry": 2.0,
+    "construction": {
+      "v2_axes": {
+        "v2_distribution": "near_equal"
+      },
+      "v2_description": "adversarial_distribution",
+      "v2_suite": "A"
+    },
+    "distribution": "near_equal",
+    "generated_utc": "2026-05-18T02:04:53Z",
+    "generator_version": "2.0.0",
+    "n": 50,
+    "seed": 3,
+    "spread_ratio": 0.1
+  },
+  "schema_version": "1.1",
+  "target": {
+    "T_L": 13106,
+    "T_M": 14042,
+    "T_R": 14510
+  },
+  "witness": {
+    "mu_value": 0.9604700854700855,
+    "subset_indices": [
+      4,
+      8,
+      12,
+      15,
+      18,
+      22,
+      23,
+      26,
+      28,
+      29,
+      35,
+      37,
+      40,
+      49
+    ],
+    "subset_sum": 14005
+  }
+}
