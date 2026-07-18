@@ -46,10 +46,30 @@ class CPSAT(Solver):
             objective.evaluate([])
             return
 
+        # Pre-scale when the mu-linearization products would overflow CP-SAT's
+        # int64 domain (huge-value instances, e.g. Suite A Avis-Lai). The
+        # model becomes approximate at resolution `scale`, but the returned
+        # subset is real and is rescored on true unscaled sums — honest by
+        # construction, exactly like the certified alpha-cut FPTAS.
+        items = [int(a) for a in instance.items]
+        bound = (sum(items) + abs(t_l) + t_r + 1) * max(d_l, d_r)
+        limit = 4 * 10**18
+        scale = 1
+        while bound // (scale * scale) > limit:
+            scale *= 2
+        if scale > 1:
+            items = [max(1, a // scale) for a in items]
+            t_l, t_m, t_r = t_l // scale, t_m // scale, t_r // scale
+            d_l, d_r = t_m - t_l, t_r - t_m
+            if d_l <= 0 or d_r <= 0:
+                objective.evaluate([])
+                return
+        self.last_scale = scale
+
         model = cp_model.CpModel()
         x = [model.new_bool_var(f"x{i}") for i in range(instance.n)]
-        total = sum(int(a) * xi for a, xi in zip(instance.items, x))
-        s_max = sum(instance.items)
+        total = sum(a * xi for a, xi in zip(items, x))
+        s_max = sum(items)
         lb = min((0 - t_l) * d_r, (t_r - s_max) * d_l, 0)
         z = model.new_int_var(lb, d_l * d_r, "z")
         model.add(z <= (total - t_l) * d_r)
