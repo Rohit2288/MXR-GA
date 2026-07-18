@@ -1,0 +1,17 @@
+{
+  "git_commit": "bc7c02561ed2624bf14221851854453e94a75b73",
+  "script": "experiments/03_alpha_cut_overshoot.py",
+  "date_utc": "2026-07-18T15:24:59.492162+00:00",
+  "summary": {
+    "instances": 384,
+    "legacy_overshoot_count": 164,
+    "legacy_overshoot_pct": 42.708333333333336,
+    "legacy_overshoot_mean_excess": 0.10884888878153359,
+    "legacy_overshoot_max_excess": 0.8562375356125468,
+    "new_overshoot_count": 0,
+    "new_overshoot_pct": 0.0,
+    "new_mean_mu": 0.49713090413173044,
+    "exact_mean_mu": 0.7468805866390462,
+    "eps": 0.01
+  }
+}

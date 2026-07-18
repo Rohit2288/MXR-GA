@@ -14,6 +14,7 @@ from src.solvers.base import Solver
 
 
 def default_solvers() -> List[Solver]:
+    from src.solvers.alpha_cut import AlphaCut
     from src.solvers.baselines import GreedyCenter, RandomSearch, VanillaGA
     from src.solvers.cpsat import CPSAT
     from src.solvers.dp_bitset import DPBitset
@@ -33,5 +34,6 @@ def default_solvers() -> List[Solver]:
         VanillaGA(),
         RandomSearch(),
         GreedyCenter(),
+        AlphaCut(),
     ]
     return solvers
