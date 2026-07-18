@@ -59,6 +59,7 @@ class FHGAConfig:
     fitness_change_eps: float = 1e-6
     uniform_xover: bool = False          # True = plain uniform crossover (ablation)
     ls_mode: str = "gradient"            # "gradient" | "best_flip" | "swap" (R2.3 controls)
+    repair_mode: str = "wbf"             # "wbf" | "dp_window" (task 3.3, R4.1)
 
     def materialize(self, n: int) -> "FHGAConfig":
         return replace(
@@ -128,6 +129,7 @@ class _Run:
         self.stats = {
             "generations": 0, "restarts": 0, "wbf_repair_count": 0,
             "wbf_repair_time_s": 0.0, "ls_invocations": 0, "apex_crossings": 0,
+            "dpwin_repair_count": 0, "dpwin_repair_time_s": 0.0,
         }
 
     # -- evaluation ---------------------------------------------------------
@@ -355,7 +357,7 @@ class _Run:
                     continue
             break
 
-    # -- WBF repair ---------------------------------------------------------
+    # -- window repair (WBF or DP-window) -----------------------------------
 
     def _wbf_repair(self, ind: _Ind) -> None:
         S = self._sum(ind.chrom)
@@ -363,6 +365,9 @@ class _Run:
             return
         w = min(self.cfg.w_max, self.n)
         if w == 0:
+            return
+        if self.cfg.repair_mode == "dp_window":
+            self._dp_window_repair(ind, w)
             return
         t0 = time.perf_counter()
         self.stats["wbf_repair_count"] += 1
@@ -386,6 +391,46 @@ class _Run:
                     ind.chrom[idx] = 1 if (best_mask & (1 << k)) else 0
                 ind.f = best_f
             self.stats["wbf_repair_time_s"] += time.perf_counter() - t0
+
+    def _dp_window_repair(self, ind: _Ind, w: int) -> None:
+        """Task 3.3 (R4.1): the same item window as WBF-Repair, but an exact
+        DP over the window's distinct reachable sums with internal selection,
+        followed by ONE counted evaluation of the repaired chromosome —
+        instead of 2^w counted evaluations. Internal mu/guide arithmetic is
+        used for selection only (as in the exact solvers); reported quality
+        remains protocol-tracked and harness-rescored."""
+        t0 = time.perf_counter()
+        self.stats["dpwin_repair_count"] += 1
+        window = sorted(range(self.n), key=lambda i: self.rho[i],
+                        reverse=True)[:w]
+        window_set = set(window)
+        fixed = sum(self.items[i] for i in range(self.n)
+                    if i not in window_set and ind.chrom[i] == 1)
+
+        # parents[s] = (previous sum, item index) for one subset reaching s.
+        parents = {0: None}
+        for idx in window:
+            a = self.items[idx]
+            for s in list(parents.keys()):
+                if s + a not in parents:
+                    parents[s + a] = (s, idx)
+
+        def val(total: int) -> float:
+            mu = self.target.mu(total)
+            return mu if self.guide is None else self.guide(total, mu)
+
+        best_s = max(parents, key=lambda s: val(fixed + s))
+        if val(fixed + best_s) > ind.f + 1e-12:
+            chosen = set()
+            s = best_s
+            while s != 0:
+                prev, idx = parents[s]
+                chosen.add(idx)
+                s = prev
+            for idx in window:
+                ind.chrom[idx] = 1 if idx in chosen else 0
+            ind.f = self._fit([i for i, b in enumerate(ind.chrom) if b])
+        self.stats["dpwin_repair_time_s"] += time.perf_counter() - t0
 
     # -- replacement / controller / diversity / restart ---------------------
 
