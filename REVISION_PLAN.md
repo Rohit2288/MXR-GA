@@ -47,15 +47,15 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 
 ## Phase 4 — Fuzzy-vs-crisp and local-search controls
 
-- [ ] 4.1 Run fhga_crisp vs FH-GA on FSSP-2; equal everything. (R4.1)
-- [ ] 4.2 Run gradient-guided LS vs best-improvement vs swap LS. If no measurable advantage, the "gradient" claim is renamed/downgraded to a sign/direction rule. (R2.3)
+- [x] 4.1 Run fhga_crisp vs FH-GA on FSSP-2; equal everything. (R4.1)
+- [x] 4.2 Run gradient-guided LS vs best-improvement vs swap LS. If no measurable advantage, the "gradient" claim is renamed/downgraded to a sign/direction rule. (R2.3)
 - [ ] 4.3 DECISION(Rohit): final fuzzy-vs-crisp positioning once data is in. If crisp matches, value proposition = bounded objective + asymmetric tolerances + linguistic control, not search advantage.
 - [ ] 4.4 Problem-positioning fragment: FSSP vs closest-subset-sum, interval SSP, tolerance-based SSP, fuzzy knapsack — what is and is not new. (R2.1)
 
 ## Phase 5 — Runtime & instrumentation (R2.9, R4.3)
 
-- [ ] 5.1 Runtime table from the fair protocol: wall-clock AND evals consumed, every solver, every suite.
-- [ ] 5.2 Re-test the "fastest at large n" claim under fair termination; keep only if it survives.
+- [x] 5.1 Runtime table from the fair protocol: wall-clock AND evals consumed, every solver, every suite.
+- [x] 5.2 Re-test the "fastest at large n" claim under fair termination; keep only if it survives.
 
 ## Phase 6 — Paper fragments (for Overleaf)
 

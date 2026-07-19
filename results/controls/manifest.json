@@ -1,0 +1,40 @@
+{
+  "git_commit": "985cdd79621f6faeee754108bd929bfd8d33be72",
+  "script": "experiments/10_controls.py",
+  "date_utc": "2026-07-19T18:41:32.256152+00:00",
+  "protocol": {
+    "max_evals": 50000,
+    "plateau_tol": 1e-09,
+    "plateau_patience": 10000
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "controls": [
+    "fhga_crisp_fast",
+    "fhga_crisp_thorough",
+    "fhga_ls_bestflip",
+    "fhga_ls_swap"
+  ],
+  "comparators": "fhga_fast / fhga_thorough from main_comparison",
+  "n_instances": 866
+}
