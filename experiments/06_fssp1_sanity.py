@@ -25,15 +25,11 @@ import numpy as np
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-# Reuse the worker and protocol of the main driver (kept identical on
-# purpose). The module name starts with a digit, so it is loaded by path.
-import importlib.util
-_spec = importlib.util.spec_from_file_location(
-    "main_comparison", REPO / "experiments" / "04_main_comparison.py")
-main_comparison = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(main_comparison)
-
+# Shared worker/protocol live in the importable src package so that
+# multiprocessing spawn workers can re-import them (loading the 04 driver
+# by file path broke worker pickling — the 2026-07-19 stage failure).
 from src.core.instance import FSSP1_DIR, iter_instance_paths
+from src.protocol import units as shared
 from src.protocol.runner import git_commit
 
 OUT_DIR = REPO / "results" / "fssp1_sanity"
@@ -49,9 +45,9 @@ def main() -> int:
     paths = list(iter_instance_paths(FSSP1_DIR))
     units = []
     for p in paths:
-        for name in main_comparison.STOCHASTIC:
+        for name in shared.STOCHASTIC:
             units.extend((name, p, s) for s in SEEDS)
-        units.extend((name, p, 0) for name in main_comparison.DETERMINISTIC)
+        units.extend((name, p, 0) for name in shared.DETERMINISTIC)
 
     done = set()
     if CSV_PATH.exists():
@@ -69,11 +65,11 @@ def main() -> int:
     t0 = time.perf_counter()
     n_done = 0
     with open(CSV_PATH, "a", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=main_comparison.FIELDS)
+        writer = csv.DictWriter(fh, fieldnames=shared.FIELDS)
         if new_file:
             writer.writeheader()
         with mp.Pool(args.workers) as pool:
-            for row in pool.imap_unordered(main_comparison.run_unit, todo,
+            for row in pool.imap_unordered(shared.run_unit, todo,
                                            chunksize=4):
                 writer.writerow(row)
                 n_done += 1
@@ -89,10 +85,10 @@ def main() -> int:
             "git_commit": git_commit(),
             "script": "experiments/06_fssp1_sanity.py",
             "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-            "protocol": {"max_evals": main_comparison.PROTOCOL.max_evals,
-                         "plateau_tol": main_comparison.PROTOCOL.plateau_tol,
+            "protocol": {"max_evals": shared.PROTOCOL.max_evals,
+                         "plateau_tol": shared.PROTOCOL.plateau_tol,
                          "plateau_patience":
-                             main_comparison.PROTOCOL.plateau_patience},
+                             shared.PROTOCOL.plateau_patience},
             "seeds": SEEDS,
             "n_instances": len(paths),
         }, fh, indent=2)

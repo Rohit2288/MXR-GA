@@ -1,0 +1,49 @@
+{
+  "git_commit": "52234436774c78af54d22bee9b36a9ac7ba286df",
+  "script": "experiments/04_main_comparison.py",
+  "date_utc": "2026-07-19T12:32:33.971911+00:00",
+  "protocol": {
+    "max_evals": 50000,
+    "plateau_tol": 1e-09,
+    "plateau_patience": 10000
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "stochastic": [
+    "fhga_fast",
+    "fhga_thorough",
+    "vanilla_ga",
+    "random_search",
+    "sim_anneal",
+    "ils"
+  ],
+  "deterministic": [
+    "dp_exact",
+    "mitm",
+    "greedy_center",
+    "alpha_cut",
+    "cpsat"
+  ],
+  "cpsat_time_s": 10.0,
+  "n_instances": 866
+}
