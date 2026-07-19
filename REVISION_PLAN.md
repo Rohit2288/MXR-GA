@@ -85,9 +85,9 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 
 ## Open decisions queue (Rohit)
 
-1. (1.11) Published SoTA solver, or justify exact methods as strong baselines.
-2. (3.4) Narrative restructuring pending hard-suite ablation results.
+1. (1.11) RESOLVED: FLSSS (Option A) — integrate as published tolerance-based solver (Rohit, 2026-07-19).
+2. (3.4) RESOLVED: restructure per narrative_restructure.md; Thorough := DP-window; inert mechanisms stated plainly (Rohit, 2026-07-19).
 3. (4.3) Fuzzy-vs-crisp positioning pending control results.
 4. (0.2) Any instance-count discrepancies found by the inventory.
 5. (7.3) GPEM tracked-changes requirement.
-6. (6.7) `ref_zakharov` citation unverifiable — supply real source or approve removal.
+6. (6.7) RESOLVED: `ref_zakharov` to be removed (Rohit, 2026-07-19).
