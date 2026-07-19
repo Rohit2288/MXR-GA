@@ -40,9 +40,9 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 
 ## Phase 3 — Ablation (R2.8, R3.5, R4.1, E)
 
-- [ ] 3.1 Full 5-mechanism ablation on Suites A and U, ≥20 seeds, mean/SD/worst-case, CIs, Wilcoxon per mechanism.
-- [ ] 3.2 WBF-Repair cost-benefit: quality gain vs runtime per suite; profile and explain the runtime scaling pattern (early stopping? implementation?). (R2.9)
-- [ ] 3.3 DP-window repair variant: same window as WBF-Repair but localized DP instead of brute force — answers R4.1's "why a GA at all?". Report honestly whichever way it goes.
+- [x] 3.1 Full 5-mechanism ablation on Suites A and U, ≥20 seeds, mean/SD/worst-case, CIs, Wilcoxon per mechanism.
+- [x] 3.2 WBF-Repair cost-benefit: quality gain vs runtime per suite; profile and explain the runtime scaling pattern (early stopping? implementation?). (R2.9)
+- [x] 3.3 DP-window repair variant: same window as WBF-Repair but localized DP instead of brute force — answers R4.1's "why a GA at all?". Report honestly whichever way it goes.
 - [ ] 3.4 DECISION(Rohit): if mechanisms still show no signal on hard suites, the paper narrative restructures around what DOES matter. Discuss in chat before writing fragments.
 
 ## Phase 4 — Fuzzy-vs-crisp and local-search controls
@@ -65,11 +65,11 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 - [x] 6.2 Appendix pseudocode for HybridInitialise, FB-UX, ImpactAwareMutate, GradientLocalSearch, WBF-Repair, Mamdani controller: inputs, outputs, parameters, boundary conditions, termination — implementable independently. (R3.6)
 - [x] 6.3 Early Fast/Thorough design-objectives paragraph for §1 + pointers to validating experiments. (R1.3)
 - [x] 6.4 De-guarantee pass list: every "always/guaranteed/correctness-critical" location in the manuscript with replacement wording. (R2.4, R3.m7)
-- [ ] 6.5 Parameter-justification subsection: derive from FSSP structure where possible; otherwise tuned defaults + sensitivity evidence with ranges, sampling, repetitions, error bars, interactions. (R2.2, R3.m3)
-- [ ] 6.5a Sensitivity sweep (`experiments/08_sensitivity.py`): one-at-a-time ranges over FH-GA parameters + p_c×p_m interaction grid, stratified A/U slice, ≥10 seeds, error bars; data source for 6.5. (R2.2, R3.m3)
+- [x] 6.5 Parameter-justification subsection: derive from FSSP structure where possible; otherwise tuned defaults + sensitivity evidence with ranges, sampling, repetitions, error bars, interactions. (R2.2, R3.m3)
+- [x] 6.5a Sensitivity sweep (`experiments/08_sensitivity.py`): one-at-a-time ranges over FH-GA parameters + p_c×p_m interaction grid, stratified A/U slice, ≥10 seeds, error bars; data source for 6.5. (R2.2, R3.m3)
 - [ ] 6.6 Rewritten Related Work: critical analysis across fuzzy subset-sum, closest-subset-sum, fuzzy knapsack, tolerance-based SSP, memetic optimization; comparison table of objectives/complexity/output form/scale. Condensed Table 1. (R2.10, R3.7, R4.4)
 - [ ] 6.7 Bibliography fixes: the "???" Springer entry, Reference [3], full verification of all entries. (R2.10, R3.m8)
-- [ ] 6.8 All figures regenerated from new CSVs: Figure 5 redrawn cleanly; Figure 6 replaced by log-scale residual (1−μ) plot; each figure audited against its CSV. (R1.2, R4.4)
+- [x] 6.8 All figures regenerated from new CSVs: Figure 5 redrawn cleanly; Figure 6 replaced by log-scale residual (1−μ) plot; each figure audited against its CSV. (R1.2, R4.4)
 - [ ] 6.9 New results tables (main comparison, ablation, runtime, stats) as fragments. (R3.m2)
 - [ ] 6.10 Condensation guidance: list of cuttable/appendix-movable passages (benchmark-generation detail, inconclusive ablation prose, conclusion overlap). (R3.m5, R3.m6, R4.4)
 - [x] 6.11 Acronym first-use audit: FSSP, SSP, FPTAS, FB-UX, WBF-Repair. (R3.m1)
