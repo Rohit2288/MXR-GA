@@ -34599,3 +34599,395 @@ ils,fsspb2-U-bimodal-n20-d01-r2-s03,U,20,bimodal,1,ok,0.9583333333333334,7143,16
 dp_exact,fsspb2-A-avis_lai-n200-d10-sym-s00,A,200,avis_lai,0,infeasible,,,,0,,,50000,"{""reason"": ""T_R=616373606995 > max_tr=10000000""}"
 sim_anneal,fsspb2-T-geometric-n1000-d0001-l2-s01,T,1000,geometric,9,ok,0.0,28,25,10001,1.9487264589988627,plateau,50000,{}
 vanilla_ga,fsspb2-U-geometric-n18-d01-sym-s00,U,18,geometric,0,ok,0.0,1670,4,10001,0.3587965839979006,plateau,50000,{}
+vanilla_ga,fsspb2-U-heavy_tail-n22-d05-r2-s03,U,22,heavy_tail,11,ok,0.9452054794520548,7237,21,10041,0.3871875420009019,plateau,50000,{}
+ils,fsspb2-U-geometric-n18-d05-r2-s02,U,18,geometric,6,ok,0.5,121,1,10024,0.04885725000349339,plateau,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n100-d10-l2-s01,A,100,near_equal,2,ok,0.9854788069073783,38177,38,10541,0.24687520798761398,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 1114}"
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s03,A,50,density_doubled_hard_ssp,16,ok,0.9999781073283679,29040582102,27,23239,0.3160830839915434,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 34, ""apex_crossings"": 1552}"
+fhga_thorough,fsspb2-A-near_equal-n100-d05-r2-s01,A,100,near_equal,17,ok,0.8443363446838082,86779,87,10006,0.4638429170008749,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 8, ""apex_crossings"": 1852}"
+sim_anneal,fsspb2-T-geometric-n500-d0005-l2-s04,T,500,geometric,18,ok,1.0,4034,243,14834,1.436830958002247,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n15-d01-l2-s00,U,15,heavy_tail,2,ok,0.6666666666666666,449,3,14672,0.07820770899706986,plateau,50000,{}
+fhga_thorough,fsspb2-U-bimodal-n20-d05-l2-s00,U,20,bimodal,16,ok,0.8888888888888888,270,9,10025,0.06556279200594872,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.04865949900704436, ""ls_invocations"": 20, ""apex_crossings"": 159}"
+ils,fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s02,A,100,density_doubled_hard_ssp,9,ok,0.9999768959050142,45439511395,41,20744,0.40332254099485,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n500-d05-r2-s02,A,500,avis_lai,4,ok,0.9264877334244455,1052266868823,245,10010,2.4609499580110423,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 1470}"
+sim_anneal,fsspb2-U-geometric-n18-d01-r2-s03,U,18,geometric,3,ok,0.0,6300,18,10001,0.0796057080005994,plateau,50000,{}
+ils,fsspb2-U-bimodal-n18-d05-r2-s02,U,18,bimodal,10,ok,0.5392156862745098,6079,17,12235,0.08301341600599699,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n50-d05-l2-s02,A,50,avis_lai,19,ok,0.7842507091045869,111669163838,26,36847,2.379447415994946,plateau,50000,{}
+vanilla_ga,fsspb2-U-heavy_tail-n15-d05-r2-s02,U,15,heavy_tail,2,ok,0.896551724137931,3455,13,10368,0.3149577500007581,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n50-d10-r2-s01,A,50,avis_lai,1,ok,0.82433749595445,167503738009,39,23135,1.5433420829940587,plateau,50000,{}
+fhga_thorough,fsspb2-T-heavy_tail-n1000-d0001-l2-s00,T,1000,heavy_tail,11,ok,0.8333333333333334,83778,108,11201,7.040008208001382,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 22}"
+fhga_thorough,fsspb2-A-avis_lai-n500-d05-r2-s01,A,500,avis_lai,7,ok,0.9501913144579928,635655056713,148,10008,2.14529025000229,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 1093}"
+sim_anneal,fsspb2-A-near_equal-n100-d10-l2-s01,A,100,near_equal,6,ok,0.9293563579277865,38034,38,11352,0.21343562500260305,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n18-d05-sym-s02,U,18,heavy_tail,7,ok,0.9871794871794872,3127,15,10275,0.12094054199405946,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n50-d10-l2-s01,A,50,near_equal,18,ok,1.0,21131,21,16601,1.0839707500126678,plateau,50000,{}
+greedy_center,fsspb2-A-near_equal-n500-d05-sym-s00,A,500,near_equal,0,ok,0.06328747284576394,282664,284,1,0.00027804099954664707,solver_done,50000,{}
+fhga_thorough,fsspb2-T-bimodal-n500-d0001-r2-s03,T,500,bimodal,19,ok,1.0,101722,122,10627,2.546178833988961,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 7, ""apex_crossings"": 118}"
+vanilla_ga,fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s01,A,50,density_doubled_hard_ssp,1,ok,0.9934986027160604,37317121765,36,16240,1.1062748749973252,plateau,50000,{}
+sim_anneal,fsspb2-U-bimodal-n18-d01-l2-s00,U,18,bimodal,12,ok,0.972972972972973,5492,15,13974,0.11572112499561626,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n100-d10-l2-s01,A,100,near_equal,3,ok,0.9941130298273155,38199,38,33977,4.157181290996959,plateau,50000,{}
+sim_anneal,fsspb2-T-geometric-n1000-d0001-l2-s00,T,1000,geometric,18,ok,1.0,5053,519,17882,3.4233169999934034,plateau,50000,{}
+random_search,fsspb2-U-geometric-n20-d01-sym-s02,U,20,geometric,10,ok,0.9354838709677419,6148,18,11597,0.15904683301050682,plateau,50000,{}
+random_search,fsspb2-A-avis_lai-n200-d10-l2-s01,A,200,avis_lai,17,ok,0.985847489287034,549755805535,128,14064,0.7425571670028148,plateau,50000,{}
+ils,fsspb2-U-bimodal-n20-d01-l2-s02,U,20,bimodal,3,ok,0.45098039215686275,7607,19,10037,0.13308345900441054,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n22-d01-l2-s03,U,22,bimodal,0,ok,0.9807692307692307,7848,12,10548,0.09034187499491964,plateau,50000,"{""generations"": 3, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 58, ""apex_crossings"": 725}"
+fhga_thorough,fsspb2-U-bimodal-n15-d01-l2-s03,U,15,bimodal,16,ok,0.8235294117647058,5072,14,10019,0.056452625009114854,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.050254707981366664, ""ls_invocations"": 14, ""apex_crossings"": 31}"
+ils,fsspb2-A-near_equal-n50-d05-r2-s00,A,50,near_equal,3,ok,1.0,20055,20,12908,0.11922979200608097,plateau,50000,{}
+random_search,fsspb2-U-bimodal-n22-d05-r2-s00,U,22,bimodal,14,ok,0.6546762589928058,8270,21,10013,0.13583487500727642,plateau,50000,{}
+random_search,fsspb2-U-bimodal-n22-d05-sym-s03,U,22,bimodal,1,ok,0.1111111111111111,9559,18,13101,0.1697588750103023,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n50-d05-r2-s00,A,50,avis_lai,19,ok,0.7645632428022837,34359737976,8,11364,0.0898508749960456,plateau,50000,{}
+mitm,fsspb2-A-near_equal-n200-d10-sym-s02,A,200,near_equal,0,infeasible,,,,0,,,50000,"{""reason"": ""n=200 > max_n=44 (2^(n/2) blowup)""}"
+ils,fsspb2-U-bimodal-n15-d01-sym-s02,U,15,bimodal,9,ok,0.0,5111,14,10001,0.06518449999566656,plateau,50000,{}
+sim_anneal,fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s02,A,100,density_doubled_hard_ssp,1,ok,0.9999643430295863,49122536652,54,14718,0.37221691699232906,plateau,50000,{}
+ils,fsspb2-A-near_equal-n500-d05-sym-s03,A,500,near_equal,19,ok,1.0,303102,303,27416,2.854392249995726,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n50-d05-r2-s00,A,50,avis_lai,13,ok,0.7645621410835555,34359739228,8,10002,0.08089858399762306,plateau,50000,{}
+fhga_fast,fsspb2-U-geometric-n20-d01-sym-s03,U,20,geometric,6,ok,0.9666666666666667,6084,18,11781,0.11116716600372456,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 107, ""apex_crossings"": 877}"
+vanilla_ga,fsspb2-U-geometric-n20-d05-r2-s01,U,20,geometric,15,ok,0.9951456310679612,6188,17,10749,0.3815126249974128,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n500-d05-sym-s02,A,500,avis_lai,13,ok,0.9790512752135256,833223633356,194,50000,3.9777561249939026,budget_exhausted,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n100-d10-sym-s03,A,100,avis_lai,18,ok,0.930015421610716,240518157928,56,11041,0.26560099999187514,plateau,50000,{}
+ils,fsspb2-U-uniform-n18-d01-sym-s02,U,18,uniform,16,ok,0.6666666666666666,551,2,10020,0.03802383299625944,plateau,50000,{}
+random_search,fsspb2-U-geometric-n15-d01-sym-s03,U,15,geometric,18,ok,0.0,0,0,10001,0.06691795799997635,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n50-d01-r2-s00,A,50,near_equal,13,ok,1.0,12000,12,10575,0.11146129199187271,plateau,50000,{}
+random_search,fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s02,A,50,density_doubled_hard_ssp,6,ok,0.9997318255847568,32313834996,33,15058,0.27817916599451564,plateau,50000,{}
+fhga_thorough,fsspb2-U-geometric-n22-d05-l2-s01,U,22,geometric,16,ok,0.9905660377358491,6347,19,10027,0.07585358301002998,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.047991667001042515, ""ls_invocations"": 31, ""apex_crossings"": 613}"
+fhga_fast,fsspb2-A-avis_lai-n50-d01-r2-s02,A,50,avis_lai,8,ok,0.45312238176229963,103079203945,24,10001,0.1480587919941172,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 10, ""apex_crossings"": 486}"
+fhga_fast,fsspb2-T-bimodal-n500-d0001-l2-s01,T,500,bimodal,2,ok,1.0,87310,98,10601,2.109192082993104,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 404}"
+random_search,fsspb2-U-uniform-n20-d01-r2-s00,U,20,uniform,17,ok,0.7121212121212122,9872,19,10015,0.12913020800624508,plateau,50000,{}
+vanilla_ga,fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s00,A,50,density_doubled_hard_ssp,17,ok,0.9999843433747493,29416270230,25,29092,1.9078188749990659,plateau,50000,{}
+ils,fsspb2-U-geometric-n15-d01-r2-s02,U,15,geometric,19,ok,0.8,1423,4,10980,0.04318016700563021,plateau,50000,{}
+ils,fsspb2-T-geometric-n1000-d0005-sym-s00,T,1000,geometric,14,ok,0.0,3386,404,10001,1.5525164999999106,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n200-d10-r2-s02,A,200,avis_lai,2,ok,0.9363347836773419,382252059066,89,50000,1.726249542000005,budget_exhausted,50000,{}
+sim_anneal,fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s00,A,50,density_doubled_hard_ssp,1,ok,0.9958926914266006,32013840121,37,16513,0.25450091699894983,plateau,50000,{}
+fhga_fast,fsspb2-A-density_doubled_hard_ssp-n100-d05-r2-s00,A,100,density_doubled_hard_ssp,14,ok,0.9999781939974107,33040431655,50,14094,0.2950778749946039,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 16, ""apex_crossings"": 1627}"
+fhga_fast,fsspb2-T-bimodal-n500-d0005-sym-s00,T,500,bimodal,15,ok,0.9333333333333333,58239,69,10603,1.9949165409925627,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 361}"
+ils,fsspb2-A-density_doubled_hard_ssp-n50-d10-l2-s01,A,50,density_doubled_hard_ssp,5,ok,0.9999560789701069,10099460372,13,22095,0.17372700000123587,plateau,50000,{}
+fhga_thorough,fsspb2-U-bimodal-n18-d01-l2-s03,U,18,bimodal,14,ok,0.0,205,8,10001,0.05559583399735857,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04370120800740551, ""ls_invocations"": 18, ""apex_crossings"": 84}"
+fhga_fast,fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s02,A,100,density_doubled_hard_ssp,14,ok,0.9999413120057916,49122749520,53,11999,0.2971717920008814,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 11, ""apex_crossings"": 1414}"
+fhga_fast,fsspb2-U-heavy_tail-n22-d01-l2-s01,U,22,heavy_tail,18,ok,0.0,101,1,10001,0.05914183300046716,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 105, ""apex_crossings"": 234}"
+fhga_thorough,fsspb2-A-avis_lai-n200-d05-sym-s03,A,200,avis_lai,1,ok,0.8670496761406782,347892302565,81,10009,0.5258567080018111,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 972}"
+ils,fsspb2-A-near_equal-n50-d10-l2-s00,A,50,near_equal,9,ok,1.0,23884,24,23416,0.27329037500021514,plateau,50000,{}
+fhga_thorough,fsspb2-T-uniform-n500-d0005-r2-s00,T,500,uniform,3,ok,0.9583333333333334,72233,80,10612,2.0267113339941716,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 5, ""apex_crossings"": 475}"
+sim_anneal,fsspb2-A-avis_lai-n500-d05-l2-s01,A,500,avis_lai,18,ok,0.9525749619870273,1292785162861,301,10391,1.1137235829955898,plateau,50000,{}
+fhga_fast,fsspb2-T-uniform-n500-d0001-l2-s01,T,500,uniform,7,ok,1.0,95535,110,10601,2.0140075410017744,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 530}"
+random_search,fsspb2-T-bimodal-n500-d0005-l2-s04,T,500,bimodal,0,ok,0.95,58975,151,17515,1.1415238750050776,plateau,50000,{}
+fhga_thorough,fsspb2-U-bimodal-n15-d05-sym-s02,U,15,bimodal,17,ok,0.9583333333333334,966,3,10247,0.046912167003029026,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.03685791701718699, ""ls_invocations"": 18, ""apex_crossings"": 329}"
+fhga_thorough,fsspb2-U-bimodal-n18-d05-sym-s03,U,18,bimodal,7,ok,0.9710144927536232,5534,8,10763,0.07309445900318678,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05254349899769295, ""ls_invocations"": 18, ""apex_crossings"": 280}"
+ils,fsspb2-U-geometric-n20-d01-r2-s03,U,20,geometric,7,ok,0.5,307,3,14757,0.060714417006238364,plateau,50000,{}
+ils,fsspb2-T-bimodal-n1000-d0005-l2-s03,T,1000,bimodal,14,ok,0.0,145320,383,10001,1.4888737500004936,plateau,50000,{}
+sim_anneal,fsspb2-U-uniform-n22-d05-l2-s01,U,22,uniform,0,ok,0.5975232198142415,9560,20,10005,0.07407833398610819,plateau,50000,{}
+random_search,fsspb2-U-bimodal-n15-d05-r2-s00,U,15,bimodal,8,ok,0.9545454545454546,5278,13,10423,0.10629362499457784,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n18-d01-r2-s02,U,18,heavy_tail,9,ok,0.9333333333333333,2255,16,10125,0.12142354200477712,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n22-d01-l2-s03,U,22,heavy_tail,11,ok,0.9714285714285714,5306,21,10032,0.07585087500046939,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n500-d10-l2-s02,A,500,avis_lai,2,ok,0.983723428031055,1378684492093,321,10759,0.9804485839995323,plateau,50000,{}
+random_search,fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s00,A,100,density_doubled_hard_ssp,10,ok,0.9998586636654148,47785392848,45,22955,0.4942616670014104,plateau,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n100-d10-sym-s00,A,100,near_equal,18,ok,0.9163780306778823,40242,40,10122,0.24734058299509343,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 798}"
+random_search,fsspb2-U-heavy_tail-n20-d01-sym-s02,U,20,heavy_tail,15,ok,0.7272727272727273,4308,19,10020,0.12918899999931455,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n18-d01-sym-s00,U,18,heavy_tail,18,ok,0.0,212,1,10001,0.05660354200517759,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n15-d01-l2-s02,U,15,bimodal,8,ok,0.0,4622,13,10001,0.0670878749951953,plateau,50000,"{""generations"": 9, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 147, ""apex_crossings"": 149}"
+vanilla_ga,fsspb2-T-bimodal-n500-d0005-r2-s02,T,500,bimodal,13,ok,1.0,28505,75,12130,5.3470077499951,plateau,50000,{}
+random_search,fsspb2-A-avis_lai-n50-d05-sym-s02,A,50,avis_lai,1,ok,0.8788822911836641,77309406178,18,24298,0.2975353750080103,plateau,50000,{}
+alpha_cut,fsspb2-U-geometric-n18-d05-l2-s01,U,18,geometric,0,ok,0.8311688311688312,6242,17,5,0.0001328750076936558,solver_done,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n50-d10-r2-s00,A,50,avis_lai,10,ok,0.8916137079999629,150323848006,35,10003,0.1703603329951875,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 979}"
+random_search,fsspb2-T-heavy_tail-n1000-d0005-r2-s02,T,1000,heavy_tail,19,ok,1.0,83342,355,23569,3.3798073749931064,plateau,50000,{}
+sim_anneal,fsspb2-T-heavy_tail-n1000-d0005-sym-s00,T,1000,heavy_tail,17,ok,0.1875,64274,286,10028,1.7491091249976307,plateau,50000,{}
+vanilla_ga,fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s03,A,100,density_doubled_hard_ssp,13,ok,0.998947152999549,19275172538,22,15168,1.596238792000804,plateau,50000,{}
+ils,fsspb2-U-bimodal-n18-d01-l2-s02,U,18,bimodal,16,ok,0.0,6452,16,10001,0.059298791995388456,plateau,50000,{}
+ils,fsspb2-U-uniform-n20-d01-l2-s00,U,20,uniform,19,ok,0.9512195121951219,12347,17,11329,0.06952774999081157,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n200-d01-r2-s03,A,200,near_equal,15,ok,0.8780487804878049,49039,49,11009,0.46225412499916274,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 9, ""apex_crossings"": 1460}"
+random_search,fsspb2-U-heavy_tail-n22-d01-r2-s01,U,22,heavy_tail,5,ok,0.9444444444444444,5400,21,10047,0.1392507080017822,plateau,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n18-d05-l2-s03,U,18,heavy_tail,6,ok,0.95,2390,16,10001,0.0995269579871092,plateau,50000,{}
+fhga_thorough,fsspb2-U-geometric-n22-d05-r2-s02,U,22,geometric,3,ok,0.0,74,2,10001,0.052751791998161934,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.044096291981986724, ""ls_invocations"": 27, ""apex_crossings"": 218}"
+random_search,fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s03,A,50,density_doubled_hard_ssp,17,ok,0.9998985685173586,29040736092,26,20393,0.29688145901309326,plateau,50000,{}
+random_search,fsspb2-U-geometric-n20-d01-l2-s02,U,20,geometric,17,ok,0.975609756097561,6192,18,11156,0.14319225000508595,plateau,50000,{}
+vanilla_ga,fsspb2-U-geometric-n18-d01-r2-s00,U,18,geometric,11,ok,0.0,62,1,10001,0.2984977500018431,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n200-d10-sym-s01,A,200,avis_lai,12,ok,0.9756194666143693,670014888013,156,50000,2.4127099579927744,budget_exhausted,50000,{}
+fhga_thorough,fsspb2-U-geometric-n18-d05-sym-s00,U,18,geometric,1,ok,0.8333333333333334,243,3,10390,0.05915070899936836,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05109820899087936, ""ls_invocations"": 24, ""apex_crossings"": 128}"
+ils,fsspb2-U-heavy_tail-n15-d01-sym-s02,U,15,heavy_tail,9,ok,0.7142857142857143,2837,14,10023,0.06440383299195673,plateau,50000,{}
+ils,fsspb2-A-near_equal-n50-d10-r2-s02,A,50,near_equal,5,ok,0.959404600811908,22132,22,50000,0.49529254200751893,budget_exhausted,50000,{}
+ils,fsspb2-U-geometric-n15-d01-l2-s01,U,15,geometric,13,ok,0.3333333333333333,458,3,14042,0.04938774999754969,plateau,50000,{}
+random_search,fsspb2-T-geometric-n1000-d0001-l2-s03,T,1000,geometric,6,ok,1.0,3984,501,11629,2.1614216250018217,plateau,50000,{}
+ils,fsspb2-T-geometric-n500-d0005-r2-s02,T,500,geometric,15,ok,0.0,5659,404,10001,1.1756230000028154,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n500-d05-l2-s01,A,500,avis_lai,4,ok,0.0,1185410968104,276,10001,0.9398542919952888,plateau,50000,{}
+sim_anneal,fsspb2-U-geometric-n22-d05-l2-s03,U,22,geometric,2,ok,0.0,0,0,10001,0.07756741599587258,plateau,50000,{}
+fhga_fast,fsspb2-U-heavy_tail-n15-d01-sym-s03,U,15,heavy_tail,9,ok,0.5,375,3,10033,0.059402166996733285,plateau,50000,"{""generations"": 8, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 142, ""apex_crossings"": 209}"
+fhga_thorough,fsspb2-A-near_equal-n200-d01-sym-s01,A,200,near_equal,18,ok,0.9698795180722891,132800,133,10966,0.7072458329930669,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 1930}"
+ils,fsspb2-A-avis_lai-n100-d05-r2-s03,A,100,avis_lai,18,ok,0.871890504614064,150323837981,35,39814,0.6041250419948483,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n15-d01-sym-s02,U,15,bimodal,4,ok,0.0,4929,14,10001,0.06937379200826399,plateau,50000,"{""generations"": 10, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 147, ""apex_crossings"": 68}"
+fhga_thorough,fsspb2-U-uniform-n18-d01-r2-s01,U,18,uniform,8,ok,0.6666666666666666,859,2,10281,0.06622904200048652,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05535325001983438, ""ls_invocations"": 14, ""apex_crossings"": 71}"
+vanilla_ga,fsspb2-T-uniform-n500-d0005-r2-s00,T,500,uniform,12,ok,1.0,72232,149,23043,11.947851832999731,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n200-d10-sym-s02,A,200,avis_lai,10,ok,0.9386943932467617,511101132503,119,30473,6.580592874990543,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n500-d10-sym-s02,A,500,near_equal,0,ok,0.5541149324250082,355917,356,10026,0.8860588750103489,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s01,A,50,density_doubled_hard_ssp,3,ok,0.9996538471075738,14303514310,20,16903,0.20440537499962375,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 30, ""apex_crossings"": 1486}"
+random_search,fsspb2-U-heavy_tail-n20-d05-r2-s00,U,20,heavy_tail,19,ok,0.9230769230769231,401,2,10374,0.06872429201030172,plateau,50000,{}
+ils,fsspb2-U-uniform-n20-d01-l2-s01,U,20,uniform,14,ok,0.9871794871794872,11765,19,10021,0.07209862500894815,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n50-d01-l2-s01,A,50,near_equal,3,ok,1.0,22948,23,11926,0.15468904199951794,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 9, ""apex_crossings"": 510}"
+fhga_fast,fsspb2-U-uniform-n15-d05-l2-s01,U,15,uniform,17,ok,0.9485981308411215,6410,13,10142,0.08049241699336562,plateau,50000,"{""generations"": 7, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 140, ""apex_crossings"": 886}"
+ils,fsspb2-U-heavy_tail-n15-d05-l2-s01,U,15,heavy_tail,15,ok,0.9905660377358491,3171,13,10062,0.062396207998972386,plateau,50000,{}
+alpha_cut,fsspb2-T-uniform-n1000-d0005-r2-s00,T,1000,uniform,0,ok,0.0,203566,417,7,0.045659625000553206,solver_done,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n500-d05-sym-s00,A,500,avis_lai,2,ok,0.9712072217576434,1185410997810,276,10489,1.0333270000119228,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s01,A,50,density_doubled_hard_ssp,2,ok,0.9999771462849466,38874264054,39,18381,0.27489520800008904,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 23, ""apex_crossings"": 1877}"
+random_search,fsspb2-A-density_doubled_hard_ssp-n100-d10-r2-s00,A,100,density_doubled_hard_ssp,17,ok,0.9999531175350949,45240616794,43,11455,0.23425758299708832,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n18-d05-l2-s01,U,18,heavy_tail,3,ok,0.5,231,2,12069,0.0477132500091102,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n100-d01-l2-s03,A,100,avis_lai,12,ok,0.7947164725145512,219043344106,51,24208,2.778281374994549,plateau,50000,{}
+ils,fsspb2-A-density_doubled_hard_ssp-n50-d05-l2-s00,A,50,density_doubled_hard_ssp,1,ok,0.9999324128302856,5730364653,11,23875,0.17540745800943114,plateau,50000,{}
+sim_anneal,fsspb2-U-geometric-n15-d01-l2-s00,U,15,geometric,2,ok,0.6388888888888888,5409,13,12023,0.08804562500154134,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n100-d01-r2-s03,A,100,avis_lai,4,ok,0.6371109228219315,279172859845,65,10001,0.34307412499038037,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 13, ""apex_crossings"": 997}"
+ils,fsspb2-T-geometric-n500-d0001-r2-s03,T,500,geometric,5,ok,0.0,3846,336,10001,1.1321170419978444,plateau,50000,{}
+sim_anneal,fsspb2-U-bimodal-n15-d01-r2-s03,U,15,bimodal,5,ok,0.0,4893,12,10001,0.0722316250030417,plateau,50000,{}
+fhga_thorough,fsspb2-U-geometric-n22-d01-l2-s03,U,22,geometric,3,ok,0.9523809523809523,6335,19,10279,0.09186124999541789,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.06110116699710488, ""ls_invocations"": 29, ""apex_crossings"": 236}"
+cpsat,fsspb2-U-heavy_tail-n22-d05-sym-s03,U,22,heavy_tail,0,ok,0.9896907216494846,3882,20,1,0.005674665997503325,solver_done,50000,"{""cpsat_status"": ""OPTIMAL""}"
+sim_anneal,fsspb2-A-near_equal-n50-d10-l2-s02,A,50,near_equal,13,ok,0.8711808422791082,18012,18,10009,0.10397158299747389,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n100-d05-sym-s00,A,100,near_equal,1,ok,0.819935691318328,37145,37,30854,3.4055193750100443,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n500-d10-l2-s02,A,500,near_equal,13,ok,0.9860931580120348,336219,336,28574,3.4398764170036884,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n100-d10-l2-s02,A,100,avis_lai,6,ok,0.9739704048548886,68719486096,16,33742,3.7272941660048673,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n200-d05-r2-s01,A,200,avis_lai,0,ok,0.9784605990993702,463856454698,108,18445,4.042451707995497,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n18-d01-l2-s00,U,18,heavy_tail,7,ok,0.5,311,2,10392,0.0688915420032572,plateau,50000,{}
+ils,fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s01,A,50,density_doubled_hard_ssp,7,ok,0.998820329923123,37318445766,37,15791,0.2129574999999022,plateau,50000,{}
+fhga_fast,fsspb2-T-uniform-n500-d0001-r2-s01,T,500,uniform,17,ok,1.0,93890,108,10629,2.0902551250037504,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 523}"
+ils,fsspb2-A-avis_lai-n500-d01-l2-s02,A,500,avis_lai,4,ok,0.0,1361504649009,317,10001,1.0569021660048747,plateau,50000,{}
+sim_anneal,fsspb2-U-uniform-n18-d01-r2-s02,U,18,uniform,7,ok,0.75,1189,5,14679,0.10224258298694622,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n50-d05-r2-s01,A,50,near_equal,17,ok,1.0,15991,16,12937,0.13044045800052118,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 7, ""apex_crossings"": 809}"
+fhga_thorough,fsspb2-U-bimodal-n22-d05-sym-s02,U,22,bimodal,14,ok,0.5125628140703518,8051,11,10031,0.07741199999873061,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.06058133298938628, ""ls_invocations"": 17, ""apex_crossings"": 84}"
+sim_anneal,fsspb2-U-bimodal-n15-d01-r2-s00,U,15,bimodal,7,ok,0.0,937,1,10001,0.05646454200905282,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n15-d01-r2-s01,U,15,heavy_tail,17,ok,0.0,456,2,10001,0.04116845798853319,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n200-d10-l2-s03,A,200,avis_lai,3,ok,0.9489407460333383,438086714089,102,10241,0.6456886670057429,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 1475}"
+fhga_fast,fsspb2-T-uniform-n1000-d0005-sym-s04,T,1000,uniform,5,ok,0.9878048780487805,328262,686,14397,8.470731916997465,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 4, ""apex_crossings"": 0}"
+sim_anneal,fsspb2-A-near_equal-n200-d10-r2-s01,A,200,near_equal,18,ok,0.9487084870848709,81162,81,11881,0.38358895800774917,plateau,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n22-d01-r2-s00,U,22,heavy_tail,18,ok,0.0,4635,20,10001,0.07805399999779183,plateau,50000,{}
+random_search,fsspb2-U-bimodal-n20-d01-l2-s00,U,20,bimodal,3,ok,0.0,0,0,10001,0.06752441599383019,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n50-d01-r2-s03,A,50,near_equal,10,ok,0.7065637065637066,38889,39,10001,0.16808554199815262,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 19, ""apex_crossings"": 1026}"
+cpsat,fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s00,A,100,density_doubled_hard_ssp,0,ok,0.9999975248503439,33088908671,38,1,10.002501499999198,solver_done,50000,"{""cpsat_status"": ""FEASIBLE""}"
+ils,fsspb2-A-density_doubled_hard_ssp-n100-d10-l2-s01,A,100,density_doubled_hard_ssp,3,ok,0.9999627005154874,47109556827,50,13883,0.26498983400233556,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s00,A,100,density_doubled_hard_ssp,13,ok,0.999536113437432,33088806068,30,18682,0.3654963330045575,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 25, ""apex_crossings"": 1596}"
+ils,fsspb2-U-uniform-n15-d05-l2-s00,U,15,uniform,4,ok,0.8333333333333334,352,4,20652,0.08834504199330695,plateau,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n500-d10-r2-s00,A,500,near_equal,2,ok,0.9999504287909582,302598,302,13318,2.6399858340009814,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 1157}"
+vanilla_ga,fsspb2-A-near_equal-n50-d10-r2-s02,A,50,near_equal,19,ok,0.9566982408660352,22130,22,29788,2.0419626669900026,plateau,50000,{}
+vanilla_ga,fsspb2-U-geometric-n20-d01-r2-s01,U,20,geometric,7,ok,0.9523809523809523,6326,19,10885,0.427742458996363,plateau,50000,{}
+fhga_thorough,fsspb2-T-heavy_tail-n1000-d0005-l2-s02,T,1000,heavy_tail,2,ok,0.972972972972973,111432,504,13062,7.231923999992432,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 152}"
+fhga_fast,fsspb2-U-bimodal-n20-d05-r2-s02,U,20,bimodal,6,ok,0.6896551724137931,7030,10,10032,0.07342470799630973,plateau,50000,"{""generations"": 4, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 79, ""apex_crossings"": 1093}"
+fhga_fast,fsspb2-U-bimodal-n18-d01-r2-s00,U,18,bimodal,17,ok,0.9743589743589743,5797,17,10022,0.08537174999946728,plateau,50000,"{""generations"": 6, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 133, ""apex_crossings"": 731}"
+random_search,fsspb2-T-bimodal-n500-d0005-l2-s00,T,500,bimodal,0,ok,1.0,114403,309,12834,1.4467993330035824,plateau,50000,{}
+fhga_fast,fsspb2-T-uniform-n500-d0005-sym-s00,T,500,uniform,7,ok,1.0,101078,203,14933,2.3234783329971833,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 8, ""apex_crossings"": 1723}"
+fhga_thorough,fsspb2-U-bimodal-n15-d05-sym-s03,U,15,bimodal,3,ok,0.5490196078431373,6033,14,10019,0.058698208988062106,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05189100099960342, ""ls_invocations"": 17, ""apex_crossings"": 45}"
+greedy_center,fsspb2-A-density_doubled_hard_ssp-n50-d05-sym-s01,A,50,density_doubled_hard_ssp,0,ok,0.0,13847120265,31,1,3.608300175983459e-05,solver_done,50000,{}
+fhga_thorough,fsspb2-T-uniform-n500-d0001-l2-s02,T,500,uniform,19,ok,1.0,108545,130,10604,2.083290666996618,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 868}"
+sim_anneal,fsspb2-A-near_equal-n100-d01-sym-s00,A,100,near_equal,8,ok,0.5114155251141552,43941,44,10628,0.21866137499455363,plateau,50000,{}
+sim_anneal,fsspb2-U-geometric-n18-d05-l2-s00,U,18,geometric,18,ok,0.9,301,2,10516,0.06326675000309478,plateau,50000,{}
+ils,fsspb2-A-near_equal-n100-d05-sym-s03,A,100,near_equal,6,ok,0.0,65890,66,10001,0.20658079200075008,plateau,50000,{}
+greedy_center,fsspb2-U-uniform-n22-d05-sym-s00,U,22,uniform,0,ok,0.07407407407407407,1123,7,1,1.95419997908175e-05,solver_done,50000,{}
+ils,fsspb2-A-avis_lai-n200-d01-sym-s03,A,200,avis_lai,12,ok,0.0,627065230188,146,10001,0.4349166660103947,plateau,50000,{}
+random_search,fsspb2-U-uniform-n22-d05-r2-s01,U,22,uniform,12,ok,0.9944444444444445,10789,20,10925,0.12523341599444393,plateau,50000,{}
+random_search,fsspb2-T-bimodal-n500-d0005-sym-s00,T,500,bimodal,3,ok,0.9333333333333333,58239,151,12841,0.8463198329991428,plateau,50000,{}
+fhga_thorough,fsspb2-T-bimodal-n500-d0005-sym-s02,T,500,bimodal,19,ok,1.0,60056,65,12470,2.186878833992523,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 8, ""apex_crossings"": 166}"
+fhga_thorough,fsspb2-A-avis_lai-n200-d10-l2-s01,A,200,avis_lai,0,ok,0.9858493449309752,549755771546,128,10008,0.6934336669946788,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 1604}"
+vanilla_ga,fsspb2-A-avis_lai-n200-d10-l2-s02,A,200,avis_lai,4,ok,0.9271552227649124,579820556497,135,13741,2.905832582997391,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n200-d01-r2-s00,A,200,avis_lai,16,ok,0.001749462492253681,227633254063,53,12526,2.4677341250062454,plateau,50000,{}
+ils,fsspb2-T-bimodal-n500-d0001-sym-s02,T,500,bimodal,9,ok,0.0,118290,323,10001,1.1544121670012828,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n200-d05-l2-s02,A,200,avis_lai,11,ok,0.8266134925765897,296352789692,69,10241,0.49454920800053515,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 4, ""apex_crossings"": 1572}"
+random_search,fsspb2-U-heavy_tail-n15-d05-sym-s02,U,15,heavy_tail,6,ok,0.9090909090909091,436,2,10113,0.06678254199505318,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n50-d05-sym-s03,A,50,near_equal,18,ok,0.8942731277533039,18119,18,24825,1.6438196660019457,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n50-d10-l2-s00,A,50,avis_lai,18,ok,0.7165808515399634,85899333564,20,43047,2.7541340419993503,plateau,50000,{}
+vanilla_ga,fsspb2-U-uniform-n22-d05-sym-s01,U,22,uniform,8,ok,0.7,422,1,10040,0.33916312499786727,plateau,50000,{}
+fhga_fast,fsspb2-T-uniform-n500-d0005-sym-s04,T,500,uniform,0,ok,1.0,166434,337,13747,2.806278124990058,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 7, ""apex_crossings"": 1315}"
+fhga_thorough,fsspb2-U-geometric-n18-d05-sym-s03,U,18,geometric,15,ok,0.9931506849315068,5822,14,11859,0.06476383299741428,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04532500100322068, ""ls_invocations"": 21, ""apex_crossings"": 410}"
+sim_anneal,fsspb2-U-geometric-n15-d01-sym-s00,U,15,geometric,17,ok,0.0,142,1,10001,0.0710190420068102,plateau,50000,{}
+ils,fsspb2-U-bimodal-n22-d01-sym-s01,U,22,bimodal,5,ok,0.0,8281,20,10001,0.07640241700573824,plateau,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n50-d01-sym-s02,A,50,near_equal,15,ok,1.0,34996,35,12285,0.19851241698779631,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 9, ""apex_crossings"": 516}"
+sim_anneal,fsspb2-A-near_equal-n200-d05-sym-s01,A,200,near_equal,3,ok,0.831207065750736,81159,81,15333,0.529836959001841,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n200-d05-l2-s00,A,200,avis_lai,14,ok,0.9354411972487154,622770245910,145,10531,0.4145281660021283,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n200-d01-r2-s02,A,200,avis_lai,7,ok,0.5246574539829425,390841997162,91,50000,10.680733916000463,budget_exhausted,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n200-d05-sym-s00,A,200,near_equal,17,ok,0.9987859166329421,98853,99,11289,0.6492298749944894,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 4, ""apex_crossings"": 1308}"
+sim_anneal,fsspb2-T-uniform-n500-d0001-l2-s01,T,500,uniform,13,ok,0.0,89702,183,10001,0.9022772080061259,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n500-d10-r2-s03,A,500,avis_lai,18,ok,0.9572857047161062,811748791523,189,50000,24.970547082994017,budget_exhausted,50000,{}
+fhga_thorough,fsspb2-U-geometric-n15-d05-l2-s03,U,15,geometric,19,ok,0.8181818181818182,669,3,14314,0.07423641700006556,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 4, ""wbf_repair_time_s"": 0.06692583301628474, ""ls_invocations"": 18, ""apex_crossings"": 127}"
+ils,fsspb2-U-bimodal-n15-d01-l2-s00,U,15,bimodal,13,ok,0.25,5435,14,10011,0.060108665988082066,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n18-d01-l2-s01,U,18,bimodal,9,ok,0.0,4824,15,10001,0.08110812499944586,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 107, ""apex_crossings"": 191}"
+random_search,fsspb2-U-bimodal-n22-d01-sym-s03,U,22,bimodal,4,ok,0.9512195121951219,8234,21,10479,0.13714170799357817,plateau,50000,{}
+fhga_thorough,fsspb2-U-geometric-n15-d01-l2-s03,U,15,geometric,5,ok,0.0,529,4,10001,0.05361449999327306,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04743091699492652, ""ls_invocations"": 24, ""apex_crossings"": 106}"
+fhga_thorough,fsspb2-U-geometric-n18-d01-r2-s02,U,18,geometric,9,ok,0.975,5989,16,10504,0.06902204200741835,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04881695999938529, ""ls_invocations"": 20, ""apex_crossings"": 133}"
+fhga_fast,fsspb2-U-geometric-n20-d01-r2-s02,U,20,geometric,3,ok,0.9512195121951219,6110,17,17325,0.14122420801140834,plateau,50000,"{""generations"": 6, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 146, ""apex_crossings"": 1242}"
+fhga_fast,fsspb2-U-uniform-n18-d01-r2-s01,U,18,uniform,12,ok,0.6666666666666666,859,2,10319,0.06246720899071079,plateau,50000,"{""generations"": 7, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 118, ""apex_crossings"": 207}"
+sim_anneal,fsspb2-U-uniform-n20-d01-r2-s00,U,20,uniform,10,ok,0.0,10055,20,10001,0.10104570799740031,plateau,50000,{}
+fhga_thorough,fsspb2-U-bimodal-n18-d01-sym-s00,U,18,bimodal,4,ok,0.75,792,2,10022,0.052702041997690685,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.0425406670110533, ""ls_invocations"": 20, ""apex_crossings"": 322}"
+sim_anneal,fsspb2-U-geometric-n22-d01-r2-s00,U,22,geometric,15,ok,0.42857142857142855,6370,21,10002,0.07763070899818558,plateau,50000,{}
+ils,fsspb2-U-uniform-n22-d01-l2-s02,U,22,uniform,16,ok,0.7101449275362319,10290,20,19568,0.15482595800131094,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n500-d10-l2-s02,A,500,near_equal,2,ok,0.9880543793180299,336263,336,30492,16.319991916010622,plateau,50000,{}
+ils,fsspb2-T-bimodal-n500-d0001-r2-s03,T,500,bimodal,2,ok,0.0,104972,266,10001,1.0473261670122156,plateau,50000,{}
+fhga_thorough,fsspb2-U-heavy_tail-n20-d01-r2-s01,U,20,heavy_tail,2,ok,0.8,3050,19,10043,0.07446216599782929,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.058013498986838385, ""ls_invocations"": 19, ""apex_crossings"": 118}"
+fhga_fast,fsspb2-A-near_equal-n50-d05-sym-s02,A,50,near_equal,8,ok,1.0,26911,27,10606,0.16434199998911936,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 8, ""apex_crossings"": 456}"
+sim_anneal,fsspb2-U-heavy_tail-n15-d05-sym-s03,U,15,heavy_tail,14,ok,0.8586956521739131,3651,13,13848,0.11638624999613967,plateau,50000,{}
+random_search,fsspb2-U-geometric-n22-d01-l2-s00,U,22,geometric,19,ok,0.9761904761904762,6355,20,11125,0.1567441250081174,plateau,50000,{}
+ils,fsspb2-A-near_equal-n200-d10-sym-s03,A,200,near_equal,15,ok,0.0,41975,42,10001,0.1931954589963425,plateau,50000,{}
+vanilla_ga,fsspb2-U-geometric-n22-d05-l2-s00,U,22,geometric,7,ok,0.9953051643192489,6377,20,12572,0.4767523750051623,plateau,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n500-d10-r2-s01,A,500,near_equal,12,ok,0.9999390355422788,246047,246,14724,2.9206798329978483,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 2706}"
+sim_anneal,fsspb2-T-heavy_tail-n500-d0005-sym-s00,T,500,heavy_tail,1,ok,0.1875,64471,275,10086,0.9855080409906805,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n200-d05-r2-s02,A,200,near_equal,10,ok,0.9433876811594203,132724,133,42551,9.438519833012833,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n50-d01-l2-s01,A,50,near_equal,11,ok,1.0,22948,23,11566,0.7778088750055758,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n50-d01-r2-s00,A,50,avis_lai,10,ok,0.1768255415442512,128849031515,30,15921,0.2355358330096351,plateau,50000,{}
+fhga_thorough,fsspb2-T-uniform-n500-d0005-r2-s02,T,500,uniform,8,ok,1.0,119561,139,22205,3.3482288750092266,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 14, ""apex_crossings"": 3335}"
+vanilla_ga,fsspb2-A-near_equal-n100-d05-sym-s01,A,100,near_equal,12,ok,1.0,35902,36,19762,2.3380381250026403,plateau,50000,{}
+ils,fsspb2-U-bimodal-n22-d01-l2-s03,U,22,bimodal,0,ok,0.0,8099,22,10001,0.09048162499675527,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n100-d01-r2-s03,A,100,density_doubled_hard_ssp,8,ok,0.9998626816987191,80388484237,56,20861,0.5780365829996299,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 29, ""apex_crossings"": 2141}"
+vanilla_ga,fsspb2-U-bimodal-n15-d05-l2-s00,U,15,bimodal,10,ok,0.9948717948717949,5837,12,10076,0.32601483300095424,plateau,50000,{}
+fhga_thorough,fsspb2-T-uniform-n1000-d0005-r2-s01,T,1000,uniform,1,ok,1.0,166578,583,19987,8.498828041003435,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 1023}"
+fhga_fast,fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s03,A,50,density_doubled_hard_ssp,1,ok,0.999013090214342,16702328624,16,22471,0.25148879099288024,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 45, ""apex_crossings"": 1146}"
+fhga_thorough,fsspb2-A-near_equal-n500-d01-r2-s03,A,500,near_equal,16,ok,0.9992163009404389,382752,383,12676,2.9970753329980653,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 3191}"
+ils,fsspb2-A-near_equal-n50-d10-r2-s02,A,50,near_equal,15,ok,0.9566982408660352,22130,22,30721,0.3230027079989668,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n200-d01-sym-s03,A,200,avis_lai,18,ok,0.4714439768585136,652835066153,152,10241,0.7673058749933261,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 5, ""apex_crossings"": 528}"
+fhga_thorough,fsspb2-A-avis_lai-n100-d10-r2-s02,A,100,avis_lai,9,ok,0.8686515769745454,163208735746,38,10007,0.24025308300042525,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 646}"
+sim_anneal,fsspb2-A-avis_lai-n500-d01-sym-s00,A,500,avis_lai,12,ok,0.0,446676596732,104,10001,0.9500055840035202,plateau,50000,{}
+fhga_fast,fsspb2-T-geometric-n1000-d0005-sym-s04,T,1000,geometric,17,ok,1.0,2794,6,11201,6.844974292005645,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 4}"
+ils,fsspb2-T-heavy_tail-n1000-d0005-l2-s01,T,1000,heavy_tail,12,ok,0.0,141978,606,10001,2.1955926249938784,plateau,50000,{}
+random_search,fsspb2-U-geometric-n18-d01-sym-s03,U,18,geometric,17,ok,0.9655172413793104,5756,15,11734,0.1246980839932803,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n200-d01-sym-s03,A,200,near_equal,2,ok,0.8297413793103449,92874,93,12693,0.5396781250019558,plateau,50000,{}
+vanilla_ga,fsspb2-T-heavy_tail-n500-d0005-sym-s02,T,500,heavy_tail,12,ok,1.0,89696,366,12237,6.8905441670067376,plateau,50000,{}
+vanilla_ga,fsspb2-T-heavy_tail-n1000-d0005-sym-s01,T,1000,heavy_tail,7,ok,1.0,158705,662,12067,12.647374749998562,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n15-d05-r2-s00,U,15,heavy_tail,15,ok,0.9642857142857143,3358,14,10025,0.06530691700754687,plateau,50000,{}
+random_search,fsspb2-U-geometric-n22-d01-l2-s01,U,22,geometric,15,ok,0.9047619047619048,6315,20,10156,0.147789875001763,plateau,50000,{}
+sim_anneal,fsspb2-U-geometric-n15-d05-sym-s00,U,15,geometric,4,ok,0.855072463768116,5531,13,10017,0.07509837500401773,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n200-d10-l2-s01,A,200,near_equal,13,ok,1.0,35085,35,25359,0.5510708749934565,plateau,50000,{}
+fhga_fast,fsspb2-U-uniform-n18-d01-r2-s01,U,18,uniform,15,ok,0.6666666666666666,859,2,10570,0.0739284589944873,plateau,50000,"{""generations"": 7, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 126, ""apex_crossings"": 191}"
+fhga_thorough,fsspb2-A-near_equal-n200-d05-r2-s03,A,200,near_equal,17,ok,1.0,78461,78,22120,1.02485279199027,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 2408}"
+ils,fsspb2-T-heavy_tail-n500-d0005-l2-s03,T,500,heavy_tail,4,ok,0.0,73021,304,10001,1.0702193750039442,plateau,50000,{}
+sim_anneal,fsspb2-T-bimodal-n500-d0005-r2-s02,T,500,bimodal,16,ok,0.0,32915,80,10001,0.9878193749900674,plateau,50000,{}
+vanilla_ga,fsspb2-U-bimodal-n20-d05-l2-s01,U,20,bimodal,10,ok,0.24180327868852458,7131,19,10501,0.36132387499674223,plateau,50000,{}
+fhga_thorough,fsspb2-A-avis_lai-n500-d05-l2-s03,A,500,avis_lai,0,ok,0.786054030651396,347892418324,81,10601,1.9054694170044968,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 1734}"
+random_search,fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s01,A,100,density_doubled_hard_ssp,1,ok,0.9991721930253126,39679206172,47,17848,0.3903229999996256,plateau,50000,{}
+random_search,fsspb2-U-bimodal-n15-d05-l2-s00,U,15,bimodal,8,ok,0.9777777777777777,5839,13,13413,0.14199458299844991,plateau,50000,{}
+sim_anneal,fsspb2-U-uniform-n18-d05-r2-s01,U,18,uniform,1,ok,0.5491803278688525,7263,17,17267,0.1649197499937145,plateau,50000,{}
+fhga_thorough,fsspb2-U-heavy_tail-n20-d05-r2-s00,U,20,heavy_tail,3,ok,0.9230769230769231,401,3,11880,0.06926770799327642,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05914883299556095, ""ls_invocations"": 19, ""apex_crossings"": 215}"
+fhga_fast,fsspb2-U-bimodal-n20-d01-l2-s00,U,20,bimodal,7,ok,0.0,253,9,10001,0.08014608299708925,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 94, ""apex_crossings"": 180}"
+fhga_fast,fsspb2-A-avis_lai-n200-d05-r2-s03,A,200,avis_lai,17,ok,0.8268168414375657,180388593799,42,10003,0.45869979199778754,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 661}"
+vanilla_ga,fsspb2-U-bimodal-n22-d01-l2-s00,U,22,bimodal,18,ok,0.08928571428571429,8367,21,10047,0.4082400829938706,plateau,50000,{}
+ils,fsspb2-U-bimodal-n18-d01-r2-s02,U,18,bimodal,14,ok,0.9583333333333334,7194,17,10007,0.06521625000459608,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n200-d05-l2-s03,A,200,near_equal,4,ok,0.9249823071479123,84885,85,14936,0.5824098340090131,plateau,50000,{}
+fhga_fast,fsspb2-T-geometric-n1000-d0005-sym-s04,T,1000,geometric,3,ok,1.0,2794,6,11201,6.283630541001912,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 2}"
+fhga_thorough,fsspb2-U-bimodal-n22-d01-sym-s02,U,22,bimodal,17,ok,0.9743589743589743,7810,20,10027,0.07620149999274872,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.05393487500259653, ""ls_invocations"": 28, ""apex_crossings"": 512}"
+fhga_thorough,fsspb2-A-near_equal-n500-d10-sym-s03,A,500,near_equal,17,ok,0.9993327773144287,239793,239,12196,2.3262330839934293,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 1, ""apex_crossings"": 1921}"
+vanilla_ga,fsspb2-A-avis_lai-n500-d05-sym-s01,A,500,avis_lai,5,ok,0.9804371275677096,665719905220,155,37716,19.366391042000032,plateau,50000,{}
+fhga_thorough,fsspb2-A-avis_lai-n100-d01-r2-s01,A,100,avis_lai,11,ok,0.19987854478045247,206158456304,48,10121,0.250471874998766,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 9, ""apex_crossings"": 624}"
+fhga_fast,fsspb2-U-heavy_tail-n15-d01-l2-s03,U,15,heavy_tail,0,ok,0.84375,4824,13,10046,0.06928974999755155,plateau,50000,"{""generations"": 9, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 151, ""apex_crossings"": 294}"
+vanilla_ga,fsspb2-U-heavy_tail-n15-d05-r2-s00,U,15,heavy_tail,17,ok,0.9642857142857143,3358,14,10001,0.30387537500064354,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n15-d05-l2-s00,U,15,bimodal,3,ok,0.9948717948717949,5837,11,10071,0.07450175000121817,plateau,50000,"{""generations"": 7, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 119, ""apex_crossings"": 1038}"
+greedy_center,fsspb2-A-near_equal-n200-d01-l2-s02,A,200,near_equal,0,ok,0.0,66541,67,1,8.495799556840211e-05,solver_done,50000,{}
+fhga_fast,fsspb2-A-density_doubled_hard_ssp-n100-d10-sym-s01,A,100,density_doubled_hard_ssp,6,ok,0.9999762615294774,52851824967,65,13213,0.34210329099732917,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 17, ""apex_crossings"": 1628}"
+ils,fsspb2-A-near_equal-n500-d10-l2-s00,A,500,near_equal,3,ok,0.982684479100969,261310,261,50000,4.785940582994954,budget_exhausted,50000,{}
+fhga_thorough,fsspb2-U-geometric-n18-d01-sym-s00,U,18,geometric,19,ok,0.5,462,2,10629,0.05308570800116286,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04357245800201781, ""ls_invocations"": 16, ""apex_crossings"": 68}"
+fhga_fast,fsspb2-A-near_equal-n50-d10-r2-s02,A,50,near_equal,10,ok,0.9675236806495264,22138,22,10061,0.12383537499408703,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 5, ""apex_crossings"": 593}"
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s01,A,50,density_doubled_hard_ssp,6,ok,0.997832728231836,37318200059,34,12337,0.21183170899166726,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 27, ""apex_crossings"": 682}"
+sim_anneal,fsspb2-U-heavy_tail-n15-d05-sym-s01,U,15,heavy_tail,17,ok,0.0,120,1,10001,0.06849204200261738,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n100-d05-l2-s03,A,100,avis_lai,18,ok,0.9912671400178845,68719463517,16,16343,0.19151766700088046,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n500-d10-r2-s02,A,500,avis_lai,3,ok,0.9690869114880769,1211180813086,282,25482,14.055111999987275,plateau,50000,{}
+ils,fsspb2-A-near_equal-n50-d01-sym-s03,A,50,near_equal,8,ok,0.0,27015,27,10001,0.1231463750009425,plateau,50000,{}
+ils,fsspb2-U-bimodal-n15-d01-sym-s02,U,15,bimodal,8,ok,0.0,5699,14,10001,0.062413249994278885,plateau,50000,{}
+fhga_fast,fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s00,A,100,density_doubled_hard_ssp,7,ok,0.9998802359508977,37402097057,48,25375,0.6434580829954939,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 30, ""apex_crossings"": 3067}"
+random_search,fsspb2-A-avis_lai-n200-d10-sym-s03,A,200,avis_lai,11,ok,0.897466729395411,287762820743,67,18954,0.6286805420095334,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n100-d05-r2-s02,A,100,near_equal,19,ok,1.0,59052,59,19349,0.5037382500013337,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n50-d10-l2-s03,A,50,near_equal,7,ok,0.9978632478632479,14040,14,10294,0.1112907499918947,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n500-d01-l2-s01,A,500,near_equal,13,ok,0.9972027972027973,214446,214,12518,2.350464874994941,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 1926}"
+vanilla_ga,fsspb2-U-uniform-n15-d05-l2-s00,U,15,uniform,3,ok,0.8333333333333334,352,4,25312,0.7560599589924095,plateau,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n22-d05-sym-s00,U,22,heavy_tail,8,ok,0.0,0,0,10001,0.08216020799591206,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n50-d05-l2-s00,A,50,avis_lai,5,ok,0.8075899587600796,107374169324,25,46327,0.5378842079953756,plateau,50000,{}
+ils,fsspb2-A-near_equal-n200-d10-r2-s01,A,200,near_equal,16,ok,1.0,81301,81,50000,1.6474963749933522,budget_exhausted,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n200-d05-sym-s01,A,200,near_equal,14,ok,0.9946025515210991,81492,81,11846,0.6729341249883873,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 1643}"
+vanilla_ga,fsspb2-A-near_equal-n200-d01-sym-s03,A,200,near_equal,16,ok,0.9935344827586207,92792,93,50000,11.435771000004024,budget_exhausted,50000,{}
+random_search,fsspb2-T-heavy_tail-n1000-d0005-sym-s03,T,1000,heavy_tail,12,ok,1.0,100574,438,17972,3.088517291995231,plateau,50000,{}
+random_search,fsspb2-U-geometric-n20-d01-sym-s02,U,20,geometric,16,ok,0.9354838709677419,6148,18,10071,0.13752404200204182,plateau,50000,{}
+alpha_cut,fsspb2-A-near_equal-n500-d01-l2-s01,A,500,near_equal,0,ok,0.3594405594405594,214908,215,8,0.01637549999577459,solver_done,50000,{}
+random_search,fsspb2-A-avis_lai-n50-d05-sym-s01,A,50,avis_lai,18,ok,0.6402242215109935,73014435584,17,12619,0.16386341700854246,plateau,50000,{}
+sim_anneal,fsspb2-U-geometric-n15-d01-sym-s01,U,15,geometric,18,ok,0.7142857142857143,5514,12,11660,0.08677041700866539,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n50-d01-l2-s02,A,50,density_doubled_hard_ssp,2,ok,0.9930620632326416,21059408117,33,12992,0.16234545900078956,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 25, ""apex_crossings"": 769}"
+sim_anneal,fsspb2-A-near_equal-n100-d05-sym-s00,A,100,near_equal,13,ok,0.6881028938906752,37022,37,12834,0.24280304199783131,plateau,50000,{}
+vanilla_ga,fsspb2-U-bimodal-n18-d01-r2-s02,U,18,bimodal,8,ok,0.9583333333333334,7194,17,10230,0.33641208401240874,plateau,50000,{}
+ils,fsspb2-A-near_equal-n500-d10-l2-s02,A,500,near_equal,7,ok,0.9921105415645197,336354,336,50000,5.456055041999207,budget_exhausted,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n22-d01-sym-s00,U,22,heavy_tail,8,ok,0.0,3475,21,10001,0.06974895800522063,plateau,50000,{}
+vanilla_ga,fsspb2-A-avis_lai-n500-d10-l2-s00,A,500,avis_lai,16,ok,0.995120538098399,974957599837,227,24151,12.796059915999649,plateau,50000,{}
+ils,fsspb2-U-uniform-n18-d05-l2-s02,U,18,uniform,16,ok,0.8571428571428571,426,3,11661,0.05770525000116322,plateau,50000,{}
+vanilla_ga,fsspb2-U-heavy_tail-n22-d05-r2-s00,U,22,heavy_tail,6,ok,0.989010989010989,6024,21,10049,0.37200750000192784,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n15-d01-l2-s00,U,15,heavy_tail,9,ok,0.6666666666666666,449,3,14719,0.07484666700474918,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n50-d10-sym-s02,A,50,near_equal,8,ok,0.8858218318695107,16028,16,10014,0.10933474999910686,plateau,50000,{}
+ils,fsspb2-U-uniform-n20-d05-l2-s01,U,20,uniform,10,ok,0.9693251533742331,9776,19,10013,0.08245041700138245,plateau,50000,{}
+vanilla_ga,fsspb2-U-heavy_tail-n18-d05-r2-s01,U,18,heavy_tail,12,ok,0.9941176470588236,5849,17,10033,0.3226549579994753,plateau,50000,{}
+ils,fsspb2-A-near_equal-n100-d01-sym-s01,A,100,near_equal,18,ok,0.0,44008,44,10001,0.17653687500569504,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n500-d10-l2-s00,A,500,avis_lai,6,ok,0.9951204313900187,974957592899,227,18341,1.6728621660004137,plateau,50000,{}
+alpha_cut,fsspb2-A-avis_lai-n500-d01-r2-s00,A,500,avis_lai,0,ok,0.470711247336503,1305670050120,304,5,0.011584542007767595,solver_done,50000,{}
+vanilla_ga,fsspb2-A-density_doubled_hard_ssp-n100-d05-sym-s00,A,100,density_doubled_hard_ssp,10,ok,0.9996143147592012,37402569680,43,12188,1.42452712499653,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n100-d01-l2-s02,A,100,near_equal,2,ok,0.3702290076335878,39061,39,12215,0.26260820899915416,plateau,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n22-d01-l2-s00,U,22,heavy_tail,18,ok,0.0,6037,21,10001,0.08410645900585223,plateau,50000,{}
+fhga_thorough,fsspb2-U-uniform-n18-d01-r2-s00,U,18,uniform,18,ok,0.4,1460,3,11356,0.05743262499163393,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.047022918006405234, ""ls_invocations"": 24, ""apex_crossings"": 160}"
+ils,fsspb2-U-bimodal-n20-d05-l2-s02,U,20,bimodal,15,ok,0.9925925925925926,8099,12,10783,0.06904529199528042,plateau,50000,{}
+sim_anneal,fsspb2-U-heavy_tail-n15-d01-l2-s02,U,15,heavy_tail,3,ok,0.9333333333333333,2195,13,13517,0.10180975000548642,plateau,50000,{}
+greedy_center,fsspb2-T-bimodal-n1000-d0005-r2-s03,T,1000,bimodal,0,ok,0.8,299789,908,1,0.0006699580117128789,solver_done,50000,{}
+fhga_fast,fsspb2-A-near_equal-n100-d10-r2-s01,A,100,near_equal,5,ok,0.9612747075433643,74264,74,10122,0.33577195899852086,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 4, ""apex_crossings"": 961}"
+fhga_thorough,fsspb2-U-uniform-n18-d05-l2-s02,U,18,uniform,12,ok,0.8571428571428571,426,3,11135,0.061841167000238784,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05348854199110065, ""ls_invocations"": 24, ""apex_crossings"": 256}"
+sim_anneal,fsspb2-U-bimodal-n15-d01-r2-s00,U,15,bimodal,18,ok,0.0,754,1,10001,0.08719812500930857,plateau,50000,{}
+vanilla_ga,fsspb2-U-uniform-n20-d05-l2-s02,U,20,uniform,8,ok,0.8461538461538461,792,3,10921,0.3932922910025809,plateau,50000,{}
+ils,fsspb2-U-bimodal-n15-d01-sym-s03,U,15,bimodal,1,ok,0.9565217391304348,4600,9,16320,0.08791441700304858,plateau,50000,{}
+sim_anneal,fsspb2-A-avis_lai-n200-d01-r2-s03,A,200,avis_lai,16,ok,0.43507842793910667,747324302469,174,10126,0.3643512499984354,plateau,50000,{}
+ils,fsspb2-U-uniform-n15-d01-r2-s02,U,15,uniform,3,ok,0.0,0,0,10001,0.038992540998151526,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n22-d05-l2-s03,U,22,heavy_tail,9,ok,0.9657534246575342,4385,20,10017,0.14386687500518747,plateau,50000,{}
+mitm,fsspb2-U-heavy_tail-n22-d05-sym-s03,U,22,heavy_tail,0,ok,0.9896907216494846,3880,21,1,0.0027297079941490665,solver_done,50000,{}
+random_search,fsspb2-T-geometric-n500-d0001-r2-s03,T,500,geometric,8,ok,1.0,4704,331,10336,1.3233531669975491,plateau,50000,{}
+alpha_cut,fsspb2-A-density_doubled_hard_ssp-n100-d01-l2-s03,A,100,density_doubled_hard_ssp,0,ok,0.772757371999009,19289908403,14,8,0.0010826249927049503,solver_done,50000,{}
+ils,fsspb2-U-geometric-n22-d01-sym-s02,U,22,geometric,9,ok,0.9375,6432,21,10013,0.08335895898926537,plateau,50000,{}
+ils,fsspb2-U-geometric-n18-d01-l2-s03,U,18,geometric,0,ok,0.0,1155,4,10001,0.04545804200461134,plateau,50000,{}
+vanilla_ga,fsspb2-U-uniform-n18-d05-l2-s01,U,18,uniform,6,ok,0.9473684210526315,1150,3,10219,0.33087441700627096,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n100-d10-l2-s03,A,100,avis_lai,13,ok,0.990330353691286,137438933162,32,10006,0.2196874579967698,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 6, ""apex_crossings"": 606}"
+sim_anneal,fsspb2-U-heavy_tail-n18-d05-r2-s03,U,18,heavy_tail,3,ok,0.0,5376,18,10001,0.07168162500602193,plateau,50000,{}
+vanilla_ga,fsspb2-T-bimodal-n500-d0005-r2-s02,T,500,bimodal,11,ok,1.0,28505,69,14917,7.131235666995053,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n50-d05-l2-s01,A,50,near_equal,12,ok,0.9042553191489362,33882,34,10001,0.15556483299587853,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 11, ""apex_crossings"": 799}"
+fhga_fast,fsspb2-A-near_equal-n50-d10-sym-s03,A,50,near_equal,7,ok,0.9235294117647059,23889,24,10004,0.1399485830042977,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 504}"
+sim_anneal,fsspb2-T-heavy_tail-n1000-d0005-l2-s01,T,1000,heavy_tail,18,ok,0.0,151319,627,10001,1.9496110420004698,plateau,50000,{}
+ils,fsspb2-U-heavy_tail-n22-d01-l2-s00,U,22,heavy_tail,14,ok,0.8,5993,21,10035,0.0828121660015313,plateau,50000,{}
+random_search,fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s02,A,50,density_doubled_hard_ssp,6,ok,0.9990296384990177,24339407403,24,13238,0.18525720899924636,plateau,50000,{}
+random_search,fsspb2-A-near_equal-n500-d01-r2-s02,A,500,near_equal,12,ok,1.0,233811,234,18765,1.7972695420030504,plateau,50000,{}
+fhga_fast,fsspb2-U-uniform-n22-d01-sym-s02,U,22,uniform,12,ok,0.98,9924,20,11627,0.11092854100570548,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 91, ""apex_crossings"": 1180}"
+random_search,fsspb2-U-heavy_tail-n20-d05-l2-s02,U,20,heavy_tail,14,ok,0.75,239,2,13705,0.0936018329957733,plateau,50000,{}
+fhga_thorough,fsspb2-U-geometric-n15-d05-sym-s02,U,15,geometric,5,ok,0.9527027027027027,5933,14,10040,0.05667454200738575,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04844316600065213, ""ls_invocations"": 18, ""apex_crossings"": 198}"
+random_search,fsspb2-T-heavy_tail-n1000-d0005-r2-s00,T,1000,heavy_tail,3,ok,1.0,142819,594,20156,4.561750958993798,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n100-d05-r2-s00,A,100,near_equal,11,ok,0.9692118226600985,48776,49,32527,3.751905875004013,plateau,50000,{}
+fhga_thorough,fsspb2-A-avis_lai-n500-d01-r2-s01,A,500,avis_lai,16,ok,0.9935394955389618,880468427139,205,10601,2.327283582999371,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 5, ""apex_crossings"": 885}"
+vanilla_ga,fsspb2-A-density_doubled_hard_ssp-n50-d01-r2-s03,A,50,density_doubled_hard_ssp,10,ok,0.9864190025835797,31404505852,32,10552,0.7434079999948153,plateau,50000,{}
+random_search,fsspb2-U-uniform-n15-d01-sym-s01,U,15,uniform,7,ok,0.8529411764705882,6721,12,13497,0.16129008399730083,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n200-d10-l2-s02,A,200,avis_lai,13,ok,0.9271566182655592,579820529591,135,10021,0.7424585000117077,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 1551}"
+sim_anneal,fsspb2-T-uniform-n500-d0005-r2-s03,T,500,uniform,0,ok,1.0,111186,231,16752,1.543335834008758,plateau,50000,{}
+ils,fsspb2-A-avis_lai-n50-d05-r2-s03,A,50,avis_lai,19,ok,0.890449663781965,154618817779,36,45304,0.6323532919923309,plateau,50000,{}
+random_search,fsspb2-U-heavy_tail-n18-d01-r2-s01,U,18,heavy_tail,1,ok,0.7777777777777778,2715,17,10140,0.11683499999344349,plateau,50000,{}
+fhga_fast,fsspb2-U-geometric-n20-d05-sym-s02,U,20,geometric,13,ok,0.9936708860759493,6303,18,10025,0.10008045799622778,plateau,50000,"{""generations"": 5, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 117, ""apex_crossings"": 470}"
+ils,fsspb2-A-density_doubled_hard_ssp-n50-d10-sym-s03,A,50,density_doubled_hard_ssp,6,ok,0.9999828593795211,29892759128,28,33736,0.3958751669997582,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n100-d01-l2-s03,A,100,near_equal,5,ok,1.0,35915,36,18267,0.4258334580081282,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 2112}"
+fhga_thorough,fsspb2-A-avis_lai-n50-d10-r2-s02,A,50,avis_lai,5,ok,0.8988973973775,42949664714,10,10001,0.10506691699265502,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 12, ""apex_crossings"": 402}"
+ils,fsspb2-A-avis_lai-n200-d01-sym-s03,A,200,avis_lai,15,ok,0.0,639950126394,149,10001,0.48268591599480715,plateau,50000,{}
+fhga_fast,fsspb2-U-bimodal-n20-d05-r2-s00,U,20,bimodal,2,ok,0.9357429718875502,7479,10,10026,0.0837348750064848,plateau,50000,"{""generations"": 3, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 61, ""apex_crossings"": 1465}"
+vanilla_ga,fsspb2-T-geometric-n1000-d0005-l2-s00,T,1000,geometric,4,ok,1.0,3473,448,10217,10.128118499997072,plateau,50000,{}
+dp_exact,fsspb2-T-heavy_tail-n500-d0005-l2-s04,T,500,heavy_tail,0,ok,1.0,41399,157,1,0.001768957998137921,solver_done,50000,{}
+fhga_thorough,fsspb2-T-bimodal-n1000-d0005-sym-s00,T,1000,bimodal,6,ok,1.0,148553,719,25435,10.030410374994972,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 10, ""apex_crossings"": 1593}"
+fhga_fast,fsspb2-A-near_equal-n50-d01-r2-s00,A,50,near_equal,4,ok,1.0,12000,12,11631,0.12323408300289884,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 15, ""apex_crossings"": 502}"
+sim_anneal,fsspb2-A-near_equal-n500-d10-sym-s03,A,500,near_equal,17,ok,0.9908256880733946,239911,240,15928,1.4507023750047665,plateau,50000,{}
+vanilla_ga,fsspb2-U-bimodal-n20-d01-sym-s03,U,20,bimodal,10,ok,0.9230769230769231,7742,19,10243,0.35367970800143667,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n100-d05-l2-s01,A,100,near_equal,1,ok,0.9283681214421252,63075,63,10619,0.28014412499032915,plateau,50000,{}
+alpha_cut,fsspb2-A-near_equal-n100-d05-r2-s01,A,100,near_equal,0,ok,0.8325225851285615,86813,87,6,0.0009646249964134768,solver_done,50000,{}
+fhga_thorough,fsspb2-A-near_equal-n200-d10-r2-s03,A,200,near_equal,7,ok,0.9983044461190655,79636,80,11414,0.6554741250001825,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 2, ""apex_crossings"": 1382}"
+random_search,fsspb2-A-density_doubled_hard_ssp-n50-d05-r2-s03,A,50,density_doubled_hard_ssp,18,ok,0.9969204301233453,11421059292,12,11081,0.1317737500066869,plateau,50000,{}
+fhga_fast,fsspb2-A-avis_lai-n200-d01-sym-s01,A,200,avis_lai,19,ok,0.9177877300281133,657130032308,153,10241,0.767850834003184,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 13, ""apex_crossings"": 484}"
+sim_anneal,fsspb2-U-geometric-n18-d01-l2-s00,U,18,geometric,14,ok,0.0,0,0,10001,0.07150454100337811,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n500-d05-l2-s00,A,500,near_equal,0,ok,0.0,345073,345,10001,0.959841542004142,plateau,50000,{}
+fhga_fast,fsspb2-U-heavy_tail-n22-d05-r2-s02,U,22,heavy_tail,1,ok,0.9824561403508771,6844,20,10201,0.09881429199595004,plateau,50000,"{""generations"": 4, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 81, ""apex_crossings"": 975}"
+fhga_thorough,fsspb2-U-geometric-n18-d01-sym-s01,U,18,geometric,1,ok,0.0,224,3,10001,0.05658225000661332,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.04796266701305285, ""ls_invocations"": 24, ""apex_crossings"": 95}"
+random_search,fsspb2-U-bimodal-n15-d01-r2-s03,U,15,bimodal,13,ok,0.16666666666666666,5264,13,10115,0.10131279200140852,plateau,50000,{}
+vanilla_ga,fsspb2-U-uniform-n20-d01-sym-s02,U,20,uniform,7,ok,0.9298245614035088,11316,19,10090,0.35393737500999123,plateau,50000,{}
+fhga_thorough,fsspb2-U-uniform-n22-d01-r2-s03,U,22,uniform,1,ok,0.9722222222222222,10758,18,10042,0.09473958300077356,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.04223308400833048, ""ls_invocations"": 29, ""apex_crossings"": 579}"
+sim_anneal,fsspb2-A-near_equal-n500-d01-r2-s00,A,500,near_equal,12,ok,0.7505827505827506,257881,258,11125,1.07692229100212,plateau,50000,{}
+fhga_thorough,fsspb2-U-uniform-n18-d01-r2-s01,U,18,uniform,18,ok,0.6666666666666666,859,2,10356,0.06695745799515862,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 3, ""wbf_repair_time_s"": 0.05913091699767392, ""ls_invocations"": 19, ""apex_crossings"": 82}"
+sim_anneal,fsspb2-A-avis_lai-n200-d05-r2-s01,A,200,avis_lai,19,ok,0.978459435793042,463856472672,108,11981,0.5077501659980044,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n200-d01-sym-s00,A,200,near_equal,10,ok,0.44950213371266,140936,141,10069,0.3895328340004198,plateau,50000,{}
+sim_anneal,fsspb2-A-near_equal-n100-d05-l2-s03,A,100,near_equal,14,ok,0.9844444444444445,53991,54,10724,0.24885420899954624,plateau,50000,{}
+ils,fsspb2-T-geometric-n500-d0001-r2-s03,T,500,geometric,9,ok,0.0,4134,323,10001,1.0818110839900328,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n200-d05-l2-s01,A,200,near_equal,0,ok,0.8535193405199747,94158,94,15997,3.4914026249898598,plateau,50000,{}
+vanilla_ga,fsspb2-U-heavy_tail-n15-d05-sym-s02,U,15,heavy_tail,7,ok,0.9090909090909091,434,4,10410,0.2795915829919977,plateau,50000,{}
+fhga_thorough,fsspb2-A-density_doubled_hard_ssp-n100-d05-l2-s02,A,100,density_doubled_hard_ssp,5,ok,0.999975346911445,43768976111,47,15356,0.39952950000588316,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 18, ""apex_crossings"": 2422}"
+fhga_thorough,fsspb2-U-geometric-n20-d01-l2-s02,U,20,geometric,17,ok,0.8571428571428571,6196,17,10314,0.08240633399691433,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.05234541799291037, ""ls_invocations"": 18, ""apex_crossings"": 417}"
+fhga_thorough,fsspb2-U-heavy_tail-n20-d01-l2-s01,U,20,heavy_tail,6,ok,0.8421052631578947,5626,18,10025,0.08148020900262054,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 2, ""wbf_repair_time_s"": 0.05843400000594556, ""ls_invocations"": 23, ""apex_crossings"": 209}"
+fhga_fast,fsspb2-T-heavy_tail-n1000-d0005-r2-s03,T,1000,heavy_tail,3,ok,1.0,167107,706,13471,8.460593041003449,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 3, ""apex_crossings"": 646}"
+fhga_thorough,fsspb2-A-avis_lai-n50-d01-r2-s03,A,50,avis_lai,0,ok,0.26653704726564487,163208742700,38,10001,0.16974924999522045,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 22, ""apex_crossings"": 888}"
+random_search,fsspb2-A-density_doubled_hard_ssp-n50-d10-r2-s01,A,50,density_doubled_hard_ssp,15,ok,0.9998438594428536,38874609482,36,27930,0.5879763749981066,plateau,50000,{}
+vanilla_ga,fsspb2-A-near_equal-n50-d05-sym-s01,A,50,near_equal,2,ok,0.82560706401766,36100,36,24561,1.6901462919922778,plateau,50000,{}
+fhga_fast,fsspb2-A-near_equal-n50-d01-r2-s00,A,50,near_equal,18,ok,1.0,12000,12,12235,0.1258227079961216,plateau,50000,"{""generations"": 1, ""restarts"": 0, ""wbf_repair_count"": 0, ""wbf_repair_time_s"": 0.0, ""ls_invocations"": 26, ""apex_crossings"": 284}"
