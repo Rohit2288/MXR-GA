@@ -28,11 +28,14 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy import stats as sps
 
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-from src.stats.analysis import analyze_suite, win_tie_loss
+from src.stats.analysis import (analyze_suite, cliffs_delta,
+                                cliffs_magnitude, holm_correction,
+                                win_tie_loss)
 
 RESULTS = REPO / "results" / "main_comparison" / "results.csv"
 OUT = REPO / "results" / "main_comparison" / "analysis"
@@ -125,9 +128,9 @@ def latex_pairwise_table(all_stats: dict) -> str:
         r"  Cliff's $\delta$ with magnitude. Positive $\delta$ favours",
         r"  FH-GA-Thorough.}",
         r"  \label{tab:stats-pairwise}",
-        r"  \begin{tabular}{llrrrl}", r"    \toprule",
+        r"  \begin{tabular}{llrrrlr}", r"    \toprule",
         r"    Suite & vs.\ solver & $p_{\mathrm{Holm}}$ & $\delta$ &"
-        r" med.\ $\Delta\mu$ & magnitude \\",
+        r" med.\ $\Delta\mu$ & magnitude & $n$ \\",
         r"    \midrule",
     ]
     for suite in SUITES:
@@ -142,7 +145,8 @@ def latex_pairwise_table(all_stats: dict) -> str:
             lines.append(
                 f"    {suite} & {name} & {pw['p_holm']:.2e} & "
                 f"{sign * pw['delta']:+.3f} & "
-                f"{sign * pw['median_diff']:+.6f} & {pw['magnitude']} \\\\")
+                f"{sign * pw['median_diff']:+.6f} & {pw['magnitude']} & "
+                f"{pw['n_pairs']} \\\\")
         lines.append(r"    \midrule")
     lines[-1] = r"    \bottomrule"
     lines += [r"  \end{tabular}", r"\end{table}", ""]
@@ -185,17 +189,49 @@ def main() -> int:
     all_stats, wtl_by_suite = {}, {}
     for suite in SUITES:
         matrix = seed_mean_matrix(df, suite)
-        res = analyze_suite(matrix)
+        # DP/MITM are infeasible on some A/T instances; a global paired
+        # intersection would silently restrict the whole comparison to the
+        # instances they can solve. Instead: omnibus + all-pairs tests over
+        # full-coverage solvers on ALL instances; partial-coverage solvers
+        # (exact methods) are compared vs FH-GA-Thorough on their own
+        # feasible subsets, with n_pairs reported.
+        n_max = max(len(v) for v in matrix.values())
+        full = {s: v for s, v in matrix.items() if len(v) == n_max}
+        partial = {s: v for s, v in matrix.items() if len(v) < n_max}
+        res = analyze_suite(full)
+        extra_pairs = []
+        if "fhga_thorough" in full and partial:
+            raw = []
+            for s, v in sorted(partial.items()):
+                common = sorted(set(v) & set(full["fhga_thorough"]))
+                xa = np.array([full["fhga_thorough"][i] for i in common])
+                xb = np.array([v[i] for i in common])
+                d = xa - xb
+                p = 1.0 if np.allclose(d, 0) else float(
+                    sps.wilcoxon(xa, xb, zero_method="wilcox").pvalue)
+                raw.append((s, xa, xb, d, p))
+            for (s, xa, xb, d, p), ph in zip(
+                    raw, holm_correction([r[4] for r in raw])):
+                delta = cliffs_delta(xa, xb)
+                extra_pairs.append({
+                    "solver_a": "fhga_thorough", "solver_b": s,
+                    "p_raw": p, "p_holm": ph, "delta": delta,
+                    "magnitude": cliffs_magnitude(delta),
+                    "median_diff": float(np.median(d)),
+                    "n_pairs": len(d),
+                })
         all_stats[suite] = {
             "friedman_chi2": res.friedman_chi2,
             "friedman_p": res.friedman_p,
             "n_instances": res.n_instances,
+            "coverage": {s: len(v) for s, v in matrix.items()},
+            "full_coverage_solvers": sorted(full),
             "mean_ranks": res.mean_ranks,
-            "pairwise": [pw.__dict__ for pw in res.pairwise],
+            "pairwise": [pw.__dict__ for pw in res.pairwise] + extra_pairs,
         }
         with open(OUT / f"stats_{suite}.json", "w") as fh:
             json.dump(all_stats[suite], fh, indent=2)
-        wtl = win_tie_loss(matrix)
+        wtl = win_tie_loss(full)
         wtl_by_suite[suite] = wtl
         pd.DataFrame(
             [{"solver_a": a, "solver_b": b, "wins": w, "ties": t, "losses": l}

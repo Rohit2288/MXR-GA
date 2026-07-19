@@ -1,0 +1,236 @@
+{
+  "friedman_chi2": 745.5333915744518,
+  "friedman_p": 6.994341760963155e-159,
+  "n_instances": 384,
+  "coverage": {
+    "alpha_cut": 190,
+    "cpsat": 198,
+    "dp_exact": 192,
+    "fhga_fast": 384,
+    "fhga_thorough": 384,
+    "greedy_center": 175,
+    "ils": 384,
+    "mitm": 182,
+    "random_search": 384,
+    "sim_anneal": 384,
+    "vanilla_ga": 384
+  },
+  "full_coverage_solvers": [
+    "fhga_fast",
+    "fhga_thorough",
+    "ils",
+    "random_search",
+    "sim_anneal",
+    "vanilla_ga"
+  ],
+  "mean_ranks": {
+    "fhga_fast": 2.6184895833333335,
+    "fhga_thorough": 3.2005208333333335,
+    "ils": 3.13671875,
+    "random_search": 3.1822916666666665,
+    "sim_anneal": 5.520833333333333,
+    "vanilla_ga": 3.3411458333333335
+  },
+  "pairwise": [
+    {
+      "solver_a": "fhga_fast",
+      "solver_b": "fhga_thorough",
+      "p_raw": 5.830891271350366e-14,
+      "p_holm": 5.247802144215329e-13,
+      "delta": 0.02309163411458326,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_fast",
+      "solver_b": "ils",
+      "p_raw": 1.1902666201469131e-11,
+      "p_holm": 9.522132961175305e-11,
+      "delta": 0.05350070529513884,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_fast",
+      "solver_b": "random_search",
+      "p_raw": 1.7548883161838604e-08,
+      "p_holm": 1.2284218213287023e-07,
+      "delta": 0.06963433159722232,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_fast",
+      "solver_b": "sim_anneal",
+      "p_raw": 7.206111022824715e-57,
+      "p_holm": 1.0809166534237071e-55,
+      "delta": 0.5805596245659723,
+      "magnitude": "large",
+      "median_diff": 0.3333333333333333,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_fast",
+      "solver_b": "vanilla_ga",
+      "p_raw": 2.1603527371435291e-19,
+      "p_holm": 2.160352737143529e-18,
+      "delta": 0.05948893229166674,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "ils",
+      "p_raw": 0.03655958320225585,
+      "p_holm": 0.10967874960676754,
+      "delta": 0.03197564019097232,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "random_search",
+      "p_raw": 0.11130723917755435,
+      "p_holm": 0.2226144783551087,
+      "delta": 0.04735649956597232,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "sim_anneal",
+      "p_raw": 1.3260098955624109e-56,
+      "p_holm": 1.8564138537873754e-55,
+      "delta": 0.5677490234375,
+      "magnitude": "large",
+      "median_diff": 0.3184001613164827,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "vanilla_ga",
+      "p_raw": 3.105689804854086e-05,
+      "p_holm": 0.00018634138829124516,
+      "delta": 0.03647189670138884,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "ils",
+      "solver_b": "random_search",
+      "p_raw": 0.9619047336602944,
+      "p_holm": 0.9619047336602944,
+      "delta": 0.01675754123263884,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "ils",
+      "solver_b": "sim_anneal",
+      "p_raw": 5.8822025703943054e-52,
+      "p_holm": 7.058643084473166e-51,
+      "delta": 0.5234035915798612,
+      "magnitude": "large",
+      "median_diff": 0.29166666666666663,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "ils",
+      "solver_b": "vanilla_ga",
+      "p_raw": 0.00032416917022317515,
+      "p_holm": 0.0016208458511158758,
+      "delta": 0.00653076171875,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "random_search",
+      "solver_b": "sim_anneal",
+      "p_raw": 9.576286261393623e-44,
+      "p_holm": 1.0533914887532985e-42,
+      "delta": 0.4990098741319444,
+      "magnitude": "large",
+      "median_diff": 0.2731345315904139,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "random_search",
+      "solver_b": "vanilla_ga",
+      "p_raw": 0.004850839974008477,
+      "p_holm": 0.01940335989603391,
+      "delta": -0.01212565104166663,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "sim_anneal",
+      "solver_b": "vanilla_ga",
+      "p_raw": 6.9769237718460675e-56,
+      "p_holm": 9.070000903399888e-55,
+      "delta": -0.5092976888020833,
+      "magnitude": "large",
+      "median_diff": -0.255334595959596,
+      "n_pairs": 384
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "alpha_cut",
+      "p_raw": 9.728559404339332e-16,
+      "p_holm": 3.891423761735733e-15,
+      "delta": 0.4343490304709141,
+      "magnitude": "medium",
+      "median_diff": 0.08771401819154606,
+      "n_pairs": 190
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "cpsat",
+      "p_raw": 2.6237857846559447e-12,
+      "p_holm": 5.2475715693118894e-12,
+      "delta": -0.03494541373329252,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 198
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "dp_exact",
+      "p_raw": 2.3145991283943948e-11,
+      "p_holm": 2.3145991283943948e-11,
+      "delta": -0.04698350694444442,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 192
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "greedy_center",
+      "p_raw": 7.641701595427896e-28,
+      "p_holm": 3.820850797713948e-27,
+      "delta": 0.9032489795918368,
+      "magnitude": "large",
+      "median_diff": 0.868020304568528,
+      "n_pairs": 175
+    },
+    {
+      "solver_a": "fhga_thorough",
+      "solver_b": "mitm",
+      "p_raw": 8.377838266023772e-13,
+      "p_holm": 2.5133514798071315e-12,
+      "delta": -0.04489192126554764,
+      "magnitude": "negligible",
+      "median_diff": 0.0,
+      "n_pairs": 182
+    }
+  ]
+}
