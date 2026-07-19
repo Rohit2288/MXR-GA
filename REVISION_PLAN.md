@@ -68,7 +68,7 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 - [x] 6.5 Parameter-justification subsection: derive from FSSP structure where possible; otherwise tuned defaults + sensitivity evidence with ranges, sampling, repetitions, error bars, interactions. (R2.2, R3.m3)
 - [x] 6.5a Sensitivity sweep (`experiments/08_sensitivity.py`): one-at-a-time ranges over FH-GA parameters + p_c×p_m interaction grid, stratified A/U slice, ≥10 seeds, error bars; data source for 6.5. (R2.2, R3.m3)
 - [ ] 6.6 Rewritten Related Work: critical analysis across fuzzy subset-sum, closest-subset-sum, fuzzy knapsack, tolerance-based SSP, memetic optimization; comparison table of objectives/complexity/output form/scale. Condensed Table 1. (R2.10, R3.7, R4.4)
-- [ ] 6.7 Bibliography fixes: the "???" Springer entry, Reference [3], full verification of all entries. (R2.10, R3.m8)
+- [x] 6.7 Bibliography fixes: the "???" Springer entry, Reference [3], full verification of all entries. (R2.10, R3.m8)
 - [x] 6.8 All figures regenerated from new CSVs: Figure 5 redrawn cleanly; Figure 6 replaced by log-scale residual (1−μ) plot; each figure audited against its CSV. (R1.2, R4.4)
 - [ ] 6.9 New results tables (main comparison, ablation, runtime, stats) as fragments. (R3.m2)
 - [ ] 6.10 Condensation guidance: list of cuttable/appendix-movable passages (benchmark-generation detail, inconclusive ablation prose, conclusion overlap). (R3.m5, R3.m6, R4.4)
@@ -90,3 +90,4 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 3. (4.3) Fuzzy-vs-crisp positioning pending control results.
 4. (0.2) Any instance-count discrepancies found by the inventory.
 5. (7.3) GPEM tracked-changes requirement.
+6. (6.7) `ref_zakharov` citation unverifiable — supply real source or approve removal.
