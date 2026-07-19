@@ -1219,3 +1219,4 @@ fragment written
 [2026-07-20 00:12:31] queue3 finished
 35618 units total, 0 done, 35618 to run
 [2026-07-20 00:12:46] queue7 started (pid 80664)
+  200/35618 (7.0/s, ETA 1.4h)
