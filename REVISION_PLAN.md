@@ -49,8 +49,8 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 
 - [x] 4.1 Run fhga_crisp vs FH-GA on FSSP-2; equal everything. (R4.1)
 - [x] 4.2 Run gradient-guided LS vs best-improvement vs swap LS. If no measurable advantage, the "gradient" claim is renamed/downgraded to a sign/direction rule. (R2.3)
-- [ ] 4.3 DECISION(Rohit): final fuzzy-vs-crisp positioning once data is in. If crisp matches, value proposition = bounded objective + asymmetric tolerances + linguistic control, not search advantage.
-- [ ] 4.4 Problem-positioning fragment: FSSP vs closest-subset-sum, interval SSP, tolerance-based SSP, fuzzy knapsack — what is and is not new. (R2.1)
+- [x] 4.3 DECISION(Rohit) RESOLVED (delegated; verdict in narrative memo): final fuzzy-vs-crisp positioning once data is in. If crisp matches, value proposition = bounded objective + asymmetric tolerances + linguistic control, not search advantage.
+- [x] 4.4 Problem-positioning fragment: FSSP vs closest-subset-sum, interval SSP, tolerance-based SSP, fuzzy knapsack — what is and is not new. (R2.1)
 
 ## Phase 5 — Runtime & instrumentation (R2.9, R4.3)
 
@@ -87,7 +87,7 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 
 1. (1.11) RESOLVED: FLSSS (Option A) — integrate as published tolerance-based solver (Rohit, 2026-07-19).
 2. (3.4) RESOLVED: restructure per narrative_restructure.md; Thorough := DP-window; inert mechanisms stated plainly (Rohit, 2026-07-19).
-3. (4.3) Fuzzy-vs-crisp positioning pending control results.
+3. (4.3) RESOLVED: crisp guide wins as search signal; fuzzy = modeling interface; v2crisp adopts crisp guide (2026-07-20).
 4. (0.2) Any instance-count discrepancies found by the inventory.
 5. (7.3) GPEM tracked-changes requirement.
 6. (6.7) RESOLVED: `ref_zakharov` to be removed (Rohit, 2026-07-19).
