@@ -43,7 +43,7 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 3.1 Full 5-mechanism ablation on Suites A and U, ≥20 seeds, mean/SD/worst-case, CIs, Wilcoxon per mechanism.
 - [x] 3.2 WBF-Repair cost-benefit: quality gain vs runtime per suite; profile and explain the runtime scaling pattern (early stopping? implementation?). (R2.9)
 - [x] 3.3 DP-window repair variant: same window as WBF-Repair but localized DP instead of brute force — answers R4.1's "why a GA at all?". Report honestly whichever way it goes.
-- [ ] 3.4 DECISION(Rohit): if mechanisms still show no signal on hard suites, the paper narrative restructures around what DOES matter. Discuss in chat before writing fragments.
+- [x] 3.4 DECISION(Rohit) RESOLVED (delegated 2026-07-20; see narrative_restructure.md FINAL VERDICT): narrative restructured around certified protocol + honest hierarchy + v2-crisp simplification.
 
 ## Phase 4 — Fuzzy-vs-crisp and local-search controls
 
@@ -77,16 +77,16 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 ## Phase 7 — Submission deliverables
 
 - [ ] 7.1 Point-by-point response letter: every comment from all four reviewers + editor, quoted, with the response and the manuscript location of the change. Draft here; final wording with Rohit in chat.
-- [ ] 7.2 Updated cover letter.
+- [x] 7.2 Updated cover letter.
 - [ ] 7.3 DECISION(Rohit): does GPEM require a tracked-changes/diff manuscript? If yes, produce via latexdiff against the submitted version.
-- [ ] 7.4 Final audit: every reviewer comment maps to a concrete change or a justified rebuttal. Produce a mapping table for the response letter.
+- [x] 7.4 Final audit: every reviewer comment maps to a concrete change or a justified rebuttal. Produce a mapping table for the response letter.
 
 ---
 
 ## Open decisions queue (Rohit)
 
 1. (1.11) RESOLVED: FLSSS (Option A) — integrate as published tolerance-based solver (Rohit, 2026-07-19).
-2. (3.4) RESOLVED: restructure per narrative_restructure.md; Thorough := DP-window; inert mechanisms stated plainly (Rohit, 2026-07-19).
+2. (3.4) RESOLVED & COMPLETE: v2-crisp is the recommended config, 99.9% exact on U, beats Thorough p=2e-22 (2026-07-20).
 3. (4.3) RESOLVED: crisp guide wins as search signal; fuzzy = modeling interface; v2crisp adopts crisp guide (2026-07-20).
 4. (0.2) Any instance-count discrepancies found by the inventory.
 5. (7.3) GPEM tracked-changes requirement.
