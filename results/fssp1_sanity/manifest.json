@@ -1,0 +1,14 @@
+{
+  "git_commit": "2e729a38b39b808fc42c52a5c781e5a549eb0285",
+  "script": "experiments/06_fssp1_sanity.py",
+  "date_utc": "2026-07-20T04:33:25.783967+00:00",
+  "protocol": {
+    "max_evals": 50000,
+    "plateau_tol": 1e-09,
+    "plateau_patience": 10000
+  },
+  "seeds": [
+    0
+  ],
+  "n_instances": 3238
+}

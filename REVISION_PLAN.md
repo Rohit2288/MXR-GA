@@ -33,7 +33,7 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 ## Phase 2 — Main comparison (R2.6, R3.4, R4.2, E)
 
 - [x] 2.1 Run ALL solvers on ALL FSSP-2 sub-suites (T, A, U). Per-suite reporting. ≥20 seeds for stochastic solvers; mean, SD, worst case.
-- [ ] 2.2 Run FSSP-1 once as a sanity check only; it will be demoted to a brief subsection/appendix in the paper. (R4.2)
+- [x] 2.2 Run FSSP-1 once as a sanity check only; it will be demoted to a brief subsection/appendix in the paper. (R4.2)
 - [x] 2.3 Statistics per sub-suite on the new data: Friedman → Wilcoxon + Bonferroni–Holm → Cliff's delta; interpret effect sizes honestly. (R4.2)
 - [x] 2.4 Full-precision reporting: no "≈1.0"; appropriate significant digits + SD + worst case. LaTeX table fragments. (R3.m2)
 - [x] 2.5 Win/tie/loss pairwise table regenerated from new data.
@@ -70,7 +70,7 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 - [x] 6.6 Rewritten Related Work: critical analysis across fuzzy subset-sum, closest-subset-sum, fuzzy knapsack, tolerance-based SSP, memetic optimization; comparison table of objectives/complexity/output form/scale. Condensed Table 1. (R2.10, R3.7, R4.4)
 - [x] 6.7 Bibliography fixes: the "???" Springer entry, Reference [3], full verification of all entries. (R2.10, R3.m8)
 - [x] 6.8 All figures regenerated from new CSVs: Figure 5 redrawn cleanly; Figure 6 replaced by log-scale residual (1−μ) plot; each figure audited against its CSV. (R1.2, R4.4)
-- [ ] 6.9 New results tables (main comparison, ablation, runtime, stats) as fragments. (R3.m2)
+- [x] 6.9 New results tables (main comparison, ablation, runtime, stats) as fragments. (R3.m2)
 - [x] 6.10 Condensation guidance: list of cuttable/appendix-movable passages (benchmark-generation detail, inconclusive ablation prose, conclusion overlap). (R3.m5, R3.m6, R4.4)
 - [x] 6.11 Acronym first-use audit: FSSP, SSP, FPTAS, FB-UX, WBF-Repair. (R3.m1)
 

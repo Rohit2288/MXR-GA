@@ -1,0 +1,42 @@
+{
+  "git_commit": "2e729a38b39b808fc42c52a5c781e5a549eb0285",
+  "script": "experiments/16_fhga_v2crisp.py",
+  "date_utc": "2026-07-20T06:23:13.554202+00:00",
+  "protocol": {
+    "max_evals": 50000,
+    "plateau_tol": 1e-09,
+    "plateau_patience": 10000
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "overrides": {
+    "repair_mode": "dp_window",
+    "uniform_xover": true,
+    "gamma": 0.0,
+    "pc_low": 0.8,
+    "pc_high": 0.8,
+    "pm_low_mult": 1.0,
+    "pm_high_mult": 1.0
+  },
+  "n_instances": 866
+}

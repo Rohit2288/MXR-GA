@@ -1,0 +1,8 @@
+{
+  "git_commit": "2e729a38b39b808fc42c52a5c781e5a549eb0285",
+  "script": "experiments/15_flsss.py",
+  "date_utc": "2026-07-20T05:27:11.989968+00:00",
+  "solver": "FLSSS (CRAN; Liu, arXiv:1612.04484) via certified alpha-window probes, tlimit 1s/probe, 60s/instance",
+  "n_instances": 866,
+  "merge_note": "append these rows to main_comparison/results.csv copies at analysis time; solver name 'flsss'"
+}

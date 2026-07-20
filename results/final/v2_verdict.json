@@ -1,0 +1,143 @@
+{
+  "T": {
+    "fhga_v2_vs_fhga_thorough": {
+      "mean_a": 0.9927760162289074,
+      "mean_b": 0.9917131714710348,
+      "mean_diff": 0.001062844757872577,
+      "p": 0.0008759210953214521,
+      "cliffs_delta": 0.034869658693899463,
+      "magnitude": "negligible",
+      "n": 122
+    },
+    "fhga_v2_vs_fhga_fast": {
+      "mean_a": 0.9927760162289074,
+      "mean_b": 0.9917131714710348,
+      "mean_diff": 0.001062844757872577,
+      "p": 0.0008759210953214521,
+      "cliffs_delta": 0.034869658693899463,
+      "magnitude": "negligible",
+      "n": 122
+    },
+    "fhga_v2crisp_vs_fhga_v2": {
+      "mean_a": 0.9960894043498055,
+      "mean_b": 0.9927760162289074,
+      "mean_diff": 0.0033133881208981192,
+      "p": 7.052348513948732e-08,
+      "cliffs_delta": 0.10205589895189471,
+      "magnitude": "negligible",
+      "n": 122
+    },
+    "fhga_v2crisp_vs_fhga_fast": {
+      "mean_a": 0.9960894043498055,
+      "mean_b": 0.9917131714710348,
+      "mean_diff": 0.004376232878770697,
+      "p": 6.916903681975827e-09,
+      "cliffs_delta": 0.12342112335393707,
+      "magnitude": "negligible",
+      "n": 122
+    },
+    "fhga_v2crisp_vs_fhga_thorough": {
+      "mean_a": 0.9960894043498055,
+      "mean_b": 0.9917131714710348,
+      "mean_diff": 0.004376232878770697,
+      "p": 6.916903681975827e-09,
+      "cliffs_delta": 0.12342112335393707,
+      "magnitude": "negligible",
+      "n": 122
+    }
+  },
+  "A": {
+    "fhga_v2_vs_fhga_thorough": {
+      "mean_a": 0.9013156849598278,
+      "mean_b": 0.9010222089517915,
+      "mean_diff": 0.00029347600803637336,
+      "p": 0.9818403061495512,
+      "cliffs_delta": -0.003341049382716066,
+      "magnitude": "negligible",
+      "n": 360
+    },
+    "fhga_v2_vs_fhga_fast": {
+      "mean_a": 0.9013156849598278,
+      "mean_b": 0.9010223892347771,
+      "mean_diff": 0.0002932957250506941,
+      "p": 0.9805881526273347,
+      "cliffs_delta": -0.003356481481481488,
+      "magnitude": "negligible",
+      "n": 360
+    },
+    "fhga_v2crisp_vs_fhga_v2": {
+      "mean_a": 0.9007410513179231,
+      "mean_b": 0.9013156849598278,
+      "mean_diff": -0.0005746336419046465,
+      "p": 0.4754084165573589,
+      "cliffs_delta": -0.002816358024691379,
+      "magnitude": "negligible",
+      "n": 360
+    },
+    "fhga_v2crisp_vs_fhga_fast": {
+      "mean_a": 0.9007410513179231,
+      "mean_b": 0.9010223892347771,
+      "mean_diff": -0.00028133791685395234,
+      "p": 0.820724853061904,
+      "cliffs_delta": -0.007492283950617296,
+      "magnitude": "negligible",
+      "n": 360
+    },
+    "fhga_v2crisp_vs_fhga_thorough": {
+      "mean_a": 0.9007410513179231,
+      "mean_b": 0.9010222089517915,
+      "mean_diff": -0.00028115763386827306,
+      "p": 0.820724853061904,
+      "cliffs_delta": -0.0075694444444444065,
+      "magnitude": "negligible",
+      "n": 360
+    }
+  },
+  "U": {
+    "fhga_v2_vs_fhga_thorough": {
+      "mean_a": 0.7430654300149926,
+      "mean_b": 0.7282237698778108,
+      "mean_diff": 0.014841660137181823,
+      "p": 1.3485211430941002e-21,
+      "cliffs_delta": 0.03673638237847232,
+      "magnitude": "negligible",
+      "n": 384
+    },
+    "fhga_v2_vs_fhga_fast": {
+      "mean_a": 0.7430654300149926,
+      "mean_b": 0.7348146967174886,
+      "mean_diff": 0.008250733297503926,
+      "p": 5.128503031601438e-14,
+      "cliffs_delta": 0.01518419053819442,
+      "magnitude": "negligible",
+      "n": 384
+    },
+    "fhga_v2crisp_vs_fhga_v2": {
+      "mean_a": 0.7458283967918077,
+      "mean_b": 0.7430654300149926,
+      "mean_diff": 0.0027629667768150983,
+      "p": 0.023999149663337088,
+      "cliffs_delta": 0.0020277235243055802,
+      "magnitude": "negligible",
+      "n": 384
+    },
+    "fhga_v2crisp_vs_fhga_fast": {
+      "mean_a": 0.7458283967918077,
+      "mean_b": 0.7348146967174886,
+      "mean_diff": 0.011013700074319024,
+      "p": 3.033155918922454e-15,
+      "cliffs_delta": 0.01719835069444442,
+      "magnitude": "negligible",
+      "n": 384
+    },
+    "fhga_v2crisp_vs_fhga_thorough": {
+      "mean_a": 0.7458283967918077,
+      "mean_b": 0.7282237698778108,
+      "mean_diff": 0.01760462691399692,
+      "p": 2.0271623464349018e-22,
+      "cliffs_delta": 0.03883870442708326,
+      "magnitude": "negligible",
+      "n": 384
+    }
+  }
+}
