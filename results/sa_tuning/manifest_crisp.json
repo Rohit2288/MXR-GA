@@ -1,0 +1,29 @@
+{
+  "git_commit": "8c56e9e78e1a99bd3140723f598b757cb1d6db98",
+  "script": "experiments/02_sa_tuning.py",
+  "guide": "crisp",
+  "grid_t0": [
+    100.0,
+    50.0,
+    20.0,
+    5.0,
+    1.0,
+    0.2
+  ],
+  "grid_t_end": [
+    0.1,
+    0.01,
+    0.001
+  ],
+  "tune_seeds": [
+    1000,
+    1001
+  ],
+  "budget": 10000,
+  "slice": {
+    "generator_seed": 0,
+    "max_n": 500,
+    "per_stratum": 2,
+    "n_instances": 18
+  }
+}

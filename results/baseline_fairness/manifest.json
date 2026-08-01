@@ -1,0 +1,39 @@
+{
+  "git_commit": "8c56e9e78e1a99bd3140723f598b757cb1d6db98",
+  "script": "experiments/18_baseline_fairness.py",
+  "date_utc": "2026-08-01T17:55:16.485241+00:00",
+  "protocol": {
+    "max_evals": 50000,
+    "plateau_tol": 1e-09,
+    "plateau_patience": 10000
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "variants": [
+    "sim_anneal_crisp",
+    "ils_crisp"
+  ],
+  "comparators": "sim_anneal / ils (mu-guided) from main_comparison",
+  "guide": "src/protocol/guide.py:crisp_guide (shared with fhga_crisp)",
+  "n_instances": 384
+}

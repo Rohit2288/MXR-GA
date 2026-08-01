@@ -16,24 +16,41 @@ import numpy as np
 
 from src.core.instance import Instance
 from src.protocol.budget import BudgetedObjective
+from src.protocol.guide import make_guide
 from src.solvers.base import Solver
 
 
 class ILS(Solver):
     name = "ils"
 
-    def __init__(self, perturb_strength: int = 3, swap_k: int = 20):
+    def __init__(self, perturb_strength: int = 3, swap_k: int = 20,
+                 guide_mode: str = "mu", name: str = None):
         self.perturb_strength = perturb_strength
         self.swap_k = swap_k
+        self.guide_mode = guide_mode
+        if name is not None:
+            self.name = name
+        elif guide_mode != "mu":
+            self.name = f"ils_{guide_mode}"
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
         n = instance.n
         items = instance.items
+        guide = make_guide(self.guide_mode, instance)
+
+        def _eval(chrom) -> float:
+            idx = [i for i, b in enumerate(chrom) if b]
+            mu = objective.evaluate(idx)
+            if guide is None:
+                return mu
+            return guide(sum(items[i] for i in idx), mu)
+
+        self._eval_fn = _eval
         density = min(1.0, instance.target.T_M / max(sum(items), 1))
         chrom: List[int] = [1 if rng.random() < density else 0
                             for _ in range(n)]
-        f = self._eval(chrom, objective)
+        f = _eval(chrom)
         f = self._local_search(chrom, f, objective, items, n)
         inc_chrom, inc_f = list(chrom), f
         while True:
@@ -41,14 +58,13 @@ class ILS(Solver):
             for i in rng.choice(n, size=min(self.perturb_strength, n),
                                 replace=False):
                 chrom[int(i)] = 1 - chrom[int(i)]
-            f = self._eval(chrom, objective)
+            f = _eval(chrom)
             f = self._local_search(chrom, f, objective, items, n)
             if f > inc_f:
                 inc_chrom, inc_f = list(chrom), f
 
-    @staticmethod
-    def _eval(chrom, objective) -> float:
-        return objective.evaluate([i for i, b in enumerate(chrom) if b])
+    def _eval(self, chrom, objective) -> float:
+        return self._eval_fn(chrom)
 
     def _local_search(self, chrom, f, objective, items, n) -> float:
         while True:

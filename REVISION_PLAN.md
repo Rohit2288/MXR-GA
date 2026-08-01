@@ -37,6 +37,19 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 2.3 Statistics per sub-suite on the new data: Friedman → Wilcoxon + Bonferroni–Holm → Cliff's delta; interpret effect sizes honestly. (R4.2)
 - [x] 2.4 Full-precision reporting: no "≈1.0"; appropriate significant digits + SD + worst case. LaTeX table fragments. (R3.m2)
 - [x] 2.5 Win/tie/loss pairwise table regenerated from new data.
+- [ ] 2.6 Baseline fairness (R2.7, R4.3): SA and ILS were steered by mu, which
+      is flat at zero outside the support, so they stalled on a zero plateau
+      (80.2% / 60.2% zero-mu runs on Suite T) while FH-GA escapes it by
+      construction. Shared guide extracted to `src/protocol/guide.py`, guided
+      variants added, SA re-tuned for the guided scale. **Suite U DONE**
+      (guided ILS +0.0376, guided SA +0.2480; FH-GA's lead over guided ILS is
+      +0.0082, delta = 0.013, NEGLIGIBLE). Suites T and A pending:
+      `./scripts/run_queue9.sh` on the author machine (~8-10 CPU-h).
+- [x] 2.7 Coverage-aware comparison (R4.3, R3.4): `table_main_comparison.tex`
+      compared dp_exact's mean over the 144 Suite A instances it solves against
+      the heuristics' means over all 360. `table_coverage.tex` now reports
+      coverage, own-mean and common-subset mean separately. See
+      `paper_fragments/fairness_and_coverage_memo.md`.
 
 ## Phase 3 — Ablation (R2.8, R3.5, R4.1, E)
 
@@ -78,7 +91,15 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 
 - [ ] 7.1 Point-by-point response letter: every comment from all four reviewers + editor, quoted, with the response and the manuscript location of the change. Draft here; final wording with Rohit in chat.
 - [x] 7.2 Updated cover letter.
-- [ ] 7.3 DECISION(Rohit): does GPEM require a tracked-changes/diff manuscript? If yes, produce via latexdiff against the submitted version.
+- [x] 7.3 RESOLVED (2026-08-01, from the journal's own guidelines): GPEM's
+      submission guidelines require "all relevant editable source files at
+      every submission and revision" but contain NO tracked-changes or
+      marked-up-manuscript requirement. Decision: produce the latexdiff PDF
+      anyway and upload it as a supplementary "marked-up manuscript" item —
+      it is optional, costs nothing (`scripts/make_latexdiff.sh` is vendored
+      and tested), and directly serves the reviewers' request to see where
+      each change landed. Rohit: if the decision e-mail from Editorial
+      Manager states otherwise, that instruction overrides this.
 - [x] 7.4 Final audit: every reviewer comment maps to a concrete change or a justified rebuttal. Produce a mapping table for the response letter.
 
 ---
@@ -89,5 +110,15 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 2. (3.4) RESOLVED & COMPLETE: v2-crisp is the recommended config, 99.9% exact on U, beats Thorough p=2e-22 (2026-07-20).
 3. (4.3) RESOLVED: crisp guide wins as search signal; fuzzy = modeling interface; v2crisp adopts crisp guide (2026-07-20).
 4. (0.2) Any instance-count discrepancies found by the inventory.
-5. (7.3) GPEM tracked-changes requirement.
+5. (7.3) RESOLVED: not required by GPEM; produce and attach anyway (2026-08-01).
 6. (6.7) RESOLVED: `ref_zakharov` to be removed (Rohit, 2026-07-19).
+7. (2.6/2.7) OPEN — DECISION(Rohit): three claims must be withdrawn or
+   requalified in light of the coverage and fairness audit. See
+   `paper_fragments/fairness_and_coverage_memo.md` "Positioning":
+   (a) "strongest heuristic across all three sub-suites" — false against a
+   fairly instrumented ILS on Suite U (negligible effect size);
+   (b) the large-n / DP-infeasible niche — random search matches FH-GA there
+   (+0.0002);
+   (c) "v2-crisp is the recommended configuration" globally — it is the worst
+   FH-GA arm on the common Suite A subset.
+   Recommended replacement: lead on full coverage + certified protocol.

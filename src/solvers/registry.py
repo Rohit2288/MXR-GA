@@ -32,6 +32,11 @@ def default_solvers() -> List[Solver]:
         CPSAT(max_time_s=5.0),
         SimAnneal(),
         ILS(),
+        # R4.3 fairness (task 2.6): the same solvers steered by the shared
+        # crisp guide, so they are not stranded on the mu = 0 plateau while
+        # FH-GA escapes it by construction. See experiments/18.
+        SimAnneal(guide_mode="crisp"),
+        ILS(guide_mode="crisp"),
         VanillaGA(),
         RandomSearch(),
         GreedyCenter(),

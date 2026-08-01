@@ -21,31 +21,57 @@ import numpy as np
 
 from src.core.instance import Instance
 from src.protocol.budget import BudgetedObjective
+from src.protocol.guide import make_guide
 from src.solvers.base import Solver
 
 
 class SimAnneal(Solver):
     name = "sim_anneal"
 
-    def __init__(self, t0: float = 0.1, t_end: float = 1e-4):
+    # Tuned per guide on the same held-out slice, seeds and budget
+    # (experiments/02_sa_tuning.py). The crisp guide is unbounded below, so
+    # its acceptance deltas are on a different scale and it needs -- and gets
+    # -- its own temperature schedule; reusing the mu schedule freezes the
+    # chain. Tuning both arms is what makes the comparison fair (R2.7, R4.3).
+    DEFAULTS = {"mu": (0.1, 1e-4), "crisp": (100.0, 1e-2)}
+
+    def __init__(self, t0: float = None, t_end: float = None,
+                 guide_mode: str = "mu", name: str = None):
+        d_t0, d_tend = self.DEFAULTS[guide_mode]
+        t0 = d_t0 if t0 is None else t0
+        t_end = d_tend if t_end is None else t_end
         if not (t0 > t_end > 0):
             raise ValueError("need t0 > t_end > 0")
         self.t0 = t0
         self.t_end = t_end
+        self.guide_mode = guide_mode
+        if name is not None:
+            self.name = name
+        elif guide_mode != "mu":
+            self.name = f"sim_anneal_{guide_mode}"
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
         n = instance.n
+        items = instance.items
+        guide = make_guide(self.guide_mode, instance)
+
+        def score(idx) -> float:
+            mu = objective.evaluate(idx)
+            if guide is None:
+                return mu
+            return guide(sum(items[i] for i in idx), mu)
+
         density = min(1.0, instance.target.T_M / max(sum(instance.items), 1))
         chrom: List[int] = [1 if rng.random() < density else 0
                             for i in range(n)]
-        cur_f = objective.evaluate([i for i, b in enumerate(chrom) if b])
+        cur_f = score([i for i, b in enumerate(chrom) if b])
         log_ratio = math.log(self.t_end / self.t0)
         max_evals = objective.config.max_evals
         while True:
             i = int(rng.integers(0, n))
             chrom[i] = 1 - chrom[i]
-            cand_f = objective.evaluate([j for j, b in enumerate(chrom) if b])
+            cand_f = score([j for j, b in enumerate(chrom) if b])
             frac = objective.evals_used / max_evals
             temp = self.t0 * math.exp(log_ratio * frac)
             delta = cand_f - cur_f
