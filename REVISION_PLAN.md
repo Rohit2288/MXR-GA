@@ -92,7 +92,7 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 
 ## Phase 7 — Submission deliverables
 
-- [ ] 7.1 Point-by-point response letter: every comment from all four reviewers + editor, quoted, with the response and the manuscript location of the change. Draft here; final wording with Rohit in chat.
+- [x] 7.1 Point-by-point response letter — DRAFTED against final numbers (2026-08-01), all four reviewers + editor, every comment quoted with response and a "Change:" location. Section numbers still bound as (§?) pending Overleaf. Includes a "Summary of claims withdrawn" block — ROHIT to approve keeping it.
 - [x] 7.2 Updated cover letter.
 - [x] 7.3 RESOLVED (2026-08-01, from the journal's own guidelines): GPEM's
       submission guidelines require "all relevant editable source files at
