@@ -15,6 +15,7 @@ grid results are recorded in results/sa_tuning/.
 from __future__ import annotations
 
 import math
+from itertools import compress
 from typing import List
 
 import numpy as np
@@ -55,23 +56,25 @@ class SimAnneal(Solver):
         n = instance.n
         items = instance.items
         guide = make_guide(self.guide_mode, instance)
+        positions = range(n)
 
         def score(idx) -> float:
             mu = objective.evaluate(idx)
             if guide is None:
                 return mu
-            return guide(sum(items[i] for i in idx), mu)
+            return guide(sum(map(items.__getitem__, idx)), mu)
 
         density = min(1.0, instance.target.T_M / max(sum(instance.items), 1))
         chrom: List[int] = [1 if rng.random() < density else 0
                             for i in range(n)]
-        cur_f = score([i for i, b in enumerate(chrom) if b])
+        # compress is the C-level equivalent of the enumerate comprehension.
+        cur_f = score(list(compress(positions, chrom)))
         log_ratio = math.log(self.t_end / self.t0)
         max_evals = objective.config.max_evals
         while True:
             i = int(rng.integers(0, n))
             chrom[i] = 1 - chrom[i]
-            cand_f = score([j for j, b in enumerate(chrom) if b])
+            cand_f = score(list(compress(positions, chrom)))
             frac = objective.evals_used / max_evals
             temp = self.t0 * math.exp(log_ratio * frac)
             delta = cand_f - cur_f

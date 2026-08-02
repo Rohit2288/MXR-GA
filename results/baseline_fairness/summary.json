@@ -79,12 +79,28 @@
     "zero_pct": 80.1639344262295,
     "runs": 2440
   },
+  "T/ils_crisp": {
+    "coverage": 122,
+    "coverage_pct": 100.0,
+    "mean_own": 0.923497015418122,
+    "mean_common": 0.923497015418122,
+    "zero_pct": 7.622950819672131,
+    "runs": 2440
+  },
   "T/sim_anneal": {
     "coverage": 122,
     "coverage_pct": 100.0,
     "mean_own": 0.35827738512516644,
     "mean_common": 0.35827738512516644,
     "zero_pct": 60.204918032786885,
+    "runs": 2440
+  },
+  "T/sim_anneal_crisp": {
+    "coverage": 122,
+    "coverage_pct": 100.0,
+    "mean_own": 0.9404355474802379,
+    "mean_common": 0.9404355474802379,
+    "zero_pct": 5.409836065573771,
     "runs": 2440
   },
   "T/alpha_cut": {
@@ -183,12 +199,28 @@
     "zero_pct": 30.041666666666668,
     "runs": 7200
   },
+  "A/ils_crisp": {
+    "coverage": 360,
+    "coverage_pct": 100.0,
+    "mean_own": 0.8874218077988452,
+    "mean_common": 0.9493720368178269,
+    "zero_pct": 0.7083333333333334,
+    "runs": 7200
+  },
   "A/sim_anneal": {
     "coverage": 360,
     "coverage_pct": 100.0,
     "mean_own": 0.7305781048445451,
     "mean_common": 0.7165423346130708,
     "zero_pct": 11.944444444444445,
+    "runs": 7200
+  },
+  "A/sim_anneal_crisp": {
+    "coverage": 360,
+    "coverage_pct": 100.0,
+    "mean_own": 0.7515580804865071,
+    "mean_common": 0.7580411910194932,
+    "zero_pct": 10.36111111111111,
     "runs": 7200
   },
   "A/alpha_cut": {

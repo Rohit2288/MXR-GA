@@ -37,14 +37,17 @@ IDs: R1.x / R2.x / R3.x (major), R3.mx (minor) / R4.x = reviewer comments; E = e
 - [x] 2.3 Statistics per sub-suite on the new data: Friedman → Wilcoxon + Bonferroni–Holm → Cliff's delta; interpret effect sizes honestly. (R4.2)
 - [x] 2.4 Full-precision reporting: no "≈1.0"; appropriate significant digits + SD + worst case. LaTeX table fragments. (R3.m2)
 - [x] 2.5 Win/tie/loss pairwise table regenerated from new data.
-- [ ] 2.6 Baseline fairness (R2.7, R4.3): SA and ILS were steered by mu, which
-      is flat at zero outside the support, so they stalled on a zero plateau
-      (80.2% / 60.2% zero-mu runs on Suite T) while FH-GA escapes it by
-      construction. Shared guide extracted to `src/protocol/guide.py`, guided
-      variants added, SA re-tuned for the guided scale. **Suite U DONE**
-      (guided ILS +0.0376, guided SA +0.2480; FH-GA's lead over guided ILS is
-      +0.0082, delta = 0.013, NEGLIGIBLE). Suites T and A pending:
-      `./scripts/run_queue9.sh` on the author machine (~8-10 CPU-h).
+- [x] 2.6 Baseline fairness (R2.7, R4.3) — COMPLETE, all three sub-suites,
+      34,640 runs. SA and ILS were steered by mu, which is flat at zero
+      outside the support, so they stalled on a zero plateau while FH-GA
+      escapes it by construction. Shared guide in `src/protocol/guide.py`,
+      guided variants added, SA re-tuned for the guided scale. Corrections:
+      Suite T ILS 0.1983 -> 0.9235, SA 0.3583 -> 0.9404; Suite A ILS
+      0.6319 -> 0.8874; Suite U ILS 0.7001 -> 0.7377, SA 0.3732 -> 0.6213.
+      Against the repaired baselines FH-GA's advantage is small on T
+      (delta=0.234 vs guided ILS) and negligible on A and U; FLSSS edges it
+      on both. One large effect survives: FH-GA over random search on Suite T
+      (delta=+0.508). See `paper_fragments/fairness_and_coverage_memo.md`.
 - [x] 2.7 Coverage-aware comparison (R4.3, R3.4): `table_main_comparison.tex`
       compared dp_exact's mean over the 144 Suite A instances it solves against
       the heuristics' means over all 360. `table_coverage.tex` now reports

@@ -10,6 +10,7 @@ ILS). Termination is protocol-owned.
 
 from __future__ import annotations
 
+from itertools import compress
 from typing import List
 
 import numpy as np
@@ -39,8 +40,12 @@ class ILS(Solver):
         items = instance.items
         guide = make_guide(self.guide_mode, instance)
 
+        positions = range(n)
+
         def _eval(chrom) -> float:
-            idx = [i for i, b in enumerate(chrom) if b]
+            # itertools.compress is the C-level equivalent of
+            # [i for i, b in enumerate(chrom) if b] and yields the same list.
+            idx = list(compress(positions, chrom))
             mu = objective.evaluate(idx)
             if guide is None:
                 return mu
