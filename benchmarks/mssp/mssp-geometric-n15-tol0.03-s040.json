@@ -1,0 +1,1 @@
+{"schema": "mssp-1.0", "instance_id": "mssp-geometric-n15-tol0.03-s040", "items": [10, 4, 15, 34, 3, 18, 12, 10, 9, 18, 3, 6, 7, 25, 6], "target1": {"T_L": 75, "T_M": 77, "T_R": 79}, "target2": {"T_L": 62, "T_M": 63, "T_R": 64}, "metadata": {"n": 15, "distribution": "geometric", "tol_c": 0.03}, "witness": {"assignment": [1, 2, 1, 1, 0, 0, 1, 2, 0, 2, 0, 1, 0, 2, 2], "mu": 1.0}}
