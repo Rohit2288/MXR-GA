@@ -1,0 +1,25 @@
+{
+  "constant_C": 0.56,
+  "violations": [],
+  "n_violations": 0,
+  "per_suite": {
+    "A": {
+      "n": 360,
+      "nonvacuous": 264,
+      "mean_bound": 0.13137384317603393,
+      "mean_observed_plateau_mass": 0.7522673611111111
+    },
+    "T": {
+      "n": 122,
+      "nonvacuous": 77,
+      "mean_bound": -0.3276896761680848,
+      "mean_observed_plateau_mass": 0.9974487704918032
+    },
+    "U": {
+      "n": 384,
+      "nonvacuous": 0,
+      "mean_bound": -110.17161159793173,
+      "mean_observed_plateau_mass": 0.9333522135416666
+    }
+  }
+}

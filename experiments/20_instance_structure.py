@@ -57,8 +57,8 @@ import numpy as np
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
-from src.core.instance import (FSSP2_DIR, iter_instance_paths,  # noqa: E402
-                               load_instance)
+from src.core.instance import (FSSP1_DIR, FSSP2_DIR,  # noqa: E402
+                               iter_instance_paths, load_instance)
 from src.protocol.runner import git_commit  # noqa: E402
 
 OUT = REPO / "results" / "instance_structure"
@@ -83,6 +83,24 @@ def exact_optima() -> dict:
     return best
 
 
+def _mu_vec(target, sums: np.ndarray) -> np.ndarray:
+    """Vectorised triangular membership, identical to target.mu elementwise.
+
+    The scalar scorer is called once per instance in `structure()` to assert
+    agreement, so this fast path cannot drift from src/core/fuzzy.py silently.
+    """
+    s = sums.astype(float)
+    t_l, t_m, t_r = float(target.T_L), float(target.T_M), float(target.T_R)
+    d_l = t_m - t_l
+    d_r = t_r - t_m
+    left = np.divide(s - t_l, d_l, out=np.zeros_like(s),
+                     where=(d_l > 0)) if d_l > 0 else (s >= t_l).astype(float)
+    right = np.divide(t_r - s, d_r, out=np.zeros_like(s),
+                      where=(d_r > 0)) if d_r > 0 else (s <= t_r).astype(float)
+    mu = np.where(s <= t_m, left, right)
+    return np.clip(mu, 0.0, 1.0)
+
+
 def structure(inst, k: int, rng: np.random.Generator) -> dict:
     items = np.asarray(inst.items, dtype=np.int64)
     total = int(items.sum())
@@ -90,8 +108,13 @@ def structure(inst, k: int, rng: np.random.Generator) -> dict:
     # k random subsets under the shared initialisation density.
     mask = rng.random((k, inst.n)) < density
     sums = mask @ items                      # exact integer sums
-    mu = np.fromiter((inst.target.mu(int(s)) for s in sums),
-                     dtype=float, count=k)
+    mu = _mu_vec(inst.target, sums)
+    # Agreement check against the canonical scalar scorer on a small probe.
+    probe = sums[:8]
+    ref = np.array([inst.target.mu(int(x)) for x in probe])
+    if not np.allclose(ref, mu[:8], rtol=0, atol=1e-12):
+        raise AssertionError(
+            f"vectorised mu disagrees with target.mu on {inst.instance_id}")
     p_near = float((mu >= 0.99).mean())
     floor = 1.0 / k
     return {
@@ -107,14 +130,41 @@ def structure(inst, k: int, rng: np.random.Generator) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--samples", type=int, default=4000)
+    ap.add_argument("--max-seconds", type=float, default=None,
+                    help="stop cleanly after N seconds (chunked runs)")
+    ap.add_argument("--corpus", choices=["fsspb2", "fsspb1"],
+                    default="fsspb2",
+                    help="fsspb1 applies the same measure retroactively to "
+                         "the saturated first corpus (R2.6, R4.2)")
     args = ap.parse_args()
+
+    corpus_dir = FSSP2_DIR if args.corpus == "fsspb2" else FSSP1_DIR
+    out_name = ("structure.csv" if args.corpus == "fsspb2"
+                else "structure_fsspb1.csv")
 
     OUT.mkdir(parents=True, exist_ok=True)
     opt = exact_optima()
-    print(f"exact optima available for {len(opt)} instances")
+    print(f"corpus={args.corpus}; exact optima available for {len(opt)} "
+          f"instances")
+
+    # Resumable: the large corpus does not fit in one bounded run.
+    out_path = OUT / out_name
     rows = []
+    done = set()
+    if out_path.exists():
+        with open(out_path) as fh:
+            for r in csv.DictReader(fh):
+                rows.append(r)
+                done.add(r["instance_id"])
+        print(f"resuming: {len(done)} instances already done")
+
     t0 = time.perf_counter()
-    for i, path in enumerate(iter_instance_paths(FSSP2_DIR)):
+    for i, path in enumerate(iter_instance_paths(corpus_dir)):
+        if path.stem in done:
+            continue
+        if args.max_seconds and time.perf_counter() - t0 > args.max_seconds:
+            print(f"  chunk limit reached; rerun to resume", flush=True)
+            break
         inst = load_instance(path)
         # Deterministic per-instance seed (hash() is salted per process).
         seed = int.from_bytes(inst.instance_id.encode()[:8].ljust(8, b"\0"),
@@ -135,20 +185,21 @@ def main() -> int:
             print(f"  {i+1} instances ({time.perf_counter()-t0:.0f}s)",
                   flush=True)
 
-    with open(OUT / "structure.csv", "w", newline="") as fh:
+    with open(OUT / out_name, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
         w.writeheader()
         w.writerows(rows)
-    with open(OUT / "manifest.json", "w") as fh:
+    with open(OUT / f"manifest_{args.corpus}.json", "w") as fh:
         json.dump({
             "git_commit": git_commit(),
             "script": "experiments/20_instance_structure.py",
             "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+            "corpus": args.corpus,
             "samples_per_instance": args.samples,
             "n_instances": len(rows),
             "density_rule": "Bernoulli(T_M / sum(items)), shared with solver init",
         }, fh, indent=2)
-    print(f"wrote {OUT/'structure.csv'} ({len(rows)} instances, "
+    print(f"wrote {OUT/out_name} ({len(rows)} instances, "
           f"{time.perf_counter()-t0:.0f}s)")
     return 0
 
