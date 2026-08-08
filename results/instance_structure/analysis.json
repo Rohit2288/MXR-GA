@@ -2,11 +2,11 @@
   "n_instances_with_optimum": 650,
   "spearman_gap_vs_solver_spread": {
     "rho": 0.22963434095013083,
-    "p": 3.1688139927194768e-09
+    "p": 3.168813992719481e-09
   },
   "spearman_gap_vs_fhga_shortfall": {
     "rho": 0.3123532622691855,
-    "p": 3.5497197715126364e-16
+    "p": 3.549719771512648e-16
   },
   "difficulty_bands": [
     {
@@ -51,7 +51,7 @@
       "solver": "ils_crisp",
       "n": 866,
       "spearman_rho": 0.0745724067531251,
-      "p": 0.0282070951472459,
+      "p": 0.028207095147245922,
       "mean_gain_low_plateau": 0.16964699299285158,
       "mean_gain_high_plateau": 0.22792163246650837,
       "n_low": 43,
@@ -61,7 +61,7 @@
       "solver": "sim_anneal_crisp",
       "n": 866,
       "spearman_rho": 0.6034397141535982,
-      "p": 5.062600297991173e-87,
+      "p": 5.062600297991391e-87,
       "mean_gain_low_plateau": -0.05810741186419256,
       "mean_gain_high_plateau": 0.21424251315745463,
       "n_low": 43,

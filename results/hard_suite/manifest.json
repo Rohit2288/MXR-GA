@@ -1,11 +1,11 @@
 {
-  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
+  "git_commit": "ae5e1b1cebc656990123df263f87ce434e3427d2",
   "script": "experiments/28_hard_suite_run.py",
-  "date_utc": "2026-08-08T11:38:56.150252+00:00",
+  "date_utc": "2026-08-08T17:01:08.628066+00:00",
   "protocol": {
     "max_evals": 50000
   },
-  "seeds": 3,
+  "seeds": 20,
   "solvers": [
     "fhga_v2crisp",
     "fhga_fast",

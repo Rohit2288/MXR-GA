@@ -1,13 +1,13 @@
 {
-  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
+  "git_commit": "41e50138593343135e84522a20639ee0f4114e2e",
   "script": "experiments/30_fkp_run.py",
-  "date_utc": "2026-08-08T16:04:18.970241+00:00",
+  "date_utc": "2026-08-08T17:21:30.620343+00:00",
   "protocol": {
     "max_evals": 50000,
     "plateau_tol": 1e-09,
     "plateau_patience": 10000
   },
-  "seeds": 3,
+  "seeds": 20,
   "solvers": [
     "ils",
     "ils_crisp",
@@ -18,5 +18,5 @@
     "greedy",
     "dp_exact"
   ],
-  "n_instances": 36
+  "n_instances": 228
 }
