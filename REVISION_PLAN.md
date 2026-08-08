@@ -115,16 +115,10 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 4. (0.2) Any instance-count discrepancies found by the inventory.
 5. (7.3) RESOLVED: not required by GPEM; produce and attach anyway (2026-08-01).
 6. (6.7) RESOLVED: `ref_zakharov` to be removed (Rohit, 2026-07-19).
-7. (2.6/2.7) OPEN — DECISION(Rohit): three claims must be withdrawn or
-   requalified in light of the coverage and fairness audit. See
-   `paper_fragments/fairness_and_coverage_memo.md` "Positioning":
-   (a) "strongest heuristic across all three sub-suites" — false against a
-   fairly instrumented ILS on Suite U (negligible effect size);
-   (b) the large-n / DP-infeasible niche — random search matches FH-GA there
-   (+0.0002);
-   (c) "v2-crisp is the recommended configuration" globally — it is the worst
-   FH-GA arm on the common Suite A subset.
-   Recommended replacement: lead on full coverage + certified protocol.
+7. (2.6/2.7) RESOLVED (Rohit delegated, 2026-08-08): adopt the honest
+   reframe — paper leads on the phenomenon+theory+three-domain+protocol
+   contribution; FH-GA demoted to a strong instance; the three over-claims
+   withdrawn. Single source of truth: `paper_fragments/positioning_final.md`.
 
 ## Phase 8 — Contribution-strengthening additions (R2) and manuscript build
 
