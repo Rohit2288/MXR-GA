@@ -1,0 +1,15 @@
+{
+  "git_commit": "4d6533aca971c2388292449994a0eaad3f08be06",
+  "budget": 20000,
+  "seeds": 5,
+  "summary": {
+    "n_instances": 108,
+    "mean_plateau_mass": 0.9643263888888889,
+    "mean_gamma": 0.3192598255212928,
+    "mean_random_search": 0.6807401744787073,
+    "mean_mu_guided_ls": 0.8447098456437638,
+    "mean_crisp_guided_ls": 0.9533413210481513,
+    "crisp_over_mu": 0.10863147540438745,
+    "crisp_over_random": 0.272601146569444
+  }
+}

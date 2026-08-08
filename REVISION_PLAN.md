@@ -122,6 +122,13 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 
 ## Phase 8 — Contribution-strengthening additions (R2) and manuscript build
 
+- [x] 2.17 Third domain (fuzzy multiple-subset-sum, k=2 coupled targets):
+      exact 2-D DP verified vs brute force; 108-instance corpus; phenomenon
+      reproduces (plateau mass 0.964; crisp-guide +0.109 over mu-guide,
+      +0.273 over blind), concentrated where plateau deepest per theory.
+      Third structurally-distinct domain confirming the clipped-objective
+      principle (experiments/31, src/core/mssp.py). (R2 contribution)
+
 - [x] 2.8 Structural difficulty axis Gamma = mu* - best-of-K-random, computed
       per instance with no reference to any solver (experiments/20, 21).
       56.2% of instances with a known optimum are already solved by blind
