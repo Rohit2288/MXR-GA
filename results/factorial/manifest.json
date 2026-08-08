@@ -1,7 +1,7 @@
 {
-  "git_commit": "a344ca193ad6546c58ff8e4d9450f784ab23eca1",
+  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
   "script": "experiments/22_factorial.py",
-  "date_utc": "2026-08-08T09:49:50.443708+00:00",
+  "date_utc": "2026-08-08T13:58:38.466520+00:00",
   "protocol": {
     "max_evals": 50000,
     "plateau_tol": 1e-09,
@@ -46,10 +46,20 @@
     6,
     7,
     8,
-    9
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
   ],
   "suite": "U",
-  "stratify": 24,
-  "n_instances": 96,
+  "stratify": null,
+  "n_instances": 384,
   "n_configs": 32
 }

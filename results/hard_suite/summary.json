@@ -1,0 +1,52 @@
+{
+  "fhga_v2crisp": {
+    "mean": 0.7808222553817058,
+    "worst": 0.0,
+    "zero_pct": 8.771929824561404,
+    "n": 24
+  },
+  "fhga_fast": {
+    "mean": 0.36942117639216143,
+    "worst": 0.0,
+    "zero_pct": 47.22222222222222,
+    "n": 24
+  },
+  "ils_crisp": {
+    "mean": 0.8471234470160028,
+    "worst": 0.4444444444444444,
+    "zero_pct": 6.944444444444445,
+    "n": 24
+  },
+  "sim_anneal_crisp": {
+    "mean": 0.6087553436439802,
+    "worst": 0.0,
+    "zero_pct": 26.38888888888889,
+    "n": 24
+  },
+  "random_search": {
+    "mean": 0.31448039485514695,
+    "worst": 0.0,
+    "zero_pct": 55.55555555555556,
+    "n": 24
+  },
+  "vanilla_ga": {
+    "mean": 0.27206915508943685,
+    "worst": 0.0,
+    "zero_pct": 59.72222222222222,
+    "n": 24
+  },
+  "greedy_center": {
+    "mean": 0.0,
+    "worst": 0.0,
+    "zero_pct": 100.0,
+    "n": 24
+  },
+  "dp_exact": {
+    "mean": 1.0,
+    "worst": 1.0,
+    "zero_pct": 0.0,
+    "n": 24
+  },
+  "_mean_solver_spread": 1.0,
+  "_n_instances": 24
+}

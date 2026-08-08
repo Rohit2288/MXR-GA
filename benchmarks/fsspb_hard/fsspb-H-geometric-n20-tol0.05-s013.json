@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb-H-geometric-n20-tol0.05-s013",
+  "metadata": {
+    "n": 20,
+    "distribution": "geometric",
+    "spread_ratio": 8.399012479744807e-05,
+    "asymmetry": 1.0,
+    "seed": 13,
+    "construction": {
+      "v2_suite": "H",
+      "v2_description": "gamma_targeted_planted_solution",
+      "v2_axes": {
+        "v2_distribution": "geometric"
+      },
+      "generator": "experiments/27_generate_hard.py",
+      "tolerance_multiplier_of_min_item": 0.05,
+      "planted_cardinality": 8,
+      "measured_attainability_gap": 1.0,
+      "measured_plateau_mass": 1.0,
+      "gamma_samples": 4000
+    }
+  },
+  "items": [
+    34211,
+    28359,
+    32083,
+    718,
+    3099,
+    18386,
+    24281,
+    99,
+    15144,
+    33395,
+    10685,
+    34871,
+    982,
+    16119,
+    5035,
+    12558,
+    27188,
+    3910,
+    71717,
+    8282
+  ],
+  "target": {
+    "T_L": 117866.05,
+    "T_M": 117871.0,
+    "T_R": 117875.95
+  },
+  "witness": {
+    "subset_indices": [
+      3,
+      6,
+      7,
+      10,
+      11,
+      13,
+      16,
+      17
+    ],
+    "subset_sum": 117871,
+    "mu_value": 1.0
+  },
+  "difficulty": {
+    "attainability_gap": 1.0,
+    "plateau_mass": 1.0,
+    "label": "gamma_targeted"
+  },
+  "checksum_sha256": "471c07509bab4dc6c92eca76bdb264e06b768b7ebcfd152805e819679bed2225"
+}

@@ -1,0 +1,23 @@
+{
+  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
+  "script": "experiments/29_generate_fkp.py",
+  "date_utc": "2026-08-08T16:02:02.770037+00:00",
+  "count": 108,
+  "sizes": [
+    30,
+    60,
+    100
+  ],
+  "tolerance_fractions": [
+    1.0,
+    4.0,
+    15.0
+  ],
+  "capacity_fraction": 0.5,
+  "correlations": [
+    "uncorrelated",
+    "weakly",
+    "strongly"
+  ],
+  "mean_plateau_mass": 0.7540601851851851
+}

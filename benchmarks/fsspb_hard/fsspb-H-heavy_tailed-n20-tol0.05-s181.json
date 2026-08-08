@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb-H-heavy_tailed-n20-tol0.05-s181",
+  "metadata": {
+    "n": 20,
+    "distribution": "heavy_tailed",
+    "spread_ratio": 0.0007526847732463038,
+    "asymmetry": 1.0,
+    "seed": 181,
+    "construction": {
+      "v2_suite": "H",
+      "v2_description": "gamma_targeted_planted_solution",
+      "v2_axes": {
+        "v2_distribution": "heavy_tailed"
+      },
+      "generator": "experiments/27_generate_hard.py",
+      "tolerance_multiplier_of_min_item": 0.05,
+      "planted_cardinality": 8,
+      "measured_attainability_gap": 0.9238845144356955,
+      "measured_plateau_mass": 0.9995,
+      "gamma_samples": 4000
+    }
+  },
+  "items": [
+    55917,
+    16392,
+    23114,
+    18527,
+    67796,
+    50014,
+    169980,
+    38797,
+    13501,
+    10974,
+    12877,
+    698719,
+    14220,
+    65029,
+    96056,
+    26712,
+    3665,
+    1905,
+    8297,
+    11086
+  ],
+  "target": {
+    "T_L": 252998.75,
+    "T_M": 253094.0,
+    "T_R": 253189.25
+  },
+  "witness": {
+    "subset_indices": [
+      1,
+      4,
+      7,
+      9,
+      10,
+      14,
+      17,
+      18
+    ],
+    "subset_sum": 253094,
+    "mu_value": 1.0
+  },
+  "difficulty": {
+    "attainability_gap": 0.9238845144356955,
+    "plateau_mass": 0.9995,
+    "label": "gamma_targeted"
+  },
+  "checksum_sha256": "c21e3219fde08de2c87e01ca0ff54aee1d6d60e02c68bcb39fd39fd1c2b067b3"
+}

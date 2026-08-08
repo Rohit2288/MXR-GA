@@ -1,164 +1,164 @@
 {
-  "n_instances": 96,
+  "n_instances": 384,
   "n_configs": 32,
   "contrasts": [
     {
       "contrast": "Hybrid initialisation",
       "kind": "main",
-      "effect": 0.07360179824966295,
-      "p_holm": 0.001633307779212708,
-      "cliffs_delta": 0.09233940972222232,
+      "effect": 0.021889012529494822,
+      "p_holm": 0.2004840486536463,
+      "cliffs_delta": 0.02412245008680558,
       "magnitude": "negligible"
     },
     {
       "contrast": "FB-UX crossover",
       "kind": "main",
-      "effect": -0.00606073126365958,
-      "p_holm": 0.011966134950739601,
-      "cliffs_delta": -0.00792100694444442,
+      "effect": -0.007707107214016906,
+      "p_holm": 4.060437689850447e-31,
+      "cliffs_delta": -0.01663547092013884,
       "magnitude": "negligible"
     },
     {
       "contrast": "Impact-aware mutation",
       "kind": "main",
-      "effect": -0.003692152126499093,
-      "p_holm": 0.01374721677891701,
-      "cliffs_delta": -0.00824652777777779,
+      "effect": -0.002714364686129289,
+      "p_holm": 5.6798967546948856e-14,
+      "cliffs_delta": -0.00590684678819442,
       "magnitude": "negligible"
     },
     {
       "contrast": "Direction-guided LS",
       "kind": "main",
-      "effect": 0.001542840135759782,
-      "p_holm": 1.0,
-      "cliffs_delta": 0.006293402777777679,
+      "effect": 0.0130676126520749,
+      "p_holm": 4.2905231759579355e-25,
+      "cliffs_delta": 0.02602132161458326,
       "magnitude": "negligible"
     },
     {
       "contrast": "Mamdani controller",
       "kind": "main",
-      "effect": 0.0033388275528501987,
-      "p_holm": 0.6487501339242652,
-      "cliffs_delta": 0.00792100694444442,
+      "effect": -0.004390563843027051,
+      "p_holm": 1.2157005022475128e-08,
+      "cliffs_delta": -0.00544569227430558,
       "magnitude": "negligible"
     },
     {
       "contrast": "init $\\times$ FB-UX",
       "kind": "inter",
-      "effect": 0.0017000999479414025,
-      "p_holm": 0.5991677211697252,
-      "cliffs_delta": 0.0003255208333332593,
+      "effect": 2.7235631142596972e-05,
+      "p_holm": 1.0,
+      "cliffs_delta": -4.747178819441977e-05,
       "magnitude": "negligible"
     },
     {
       "contrast": "init $\\times$ impact",
       "kind": "inter",
-      "effect": 0.0020932975840920465,
-      "p_holm": 0.21162430153065748,
-      "cliffs_delta": 0.0026041666666667407,
+      "effect": 0.0007195468634743074,
+      "p_holm": 0.2493515592030211,
+      "cliffs_delta": 0.0006374782986111605,
       "magnitude": "negligible"
     },
     {
       "contrast": "init $\\times$ LS",
       "kind": "inter",
-      "effect": -0.002941429025949849,
-      "p_holm": 1.0,
-      "cliffs_delta": -0.00835503472222221,
+      "effect": 0.0003696039518672478,
+      "p_holm": 0.8072254941924739,
+      "cliffs_delta": 8.138020833325932e-05,
       "magnitude": "negligible"
     },
     {
       "contrast": "init $\\times$ ctrl",
       "kind": "inter",
-      "effect": -0.0020299106544178214,
+      "effect": -0.00032670315799354643,
       "p_holm": 1.0,
-      "cliffs_delta": -0.0027126736111111605,
+      "cliffs_delta": 0.0005425347222223209,
       "magnitude": "negligible"
     },
     {
       "contrast": "FB-UX $\\times$ impact",
       "kind": "inter",
-      "effect": -0.0008674355874888073,
-      "p_holm": 1.0,
-      "cliffs_delta": -0.0005425347222222099,
+      "effect": -0.0005883273197651029,
+      "p_holm": 0.025065212110926556,
+      "cliffs_delta": -0.0017022026909722099,
       "magnitude": "negligible"
     },
     {
       "contrast": "FB-UX $\\times$ LS",
       "kind": "inter",
-      "effect": 0.00448598795926336,
-      "p_holm": 0.003709131932800247,
-      "cliffs_delta": 0.0107421875,
+      "effect": 0.006201106409513546,
+      "p_holm": 6.238205651770131e-32,
+      "cliffs_delta": 0.013312445746527679,
       "magnitude": "negligible"
     },
     {
       "contrast": "FB-UX $\\times$ ctrl",
       "kind": "inter",
-      "effect": 0.0014001278074345924,
-      "p_holm": 0.5073978280228961,
-      "cliffs_delta": 0.003363715277777679,
+      "effect": -2.5454964939664038e-05,
+      "p_holm": 1.0,
+      "cliffs_delta": -0.00016276041666662966,
       "magnitude": "negligible"
     },
     {
       "contrast": "impact $\\times$ LS",
       "kind": "inter",
-      "effect": 0.00012106476320006276,
-      "p_holm": 1.0,
-      "cliffs_delta": 0.0004340277777776791,
+      "effect": 0.0006222445590577941,
+      "p_holm": 0.004079287423540156,
+      "cliffs_delta": 0.0022922092013888395,
       "magnitude": "negligible"
     },
     {
       "contrast": "impact $\\times$ ctrl",
       "kind": "inter",
-      "effect": -7.017022999589173e-05,
+      "effect": -0.00010554410607133136,
       "p_holm": 1.0,
-      "cliffs_delta": -0.0015190972222222099,
+      "cliffs_delta": 3.3908420138839546e-05,
       "magnitude": "negligible"
     },
     {
       "contrast": "LS $\\times$ ctrl",
       "kind": "inter",
-      "effect": 0.0014048486315215714,
-      "p_holm": 1.0,
-      "cliffs_delta": 0.002387152777777679,
+      "effect": 0.0038660492134717783,
+      "p_holm": 9.249600400769457e-11,
+      "cliffs_delta": 0.005683051215277679,
       "magnitude": "negligible"
     }
   ],
   "best_configs": [
     {
-      "config": "init+impact+ctrl",
-      "mean_mu": 0.6481115027560896
+      "config": "init+ls",
+      "mean_mu": 0.7384443121471829
     },
     {
-      "config": "init",
-      "mean_mu": 0.6449225997167016
+      "config": "init+ls+ctrl",
+      "mean_mu": 0.7374360911611747
     },
     {
-      "config": "init+impact",
-      "mean_mu": 0.6441473490094736
+      "config": "init+impact+ls",
+      "mean_mu": 0.7373132114770641
     },
     {
-      "config": "init+ctrl",
-      "mean_mu": 0.644083480935099
+      "config": "init+xover+ls",
+      "mean_mu": 0.7371055758739034
     },
     {
       "config": "init+xover+ls+ctrl",
-      "mean_mu": 0.6427875093290727
+      "mean_mu": 0.7364823769421205
     }
   ],
   "worst_configs": [
     {
-      "config": "xover+impact+ctrl",
-      "mean_mu": 0.5588267679166118
-    },
-    {
-      "config": "xover",
-      "mean_mu": 0.5570684833941444
-    },
-    {
       "config": "xover+impact",
-      "mean_mu": 0.5525905665671293
+      "mean_mu": 0.6968041373450525
+    },
+    {
+      "config": "xover+ctrl",
+      "mean_mu": 0.6937757069367171
+    },
+    {
+      "config": "xover+impact+ctrl",
+      "mean_mu": 0.688874945871466
     }
   ],
-  "all_on": 0.6397354149725945,
-  "all_off": 0.5768095512623957
+  "all_on": 0.7348146967174887,
+  "all_off": 0.7146548331052638
 }

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.1",
+  "instance_id": "fsspb-H-bimodal-n20-tol0.25-s075",
+  "metadata": {
+    "n": 20,
+    "distribution": "bimodal",
+    "spread_ratio": 0.001578637083869502,
+    "asymmetry": 1.0,
+    "seed": 75,
+    "construction": {
+      "v2_suite": "H",
+      "v2_description": "gamma_targeted_planted_solution",
+      "v2_axes": {
+        "v2_distribution": "bimodal"
+      },
+      "generator": "experiments/27_generate_hard.py",
+      "tolerance_multiplier_of_min_item": 0.25,
+      "planted_cardinality": 12,
+      "measured_attainability_gap": 1.0,
+      "measured_plateau_mass": 1.0,
+      "gamma_samples": 4000
+    }
+  },
+  "items": [
+    95222,
+    3655,
+    86948,
+    4777,
+    98537,
+    93918,
+    1809,
+    3737,
+    95029,
+    4732,
+    97335,
+    80085,
+    98945,
+    2397,
+    1612,
+    3657,
+    80252,
+    1853,
+    3940,
+    95517
+  ],
+  "target": {
+    "T_L": 510164.0,
+    "T_M": 510567.0,
+    "T_R": 510970.0
+  },
+  "witness": {
+    "subset_indices": [
+      0,
+      1,
+      3,
+      4,
+      9,
+      10,
+      12,
+      13,
+      15,
+      17,
+      18,
+      19
+    ],
+    "subset_sum": 510567,
+    "mu_value": 1.0
+  },
+  "difficulty": {
+    "attainability_gap": 1.0,
+    "plateau_mass": 1.0,
+    "label": "gamma_targeted"
+  },
+  "checksum_sha256": "3df20b736341bde26d5e8478494c2459190fbc528780b47298614ae328603caf"
+}

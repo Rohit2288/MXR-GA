@@ -1,0 +1,20 @@
+{
+  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
+  "script": "experiments/28_hard_suite_run.py",
+  "date_utc": "2026-08-08T11:38:56.150252+00:00",
+  "protocol": {
+    "max_evals": 50000
+  },
+  "seeds": 3,
+  "solvers": [
+    "fhga_v2crisp",
+    "fhga_fast",
+    "flsss",
+    "ils_crisp",
+    "sim_anneal_crisp",
+    "random_search",
+    "vanilla_ga",
+    "greedy_center",
+    "dp_exact"
+  ]
+}
