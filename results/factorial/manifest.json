@@ -1,7 +1,7 @@
 {
-  "git_commit": "6f75877be8385efb56665354c549aaa7dea66a45",
+  "git_commit": "b01bf676977bbcf7b621395b1051b490faab6812",
   "script": "experiments/22_factorial.py",
-  "date_utc": "2026-08-08T13:58:38.466520+00:00",
+  "date_utc": "2026-08-08T16:19:19.773282+00:00",
   "protocol": {
     "max_evals": 50000,
     "plateau_tol": 1e-09,
