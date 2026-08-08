@@ -125,3 +125,50 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
    (c) "v2-crisp is the recommended configuration" globally — it is the worst
    FH-GA arm on the common Suite A subset.
    Recommended replacement: lead on full coverage + certified protocol.
+
+## Phase 8 — Contribution-strengthening additions (R2) and manuscript build
+
+- [x] 2.8 Structural difficulty axis Gamma = mu* - best-of-K-random, computed
+      per instance with no reference to any solver (experiments/20, 21).
+      56.2% of instances with a known optimum are already solved by blind
+      sampling. FH-GA over random search by Gamma quartile: +0.0055 / +0.0021
+      / +0.0107 / +0.1905. (R2.6, R4.2)
+- [x] 2.9 Plateau mass quantified: predicts the guided-instrumentation gain
+      (SA rho=+0.603, p=5e-87). Generalises the finding to clipped objectives
+      beyond FSSP. (R2.7, R4.3)
+- [x] 2.10 Full 2^5 factorial, 30,720 runs, main effects + all 10 two-way
+      interactions. Only hybrid init has a positive main effect (+0.0736);
+      FB-UX and impact-aware mutation are negatively signed; one negligible
+      interaction. Best config in the design space is init+impact+ctrl,
+      not the proposed algorithm. (R2.2)
+- [x] 2.11 LS-conditional-on-repair check: the factorial's null LS main effect
+      and the leave-one-out's large one are reconciled — LS contributes only
+      when repair is active (+0.0099 p=0.028 vs -0.0010 p=0.89). Reported,
+      not smoothed. (R2.2)
+- [x] 2.12 Formal reduction proposition mu = max(0, 1-d) with reductions both
+      ways; FSSP conceded as closest-subset-sum with asymmetric penalties.
+      (R2.1)
+- [x] 7.5 Revised manuscript BUILT (scripts/build_manuscript.py) from the
+      frozen submitted .tex plus generated fragments; marked-up version via
+      latexdiff. Two deliverables: manuscript/fhga_manuscript_revised.tex and
+      manuscript/fhga_manuscript_diff.tex. See manuscript/README.md.
+- [ ] 7.6 Confirmatory runs before submission: ./scripts/run_queue10.sh
+      stage 1 (Suite U at full scale, ~1.5 h) then rebuild. Stage 2 (Suite A,
+      ~12 h) optional.
+- [ ] 7.7 Overleaf: bind section numbers into the response letter, apply the
+      journal template, apply condensation_guidance.md, final proofread,
+      upload figures.
+
+## Author decisions (2026-08-03, Rohit)
+
+1. Paper framing: BENCHMARK + PROTOCOL paper. FH-GA is the worked case study;
+   contributions reordered to benchmark (with difficulty axis), protocol,
+   clipped-objective analysis.
+2. Recommended configuration: UNCHANGED (v2-crisp) pending queue10 stage 1.
+   The factorial winner init+impact+ctrl came from a 96-instance slice with
+   the top four configs inside 0.004.
+3. Response letter: KEEP the "Summary of claims withdrawn" block, all seven,
+   in the current direct wording.
+4. Sequencing: confirmatory runs before final numbers are fixed. The
+   manuscript is built so that re-running the generators refreshes every
+   table automatically.

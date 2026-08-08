@@ -1,0 +1,8 @@
+{
+  "git_commit": "a344ca193ad6546c58ff8e4d9450f784ab23eca1",
+  "script": "experiments/20_instance_structure.py",
+  "date_utc": "2026-08-08T09:19:11.549585+00:00",
+  "samples_per_instance": 4000,
+  "n_instances": 866,
+  "density_rule": "Bernoulli(T_M / sum(items)), shared with solver init"
+}

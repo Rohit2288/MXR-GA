@@ -1,0 +1,71 @@
+{
+  "n_instances_with_optimum": 650,
+  "spearman_gap_vs_solver_spread": {
+    "rho": 0.22963434095013083,
+    "p": 3.1688139927194768e-09
+  },
+  "spearman_gap_vs_fhga_shortfall": {
+    "rho": 0.3123532622691855,
+    "p": 3.5497197715126364e-16
+  },
+  "difficulty_bands": [
+    {
+      "band": "Q1 (easiest)",
+      "n": 162,
+      "mean_gap": -2.1587669923266933e-17,
+      "mean_solver_spread": 0.4037425059052709,
+      "fhga_v2crisp": 0.82813642503508,
+      "random_search": 0.8226527826925929,
+      "delta": 0.005483642342487105
+    },
+    {
+      "band": "Q2",
+      "n": 162,
+      "mean_gap": 2.05596856412066e-18,
+      "mean_solver_spread": 0.33746099023276355,
+      "fhga_v2crisp": 0.6957238604721251,
+      "random_search": 0.6936599179504636,
+      "delta": 0.0020639425216615326
+    },
+    {
+      "band": "Q3",
+      "n": 162,
+      "mean_gap": 0.019739491046931824,
+      "mean_solver_spread": 0.42085342570357637,
+      "fhga_v2crisp": 0.9748839964160699,
+      "random_search": 0.9641592258375002,
+      "delta": 0.010724770578569687
+    },
+    {
+      "band": "Q4 (hardest)",
+      "n": 164,
+      "mean_gap": 0.31563998600872917,
+      "mean_solver_spread": 0.5301657367737229,
+      "fhga_v2crisp": 0.8753462894683628,
+      "random_search": 0.6848239501411691,
+      "delta": 0.19052233932719365
+    }
+  ],
+  "plateau_predicts_guided_gain": [
+    {
+      "solver": "ils_crisp",
+      "n": 866,
+      "spearman_rho": 0.0745724067531251,
+      "p": 0.0282070951472459,
+      "mean_gain_low_plateau": 0.16964699299285158,
+      "mean_gain_high_plateau": 0.22792163246650837,
+      "n_low": 43,
+      "n_high": 823
+    },
+    {
+      "solver": "sim_anneal_crisp",
+      "n": 866,
+      "spearman_rho": 0.6034397141535982,
+      "p": 5.062600297991173e-87,
+      "mean_gain_low_plateau": -0.05810741186419256,
+      "mean_gain_high_plateau": 0.21424251315745463,
+      "n_low": 43,
+      "n_high": 823
+    }
+  ]
+}
