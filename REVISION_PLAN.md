@@ -156,7 +156,7 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 - [ ] 7.6 Confirmatory runs before submission: ./scripts/run_queue10.sh
       stage 1 (Suite U at full scale, ~1.5 h) then rebuild. Stage 2 (Suite A,
       ~12 h) optional.
-- [ ] 7.7 Overleaf: bind section numbers into the response letter, apply the
+- [~] 7.7 Overleaf: bind section numbers into the response letter, apply the
       journal template, apply condensation_guidance.md, final proofread,
       upload figures.
 
