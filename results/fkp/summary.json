@@ -1,0 +1,47 @@
+{
+  "n_instances": 228,
+  "seeds": 20,
+  "mean_plateau_mass": 0.8777697368421051,
+  "solvers": {
+    "dp_exact": {
+      "mean_mu": 1.0,
+      "zero_rate": 0.0,
+      "pct_of_exact": 1.0
+    },
+    "greedy": {
+      "mean_mu": 0.5007407795593476,
+      "zero_rate": 0.3815789473684211,
+      "pct_of_exact": 0.5007407795593476
+    },
+    "ils": {
+      "mean_mu": 0.572542822507543,
+      "zero_rate": 0.4267543859649123,
+      "pct_of_exact": 0.572542822507543
+    },
+    "ils_crisp": {
+      "mean_mu": 0.820289595774867,
+      "zero_rate": 0.16973684210526316,
+      "pct_of_exact": 0.820289595774867
+    },
+    "random_search": {
+      "mean_mu": 0.6628214504069252,
+      "zero_rate": 0.2912280701754386,
+      "pct_of_exact": 0.6628214504069252
+    },
+    "sim_anneal": {
+      "mean_mu": 0.6455389910390363,
+      "zero_rate": 0.29539473684210527,
+      "pct_of_exact": 0.6455389910390363
+    },
+    "sim_anneal_crisp": {
+      "mean_mu": 0.6692820084206786,
+      "zero_rate": 0.28925438596491226,
+      "pct_of_exact": 0.6692820084206786
+    },
+    "vanilla_ga": {
+      "mean_mu": 0.703006643656206,
+      "zero_rate": 0.29407894736842105,
+      "pct_of_exact": 0.703006643656206
+    }
+  }
+}
