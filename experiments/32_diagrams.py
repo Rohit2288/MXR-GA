@@ -148,9 +148,13 @@ def framework():
     ymid = y + h / 2
     _arrow(ax, (x1 + W, ymid), (x2, ymid)); _pill(ax, (x1 + W + x2) / 2, ymid, "offspring")
     _arrow(ax, (x2 + W, ymid), (x3, ymid)); _pill(ax, (x2 + W + x3) / 2, ymid, "refined pop.")
-    # input splits to all three stages
-    for xc in (x1 + W / 2, x2 + W / 2, x3 + W / 2):
-        _arrow(ax, (xc, 0.905), (xc, y + h))
+    # input distributes to all three stages through a horizontal bus
+    xc1, xc2, xc3 = x1 + W / 2, x2 + W / 2, x3 + W / 2
+    ybus = 0.873
+    ax.plot([0.5, 0.5], [0.905, ybus], color=INK, lw=1.6, zorder=1)
+    ax.plot([xc1, xc3], [ybus, ybus], color=INK, lw=1.6, zorder=1)
+    for xc in (xc1, xc2, xc3):
+        _arrow(ax, (xc, ybus), (xc, y + h))
     # output
     ax.add_patch(FancyBboxPatch((0.27, 0.0), 0.46, 0.125,
         boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
