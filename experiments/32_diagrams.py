@@ -68,81 +68,105 @@ def _arrow(ax, p, q, color=INK, lw=1.6, style="-|>", ls="-"):
         shrinkA=2, shrinkB=2))
 
 
+def _stagebox(ax, x, y, w, h, fc, ec, num, title, items, fs=8.0):
+    """A stage box with a numbered badge, title, and a left-aligned bulleted
+    list. Each item is (lines, highlight); lines is a list of strings (first
+    carries the bullet, the rest hang-indent)."""
+    ax.add_patch(FancyBboxPatch((x, y), w, h,
+        boxstyle="round,pad=0.012,rounding_size=0.018", linewidth=1.8,
+        edgecolor=ec, facecolor=fc, zorder=2))
+    ax.text(x + 0.045, y + h - 0.052, num, ha="center", va="center",
+            fontsize=9.5, fontweight="bold", color="white", zorder=4,
+            bbox=dict(boxstyle="circle,pad=0.34", facecolor=ec,
+                      edgecolor=ec, linewidth=0))
+    ax.text(x + 0.088, y + h - 0.052, title, ha="left", va="center",
+            fontsize=fs + 3.0, fontweight="bold", color=ec, zorder=3)
+    ax.plot([x + 0.03, x + w - 0.03], [y + h - 0.10] * 2, color=ec,
+            lw=1.0, zorder=3)
+    xb, xt = x + 0.035, x + 0.068
+    yy = y + h - 0.155
+    dy, gap = 0.0405, 0.010
+    for lines, hi in items:
+        col = ec if hi else INK
+        ax.text(xb, yy, r"$\bullet$", ha="left", va="top", fontsize=fs,
+                color=col, zorder=3)
+        for ln in lines:
+            ax.text(xt, yy, ln, ha="left", va="top", fontsize=fs, color=col,
+                    fontweight="bold" if hi else "normal", zorder=3)
+            yy -= dy
+        yy -= gap
+
+
 def framework():
-    fig, ax = plt.subplots(figsize=(9.2, 5.4))
+    fig, ax = plt.subplots(figsize=(10.0, 6.6))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
 
     # Input
-    ax.add_patch(FancyBboxPatch((0.30, 0.905), 0.40, 0.075,
-        boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.4,
+    ax.add_patch(FancyBboxPatch((0.28, 0.905), 0.44, 0.078,
+        boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
         edgecolor=VIOLET_E, facecolor=VIOLET, zorder=2))
-    ax.text(0.5, 0.9425,
-            r"Input: items $S=\{a_1,\dots,a_n\}$,  fuzzy target "
+    ax.text(0.5, 0.944,
+            r"$\bf{Input:}$  items $S=\{a_1,\dots,a_n\}$,  fuzzy target "
             r"$\tilde{T}=(T^{L},T^{M},T^{R})$",
-            ha="center", va="center", fontsize=9, fontweight="bold", color=INK)
+            ha="center", va="center", fontsize=9.5, color=INK)
 
-    y, h = 0.30, 0.53
-    _box(ax, 0.025, y, 0.30, h, BLUE, BLUE_E, "Population & variation", [
-        "Binary chromosome encoding",
-        r"Hybrid init: greedy 30%",
-        r"$+\ \alpha$-cut 20% $+$ random 50%",
-        r"Tournament selection ($k{=}3$)",
-        "Fitness-biased uniform",
-        "crossover (FB-UX)",
-        "Impact-aware two-phase mutation",
-        r"Elitist replacement ($\mu{+}\lambda$)",
-        "Restart on stagnation",
+    y, h = 0.275, 0.565
+    W = 0.305
+    x1, x2, x3 = 0.015, 0.348, 0.681
+
+    _stagebox(ax, x1, y, W, h, BLUE, BLUE_E, "1", "Population & variation", [
+        ([r"Binary chromosome encoding"], False),
+        ([r"Hybrid initialization (greedy 30%",
+          r"$+\ \alpha$-cut 20% $+$ random 50%)"], False),
+        ([r"Tournament selection ($k{=}3$)"], False),
+        ([r"Fitness-biased uniform crossover", r"(FB-UX)"], False),
+        ([r"Impact-aware two-phase mutation"], False),
+        ([r"Elitist replacement ($\mu{+}\lambda$)"], False),
+        ([r"Restart on stagnation"], False),
     ])
-    _box(ax, 0.35, y, 0.30, h, ORANGE, ORANGE_E, "Local refinement", [
-        ("Direction-guided local search", True),
-        (r"(sign of $\Delta\mu$, not a gradient)", True),
-        r"single-flip, 1-1 swap (top-$K$),",
-        "random kick",
-        "Windowed repair for",
-        "outside-support offspring",
-        ("recommended: exact DP-window", True),
-        r"(WBF variant enumerates $2^{w}$)",
-        "Lamarckian update",
+    _stagebox(ax, x2, y, W, h, ORANGE, ORANGE_E, "2", "Local refinement", [
+        ([r"Direction-guided local search",
+          r"(sign of $\Delta\mu$, not a gradient)"], True),
+        ([r"Single-flip, 1-1 swap moves"], False),
+        ([r"Random kick"], False),
+        ([r"Windowed repair for",
+          r"outside-support offspring"], False),
+        ([r"Exact DP-window recommendation",
+          r"(WBF variant enumerates $2^{w}$)"], True),
+        ([r"Lamarckian update"], False),
     ])
-    _box(ax, 0.675, y, 0.30, h, GREEN, GREEN_E, "Online fuzzy control", [
-        r"Mamdani $3\times3$ inference",
-        r"Inputs: diversity $D$, best $\mu^\star$",
-        r"Outputs: $p_c,\ p_m$",
-        "Triangular MFs, min-norm,",
-        "centroid defuzzification",
-        ("Termination: shared", True),
-        ("budget or plateau", True),
-        ("(protocol-owned)", True),
+    _stagebox(ax, x3, y, W, h, GREEN, GREEN_E, "3", "Online fuzzy control", [
+        ([r"Mamdani $3\times3$ inference"], False),
+        ([r"Inputs: diversity $D$, best $\mu^\star$"], False),
+        ([r"Outputs: $p_c,\ p_m$"], False),
+        ([r"Triangular membership functions"], False),
+        ([r"Centroid defuzzification"], False),
+        ([r"Termination: shared budget",
+          r"or plateau (protocol-owned)"], True),
     ])
 
-    # numbered stage badges next to each box title
-    for bx, col in [(0.052, BLUE_E), (0.377, ORANGE_E), (0.702, GREEN_E)]:
-        n = {0.052: "1", 0.377: "2", 0.702: "3"}[bx]
-        ax.text(bx, 0.787, n, ha="center", va="center", fontsize=9,
-                fontweight="bold", color="white", zorder=4,
-                bbox=dict(boxstyle="circle,pad=0.32", facecolor=col,
-                          edgecolor=col, linewidth=0))
-
-    # inter-box pills/arrows
-    _arrow(ax, (0.325, y + h / 2), (0.35, y + h / 2)); _pill(ax, 0.3375, y + h / 2 + 0.055, "offspring")
-    _arrow(ax, (0.65, y + h / 2), (0.675, y + h / 2)); _pill(ax, 0.6625, y + h / 2 + 0.055, "refined pop.")
-    # input -> box1
-    _arrow(ax, (0.42, 0.905), (0.175, y + h))
-    # box3 -> output
-    ax.add_patch(FancyBboxPatch((0.28, 0.045), 0.44, 0.075,
-        boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.4,
+    ymid = y + h / 2
+    _arrow(ax, (x1 + W, ymid), (x2, ymid)); _pill(ax, (x1 + W + x2) / 2, ymid, "offspring")
+    _arrow(ax, (x2 + W, ymid), (x3, ymid)); _pill(ax, (x2 + W + x3) / 2, ymid, "refined pop.")
+    # input splits to all three stages
+    for xc in (x1 + W / 2, x2 + W / 2, x3 + W / 2):
+        _arrow(ax, (xc, 0.905), (xc, y + h))
+    # output
+    ax.add_patch(FancyBboxPatch((0.27, 0.0), 0.46, 0.125,
+        boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
         edgecolor=VIOLET_E, facecolor=VIOLET, zorder=2))
-    ax.text(0.5, 0.0825,
-            r"Output: best subset $x^\star\in\{0,1\}^n$ maximising "
-            r"$\mu_{\tilde{T}}(\sum_i a_i x_i)$",
-            ha="center", va="center", fontsize=9, fontweight="bold", color=INK)
-    _arrow(ax, (0.5, y), (0.5, 0.12))
-    # feedback loop (dashed) box3 bottom -> box1 bottom
-    _arrow(ax, (0.825, y), (0.825, 0.16), color="#777", lw=1.2, ls=(0, (4, 3)))
-    _arrow(ax, (0.825, 0.16), (0.175, 0.16), color="#777", lw=1.2, ls=(0, (4, 3)))
-    _arrow(ax, (0.175, 0.16), (0.175, y), color="#777", lw=1.2, ls=(0, (4, 3)))
-    ax.text(0.5, 0.175, "adaptive $(p_c, p_m)$ feedback per generation",
-            ha="center", va="bottom", fontsize=7.6, style="italic", color="#555")
+    ax.text(0.5, 0.088, r"$\bf{Output:}$  best subset $x^\star\in\{0,1\}^n$",
+            ha="center", va="center", fontsize=9.5, color=INK)
+    ax.text(0.5, 0.038, r"maximising $\mu_{\tilde{T}}\left(\sum_{i=1}^{n} a_i x_i\right)$",
+            ha="center", va="center", fontsize=9.5, color=INK)
+    _arrow(ax, (0.5, y), (0.5, 0.126))
+    # dashed adaptive-feedback loop: box3 bottom -> box1 bottom
+    yb = 0.155
+    _arrow(ax, (x3 + W / 2, y), (x3 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
+    _arrow(ax, (x3 + W / 2, yb), (x1 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
+    _arrow(ax, (x1 + W / 2, yb), (x1 + W / 2, y), color="#888", lw=1.2, ls=(0, (4, 3)))
+    ax.text(0.5, yb + 0.006, "adaptive feedback per generation",
+            ha="center", va="bottom", fontsize=8.0, style="italic", color="#555")
 
     fig.tight_layout(pad=0.3)
     fig.savefig(OUT / "fhga_framework.pdf", bbox_inches="tight")
