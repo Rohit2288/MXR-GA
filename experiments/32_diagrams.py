@@ -61,11 +61,11 @@ def _pill(ax, x, y, text, fs=7.6):
             color=INK, style="italic", zorder=5)
 
 
-def _arrow(ax, p, q, color=INK, lw=1.6, style="-|>", ls="-"):
+def _arrow(ax, p, q, color=INK, lw=1.6, style="-|>", ls="-", shrink=2, scale=12):
     ax.add_patch(FancyArrowPatch(
-        p, q, arrowstyle=style, mutation_scale=13, linewidth=lw,
+        p, q, arrowstyle=style, mutation_scale=scale, linewidth=lw,
         color=color, linestyle=ls, zorder=1,
-        shrinkA=2, shrinkB=2))
+        shrinkA=shrink, shrinkB=shrink))
 
 
 def _stagebox(ax, x, y, w, h, fc, ec, num, title, items, fs=8.0):
@@ -148,13 +148,17 @@ def framework():
     ymid = y + h / 2
     _arrow(ax, (x1 + W, ymid), (x2, ymid)); _pill(ax, (x1 + W + x2) / 2, ymid, "offspring")
     _arrow(ax, (x2 + W, ymid), (x3, ymid)); _pill(ax, (x2 + W + x3) / 2, ymid, "refined pop.")
-    # input distributes to all three stages through a horizontal bus
+    # input distributes to all three stages through a right-angle bus
     xc1, xc2, xc3 = x1 + W / 2, x2 + W / 2, x3 + W / 2
-    ybus = 0.873
-    ax.plot([0.5, 0.5], [0.905, ybus], color=INK, lw=1.6, zorder=1)
-    ax.plot([xc1, xc3], [ybus, ybus], color=INK, lw=1.6, zorder=1)
+    ytop = y + h
+    ybus = 0.876
+    ax.plot([0.5, 0.5], [0.905, ybus], color=INK, lw=1.6,
+            solid_capstyle="round", zorder=1)
+    ax.plot([xc1, xc3], [ybus, ybus], color=INK, lw=1.6,
+            solid_capstyle="round", zorder=1)
     for xc in (xc1, xc2, xc3):
-        _arrow(ax, (xc, ybus), (xc, y + h))
+        ax.plot([xc, xc], [ybus, ytop + 0.012], color=INK, lw=1.6, zorder=1)
+        _arrow(ax, (xc, ytop + 0.03), (xc, ytop), shrink=0, scale=12)
     # output
     ax.add_patch(FancyBboxPatch((0.28, 0.035), 0.44, 0.135,
         boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
@@ -164,11 +168,13 @@ def framework():
     ax.text(0.5, 0.075, r"maximising $\mu_{\tilde{T}}\left(\sum_{i=1}^{n} a_i x_i\right)$",
             ha="center", va="center", fontsize=9.5, color=INK)
     _arrow(ax, (0.5, y), (0.5, 0.172))
-    # dashed adaptive-feedback loop: box3 bottom -> box1 bottom
+    # dashed adaptive-feedback loop (control -> population): one arrowhead
     yb = 0.225
-    _arrow(ax, (x3 + W / 2, y), (x3 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
-    _arrow(ax, (x3 + W / 2, yb), (x1 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
-    _arrow(ax, (x1 + W / 2, yb), (x1 + W / 2, y), color="#888", lw=1.2, ls=(0, (4, 3)))
+    dstyle = (0, (4, 3))
+    ax.plot([xc3, xc3], [y, yb], color="#888", lw=1.2, ls=dstyle, zorder=1)
+    ax.plot([xc3, xc1], [yb, yb], color="#888", lw=1.2, ls=dstyle, zorder=1)
+    ax.plot([xc1, xc1], [yb, y - 0.03], color="#888", lw=1.2, ls=dstyle, zorder=1)
+    _arrow(ax, (xc1, y - 0.03), (xc1, y), color="#888", lw=1.2, ls=dstyle, shrink=0, scale=12)
     ax.text(0.5, yb + 0.006, "adaptive feedback per generation",
             ha="center", va="bottom", fontsize=8.0, style="italic", color="#555")
 
