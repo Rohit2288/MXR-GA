@@ -115,6 +115,14 @@ def framework():
         ("(protocol-owned)", True),
     ])
 
+    # numbered stage badges next to each box title
+    for bx, col in [(0.052, BLUE_E), (0.377, ORANGE_E), (0.702, GREEN_E)]:
+        n = {0.052: "1", 0.377: "2", 0.702: "3"}[bx]
+        ax.text(bx, 0.787, n, ha="center", va="center", fontsize=9,
+                fontweight="bold", color="white", zorder=4,
+                bbox=dict(boxstyle="circle,pad=0.32", facecolor=col,
+                          edgecolor=col, linewidth=0))
+
     # inter-box pills/arrows
     _arrow(ax, (0.325, y + h / 2), (0.35, y + h / 2)); _pill(ax, 0.3375, y + h / 2 + 0.055, "offspring")
     _arrow(ax, (0.65, y + h / 2), (0.675, y + h / 2)); _pill(ax, 0.6625, y + h / 2 + 0.055, "refined pop.")
