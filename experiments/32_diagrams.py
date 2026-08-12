@@ -110,9 +110,9 @@ def framework():
             r"$\tilde{T}=(T^{L},T^{M},T^{R})$",
             ha="center", va="center", fontsize=9.5, color=INK)
 
-    y, h = 0.275, 0.565
-    W = 0.305
-    x1, x2, x3 = 0.015, 0.348, 0.681
+    y, h = 0.285, 0.555
+    W = 0.29
+    x1, x2, x3 = 0.012, 0.355, 0.698
 
     _stagebox(ax, x1, y, W, h, BLUE, BLUE_E, "1", "Population & variation", [
         ([r"Binary chromosome encoding"], False),
@@ -156,16 +156,16 @@ def framework():
     for xc in (xc1, xc2, xc3):
         _arrow(ax, (xc, ybus), (xc, y + h))
     # output
-    ax.add_patch(FancyBboxPatch((0.27, 0.0), 0.46, 0.125,
+    ax.add_patch(FancyBboxPatch((0.28, 0.035), 0.44, 0.135,
         boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
         edgecolor=VIOLET_E, facecolor=VIOLET, zorder=2))
-    ax.text(0.5, 0.088, r"$\bf{Output:}$  best subset $x^\star\in\{0,1\}^n$",
+    ax.text(0.5, 0.128, r"$\bf{Output:}$  best subset $x^\star\in\{0,1\}^n$",
             ha="center", va="center", fontsize=9.5, color=INK)
-    ax.text(0.5, 0.038, r"maximising $\mu_{\tilde{T}}\left(\sum_{i=1}^{n} a_i x_i\right)$",
+    ax.text(0.5, 0.075, r"maximising $\mu_{\tilde{T}}\left(\sum_{i=1}^{n} a_i x_i\right)$",
             ha="center", va="center", fontsize=9.5, color=INK)
-    _arrow(ax, (0.5, y), (0.5, 0.126))
+    _arrow(ax, (0.5, y), (0.5, 0.172))
     # dashed adaptive-feedback loop: box3 bottom -> box1 bottom
-    yb = 0.155
+    yb = 0.225
     _arrow(ax, (x3 + W / 2, y), (x3 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
     _arrow(ax, (x3 + W / 2, yb), (x1 + W / 2, yb), color="#888", lw=1.2, ls=(0, (4, 3)))
     _arrow(ax, (x1 + W / 2, yb), (x1 + W / 2, y), color="#888", lw=1.2, ls=(0, (4, 3)))
@@ -173,8 +173,8 @@ def framework():
             ha="center", va="bottom", fontsize=8.0, style="italic", color="#555")
 
     fig.tight_layout(pad=0.3)
-    fig.savefig(OUT / "fhga_framework.pdf", bbox_inches="tight")
-    fig.savefig(OUT / "fhga_framework.png", dpi=150, bbox_inches="tight")
+    fig.savefig(OUT / "fhga_framework.pdf", bbox_inches="tight", pad_inches=0.12)
+    fig.savefig(OUT / "fhga_framework.png", dpi=150, bbox_inches="tight", pad_inches=0.12)
     plt.close(fig)
     print("framework written")
 
