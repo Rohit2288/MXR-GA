@@ -52,13 +52,13 @@ def _box(ax, x, y, w, h, fc, ec, title, lines, title_color=None, fs=8.2):
         yy -= dy
 
 
-def _pill(ax, x, y, text, fs=7.6):
+def _pill(ax, x, y, text, fs=7.2):
     ax.add_patch(FancyBboxPatch(
-        (x - 0.055, y - 0.028), 0.11, 0.056,
-        boxstyle="round,pad=0.006,rounding_size=0.03",
+        (x - 0.036, y - 0.025), 0.072, 0.050,
+        boxstyle="round,pad=0.005,rounding_size=0.03",
         linewidth=1.0, edgecolor="#888", facecolor="white", zorder=4))
     ax.text(x, y, text, ha="center", va="center", fontsize=fs,
-            color=INK, style="italic", zorder=5)
+            color=INK, style="italic", zorder=5)  # pill label
 
 
 def _arrow(ax, p, q, color=INK, lw=1.6, style="-|>", ls="-", shrink=2, scale=12):
@@ -111,8 +111,8 @@ def framework():
             ha="center", va="center", fontsize=9.5, color=INK)
 
     y, h = 0.285, 0.555
-    W = 0.29
-    x1, x2, x3 = 0.012, 0.355, 0.698
+    W = 0.28
+    x1, x2, x3 = 0.006, 0.361, 0.716
 
     _stagebox(ax, x1, y, W, h, BLUE, BLUE_E, "1", "Population & variation", [
         ([r"Binary chromosome encoding"], False),
@@ -151,14 +151,13 @@ def framework():
     # input distributes to all three stages through a right-angle bus
     xc1, xc2, xc3 = x1 + W / 2, x2 + W / 2, x3 + W / 2
     ytop = y + h
-    ybus = 0.876
+    ybus = 0.888
     ax.plot([0.5, 0.5], [0.905, ybus], color=INK, lw=1.6,
             solid_capstyle="round", zorder=1)
     ax.plot([xc1, xc3], [ybus, ybus], color=INK, lw=1.6,
             solid_capstyle="round", zorder=1)
     for xc in (xc1, xc2, xc3):
-        ax.plot([xc, xc], [ybus, ytop + 0.012], color=INK, lw=1.6, zorder=1)
-        _arrow(ax, (xc, ytop + 0.03), (xc, ytop), shrink=0, scale=12)
+        _arrow(ax, (xc, ybus), (xc, ytop), shrink=0, scale=11)
     # output
     ax.add_patch(FancyBboxPatch((0.28, 0.035), 0.44, 0.135,
         boxstyle="round,pad=0.01,rounding_size=0.02", linewidth=1.5,
