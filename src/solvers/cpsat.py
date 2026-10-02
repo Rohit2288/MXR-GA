@@ -33,8 +33,11 @@ class CPSAT(Solver):
     name = "cpsat"
     deterministic = False  # incumbent at the wall-clock limit is time-dependent
 
-    def __init__(self, max_time_s: float = 10.0):
+    def __init__(self, max_time_s: float = 10.0, num_workers: int = 1):
         self.max_time_s = max_time_s
+        # 1 (default) = deterministic single worker, one core like every
+        # other solver; >1 = CP-SAT's parallel portfolio (strong-baseline check).
+        self.num_workers = num_workers
         self.last_status: str = ""
 
     def search(self, instance: Instance, objective: BudgetedObjective,
@@ -78,7 +81,7 @@ class CPSAT(Solver):
 
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = self.max_time_s
-        solver.parameters.num_workers = 1  # determinism
+        solver.parameters.num_workers = self.num_workers
         solver.parameters.random_seed = int(rng.integers(1, 2**31 - 1))
         status = solver.solve(model)
         self.last_status = solver.status_name(status)

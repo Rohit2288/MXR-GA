@@ -1,0 +1,28 @@
+{
+ "git_commit": "6e36af1aac975ef210ca410c652a314afd75cea4",
+ "script": "experiments/36_generate_reconcile.py",
+ "date_utc": "2026-10-02T12:06:01.545234+00:00",
+ "count": 48,
+ "sizes": [
+  200,
+  1000,
+  5000
+ ],
+ "fees_cents": [
+  100,
+  10000
+ ],
+ "cardinalities": [
+  [
+   5,
+   15
+  ],
+  [
+   20,
+   40
+  ]
+ ],
+ "per_cell": 4,
+ "seed_base": 660000,
+ "synthetic": true
+}

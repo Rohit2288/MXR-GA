@@ -293,8 +293,8 @@ after 9.7, so no two experiments share wall-clock time. Shared definitions: `src
 Protocol: wall-clock budget by size, identical for all solvers (n<=100: 2 s; <=500: 5 s; >500: 10 s;
 regime map and sensitivity: fixed 10 s); stop at the certified optimum where known (witness mu = 1,
 Suite U enumeration, exact DP): 650/866 FSSP-2 and 97/97 Suite H instances. Seeds: 20 for the new
-solvers, 10 for stochastic baselines (8.5 h of compute at 20 would exceed one overnight run;
-the baselines' round-2 numbers already exist at 20 seeds). FLSSS uses the fixed wrapper.
+solvers and (raised 2026-10-02, Rohit: "very strong defense") 20 for stochastic baselines on
+Suite H, FSSP-2 and reconciliation; 5/5 on the regime map and the Phase-11 stress corpora. FLSSS uses the fixed wrapper.
 New comparator for R4b.1: `vanilla_ga_crisp`, a conventional GA steered by the shared crisp guide.
 
 - [ ] 10.3 Regime map, fresh corpus `benchmarks/fsspb_regime_final` (198 inst, seed base 550000,
@@ -307,4 +307,30 @@ New comparator for R4b.1: `vanilla_ga_crisp`, a conventional GA steered by the s
 - [ ] 10.4 Sensitivity of the only remaining parameters: k in {16,24,32,36} x pop in {8,16,32} (ma_xr),
       k sweep for lns_mitm, on the 9.7 hard corpus, 3 seeds, 10 s. -> results/r3_sensitivity. (R2b.1)
 - [ ] 10.5 Analysis + tables/figures for the new manuscript (regime heat-map first).
+
+## Phase 11 — Strong-defence tests (Rohit 2026-10-02: "do all possible tests, very strong defense")
+
+Each test pre-empts a specific reviewer objection. All of them are in `scripts/run_r3_queue.sh`
+after Phase 10. New code: anytime trace in the protocol (every improvement: time, evals, mu);
+CP-SAT worker option; MITM cap option; lattice baseline `src/solvers/lattice.py`
+(CJLOSS embedding, LLL then BKZ 10/20/30, randomised restarts, n <= 150).
+
+FINDING while building it (before any queued run): lattice reduction solves the critical-block
+instances (n = 46, 38-46 bits) in 0.06-0.8 s, where ma_xr reached about 0.5 in the pilot. So the
+critical / low-density regime belongs to lattice reduction, and the regime map must say so.
+On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued corpus.
+
+- [ ] 11.1 Beyond MITM's memory reach: n in {56,64,80}, 46-47 bits (24 inst), 30 s, 5 seeds.
+      Objection: "your hard cells are just MITM / lattice territory".
+- [ ] 11.2 Scale: n in {2000,5000,10000} x {32,39} bits (54 inst), 30 s. Objection: "only at
+      your sizes". GA baselines are excluded at this size (population lists of 4n x n do not fit
+      in memory per worker); this is stated, not hidden.
+- [ ] 11.3 Payment reconciliation (48 synthetic instances, amounts in cents, 5-40 invoices per
+      payment, asymmetric fee tolerance): `experiments/36_generate_reconcile.py`. Objection:
+      "is any of this practical?" Also motivates the asymmetric fuzzy target.
+- [ ] 11.4 Handicap checks on the 9.7 hard corpus: (a) CP-SAT with 8 workers, run alone;
+      (b) MITM with max_n = 50; (c) 60 s budgets for the new solvers, FLSSS, CP-SAT and lattice.
+      Objection: "you crippled the baselines / the budget was too short".
+- [ ] 11.5 Anytime curves from the traces (all Phase 10-11 runs). Objection: "end-of-budget
+      snapshots hide the dynamics".
 

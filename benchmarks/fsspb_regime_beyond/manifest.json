@@ -1,0 +1,66 @@
+{
+ "git_commit": "6e36af1aac975ef210ca410c652a314afd75cea4",
+ "script": "experiments/33_generate_regime.py",
+ "date_utc": "2026-10-02T12:05:19.194633+00:00",
+ "count": 24,
+ "per_cell": 4,
+ "profile": "beyond",
+ "seed_base": 770000,
+ "dense": {
+  "n": [
+   100,
+   200,
+   500,
+   1000
+  ],
+  "bits": [
+   16,
+   24,
+   32,
+   40
+  ],
+  "gaps": [
+   8,
+   16,
+   "exact"
+  ]
+ },
+ "critical": {
+  "n": [
+   32,
+   40,
+   46
+  ],
+  "bits": "n-8, n, min(n+6, 47)",
+  "gaps": [
+   16,
+   "exact"
+  ]
+ },
+ "kappa": {
+  "fsspb-R-beyond-n56-b47-g16-r0": 37.16694495507811,
+  "fsspb-R-beyond-n56-b47-g16-r1": 37.07605698408509,
+  "fsspb-R-beyond-n56-b47-g16-r2": 37.10141163286983,
+  "fsspb-R-beyond-n56-b47-g16-r3": 37.17308518552722,
+  "fsspb-R-beyond-n56-b47-gexact-r0": 7.145348633129885,
+  "fsspb-R-beyond-n56-b47-gexact-r1": 7.185971115787261,
+  "fsspb-R-beyond-n56-b47-gexact-r2": 7.1575008989957425,
+  "fsspb-R-beyond-n56-b47-gexact-r3": 7.142806132045166,
+  "fsspb-R-beyond-n64-b46-g16-r0": 45.02564738240661,
+  "fsspb-R-beyond-n64-b46-g16-r1": 45.06193730592269,
+  "fsspb-R-beyond-n64-b46-g16-r2": 45.057639799707246,
+  "fsspb-R-beyond-n64-b46-g16-r3": 45.06156637749144,
+  "fsspb-R-beyond-n64-b46-gexact-r0": 16.09942695503149,
+  "fsspb-R-beyond-n64-b46-gexact-r1": 16.124837642114876,
+  "fsspb-R-beyond-n64-b46-gexact-r2": 16.087271702937514,
+  "fsspb-R-beyond-n64-b46-gexact-r3": 16.01696924390157,
+  "fsspb-R-beyond-n80-b46-g16-r0": 60.90042277318979,
+  "fsspb-R-beyond-n80-b46-g16-r1": 60.904388710144005,
+  "fsspb-R-beyond-n80-b46-g16-r2": 60.86514072746021,
+  "fsspb-R-beyond-n80-b46-g16-r3": 60.866357377122625,
+  "fsspb-R-beyond-n80-b46-gexact-r0": 31.890985992548764,
+  "fsspb-R-beyond-n80-b46-gexact-r1": 31.909172277070887,
+  "fsspb-R-beyond-n80-b46-gexact-r2": 31.86347497406142,
+  "fsspb-R-beyond-n80-b46-gexact-r3": 31.858678473428164
+ }
+}

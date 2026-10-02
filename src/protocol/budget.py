@@ -74,6 +74,9 @@ class BudgetedObjective:
         self._evals_since_improvement = 0
         self._stopped: Optional[str] = None
         self._t0 = time.perf_counter()
+        # Anytime trace: (elapsed seconds, evals, mu) at every strict
+        # improvement of the best mu. Bookkeeping only; never read by solvers.
+        self.trace: list = []
 
     def elapsed(self) -> float:
         return time.perf_counter() - self._t0
@@ -118,6 +121,8 @@ class BudgetedObjective:
         if ev.mu > self.best_mu:
             self.best_mu = ev.mu
             self.best_subset = ev.subset_indices
+            self.trace.append((round(self.elapsed(), 6), self.evals_used,
+                               ev.mu))
 
         if (self.config.stop_at_mu is not None
                 and self.best_mu >= self.config.stop_at_mu):

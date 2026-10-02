@@ -32,7 +32,8 @@ V2 = dict(repair_mode="dp_window", uniform_xover=True, gamma=0.0,
 NEW = ["ma_xr", "ma_rand", "lns_mitm"]
 BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
                    "vanilla_ga_crisp", "random_search"]
-SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "alpha_cut", "greedy_center"]
+SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "alpha_cut",
+          "greedy_center"]
 STOCHASTIC = NEW + BASE_STOCHASTIC
 
 
@@ -108,13 +109,16 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
         "vanilla_ga_crisp": lambda: VanillaGA(guide_mode="crisp"),
         "random_search": RandomSearch,
         "dp_exact": DPBitset,
-        "mitm": MITM,
-        "cpsat": lambda: CPSAT(max_time_s=wall_s),
+        "mitm": lambda: MITM(max_n=kw.get("max_n", 44)),
+        "cpsat": lambda: CPSAT(max_time_s=wall_s,
+                               num_workers=kw.get("workers", 1)),
         "flsss": lambda: FLSSSSolver(
             eps=flsss_eps,
             tlimit_per_probe=wall_s / (2 + math.ceil(math.log2(1 / flsss_eps))),
             total_timeout=wall_s + 5),
         "alpha_cut": AlphaCut,
+        "lattice": lambda: __import__("src.solvers.lattice", fromlist=["Lattice"]).Lattice(
+            max_n=kw.get("max_n", 150)),
         "greedy_center": GreedyCenter,
     }
     return table[name]()

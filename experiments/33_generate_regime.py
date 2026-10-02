@@ -67,6 +67,13 @@ CRIT_GAPS = [16, "exact"]
 CONFIRM_DENSE = [(n, 40) for n in DENSE_N]
 CONFIRM_CRIT = [(46, 38), (46, 46), (46, 47), (48, 40), (48, 47)]
 
+# Strong-defence profiles (Phase 11).
+#   beyond: moderate density just past meet-in-the-middle's memory reach
+#           (n = 56..80 at the float-safe ceiling, 46-47 bits).
+#   scale:  very large n at large magnitude (n * 2^bits < 2^53).
+BEYOND = [(56, 47), (64, 46), (80, 46)]
+SCALE = [(n, b) for n in (2000, 5000, 10000) for b in (32, 39)]
+
 
 def make_instance(block: str, n: int, bits: int, gap, rep: int, seed: int):
     rng = np.random.default_rng(seed)
@@ -114,7 +121,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--per-cell", type=int, default=2)
-    ap.add_argument("--profile", choices=["pilot", "confirm"], default="pilot")
+    ap.add_argument("--profile", choices=["pilot", "confirm", "beyond", "scale"], default="pilot")
     ap.add_argument("--seed-base", type=int, default=330_000)
     args = ap.parse_args()
 
@@ -129,11 +136,15 @@ def main() -> int:
             for b in sorted({n - 8, n, min(n + 6, 47)}):
                 for g in CRIT_GAPS:
                     cells.append(("critical", n, b, g))
-    else:
+    elif args.profile == "confirm":
         cells = [("dense", n, b, g) for (n, b) in CONFIRM_DENSE
                  for g in DENSE_GAPS]
         cells += [("critical", n, b, g) for (n, b) in CONFIRM_CRIT
                   for g in CRIT_GAPS]
+    elif args.profile == "beyond":
+        cells = [("beyond", n, b, g) for (n, b) in BEYOND for g in CRIT_GAPS]
+    else:
+        cells = [("scale", n, b, g) for (n, b) in SCALE for g in DENSE_GAPS]
     for block, n, b, g in cells:
         assert n * 2 ** b < 2 ** 53, (n, b)
         for rep in range(args.per_cell):

@@ -82,6 +82,11 @@ def run_unit(args):
     extra = dict(getattr(solver, "last_stats", {}) or {})
     if getattr(solver, "last_status", ""):
         extra["cpsat_status"] = solver.last_status
+    trace = getattr(solver, "last_trace", [])
+    if len(trace) > 200:   # keep first, last and an even thinning between
+        step = len(trace) / 199
+        trace = [trace[int(i * step)] for i in range(199)] + [trace[-1]]
+    extra["trace"] = trace
     return {**row, "status": "ok", "mu": repr(ev.mu),
             "subset_sum": ev.subset_sum, "evals_used": res.evals_used,
             "wall_time": repr(res.wall_time), "stop_reason": res.stop_reason,

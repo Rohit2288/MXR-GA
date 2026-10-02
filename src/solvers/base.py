@@ -53,6 +53,7 @@ class Solver(ABC):
     def solve(self, instance: Instance, config: ProtocolConfig,
               rng: np.random.Generator) -> SolverResult:
         objective = BudgetedObjective(instance, config)
+        self.last_trace = objective.trace
         t0 = time.perf_counter()
         try:
             self.search(instance, objective, rng)

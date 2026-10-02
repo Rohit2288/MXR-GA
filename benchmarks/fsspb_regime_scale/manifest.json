@@ -1,0 +1,96 @@
+{
+ "git_commit": "6e36af1aac975ef210ca410c652a314afd75cea4",
+ "script": "experiments/33_generate_regime.py",
+ "date_utc": "2026-10-02T12:05:24.479328+00:00",
+ "count": 54,
+ "per_cell": 3,
+ "profile": "scale",
+ "seed_base": 880000,
+ "dense": {
+  "n": [
+   100,
+   200,
+   500,
+   1000
+  ],
+  "bits": [
+   16,
+   24,
+   32,
+   40
+  ],
+  "gaps": [
+   8,
+   16,
+   "exact"
+  ]
+ },
+ "critical": {
+  "n": [
+   32,
+   40,
+   46
+  ],
+  "bits": "n-8, n, min(n+6, 47)",
+  "gaps": [
+   16,
+   "exact"
+  ]
+ },
+ "kappa": {
+  "fsspb-R-scale-n2000-b32-g8-r0": 1986.5865268590205,
+  "fsspb-R-scale-n2000-b32-g8-r1": 1986.5701070443781,
+  "fsspb-R-scale-n2000-b32-g8-r2": 1986.5872299404948,
+  "fsspb-R-scale-n2000-b32-g16-r0": 1978.5713444108756,
+  "fsspb-R-scale-n2000-b32-g16-r1": 1978.5759486488782,
+  "fsspb-R-scale-n2000-b32-g16-r2": 1978.5756603611205,
+  "fsspb-R-scale-n2000-b32-gexact-r0": 1963.5704155995188,
+  "fsspb-R-scale-n2000-b32-gexact-r1": 1963.5845278890629,
+  "fsspb-R-scale-n2000-b32-gexact-r2": 1963.5960962846884,
+  "fsspb-R-scale-n2000-b39-g8-r0": 1986.5849426989494,
+  "fsspb-R-scale-n2000-b39-g8-r1": 1986.574840629534,
+  "fsspb-R-scale-n2000-b39-g8-r2": 1986.5756175000172,
+  "fsspb-R-scale-n2000-b39-g16-r0": 1978.5779493972352,
+  "fsspb-R-scale-n2000-b39-g16-r1": 1978.5839542617757,
+  "fsspb-R-scale-n2000-b39-g16-r2": 1978.5769044806284,
+  "fsspb-R-scale-n2000-b39-gexact-r0": 1956.567044445554,
+  "fsspb-R-scale-n2000-b39-gexact-r1": 1956.564845540821,
+  "fsspb-R-scale-n2000-b39-gexact-r2": 1956.5686129883543,
+  "fsspb-R-scale-n5000-b32-g8-r0": 4985.923515102491,
+  "fsspb-R-scale-n5000-b32-g8-r1": 4985.9203773211275,
+  "fsspb-R-scale-n5000-b32-g8-r2": 4985.921517553294,
+  "fsspb-R-scale-n5000-b32-g16-r0": 4977.923454809597,
+  "fsspb-R-scale-n5000-b32-g16-r1": 4977.922431877782,
+  "fsspb-R-scale-n5000-b32-g16-r2": 4977.917498332346,
+  "fsspb-R-scale-n5000-b32-gexact-r0": 4962.927616256149,
+  "fsspb-R-scale-n5000-b32-gexact-r1": 4962.920537667552,
+  "fsspb-R-scale-n5000-b32-gexact-r2": 4962.918018349087,
+  "fsspb-R-scale-n5000-b39-g8-r0": 4985.914458585426,
+  "fsspb-R-scale-n5000-b39-g8-r1": 4985.919719410473,
+  "fsspb-R-scale-n5000-b39-g8-r2": 4985.9240421012055,
+  "fsspb-R-scale-n5000-b39-g16-r0": 4977.922758247042,
+  "fsspb-R-scale-n5000-b39-g16-r1": 4977.917187526448,
+  "fsspb-R-scale-n5000-b39-g16-r2": 4977.915690850824,
+  "fsspb-R-scale-n5000-b39-gexact-r0": 4955.918403360808,
+  "fsspb-R-scale-n5000-b39-gexact-r1": 4955.922351693415,
+  "fsspb-R-scale-n5000-b39-gexact-r2": 4955.915474541532,
+  "fsspb-R-scale-n10000-b32-g8-r0": 9985.416551312825,
+  "fsspb-R-scale-n10000-b32-g8-r1": 9985.419941503445,
+  "fsspb-R-scale-n10000-b32-g8-r2": 9985.423428262953,
+  "fsspb-R-scale-n10000-b32-g16-r0": 9977.420711408646,
+  "fsspb-R-scale-n10000-b32-g16-r1": 9977.416843317373,
+  "fsspb-R-scale-n10000-b32-g16-r2": 9977.421763437902,
+  "fsspb-R-scale-n10000-b32-gexact-r0": 9962.418460570041,
+  "fsspb-R-scale-n10000-b32-gexact-r1": 9962.416385219194,
+  "fsspb-R-scale-n10000-b32-gexact-r2": 9962.417068378147,
+  "fsspb-R-scale-n10000-b39-g8-r0": 9985.416255602016,
+  "fsspb-R-scale-n10000-b39-g8-r1": 9985.416993200091,
+  "fsspb-R-scale-n10000-b39-g8-r2": 9985.420395097079,
+  "fsspb-R-scale-n10000-b39-g16-r0": 9977.420441453476,
+  "fsspb-R-scale-n10000-b39-g16-r1": 9977.41712921209,
+  "fsspb-R-scale-n10000-b39-g16-r2": 9977.417915267266,
+  "fsspb-R-scale-n10000-b39-gexact-r0": 9955.420101398793,
+  "fsspb-R-scale-n10000-b39-gexact-r1": 9955.420397923615,
+  "fsspb-R-scale-n10000-b39-gexact-r2": 9955.420188934095
+ }
+}
