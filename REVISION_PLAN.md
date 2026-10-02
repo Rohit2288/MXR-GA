@@ -227,7 +227,7 @@ Heuristic regime = DP infeasible and n > 44: 95 of 132 instances (83 dense, 12 c
 
 Rohit approved 9.6 + 9.7 (2026-10-02: "run both and help me get paper published").
 
-- [ ] 9.6 FLSSS fairness rerun. Diagnosis changed on inspection: the wrapper is not just imprecise,
+- [x] 9.6 FLSSS fairness rerun. Diagnosis changed on inspection: the wrapper is not just imprecise,
       it has a BUG. The alpha = 1 probe sends ME = 0, for which FLSSS returns no solution ("[1] FALSE"),
       so FLSSS could never return an exact hit except via a lucky bisection probe. Fix in
       src/solvers/flsss_probe.R: probe the integer window [ceil L, floor R] with a +0.5 margin, which
@@ -249,6 +249,16 @@ Rohit approved 9.6 + 9.7 (2026-10-02: "run both and help me get paper published"
       time-to-optimum (unsolved = +inf) on the instances where they differ. Both comparisons must pass.
       Secondary (reported, not a gate): Wilcoxon signed-rank on per-instance success, Holm over the 2 pairs.
       Result -> results/regime_confirm/results.csv.
+
+### 9.6 outcome (2026-10-02): Gate N still MET with the fixed FLSSS
+Fixed FLSSS (results/regime_pilot/flsss_fixed.csv) vs the best new solver, heuristic regime:
+- dense (83 inst): ma_xr 0.839 vs FLSSS 0.554 (was 0.325 with the bug): +28.5 pts, Cliff delta(mu) +0.222.
+- critical (12 inst): ma_rand 0.472 vs FLSSS 0.083: +38.9 pts, delta +0.576.
+- By magnitude (dense), success: 16 and 24 bits, all four solvers 1.000 (FLSSS 0.75-1.4 s median vs
+  0.01 s); 32 bits, new 1.000 vs FLSSS 0.458; 40 bits, new 0.28-0.44 vs FLSSS 0.000.
+  This is the regime map's "when": the advantage appears once items reach about 32 bits, and
+  grows with magnitude.
+- Where DP or MITM can run, fixed FLSSS reaches 0.514; the new solvers reach 1.000.
 
 
 ### Pre-registered decision gates (written before any pilot result was seen)
