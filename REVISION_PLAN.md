@@ -283,3 +283,28 @@ Paths:
                     with Rohit (e.g. a heuristics / OR / fuzzy-systems journal).
 - N not met      -> no honest "use FH-GA when..." claim; retarget as a benchmark +
                     protocol + plateau-theory paper to a better-fitting venue.
+
+## Phase 10 — Tests the round-2 comments need (queued 2026-10-02, `scripts/run_r3_queue.sh`)
+
+Rohit (2026-10-02): "please do tests now needed for current comments". Runs start automatically
+after 9.7, so no two experiments share wall-clock time. Shared definitions: `src/protocol/r3.py`
+(one solver factory, one protocol); driver `experiments/35_r3_runs.py`.
+
+Protocol: wall-clock budget by size, identical for all solvers (n<=100: 2 s; <=500: 5 s; >500: 10 s;
+regime map and sensitivity: fixed 10 s); stop at the certified optimum where known (witness mu = 1,
+Suite U enumeration, exact DP): 650/866 FSSP-2 and 97/97 Suite H instances. Seeds: 20 for the new
+solvers, 10 for stochastic baselines (8.5 h of compute at 20 would exceed one overnight run;
+the baselines' round-2 numbers already exist at 20 seeds). FLSSS uses the fixed wrapper.
+New comparator for R4b.1: `vanilla_ga_crisp`, a conventional GA steered by the shared crisp guide.
+
+- [ ] 10.3 Regime map, fresh corpus `benchmarks/fsspb_regime_final` (198 inst, seed base 550000,
+      3 per cell), all 14 solvers, 5 seeds, 10 s. -> results/r3_regime. (AEb.1, R4b.1 when/why)
+- [ ] 10.2 Suite H, all 97 instances (round-2 table reported 73: resolved by running all).
+      -> results/r3_hard. (R4b.1 hard instances)
+- [ ] 10.1 Benchmark-FSSP-2 main comparison (T/A/U, 866), all solvers. Statistics with the
+      recommended configuration as the reference arm (R1b.1): Friedman -> Wilcoxon + Holm ->
+      Cliff's delta, per suite; success rate vs certified optimum; time-to-optimum. -> results/r3_main.
+- [ ] 10.4 Sensitivity of the only remaining parameters: k in {16,24,32,36} x pop in {8,16,32} (ma_xr),
+      k sweep for lns_mitm, on the 9.7 hard corpus, 3 seeds, 10 s. -> results/r3_sensitivity. (R2b.1)
+- [ ] 10.5 Analysis + tables/figures for the new manuscript (regime heat-map first).
+

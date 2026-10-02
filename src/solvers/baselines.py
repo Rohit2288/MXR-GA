@@ -19,6 +19,7 @@ import numpy as np
 
 from src.core.instance import Instance
 from src.protocol.budget import BudgetedObjective
+from src.protocol.guide import make_guide
 from src.solvers.base import Solver
 
 
@@ -59,10 +60,16 @@ class GreedyCenter(Solver):
 class VanillaGA(Solver):
     name = "vanilla_ga"
 
-    def __init__(self, pop_size=None, p_c: float = 0.9, p_m=None):
+    def __init__(self, pop_size=None, p_c: float = 0.9, p_m=None,
+                 guide_mode: str = "mu"):
         self.pop_size = pop_size
         self.p_c = p_c
         self.p_m = p_m
+        # "crisp": a conventional GA steered by the shared crisp guide -- the
+        # comparator R4 (round 2) asked for. Default "mu" is unchanged.
+        self.guide_mode = guide_mode
+        if guide_mode != "mu":
+            self.name = f"vanilla_ga_{guide_mode}"
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
@@ -71,9 +78,13 @@ class VanillaGA(Solver):
         p_c = self.p_c
         p_m = self.p_m if self.p_m is not None else 1.0 / n
         density = _density(instance)
+        guide = make_guide(self.guide_mode, instance)
+        items = instance.items
 
         def evaluate(chrom: List[int]) -> float:
-            return objective.evaluate([i for i, b in enumerate(chrom) if b])
+            idx = [i for i, b in enumerate(chrom) if b]
+            mu = objective.evaluate(idx)
+            return mu if guide is None else guide(sum(items[i] for i in idx), mu)
 
         pop = [[1 if rng.random() < density else 0 for _ in range(n)]
                for _ in range(N)]

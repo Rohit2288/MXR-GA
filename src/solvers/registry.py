@@ -39,6 +39,7 @@ def default_solvers() -> List[Solver]:
         SimAnneal(guide_mode="crisp"),
         ILS(guide_mode="crisp"),
         VanillaGA(),
+        VanillaGA(guide_mode="crisp"),
         RandomSearch(),
         GreedyCenter(),
         AlphaCut(),
