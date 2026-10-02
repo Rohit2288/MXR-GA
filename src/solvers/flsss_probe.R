@@ -28,9 +28,15 @@ sorted_v <- padded[ord]
 probe <- function(alpha) {
   L <- TL + alpha * (TM - TL)
   R <- TR - alpha * (TR - TM)
+  # Items are integers, so the attainable sums in [L, R] are exactly the
+  # integers in [ceil(L), floor(R)]. Probing that integer window with a
+  # half-unit margin admits the same sums but never asks FLSSS for ME = 0,
+  # for which it returns no solution (the exact-hit probe at alpha = 1
+  # silently failed before this fix, 2026-10-02).
+  L <- ceiling(L); R <- floor(R)
   if (R < L) return(FALSE)
   target <- (L + R) / 2
-  ME <- (R - L) / 2
+  ME <- (R - L) / 2 + 0.5
   res <- tryCatch(
     FLSSS(len = n, v = sorted_v, target = target, ME = ME,
           solutionNeed = 1, tlimit = tlimit),
@@ -43,10 +49,10 @@ probe <- function(alpha) {
   TRUE
 }
 
-probe(1.0)
+invisible(probe(1.0))
 lo <- 0.0; hi <- 1.0
 for (i in seq_len(max(1, ceiling(log2(1 / eps))))) {
   mid <- 0.5 * (lo + hi)
   if (probe(mid)) lo <- mid else hi <- mid
 }
-if (lo == 0.0) probe(eps)
+if (lo == 0.0) invisible(probe(eps))

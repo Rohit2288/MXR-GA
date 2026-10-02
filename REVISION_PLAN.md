@@ -225,11 +225,30 @@ Heuristic regime = DP infeasible and n > 44: 95 of 132 instances (83 dense, 12 c
   they can run on; the new solvers solve all 37 as well (k >= n makes one move exact).
 - Old FH-GA v2-crisp: 0.070 success in the heuristic regime. The redesign is necessary in any case.
 
-Proposed next (needs Rohit's OK):
-- 9.6 Fairness fix: rerun FLSSS with a precision matching the success metric (eps 1e-6 plus an
-      explicit alpha = 1 probe) on suite R; re-evaluate Gate N.
-- 9.7 Pre-registered confirmatory test of Gate G on the hard region only (bits = 40 dense + critical
-      n >= 46): fresh instances (new seeds), 5 seeds, 30 s budget. Same Gate G thresholds.
+Rohit approved 9.6 + 9.7 (2026-10-02: "run both and help me get paper published").
+
+- [ ] 9.6 FLSSS fairness rerun. Diagnosis changed on inspection: the wrapper is not just imprecise,
+      it has a BUG. The alpha = 1 probe sends ME = 0, for which FLSSS returns no solution ("[1] FALSE"),
+      so FLSSS could never return an exact hit except via a lucky bisection probe. Fix in
+      src/solvers/flsss_probe.R: probe the integer window [ceil L, floor R] with a +0.5 margin, which
+      admits exactly the same attainable sums. Verified: 3 previously missed instances now reach mu = 1.
+      eps stays 0.01 (with mu* = 1 planted, the alpha = 1 probe decides; fewer probes give it more time).
+      NOTE for the paper: FLSSS numbers in the round-2 manuscript came from the buggy wrapper and may
+      understate FLSSS. Every FLSSS number in the new submission is re-run with the fixed wrapper.
+      Rerun: fixed FLSSS on all 132 suite-R instances, 10 s, the pilot protocol ->
+      results/regime_pilot/flsss_fixed.csv. Gate N is re-evaluated with the same rule
+      (success = mu exactly 1, existing-solver set as before, with fixed FLSSS replacing the old one).
+- [ ] 9.7 Confirmatory Gate G test (PRE-REGISTERED here, before the run).
+      Corpus: benchmarks/fsspb_regime_confirm, 88 FRESH instances (seed base 990000, no overlap with
+      the pilot): dense n in {100,200,500,1000} x bits 40 x gap {8,16,exact}; critical (n,bits) in
+      {(46,38),(46,46),(46,47),(48,40),(48,47)} x gap {16,exact}; 4 instances per cell.
+      Solvers: ma_xr, ma_rand, lns_mitm (5 seeds each), fixed FLSSS (1 run). 30 s wall-clock each,
+      same protocol (stop at mu = 1).
+      Gate G (unchanged thresholds): ma_xr beats BOTH ma_rand and lns_mitm by >= 10 points in success
+      rate (mu = 1, per-instance seed means, averaged over instances), OR by Cliff's delta <= -0.147 in
+      time-to-optimum (unsolved = +inf) on the instances where they differ. Both comparisons must pass.
+      Secondary (reported, not a gate): Wilcoxon signed-rank on per-instance success, Holm over the 2 pairs.
+      Result -> results/regime_confirm/results.csv.
 
 
 ### Pre-registered decision gates (written before any pilot result was seen)

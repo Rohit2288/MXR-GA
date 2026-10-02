@@ -18,6 +18,7 @@ Output: results/regime_pilot/{results.csv, manifest.json}
 from __future__ import annotations
 
 import argparse
+import math
 import csv
 import datetime as _dt
 import json
@@ -38,9 +39,15 @@ from src.protocol.runner import git_commit  # noqa: E402
 CORPUS = REPO / "benchmarks" / "fsspb_regime"
 OUT_DIR = REPO / "results" / "regime_pilot"
 WALL_S = 10.0
-PROTOCOL = ProtocolConfig(max_evals=10_000_000, plateau_tol=1e-9,
-                          plateau_patience=None, max_wall_s=WALL_S,
+
+
+def protocol(wall_s: float) -> ProtocolConfig:
+    return ProtocolConfig(max_evals=10_000_000, plateau_tol=1e-9,
+                          plateau_patience=None, max_wall_s=wall_s,
                           stop_at_mu=1.0)
+
+
+PROTOCOL = protocol(WALL_S)
 STOCHASTIC = ["ma_xr", "ma_rand", "lns_mitm", "fhga_v2crisp", "ils_crisp",
               "sim_anneal_crisp", "random_search"]
 SINGLE = ["dp_exact", "mitm", "cpsat", "flsss"]
@@ -53,7 +60,7 @@ V2 = dict(repair_mode="dp_window", uniform_xover=True, gamma=0.0,
           pc_low=0.8, pc_high=0.8, pm_low_mult=1.0, pm_high_mult=1.0)
 
 
-def make_solver(name: str):
+def make_solver(name: str, wall_s: float = WALL_S, flsss_eps: float = 0.01):
     from src.solvers.baselines import RandomSearch
     from src.solvers.cpsat import CPSAT
     from src.solvers.dp_bitset import DPBitset
@@ -76,28 +83,31 @@ def make_solver(name: str):
         "random_search": RandomSearch,
         "dp_exact": DPBitset,
         "mitm": MITM,
-        "cpsat": lambda: CPSAT(max_time_s=WALL_S),
-        # ~7 bisection probes; total capped near the shared wall budget.
-        "flsss": lambda: FLSSSSolver(tlimit_per_probe=WALL_S / 8,
-                                     total_timeout=WALL_S + 5),
+        "cpsat": lambda: CPSAT(max_time_s=wall_s),
+        # 1 + ceil(log2(1/eps)) probes share the wall budget; total capped
+        # near it (R start-up is the +5 s).
+        "flsss": lambda: FLSSSSolver(
+            eps=flsss_eps,
+            tlimit_per_probe=wall_s / (2 + math.ceil(math.log2(1 / flsss_eps))),
+            total_timeout=wall_s + 5),
     }[name]()
 
 
 def run_unit(args):
-    solver_name, path, seed = args
+    solver_name, path, seed, wall_s, flsss_eps = args
     inst = load_instance(path)
     c = inst.metadata["construction"]
     base = {"solver": solver_name, "instance_id": inst.instance_id,
             "block": c["block"], "n": inst.n, "bits": c["bits"],
             "gap": c["gap"], "kappa": round(c["kappa"], 2), "seed": seed}
-    solver = make_solver(solver_name)
+    solver = make_solver(solver_name, wall_s, flsss_eps)
     if hasattr(solver, "feasible"):
         ok, reason = solver.feasible(inst)
         if not ok:
             return {**base, "status": "infeasible", "mu": "", "subset_sum": "",
                     "evals_used": 0, "wall_time": "", "stop_reason": "",
                     "extra": json.dumps({"reason": reason})}
-    res = solver.solve(inst, PROTOCOL, np.random.default_rng(seed))
+    res = solver.solve(inst, protocol(wall_s), np.random.default_rng(seed))
     ev = evaluate(inst, res.subset_indices)
     extra = dict(getattr(solver, "last_stats", {}) or {})
     if getattr(solver, "last_status", ""):
@@ -112,28 +122,36 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--solvers", nargs="+", default=STOCHASTIC + SINGLE)
+    ap.add_argument("--corpus", type=Path, default=CORPUS)
+    ap.add_argument("--out-dir", type=Path, default=OUT_DIR)
+    ap.add_argument("--out-name", default="results.csv")
+    ap.add_argument("--wall", type=float, default=WALL_S)
+    ap.add_argument("--seeds", type=int, nargs="+", default=SEEDS)
+    ap.add_argument("--flsss-eps", type=float, default=0.01)
     args = ap.parse_args()
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / "results.csv"
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    out = args.out_dir / args.out_name
     done = set()
     if out.exists():
         with open(out) as fh:
             done = {(r["solver"], r["instance_id"], int(r["seed"]))
                     for r in csv.DictReader(fh)}
-    paths = list(iter_instance_paths(CORPUS))
+    paths = list(iter_instance_paths(args.corpus))
     units = []
     for p in paths:
         iid = p.stem
         for s in args.solvers:
-            for seed in (SEEDS if s in STOCHASTIC else [0]):
+            for seed in (args.seeds if s in STOCHASTIC else [0]):
                 if (s, iid, seed) not in done:
-                    units.append((s, str(p), seed))
+                    units.append((s, str(p), seed, args.wall, args.flsss_eps))
     # Interleave slow single-shot solvers with fast ones.
     units.sort(key=lambda u: (u[2], u[1], u[0]))
-    (OUT_DIR / "manifest.json").write_text(json.dumps({
+    (args.out_dir / args.out_name.replace(".csv", "_manifest.json")).write_text(json.dumps({
         "git_commit": git_commit(), "script": "experiments/34_regime_pilot.py",
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "protocol": PROTOCOL.__dict__, "seeds": SEEDS,
+        "protocol": protocol(args.wall).__dict__, "seeds": args.seeds,
+        "corpus": str(args.corpus.relative_to(REPO)), "solvers": args.solvers,
+        "flsss_eps": args.flsss_eps,
         "stochastic": STOCHASTIC, "single": SINGLE,
         "workers": args.workers, "instances": len(paths),
     }, indent=1, default=str))

@@ -62,6 +62,11 @@ DENSE_GAPS = [8, 16, "exact"]
 CRIT_N = [32, 40, 46]
 CRIT_GAPS = [16, "exact"]
 
+# Confirmatory profile (task 9.7): the hard region only, FRESH seeds so no
+# instance overlaps the pilot. dense: bits = 40; critical: n >= 46.
+CONFIRM_DENSE = [(n, 40) for n in DENSE_N]
+CONFIRM_CRIT = [(46, 38), (46, 46), (46, 47), (48, 40), (48, 47)]
+
 
 def make_instance(block: str, n: int, bits: int, gap, rep: int, seed: int):
     rng = np.random.default_rng(seed)
@@ -109,23 +114,31 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--per-cell", type=int, default=2)
+    ap.add_argument("--profile", choices=["pilot", "confirm"], default="pilot")
+    ap.add_argument("--seed-base", type=int, default=330_000)
     args = ap.parse_args()
 
     inst_dir = args.out_dir / "instances"
     inst_dir.mkdir(parents=True, exist_ok=True)
     rows = []
     seed = 0
-    cells = [("dense", n, b, g) for n, b, g in itertools.product(
-        DENSE_N, DENSE_BITS, DENSE_GAPS)]
-    for n in CRIT_N:
-        for b in sorted({n - 8, n, min(n + 6, 47)}):
-            for g in CRIT_GAPS:
-                cells.append(("critical", n, b, g))
+    if args.profile == "pilot":
+        cells = [("dense", n, b, g) for n, b, g in itertools.product(
+            DENSE_N, DENSE_BITS, DENSE_GAPS)]
+        for n in CRIT_N:
+            for b in sorted({n - 8, n, min(n + 6, 47)}):
+                for g in CRIT_GAPS:
+                    cells.append(("critical", n, b, g))
+    else:
+        cells = [("dense", n, b, g) for (n, b) in CONFIRM_DENSE
+                 for g in DENSE_GAPS]
+        cells += [("critical", n, b, g) for (n, b) in CONFIRM_CRIT
+                  for g in CRIT_GAPS]
     for block, n, b, g in cells:
         assert n * 2 ** b < 2 ** 53, (n, b)
         for rep in range(args.per_cell):
             seed += 1
-            raw = make_instance(block, n, b, g, rep, 330_000 + seed)
+            raw = make_instance(block, n, b, g, rep, args.seed_base + seed)
             path = inst_dir / f"{raw['instance_id']}.json"
             path.write_text(json.dumps(raw, indent=1))
             load_instance(path)  # schema + consistency round-trip
@@ -136,6 +149,7 @@ def main() -> int:
         "script": "experiments/33_generate_regime.py",
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
         "count": len(rows), "per_cell": args.per_cell,
+        "profile": args.profile, "seed_base": args.seed_base,
         "dense": {"n": DENSE_N, "bits": DENSE_BITS, "gaps": DENSE_GAPS},
         "critical": {"n": CRIT_N, "bits": "n-8, n, min(n+6, 47)",
                      "gaps": CRIT_GAPS},
