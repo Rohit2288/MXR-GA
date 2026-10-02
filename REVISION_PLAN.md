@@ -173,3 +173,55 @@ All outputs land in `paper_fragments/` as compilable LaTeX snippets + figure fil
 4. Sequencing: confirmatory runs before final numbers are fixed. The
    manuscript is built so that re-running the generators refreshes every
    table automatically.
+
+---
+
+# ROUND 3 — New submission after round-2 reject (decision 2026-10-02)
+
+Round-2 comments are appended verbatim to `reviewer_comments.md` (IDs R1b/R2b/R3b/R4b/AEb).
+Blocking demand: AEb.1 + R4b.1 — show WHEN and WHY the proposed method should be used.
+Everything else (R1b.1-4, R2b.1-5, R3b, R4b.2, AEb.2) is presentation/consistency work.
+Rohit (2026-10-02): new submission, so the algorithm itself may be redesigned; run the pilot.
+
+## Phase 9 — Decision pilot (pre-registered before results)
+
+Data check that motivated it (results/final/combined.csv): fhga_v2crisp is strictly best
+(excl. DP) on 0.8% of Suite T and 2.2% of Suite A instances; DP solves all of T in ~4 ms;
+on Suite H FLSSS (0.9997) and guided ILS (0.86) beat it (0.75).
+
+- [x] 9.1 Protocol: optional wall-clock budget, protocol-owned stop at mu = 1, and
+      `progress()` for budget-fraction schedules (eval-budgeted runs unchanged; 352 tests pass).
+- [x] 9.2 Redesigned algorithm prototype (`src/solvers/exact_lns.py`), built on the FSSP ->
+      closest-subset-sum reduction: an EXACT move that frees k items and solves the residual
+      closest-sum problem by meet-in-the-middle (2^k assignments per move, magnitude-independent).
+      `ma_xr` = memetic algorithm whose recombination solves the parents' disagreement set exactly;
+      controls `ma_rand` (same population, random free set) and `lns_mitm` (single trajectory).
+- [x] 9.3 Regime-map suite R (`experiments/33`, 132 instances, planted mu* = 1): dense block
+      n in {100,200,500,1000} x bits {16,24,32,40} x precision gap {8,16,exact}; critical block
+      n ~ bits, n in {32,40,46}. Finding during design: with integer items, n >> bits makes every
+      instance dense (~2^(n-bits) subsets per attainable sum); needles exist only near n ~ bits.
+- [ ] 9.4 Run pilot (`experiments/34`): 11 solvers, 10 s wall-clock each, 3 seeds (stochastic).
+- [ ] 9.5 Analyse against the gates below; record outcome + path here; Rohit confirms path.
+
+### Pre-registered decision gates (written before any pilot result was seen)
+
+Primary metric per (solver, instance): success = reaches mu = 1 (the planted optimum);
+secondary: mean mu and median time-to-optimum. "Heuristic regime" = cells where DP is
+infeasible AND n > 44 (MITM infeasible).
+
+- Gate N (niche exists): in the heuristic regime, the best proposed solver (ma_xr or lns_mitm)
+  exceeds the best existing solver (FLSSS, CP-SAT, guided ILS, guided SA, fhga_v2crisp,
+  random search) in success rate by >= 20 percentage points, OR in mean mu with Cliff's
+  delta >= 0.33 (medium), on at least one coherent block of cells (not cherry-picked
+  single cells).
+- Gate G (population justified): ma_xr beats BOTH ma_rand and lns_mitm in success rate
+  (>= 10 points) or in time-to-optimum (Cliff's delta >= 0.147, small) on the cells
+  where they differ. If not met, the algorithm is reported as an exact-move LNS, not a GA.
+
+Paths:
+- N and G met    -> GPEM resubmission: memetic algorithm with exact recombination, regime
+                    map as the "when/why" evidence, plateau theory as the "why".
+- N met, G not   -> the method is an LNS matheuristic; GPEM fit is weak -> discuss venue
+                    with Rohit (e.g. a heuristics / OR / fuzzy-systems journal).
+- N not met      -> no honest "use FH-GA when..." claim; retarget as a benchmark +
+                    protocol + plateau-theory paper to a better-fitting venue.
