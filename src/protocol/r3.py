@@ -30,10 +30,12 @@ V2 = dict(repair_mode="dp_window", uniform_xover=True, gamma=0.0,
           pc_low=0.8, pc_high=0.8, pm_low_mult=1.0, pm_high_mult=1.0)
 
 NEW = ["ma_xr", "ma_rand", "lns_mitm"]
+# Seeded like NEW when requested explicitly; not in the default list.
+ABLATION = ["ma_xr_cpsat"]
 BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
                    "vanilla_ga_crisp", "random_search"]
-SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "alpha_cut",
-          "greedy_center"]
+SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "kk", "ckk",
+          "alpha_cut", "greedy_center"]
 STOCHASTIC = NEW + BASE_STOCHASTIC
 
 
@@ -101,6 +103,11 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
         "ma_xr": lambda: MAXR(k=k, pop_size=pop, recomb="exact"),
         "ma_rand": lambda: MAXR(k=k, pop_size=pop, recomb="random"),
         "lns_mitm": lambda: LNSMITM(k=k),
+        # CMSA-style ablation: same exact recombination, CP-SAT sub-solver.
+        "ma_xr_cpsat": lambda: MAXR(k=k, pop_size=pop, recomb="exact",
+                                    subsolver="cpsat"),
+        "kk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=False),
+        "ckk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=True),
         "fhga_v2crisp": lambda: FHGACrisp(variant="thorough",
                                           config=FHGAConfig(**V2),
                                           name="fhga_v2crisp"),

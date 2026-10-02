@@ -89,7 +89,7 @@ class _Core:
     """Shared state for one run: items, distance, the exact move."""
 
     def __init__(self, instance: Instance, objective: BudgetedObjective,
-                 rng: np.random.Generator, k: int):
+                 rng: np.random.Generator, k: int, subsolver: str = "mitm"):
         self.n = instance.n
         self.items = np.asarray(instance.items, dtype=np.int64)
         t = instance.target
@@ -100,6 +100,7 @@ class _Core:
         self.rng = rng
         self.k = min(k, self.n)
         self.moves = 0
+        self.subsolver = subsolver
 
     def dist(self, s: int) -> float:
         u = self.t_m - s
@@ -131,10 +132,46 @@ class _Core:
         fixed = chrom.copy()
         fixed[free] = False
         r = self.t_m - int(self.items[fixed].sum())
-        _, mask = closest_subset(self.items[free], r, self.d_l, self.d_r)
+        if self.subsolver == "mitm":
+            _, mask = closest_subset(self.items[free], r, self.d_l, self.d_r)
+        else:
+            mask = self._cpsat_closest(free, r, chrom[free])
         chrom[free] = mask
         self.moves += 1
         return self.commit(chrom)
+
+    def _cpsat_closest(self, free: np.ndarray, r: int,
+                       current: np.ndarray) -> np.ndarray:
+        """CMSA-style ablation: the same sub-problem handed to CP-SAT
+        (min weighted |sum - r|, current assignment as hint), time-capped
+        per move. Kept only if not worse than the current assignment."""
+        from ortools.sat.python import cp_model
+        vals = [int(v) for v in self.items[free]]
+        wl = max(1, int(round(self.d_r)))      # weights: dist/dL ~ wl*under
+        wr = max(1, int(round(self.d_l)))      # cross-multiplied by dL*dR
+        m = cp_model.CpModel()
+        x = [m.new_bool_var(f"x{i}") for i in range(len(vals))]
+        hi = sum(vals) + abs(r)
+        under = m.new_int_var(0, hi, "u")
+        over = m.new_int_var(0, hi, "o")
+        m.add(sum(v * xi for v, xi in zip(vals, x)) + under - over == r)
+        m.minimize(wl * under + wr * over)
+        for xi, c in zip(x, current):
+            m.add_hint(xi, bool(c))
+        solver = cp_model.CpSolver()
+        solver.parameters.num_workers = 1
+        solver.parameters.max_time_in_seconds = max(
+            0.01, min(0.2, self.objective.time_left()))
+        solver.parameters.random_seed = int(self.rng.integers(1, 2**31 - 1))
+        st = solver.solve(m)
+        if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+            return current.copy()
+        mask = np.array([bool(solver.value(xi)) for xi in x])
+
+        def dist(msk):
+            u = r - int(np.asarray(vals)[msk].sum()) if msk.any() else r
+            return u / self.d_l if u >= 0 else -u / self.d_r
+        return mask if dist(mask) <= dist(current) else current.copy()
 
     def random_free(self, exclude: Optional[np.ndarray] = None,
                     size: Optional[int] = None) -> np.ndarray:
@@ -172,16 +209,21 @@ class MAXR(Solver):
     """Memetic algorithm with exact recombination and exact moves."""
 
     def __init__(self, k: int = 32, pop_size: int = 16,
-                 recomb: str = "exact", name: Optional[str] = None):
+                 recomb: str = "exact", name: Optional[str] = None,
+                 subsolver: str = "mitm"):
         if recomb not in ("exact", "random"):
             raise ValueError(recomb)
         self.k, self.pop_size, self.recomb = k, pop_size, recomb
-        self.name = name or ("ma_xr" if recomb == "exact" else "ma_rand")
+        self.subsolver = subsolver
+        default = "ma_xr" if recomb == "exact" else "ma_rand"
+        if subsolver != "mitm":
+            default += f"_{subsolver}"
+        self.name = name or default
         self.last_stats: dict = {}
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
-        core = _Core(instance, objective, rng, self.k)
+        core = _Core(instance, objective, rng, self.k, self.subsolver)
         stats = self.last_stats = {"moves": 0, "generations": 0,
                                    "accepted": 0, "mean_diff": 0.0}
         pop: List[np.ndarray] = []

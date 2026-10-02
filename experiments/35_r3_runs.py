@@ -119,7 +119,7 @@ def main() -> int:
         iid = load_instance(p).instance_id
         for spec in args.solvers:
             base_name, _ = parse_spec(spec)
-            if base_name in r3.NEW:
+            if base_name in r3.NEW or base_name in r3.ABLATION:
                 seeds = range(args.seeds_new)
             elif base_name in r3.BASE_STOCHASTIC:
                 seeds = range(args.seeds_base)

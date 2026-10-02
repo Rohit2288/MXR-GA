@@ -345,4 +345,13 @@ On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued 
       Objection: "you crippled the baselines / the budget was too short".
 - [ ] 11.5 Anytime curves from the traces (all Phase 10-11 runs). Objection: "end-of-budget
       snapshots hide the dynamics".
+- [ ] 11.6 KK / CKK baselines (`src/solvers/kk.py`; Karmarkar-Karp differencing and Korf's complete
+      anytime version, via the reduction subset sum -> partition with d = |S - 2T|; parity union-find
+      reconstructs explicit subsets; CKK exact on 60/60 brute-force cases). Required by the novelty check
+      (paper_fragments/novelty_check.md): KK is the standard heuristic for many large numbers. In the
+      default solver list for every stage not yet started; `scripts/run_r3_queue2.sh` adds them to the
+      regime map, beyond, scale and hard corpora (plus lattice on the hard corpus).
+- [ ] 11.7 CMSA-style ablation `ma_xr_cpsat`: the same exact recombination with CP-SAT as the
+      sub-solver (0.2 s cap per move) vs ma_xr, on the hard corpus, 5 seeds, 30 s. Answers "why MITM
+      rather than an ILP/CP sub-solver, as in CMSA or kernel search?".
 

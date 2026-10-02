@@ -56,5 +56,8 @@ def default_solvers() -> List[Solver]:
         LNSMITM(),
         MAXR(recomb="exact"),
         MAXR(recomb="random"),
+        MAXR(recomb="exact", subsolver="cpsat", k=12),
+        __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=False),
+        __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=True),
     ]
     return solvers
