@@ -200,8 +200,37 @@ on Suite H FLSSS (0.9997) and guided ILS (0.86) beat it (0.75).
       n in {100,200,500,1000} x bits {16,24,32,40} x precision gap {8,16,exact}; critical block
       n ~ bits, n in {32,40,46}. Finding during design: with integer items, n >> bits makes every
       instance dense (~2^(n-bits) subsets per attainable sum); needles exist only near n ~ bits.
-- [ ] 9.4 Run pilot (`experiments/34`): 11 solvers, 10 s wall-clock each, 3 seeds (stochastic).
-- [ ] 9.5 Analyse against the gates below; record outcome + path here; Rohit confirms path.
+- [x] 9.4 Run pilot (`experiments/34`): 11 solvers, 10 s wall-clock each, 3 seeds (stochastic). 3,300 runs, 2026-10-02. Raw: results/regime_pilot/results.csv; per-instance: per_instance.csv.
+- [x] 9.5 Analysed against the gates (outcome below). Rohit to confirm next step.
+
+### Pilot outcome (2026-10-02)
+
+Heuristic regime = DP infeasible and n > 44: 95 of 132 instances (83 dense, 12 critical).
+
+- Gate N (as pre-registered, success = mu exactly 1): MET.
+  dense: ma_xr 0.839 vs best existing FLSSS 0.325 (+51.4 pts, Cliff delta on mean mu +0.471);
+  critical: ma_rand 0.472 vs every existing solver 0.000 (+47.2 pts, delta +0.667).
+  CAVEAT, found in the fairness check: FLSSS is configured with eps = 0.01, so its alpha search
+  stops at about mu >= 0.99. With success counted as mu >= 0.99, dense is ma_xr 0.940 vs FLSSS
+  0.880 (+6 pts only); critical is ma_xr 0.778 / ma_rand 0.833 vs FLSSS 0.417 (+36 to +42 pts).
+  So the large dense margin is partly an artefact of the FLSSS precision setting. The strong
+  claim currently rests on the critical block plus the 40-bit dense cells. The rest of the
+  dense block is "matches or slightly beats FLSSS, and far beats GA/ILS/SA/CP-SAT/FH-GA v2".
+- Gate G: NOT MET. ma_xr vs ma_rand: +1.0 pts success, time-to-optimum delta -0.051;
+  vs lns_mitm: +4.3 pts, delta -0.146 (threshold 0.147). ma_rand leads on critical (0.824 vs 0.796).
+  Post-hoc only (not a gate): on the 40-bit dense cells, the hardest region, ma_xr hits mu = 1 on
+  0.444 of runs vs ma_rand 0.347 and lns_mitm 0.278. That is small-sample and is a hypothesis
+  for a confirmatory test, not a result.
+- Small n / small magnitude (37 instances where DP or MITM runs): the exact methods solve what
+  they can run on; the new solvers solve all 37 as well (k >= n makes one move exact).
+- Old FH-GA v2-crisp: 0.070 success in the heuristic regime. The redesign is necessary in any case.
+
+Proposed next (needs Rohit's OK):
+- 9.6 Fairness fix: rerun FLSSS with a precision matching the success metric (eps 1e-6 plus an
+      explicit alpha = 1 probe) on suite R; re-evaluate Gate N.
+- 9.7 Pre-registered confirmatory test of Gate G on the hard region only (bits = 40 dense + critical
+      n >= 46): fresh instances (new seeds), 5 seeds, 30 s budget. Same Gate G thresholds.
+
 
 ### Pre-registered decision gates (written before any pilot result was seen)
 

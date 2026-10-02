@@ -1,0 +1,34 @@
+{
+ "git_commit": "fe0d6d13a86958fba24ee74f3e2f0c00f3078533",
+ "script": "experiments/34_regime_pilot.py",
+ "date_utc": "2026-10-02T09:20:11.408829+00:00",
+ "protocol": {
+  "max_evals": 10000000,
+  "plateau_tol": 1e-09,
+  "plateau_patience": null,
+  "max_wall_s": 10.0,
+  "stop_at_mu": 1.0
+ },
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "stochastic": [
+  "ma_xr",
+  "ma_rand",
+  "lns_mitm",
+  "fhga_v2crisp",
+  "ils_crisp",
+  "sim_anneal_crisp",
+  "random_search"
+ ],
+ "single": [
+  "dp_exact",
+  "mitm",
+  "cpsat",
+  "flsss"
+ ],
+ "workers": 6,
+ "instances": 132
+}
