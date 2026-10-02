@@ -1,0 +1,44 @@
+{
+ "git_commit": "9d45c0bae5a87b3567390c40b44a84f2ee46087c",
+ "script": "experiments/34_regime_pilot.py",
+ "date_utc": "2026-10-02T11:00:19.400330+00:00",
+ "protocol": {
+  "max_evals": 10000000,
+  "plateau_tol": 1e-09,
+  "plateau_patience": null,
+  "max_wall_s": 30.0,
+  "stop_at_mu": 1.0
+ },
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "corpus": "benchmarks/fsspb_regime_confirm",
+ "solvers": [
+  "ma_xr",
+  "ma_rand",
+  "lns_mitm",
+  "flsss"
+ ],
+ "flsss_eps": 0.01,
+ "stochastic": [
+  "ma_xr",
+  "ma_rand",
+  "lns_mitm",
+  "fhga_v2crisp",
+  "ils_crisp",
+  "sim_anneal_crisp",
+  "random_search"
+ ],
+ "single": [
+  "dp_exact",
+  "mitm",
+  "cpsat",
+  "flsss"
+ ],
+ "workers": 6,
+ "instances": 88
+}

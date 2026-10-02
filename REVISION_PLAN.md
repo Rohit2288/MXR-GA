@@ -238,7 +238,7 @@ Rohit approved 9.6 + 9.7 (2026-10-02: "run both and help me get paper published"
       Rerun: fixed FLSSS on all 132 suite-R instances, 10 s, the pilot protocol ->
       results/regime_pilot/flsss_fixed.csv. Gate N is re-evaluated with the same rule
       (success = mu exactly 1, existing-solver set as before, with fixed FLSSS replacing the old one).
-- [ ] 9.7 Confirmatory Gate G test (PRE-REGISTERED here, before the run).
+- [x] 9.7 Confirmatory Gate G test (PRE-REGISTERED here, before the run).
       Corpus: benchmarks/fsspb_regime_confirm, 88 FRESH instances (seed base 990000, no overlap with
       the pilot): dense n in {100,200,500,1000} x bits 40 x gap {8,16,exact}; critical (n,bits) in
       {(46,38),(46,46),(46,47),(48,40),(48,47)} x gap {16,exact}; 4 instances per cell.
@@ -249,6 +249,18 @@ Rohit approved 9.6 + 9.7 (2026-10-02: "run both and help me get paper published"
       time-to-optimum (unsolved = +inf) on the instances where they differ. Both comparisons must pass.
       Secondary (reported, not a gate): Wilcoxon signed-rank on per-instance success, Holm over the 2 pairs.
       Result -> results/regime_confirm/results.csv.
+
+### 9.7 outcome (2026-10-02): Gate G MET, both comparisons, both criteria
+88 fresh hard instances, 5 seeds, 30 s (results/regime_confirm/results.csv, 1,408 runs).
+- ma_xr vs ma_rand: success 0.577 vs 0.461 (+11.6 pts); time-to-optimum Cliff delta -0.197
+  (79 differing instances); Wilcoxon on per-instance success p = 1.7e-4 (Holm 1.7e-4).
+- ma_xr vs lns_mitm: 0.577 vs 0.423 (+15.5 pts); delta -0.349 (75 instances); p = 7.3e-5 (Holm 1.5e-4).
+- Where it comes from: DENSE 40-bit cells, ma_xr 0.638 vs ma_rand 0.429 / lns_mitm 0.454. On the
+  critical cells ma_xr = ma_rand (0.505 vs 0.500), and lattice reduction solves those anyway (Phase 11).
+  So the population with exact recombination earns its place exactly in the regime the method is for.
+- FLSSS (fixed wrapper): 0.000 on this corpus.
+=> Path: GPEM new submission. The method is a memetic algorithm with exact recombination; the
+   "why a GA" evidence is this pre-registered test.
 
 ### 9.6 outcome (2026-10-02): Gate N still MET with the fixed FLSSS
 Fixed FLSSS (results/regime_pilot/flsss_fixed.csv) vs the best new solver, heuristic regime:
