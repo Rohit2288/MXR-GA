@@ -150,7 +150,7 @@ def main() -> int:
         "git_commit": git_commit(), "script": "experiments/34_regime_pilot.py",
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
         "protocol": protocol(args.wall).__dict__, "seeds": args.seeds,
-        "corpus": str(args.corpus.relative_to(REPO)), "solvers": args.solvers,
+        "corpus": str(args.corpus.resolve().relative_to(REPO)), "solvers": args.solvers,
         "flsss_eps": args.flsss_eps,
         "stochastic": STOCHASTIC, "single": SINGLE,
         "workers": args.workers, "instances": len(paths),
