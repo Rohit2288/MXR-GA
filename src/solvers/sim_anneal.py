@@ -70,12 +70,11 @@ class SimAnneal(Solver):
         # compress is the C-level equivalent of the enumerate comprehension.
         cur_f = score(list(compress(positions, chrom)))
         log_ratio = math.log(self.t_end / self.t0)
-        max_evals = objective.config.max_evals
         while True:
             i = int(rng.integers(0, n))
             chrom[i] = 1 - chrom[i]
             cand_f = score(list(compress(positions, chrom)))
-            frac = objective.evals_used / max_evals
+            frac = objective.progress()
             temp = self.t0 * math.exp(log_ratio * frac)
             delta = cand_f - cur_f
             if delta >= 0 or rng.random() < math.exp(delta / temp):

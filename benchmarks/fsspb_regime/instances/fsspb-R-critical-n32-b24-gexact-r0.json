@@ -1,0 +1,82 @@
+{
+ "schema_version": "1.1",
+ "instance_id": "fsspb-R-critical-n32-b24-gexact-r0",
+ "metadata": {
+  "n": 32,
+  "distribution": "uniform_b24",
+  "spread_ratio": 1.727790435330536e-08,
+  "asymmetry": 1.0,
+  "seed": 330099,
+  "construction": {
+   "v2_suite": "R",
+   "v2_description": "regime_map_planted_solution",
+   "generator": "experiments/33_generate_regime.py",
+   "block": "critical",
+   "bits": 24,
+   "gap": "exact",
+   "kappa": 6.533585799663548,
+   "planted_cardinality": 9
+  }
+ },
+ "items": [
+  12007890,
+  9548554,
+  12766937,
+  11709973,
+  15030707,
+  9519288,
+  11715534,
+  14828484,
+  14170964,
+  12901567,
+  14322257,
+  16647503,
+  9381849,
+  14830389,
+  14219412,
+  11386759,
+  14185220,
+  11195843,
+  13943974,
+  15125381,
+  8465520,
+  15479258,
+  11005296,
+  11692804,
+  10129256,
+  12041115,
+  15483256,
+  16725433,
+  11443756,
+  13131414,
+  12756605,
+  14923882
+ ],
+ "target": {
+  "T_L": 115754778.0,
+  "T_M": 115754779.0,
+  "T_R": 115754780.0
+ },
+ "witness": {
+  "subset_indices": [
+   1,
+   4,
+   9,
+   10,
+   13,
+   20,
+   25,
+   26,
+   29
+  ],
+  "subset_sum": 115754779,
+  "mu_value": 1.0
+ },
+ "difficulty": {
+  "kappa": 6.533585799663548,
+  "bits": 24,
+  "gap": "exact",
+  "label": "regime_map"
+ },
+ "checksum_sha256": "9f97728be93b01e5b3df99308253f1ef6ab25d5fa08a93a4bacab186378e8245"
+}

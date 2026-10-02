@@ -151,7 +151,7 @@ class _Run:
         return sum(a for a, b in zip(self.items, chrom) if b)
 
     def _phi(self) -> float:
-        return self.objective.evals_used / self.objective.config.max_evals
+        return self.objective.progress()
 
     # -- main loop ----------------------------------------------------------
 

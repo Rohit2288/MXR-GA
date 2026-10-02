@@ -18,6 +18,7 @@ def default_solvers() -> List[Solver]:
     from src.solvers.baselines import GreedyCenter, RandomSearch, VanillaGA
     from src.solvers.cpsat import CPSAT
     from src.solvers.dp_bitset import DPBitset
+    from src.solvers.exact_lns import LNSMITM, MAXR
     from src.solvers.fhga import FHGA, FHGAConfig
     from src.solvers.fhga_crisp import FHGACrisp
     from src.solvers.ils import ILS
@@ -49,5 +50,10 @@ def default_solvers() -> List[Solver]:
              name="fhga_ls_bestflip"),
         FHGA(variant="fast", config=FHGAConfig(ls_mode="swap"),
              name="fhga_ls_swap"),
+        # Round-3 redesign (pilot): exact-neighbourhood search and the
+        # memetic algorithm with exact recombination, plus its control.
+        LNSMITM(),
+        MAXR(recomb="exact"),
+        MAXR(recomb="random"),
     ]
     return solvers
