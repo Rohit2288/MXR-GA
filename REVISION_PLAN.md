@@ -309,7 +309,7 @@ solvers and (raised 2026-10-02, Rohit: "very strong defense") 20 for stochastic 
 Suite H, FSSP-2 and reconciliation; 5/5 on the regime map and the Phase-11 stress corpora. FLSSS uses the fixed wrapper.
 New comparator for R4b.1: `vanilla_ga_crisp`, a conventional GA steered by the shared crisp guide.
 
-- [ ] 10.3 Regime map, fresh corpus `benchmarks/fsspb_regime_final` (198 inst, seed base 550000,
+- [x] 10.3 Regime map, fresh corpus `benchmarks/fsspb_regime_final` (198 inst, seed base 550000,
       3 per cell), all 14 solvers, 5 seeds, 10 s. -> results/r3_regime. (AEb.1, R4b.1 when/why)
 - [ ] 10.2 Suite H, all 97 instances (round-2 table reported 73: resolved by running all).
       -> results/r3_hard. (R4b.1 hard instances)
@@ -354,4 +354,16 @@ On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued 
 - [ ] 11.7 CMSA-style ablation `ma_xr_cpsat`: the same exact recombination with CP-SAT as the
       sub-solver (0.2 s cap per move) vs ma_xr, on the hard corpus, 5 seeds, 30 s. Answers "why MITM
       rather than an ILP/CP sub-solver, as in CMSA or kernel search?".
+- [ ] 11.8 Lattice without the n <= 150 cap on the regime map (`scripts/run_r3_queue3.sh`). Reason: in the
+      10.3 regime map, lattice solves 0.89 of dense n = 100 cells vs ma_xr 0.80, and shows 0 at n >= 200
+      only because of the cap. Before claiming dense n >= 200, it must be shown that lattice fails there.
+
+### 10.3 outcome (2026-10-02), success = mu exactly 1, 5 seeds, 10 s, 198 instances (no KK/CKK yet: queue 2)
+- Critical block (n ~ bits): lattice 1.00 in every bit class; ma_xr 1.00 / 1.00 / 0.88 / 0.97 / 0.52 / 0.13
+  at 24 / 32 / 38 / 40 / 46 / 47 bits. => lattice reduction is the tool there.
+- Dense block: 16 and 24 bits, ma_xr = FLSSS = 1.00; 32 bits, ma_xr 1.00 vs best other (FLSSS) 0.31;
+  40 bits, ma_xr 0.33 vs best other (lattice) 0.14.
+- Dense by n: n = 100, lattice 0.89 > ma_xr 0.80 (!); n >= 200, ma_xr 0.83-0.86 vs FLSSS 0.58-0.64
+  (lattice capped, see 11.8).
+- Metaheuristics with the crisp guide (ILS, SA, conventional GA, FH-GA v2): <= 0.28 dense, ~0 critical.
 
