@@ -481,14 +481,22 @@ unreliable. Large gaps (e.g. structured 1.00 vs 0.4) are not at risk; close ones
 ## Phase 13 — Re-run the wall-clock headline experiments on performance cores only (PRE-REGISTERED)
 - [x] 13.0 Gate (PASS 2026-10-03: 4 workers vs 1 worker, ma_xr dense -8.3, critical -2.5; ktree dense 0.0, critical -7.5 points): hard corpus, ma_xr and ktree, seed 0, 30 s, 4 workers vs the one-worker run (12.6). Each
       solver within +-10 points in each block; otherwise drop to 3 workers and repeat.
-- [ ] 13.1 Gate G re-run (ma_xr / ma_rand / lns_mitm, 88 inst, 5 seeds, 30 s, 4 workers); same thresholds
+- [x] 13.1 Gate G re-run (ma_xr / ma_rand / lns_mitm, 88 inst, 5 seeds, 30 s, 4 workers); same thresholds
       as 9.7 (>= 10 points vs both, or time-to-optimum delta <= -0.147 vs both).
 - [ ] 13.2 Structured confirmation re-run (12.3 corpus and solvers, 4 workers); same R1 / R2 criteria.
 - [ ] 13.3 Regime map re-run (ma_xr, ktree, ckk, flsss, flsss_exact, cpsat, lattice uncapped; 5 seeds,
       10 s, 4 workers; lattice 3 workers because BKZ is memory-heavy).
 - [ ] 13.4 Scale re-run (ma_xr, ktree, ckk, flsss_exact; 30 s, 5 seeds, 4 workers).
-- [ ] 13.5 CP-SAT sub-solver ablation re-run (ma_xr_cpsat vs ma_xr, 30 s, 5 seeds, 4 workers).
+- [x] 13.5 CP-SAT sub-solver ablation re-run (ma_xr_cpsat vs ma_xr, 30 s, 5 seeds, 4 workers).
 Not re-run, stated in the paper: FSSP-2 main, Suite H and reconciliation (small magnitudes; almost all runs
 stop at the known optimum within milliseconds, so contention cannot change their outcome). Every paper
 number from Phase 13 replaces the corresponding earlier number. Hardware is reported: Apple M1, 4 P-cores used.
+
+### Phase 13 outcomes (performance cores only)
+- 13.1 Gate G MET on the clean re-run. ma_xr vs ma_rand: success 0.732 vs 0.639 (+9.3 points, below the
+  10-point threshold) but time-to-optimum Cliff delta -0.187 (passes the second criterion), Wilcoxon
+  p = 3.7e-3. ma_xr vs lns_mitm: 0.732 vs 0.559 (+17.3), delta -0.354, p = 3.2e-6. As before, the gain is
+  in the dense cells (0.833 vs 0.667 / 0.633); critical ma_xr = ma_rand (0.610 vs 0.605). Report the
+  success margin vs ma_rand honestly as +9.3 points, with the gate passing on time-to-optimum.
+- 13.5 CP-SAT sub-solver ablation: ma_xr_cpsat 0.000 / 0.000 (critical / dense) vs ma_xr 0.610 / 0.833.
 
