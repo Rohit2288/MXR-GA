@@ -33,7 +33,7 @@ NEW = ["ma_xr", "ma_rand", "lns_mitm"]
 # Seeded like NEW when requested explicitly; not in the default list.
 ABLATION = ["ma_xr_cpsat"]
 BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
-                   "vanilla_ga_crisp", "random_search"]
+                   "vanilla_ga_crisp", "random_search", "ktree"]
 SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "kk", "ckk",
           "alpha_cut", "greedy_center"]
 STOCHASTIC = NEW + BASE_STOCHASTIC
@@ -124,6 +124,7 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
             tlimit_per_probe=wall_s / (2 + math.ceil(math.log2(1 / flsss_eps))),
             total_timeout=wall_s + 5),
         "alpha_cut": AlphaCut,
+        "ktree": lambda: __import__("src.solvers.ktree", fromlist=["KTree"]).KTree(),
         "lattice": lambda: __import__("src.solvers.lattice", fromlist=["Lattice"]).Lattice(
             max_n=kw.get("max_n", 150)),
         "greedy_center": GreedyCenter,
