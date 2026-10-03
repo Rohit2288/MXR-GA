@@ -59,5 +59,7 @@ def default_solvers() -> List[Solver]:
         MAXR(recomb="exact", subsolver="cpsat", k=12),
         __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=False),
         __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=True),
+        __import__("src.solvers.ktree", fromlist=["KTree"]).KTree(),
+        __import__("src.solvers.lattice", fromlist=["Lattice"]).Lattice(),
     ]
     return solvers

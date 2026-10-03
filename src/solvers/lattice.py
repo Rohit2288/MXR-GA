@@ -85,7 +85,7 @@ class Lattice(Solver):
                     objective.evaluate([])   # lets the protocol stop the run
                 block = min(block, n + 1)
                 params = BKZ.Param(block_size=block,
-                                   max_time=max(0.05, left),
+                                   max_time=max(0.05, min(left, 60.0)),
                                    flags=BKZ.AUTO_ABORT | BKZ.MAX_TIME)
                 BKZReduction(B)(params)
                 read_off(B)
