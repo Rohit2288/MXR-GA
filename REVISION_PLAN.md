@@ -311,9 +311,9 @@ New comparator for R4b.1: `vanilla_ga_crisp`, a conventional GA steered by the s
 
 - [x] 10.3 Regime map, fresh corpus `benchmarks/fsspb_regime_final` (198 inst, seed base 550000,
       3 per cell), all 14 solvers, 5 seeds, 10 s. -> results/r3_regime. (AEb.1, R4b.1 when/why)
-- [ ] 10.2 Suite H, all 97 instances (round-2 table reported 73: resolved by running all).
+- [x] 10.2 Suite H, all 97 instances (round-2 table reported 73: resolved by running all).
       -> results/r3_hard. (R4b.1 hard instances)
-- [ ] 10.1 Benchmark-FSSP-2 main comparison (T/A/U, 866), all solvers. Statistics with the
+- [x] 10.1 Benchmark-FSSP-2 main comparison (T/A/U, 866), all solvers. Statistics with the
       recommended configuration as the reference arm (R1b.1): Friedman -> Wilcoxon + Holm ->
       Cliff's delta, per suite; success rate vs certified optimum; time-to-optimum. -> results/r3_main.
 - [ ] 10.4 Sensitivity of the only remaining parameters: k in {16,24,32,36} x pop in {8,16,32} (ma_xr),
@@ -332,12 +332,12 @@ instances (n = 46, 38-46 bits) in 0.06-0.8 s, where ma_xr reached about 0.5 in t
 critical / low-density regime belongs to lattice reduction, and the regime map must say so.
 On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued corpus.
 
-- [ ] 11.1 Beyond MITM's memory reach: n in {56,64,80}, 46-47 bits (24 inst), 30 s, 5 seeds.
+- [x] 11.1 Beyond MITM's memory reach: n in {56,64,80}, 46-47 bits (24 inst), 30 s, 5 seeds.
       Objection: "your hard cells are just MITM / lattice territory".
-- [ ] 11.2 Scale: n in {2000,5000,10000} x {32,39} bits (54 inst), 30 s. Objection: "only at
+- [x] 11.2 Scale: n in {2000,5000,10000} x {32,39} bits (54 inst), 30 s. Objection: "only at
       your sizes". GA baselines are excluded at this size (population lists of 4n x n do not fit
       in memory per worker); this is stated, not hidden.
-- [ ] 11.3 Payment reconciliation (48 synthetic instances, amounts in cents, 5-40 invoices per
+- [x] 11.3 Payment reconciliation (48 synthetic instances, amounts in cents, 5-40 invoices per
       payment, asymmetric fee tolerance): `experiments/36_generate_reconcile.py`. Objection:
       "is any of this practical?" Also motivates the asymmetric fuzzy target.
 - [ ] 11.4 Handicap checks on the 9.7 hard corpus: (a) CP-SAT with 8 workers, run alone;
@@ -366,4 +366,28 @@ On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued 
 - Dense by n: n = 100, lattice 0.89 > ma_xr 0.80 (!); n >= 200, ma_xr 0.83-0.86 vs FLSSS 0.58-0.64
   (lattice capped, see 11.8).
 - Metaheuristics with the crisp guide (ILS, SA, conventional GA, FH-GA v2): <= 0.28 dense, ~0 critical.
+
+### Phase 10-11 outcomes so far (2026-10-03); success = mu exactly 1 unless stated
+- 10.1 FSSP-2 (866 inst, 20 seeds new and baselines, 146,354 runs): ma_xr top or tied on every suite.
+  Mean mu: T 1.0000, A 0.9039 (best), U 0.7469 (= the exact optimum on all 384). Against FLSSS:
+  T 0/122/0, A 159/198/3 (delta +0.038, negligible), U 11/373/0. Against CKK: A delta +0.374 (medium,
+  316/33/11). Against conventional crisp GA: A delta +0.259 (small), T +0.664 (large). The strong
+  methods bunch at the top because FSSP-2 magnitudes are small; FSSP-2 shows the method has no weak
+  suite, not where it is uniquely needed.
+- 10.2 Suite H (97 inst, 20 seeds): ma_xr, ma_rand, lns_mitm, CP-SAT, FLSSS, CKK all 1.000; DP 0.990;
+  fhga_v2crisp 0.934; ILS 0.922; KK 0.835; lattice 0.639; SA 0.341; random 0.211; crisp GA 0.139.
+  Suite H discriminates blind / plain-GA search from strong methods, NOT among strong methods.
+- 11.3 Reconciliation (48 inst, synthetic, amounts in cents): ma_xr 1.00 at n = 200/1000/5000;
+  CKK ALSO 1.00 everywhere and faster (median 1-16 ms vs ma_xr 20-170 ms); KK 0.81-1.00; FLSSS 1.00 at
+  n <= 1000 but 0.12 at 5000; CP-SAT <= 0.31; every metaheuristic ~0. => On this realistic dense
+  workload a classical differencing method is as good and faster; the paper must say so.
+- 11.1 Beyond MITM (n 56-80, 46-47 bits, 30 s): only lattice solves anything (0.542); every other
+  solver, ma_xr included, 0.000. => moderate density at n < ~100 is lattice territory.
+- 11.2 Scale (n 2000-10000, 32/39 bits, 30 s): ma_xr 1.00 at 32 bits and 0.84-0.91 at 39 bits;
+  lns_mitm 0.69-1.00; FLSSS 0.78 only at n2000-b32; CP-SAT, ILS, SA, random all 0. KK/CKK pending (queue 4).
+- 11.4a CP-SAT with 8 workers on the hard corpus (30 s): 0.000 success (mean mu 0.589).
+- 11.4b MITM with max_n = 50: solves every instance it can run on (40 critical; 48 dense infeasible).
+OPEN AND PIVOTAL: KK/CKK on the regime map and the scale corpus (queue 4, re-ordered first). If CKK
+matches ma_xr on dense >= 32-bit instances as it did on reconciliation, the "when to use" claim must
+narrow further, or shift to the instances where CKK fails.
 

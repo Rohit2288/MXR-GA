@@ -1,0 +1,31 @@
+{
+ "git_commit": "b85c585209477c943176b77aa71a4db143d230a8",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-02T22:25:55.343566+00:00",
+ "corpus": "benchmarks/fsspb_reconcile",
+ "instances": 48,
+ "solvers": [
+  "ma_xr",
+  "ma_rand",
+  "lns_mitm",
+  "fhga_v2crisp",
+  "ils_crisp",
+  "sim_anneal_crisp",
+  "vanilla_ga_crisp",
+  "random_search",
+  "dp_exact",
+  "mitm",
+  "cpsat",
+  "flsss",
+  "lattice",
+  "kk",
+  "ckk",
+  "alpha_cut",
+  "greedy_center"
+ ],
+ "seeds_new": 20,
+ "seeds_base": 20,
+ "wall": "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 7
+}
