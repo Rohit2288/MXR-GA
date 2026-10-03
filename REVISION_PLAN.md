@@ -340,21 +340,21 @@ On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued 
 - [x] 11.3 Payment reconciliation (48 synthetic instances, amounts in cents, 5-40 invoices per
       payment, asymmetric fee tolerance): `experiments/36_generate_reconcile.py`. Objection:
       "is any of this practical?" Also motivates the asymmetric fuzzy target.
-- [ ] 11.4 Handicap checks on the 9.7 hard corpus: (a) CP-SAT with 8 workers, run alone;
+- [x] 11.4 Handicap checks on the 9.7 hard corpus: (a) CP-SAT with 8 workers, run alone;
       (b) MITM with max_n = 50; (c) 60 s budgets for the new solvers, FLSSS, CP-SAT and lattice.
       Objection: "you crippled the baselines / the budget was too short".
 - [ ] 11.5 Anytime curves from the traces (all Phase 10-11 runs). Objection: "end-of-budget
       snapshots hide the dynamics".
-- [ ] 11.6 KK / CKK baselines (`src/solvers/kk.py`; Karmarkar-Karp differencing and Korf's complete
+- [x] 11.6 KK / CKK baselines (`src/solvers/kk.py`; Karmarkar-Karp differencing and Korf's complete
       anytime version, via the reduction subset sum -> partition with d = |S - 2T|; parity union-find
       reconstructs explicit subsets; CKK exact on 60/60 brute-force cases). Required by the novelty check
       (paper_fragments/novelty_check.md): KK is the standard heuristic for many large numbers. In the
       default solver list for every stage not yet started; `scripts/run_r3_queue2.sh` adds them to the
       regime map, beyond, scale and hard corpora (plus lattice on the hard corpus).
-- [ ] 11.7 CMSA-style ablation `ma_xr_cpsat`: the same exact recombination with CP-SAT as the
+- [x] 11.7 CMSA-style ablation `ma_xr_cpsat`: the same exact recombination with CP-SAT as the
       sub-solver (0.2 s cap per move) vs ma_xr, on the hard corpus, 5 seeds, 30 s. Answers "why MITM
       rather than an ILP/CP sub-solver, as in CMSA or kernel search?".
-- [ ] 11.8 Lattice without the n <= 150 cap on the regime map (`scripts/run_r3_queue3.sh`). Reason: in the
+- [x] 11.8 Lattice without the n <= 150 cap on the regime map (`scripts/run_r3_queue3.sh`). Reason: in the
       10.3 regime map, lattice solves 0.89 of dense n = 100 cells vs ma_xr 0.80, and shows 0 at n >= 200
       only because of the cap. Before claiming dense n >= 200, it must be shown that lattice fails there.
 
@@ -390,4 +390,25 @@ On dense 40-bit n = 100 it finds nothing in 5 s. Lattice is now in every queued 
 OPEN AND PIVOTAL: KK/CKK on the regime map and the scale corpus (queue 4, re-ordered first). If CKK
 matches ma_xr on dense >= 32-bit instances as it did on reconciliation, the "when to use" claim must
 narrow further, or shift to the instances where CKK fails.
+
+### Pivotal results (2026-10-03, queue 4)
+- 11.7 DECISIVE NOVELTY TEST, the same algorithm with a CP-SAT sub-solver (the Rothberg-2007 MIP/CP
+  template): hard corpus, 30 s, 5 seeds: ma_xr_cpsat 0.00 (critical) / 0.00 (dense) vs ma_xr 0.57 / 0.73.
+  The meet-in-the-middle sub-solver IS the contribution; a general solver in its place solves nothing.
+- 11.6 KK/CKK: scale (n 2000-10000), CKK 0.11-0.56 and KK identical, vs ma_xr 0.84-1.00. Regime dense:
+  CKK 0.78 / 0.61 / 0.39 / 0.25 at 16 / 24 / 32 / 40 bits, vs ma_xr 1.00 / 1.00 / 1.00 / 0.33. Hard corpus
+  dense: CKK 0.23 vs ma_xr 0.64. Beyond-MITM: 0.00. => CKK's reconciliation win does not carry over; it is
+  specific to that workload (very dense, few invoices per payment).
+- 11.8 Lattice without the cap (regime map, 10 s): n = 100, 1.00 / 1.00 / 1.00 / 0.89 at 16-40 bits (beats
+  ma_xr 0.20 at 40 bits); n = 200, 1.00 up to 32 bits (ties ma_xr), 0.44 at 40 bits (ma_xr 0.40); n = 500,
+  0.78 at 16 bits and 0 above; n = 1000, 0. => Lattice owns n <= ~200; it collapses from n ~500.
+- 11.4c 60 s budget, hard corpus dense: ma_xr 0.64 (30 s) -> 0.97 (60 s); lattice 0.25, FLSSS 0.02,
+  CP-SAT 0.00. Critical: lattice 1.00, ma_xr 0.64. More time helps only ma_xr.
+
+FINAL REGIME MAP (the "when" answer for AEb.1 / R4b.1):
+- n <= ~44 or small magnitudes (DP table fits): exact methods (MITM, DP).
+- Few-to-moderate items with large magnitudes (critical density, n <= ~200): lattice reduction.
+- Very dense reconciliation-type workloads (few items per payment): CKK as good and faster.
+- MANY items (n >= ~500, up to 10,000 tested) with large magnitudes (>= 24-32 bits): ma_xr, the only
+  method that works (0.84-1.00 vs <= 0.56 for every competitor), and it keeps improving with time.
 
