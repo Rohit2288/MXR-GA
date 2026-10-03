@@ -1,0 +1,20 @@
+{
+ "git_commit": "fb3c1406325802fbb80dcd09b6830232ee1d80be",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-03T12:42:25.782265+00:00",
+ "corpus": "benchmarks/subset_speed",
+ "instances": 26,
+ "solvers": [
+  "ckk",
+  "ktree",
+  "ils_crisp",
+  "vanilla_ga_crisp",
+  "sim_anneal_crisp",
+  "fhga_v2crisp"
+ ],
+ "seeds_new": 20,
+ "seeds_base": 1,
+ "wall": 120.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 7
+}

@@ -430,7 +430,7 @@ which would need a fresh pre-registered confirmation.
 Rohit (2026-10-03): "if any other tests ... required please perform". The robustness claim ("robust across
 item structure") was formed from FSSP-2 AFTER the results, so it needs fresh-data confirmation.
 
-- [ ] 12.3 Structure confirmation, fresh corpus `benchmarks/fsspb_structured` (168 + 12 parity = 180 inst,
+- [x] 12.3 Structure confirmation, fresh corpus `benchmarks/fsspb_structured` (168 + 12 parity = 180 inst,
       seed base 440000; 7 distributions x n {200,1000,5000} x planted cardinality {10, n/4-3n/4} x gap
       {exact,16} x asymmetry rotation {1:1, 1:20, 20:1}; max item ~2^40). 30 s. ma_xr and ktree 5 seeds;
       ckk, kk, flsss, flsss_exact, cpsat, lattice (n <= 250) once. Success = mu >= mu* - 1e-9.
@@ -440,16 +440,33 @@ item structure") was formed from FSSP-2 AFTER the results, so it needs fresh-dat
           averaged over the six non-uniform distributions.
       Uniform is the control (no criterion; ktree expected >= ma_xr). Any distribution failing R1 is
       named in the paper together with its winner.
-- [ ] 12.4 Unreachable apex at scale: the 12 parity instances inside 12.3 (mu* = 1 - 1/dL proven). Reported
+- [x] 12.4 Unreachable apex at scale: the 12 parity instances inside 12.3 (mu* = 1 - 1/dL proven). Reported
       as success and mean gap to mu*; no separate criterion.
-- [ ] 12.2 Speed equalisation: the Python-implemented baselines (ckk, ktree, ils_crisp, vanilla_ga_crisp,
+- [x] 12.2 Speed equalisation: the Python-implemented baselines (ckk, ktree, ils_crisp, vanilla_ga_crisp,
       sim_anneal_crisp, fhga_v2crisp) at 120 s (4-12x their earlier budgets), 1 seed, on
       `benchmarks/subset_speed` (structured geometric n >= 1000, dense n1000-b32, scale n5000-b32). If one
       reaches ma_xr's success there (ma_xr data from the earlier runs at 10-30 s), the "slowness" defence
       fails for it and the paper says so.
-- [ ] 12.5 Strong configurations: lattice uncapped at 60 s on dense n >= 500 (regime map); flsss_exact on
+- [x] 12.5 Strong configurations: lattice uncapped at 60 s on dense n >= 500 (regime map); flsss_exact on
       the regime map, scale and hard corpora; cpsat_closest with 8 workers (run alone) on scale and hard.
 - [ ] 12.6 Timing robustness: hard-corpus dense cells, ma_xr and ktree, seed 0, 30 s, ONE worker. Criterion:
       each solver's success within +-10 points of its 6-worker value.
 - [ ] 12.7 Analysis only: bootstrap 95% CIs per regime cell; anytime curves from the traces.
+
+### Phase 12 outcomes (2026-10-03)
+- 12.3 PRE-REGISTERED CONFIRMATION, fresh 168 instances, 30 s: R1 PASS on all six non-uniform
+  distributions. ma_xr mean mu 1.000 (avislai, geometric, heavytail, loguniform, nearequal) and 0.979
+  (bimodal); best competitor 0.933 (ktree), 1.000 (ckk), 1.000 (flsss_exact), 1.000 (ckk), 0.958 (ktree)
+  and 0.583 (ckk). R2 PASS: ma_xr success minus ktree = +32.8 points over the structured distributions.
+  Control (uniform): ktree 1.000 vs ma_xr 0.375, as expected. ma_xr success 0.98-1.00 at every n
+  (200 / 1000 / 5000) and both planted cardinalities. Lattice is strong only at n = 200.
+- 12.4 Parity (unreachable apex, mu* = 1 - 1/dL proven): ma_xr 1.000 success, gap to mu* 0.000; ktree 0.683
+  (gap 0.307); ckk 0.583; kk 0.333; lattice 0.250; FLSSS, FLSSS-exact, CP-SAT 0.000.
+- 12.2 Speed equalisation (Python baselines at 120 s = 4-12x their earlier budgets): ILS, SA, conventional
+  crisp GA and FH-GA v2 stay at 0.0 on dense n1000-b32 and scale n5000-b32; CKK 0.44 / 0.11; ktree 0.38 on
+  structured geometric; ma_xr 1.00 on all three (10-30 s). Slowness does not explain the gaps.
+- 12.5 Strong configurations: lattice 60 s, n = 500, 1.00 / 1.00 / 0.67 / 0.11 at 16 / 24 / 32 / 40 bits;
+  n = 1000, 0.00. flsss_exact (whole budget on the alpha = 1 probe) is stronger than FLSSS: dense-32 0.75,
+  scale-32 0.59, scale-39 0.26, hard dense 0.06; still below ma_xr. cpsat_closest with 8 workers: 0.00 on
+  scale and on the hard corpus.
 
