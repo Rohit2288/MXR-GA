@@ -412,3 +412,16 @@ FINAL REGIME MAP (the "when" answer for AEb.1 / R4b.1):
 - MANY items (n >= ~500, up to 10,000 tested) with large magnitudes (>= 24-32 bits): ma_xr, the only
   method that works (0.84-1.00 vs <= 0.56 for every competitor), and it keeps improving with time.
 
+### 12.1 k-tree results, all corpora (2026-10-03) -- risk A1 resolved as a NARROWING, not a collapse
+k-tree WINS: dense uniform at 39-40 bits (regime dense-40: 1.00 vs ma_xr 0.20-0.42; scale b39: 1.00 vs
+0.84-0.91; hard dense: 1.00 vs 0.64 at 30 s, 0.97 at 60 s); beyond-MITM 0.67 (lattice 0.54, ma_xr 0.00).
+ma_xr WINS, often heavily, on STRUCTURED distributions (FSSP-2, 20 vs 5 seeds): T geometric 1.000 vs 0.047,
+heavy-tail 1.000 vs 0.955, bimodal 1.000 vs 0.985; A near-equal 0.983 vs 0.827, Avis-Lai 0.777 vs 0.647.
+W/T/L ma_xr vs k-tree: T 93/29/0, A 250/82/28, U 6/378/0. Ties: reconciliation (CKK, k-tree, ma_xr all
+1.00), Suite H (both 1.00), dense <= 32 bits (both 1.00; ma_xr 6-60x faster). Critical: lattice > both.
+=> k-tree is a specialist for uniform random dense instances; it breaks on structured item distributions,
+where ma_xr does not. The defensible claim becomes robustness across structure (never worse, often far
+better) plus speed, with k-tree / lattice / CKK named as winners in their home regimes. Alternatively
+(Rohit to decide): a hybrid move set (MITM exact move + k-tree move inside the memetic algorithm),
+which would need a fresh pre-registered confirmation.
+
