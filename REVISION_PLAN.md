@@ -479,7 +479,7 @@ This is noise, not a bias towards any solver, but it depresses absolute success 
 unreliable. Large gaps (e.g. structured 1.00 vs 0.4) are not at risk; close ones are.
 
 ## Phase 13 — Re-run the wall-clock headline experiments on performance cores only (PRE-REGISTERED)
-- [ ] 13.0 Gate: hard corpus, ma_xr and ktree, seed 0, 30 s, 4 workers vs the one-worker run (12.6). Each
+- [x] 13.0 Gate (PASS 2026-10-03: 4 workers vs 1 worker, ma_xr dense -8.3, critical -2.5; ktree dense 0.0, critical -7.5 points): hard corpus, ma_xr and ktree, seed 0, 30 s, 4 workers vs the one-worker run (12.6). Each
       solver within +-10 points in each block; otherwise drop to 3 workers and repeat.
 - [ ] 13.1 Gate G re-run (ma_xr / ma_rand / lns_mitm, 88 inst, 5 seeds, 30 s, 4 workers); same thresholds
       as 9.7 (>= 10 points vs both, or time-to-optimum delta <= -0.147 vs both).
