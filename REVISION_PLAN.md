@@ -425,3 +425,31 @@ better) plus speed, with k-tree / lattice / CKK named as winners in their home r
 (Rohit to decide): a hybrid move set (MITM exact move + k-tree move inside the memetic algorithm),
 which would need a fresh pre-registered confirmation.
 
+## Phase 12 — Robustness tests required before writing (PRE-REGISTERED 2026-10-03, before any run)
+
+Rohit (2026-10-03): "if any other tests ... required please perform". The robustness claim ("robust across
+item structure") was formed from FSSP-2 AFTER the results, so it needs fresh-data confirmation.
+
+- [ ] 12.3 Structure confirmation, fresh corpus `benchmarks/fsspb_structured` (168 + 12 parity = 180 inst,
+      seed base 440000; 7 distributions x n {200,1000,5000} x planted cardinality {10, n/4-3n/4} x gap
+      {exact,16} x asymmetry rotation {1:1, 1:20, 20:1}; max item ~2^40). 30 s. ma_xr and ktree 5 seeds;
+      ckk, kk, flsss, flsss_exact, cpsat, lattice (n <= 250) once. Success = mu >= mu* - 1e-9.
+      R1 (never meaningfully worse): for EACH of the six non-uniform distributions, ma_xr mean mu >=
+          (best competitor mean mu) - 0.01.
+      R2 (beats the dense specialist on structure): ma_xr success exceeds ktree's by >= 20 points,
+          averaged over the six non-uniform distributions.
+      Uniform is the control (no criterion; ktree expected >= ma_xr). Any distribution failing R1 is
+      named in the paper together with its winner.
+- [ ] 12.4 Unreachable apex at scale: the 12 parity instances inside 12.3 (mu* = 1 - 1/dL proven). Reported
+      as success and mean gap to mu*; no separate criterion.
+- [ ] 12.2 Speed equalisation: the Python-implemented baselines (ckk, ktree, ils_crisp, vanilla_ga_crisp,
+      sim_anneal_crisp, fhga_v2crisp) at 120 s (4-12x their earlier budgets), 1 seed, on
+      `benchmarks/subset_speed` (structured geometric n >= 1000, dense n1000-b32, scale n5000-b32). If one
+      reaches ma_xr's success there (ma_xr data from the earlier runs at 10-30 s), the "slowness" defence
+      fails for it and the paper says so.
+- [ ] 12.5 Strong configurations: lattice uncapped at 60 s on dense n >= 500 (regime map); flsss_exact on
+      the regime map, scale and hard corpora; cpsat_closest with 8 workers (run alone) on scale and hard.
+- [ ] 12.6 Timing robustness: hard-corpus dense cells, ma_xr and ktree, seed 0, 30 s, ONE worker. Criterion:
+      each solver's success within +-10 points of its 6-worker value.
+- [ ] 12.7 Analysis only: bootstrap 95% CIs per regime cell; anytime curves from the traces.
+

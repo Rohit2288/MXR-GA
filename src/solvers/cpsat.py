@@ -33,8 +33,13 @@ class CPSAT(Solver):
     name = "cpsat"
     deterministic = False  # incumbent at the wall-clock limit is time-dependent
 
-    def __init__(self, max_time_s: float = 10.0, num_workers: int = 1):
+    def __init__(self, max_time_s: float = 10.0, num_workers: int = 1,
+                 formulation: str = "mu"):
         self.max_time_s = max_time_s
+        # "mu": maximise the linearised membership (default, as published).
+        # "closest": minimise wl*under + wr*over with sum + under - over = T_M,
+        # an alternative closest-sum model (Phase 12.5 strong-competitor check).
+        self.formulation = formulation
         # 1 (default) = deterministic single worker, one core like every
         # other solver; >1 = CP-SAT's parallel portfolio (strong-baseline check).
         self.num_workers = num_workers
@@ -73,11 +78,18 @@ class CPSAT(Solver):
         x = [model.new_bool_var(f"x{i}") for i in range(instance.n)]
         total = sum(a * xi for a, xi in zip(items, x))
         s_max = sum(items)
-        lb = min((0 - t_l) * d_r, (t_r - s_max) * d_l, 0)
-        z = model.new_int_var(lb, d_l * d_r, "z")
-        model.add(z <= (total - t_l) * d_r)
-        model.add(z <= (t_r - total) * d_l)
-        model.maximize(z)
+        if self.formulation == "closest":
+            hi = s_max + abs(t_m)
+            under = model.new_int_var(0, hi, "under")
+            over = model.new_int_var(0, hi, "over")
+            model.add(total + under - over == t_m)
+            model.minimize(d_r * under + d_l * over)
+        else:
+            lb = min((0 - t_l) * d_r, (t_r - s_max) * d_l, 0)
+            z = model.new_int_var(lb, d_l * d_r, "z")
+            model.add(z <= (total - t_l) * d_r)
+            model.add(z <= (t_r - total) * d_l)
+            model.maximize(z)
 
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = self.max_time_s

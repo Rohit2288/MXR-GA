@@ -36,6 +36,8 @@ BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
                    "vanilla_ga_crisp", "random_search", "ktree"]
 SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "kk", "ckk",
           "alpha_cut", "greedy_center"]
+# Run once when requested explicitly (not in the default list).
+EXTRA_SINGLE = ["flsss_exact", "cpsat_closest"]
 STOCHASTIC = NEW + BASE_STOCHASTIC
 
 
@@ -76,6 +78,9 @@ def known_optimum(inst: Instance) -> Optional[float]:
     scorer can never make an attained optimum look unattained."""
     if float(inst.witness.get("mu_value", 0.0)) >= 1.0:
         return 1.0 - 1e-12
+    con = inst.metadata.get("construction", {})
+    if con.get("parity"):            # unreachable odd apex: mu* = 1 - 1/dL, proven
+        return float(con["mu_star"]) - 1e-12
     u = _suite_u_optima().get(inst.instance_id)
     if u is not None:
         return u - 1e-12 if u > 0 else None   # mu* = 0: nothing to stop on
@@ -124,6 +129,11 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
             tlimit_per_probe=wall_s / (2 + math.ceil(math.log2(1 / flsss_eps))),
             total_timeout=wall_s + 5),
         "alpha_cut": AlphaCut,
+        # Phase 12.5 stronger competitor configurations.
+        "flsss_exact": lambda: FLSSSSolver(eps=0.5, tlimit_per_probe=0.85 * wall_s,
+                                           total_timeout=wall_s + 5),
+        "cpsat_closest": lambda: CPSAT(max_time_s=wall_s, num_workers=kw.get("workers", 8),
+                                       formulation="closest"),
         "ktree": lambda: __import__("src.solvers.ktree", fromlist=["KTree"]).KTree(),
         "lattice": lambda: __import__("src.solvers.lattice", fromlist=["Lattice"]).Lattice(
             max_n=kw.get("max_n", 150)),
