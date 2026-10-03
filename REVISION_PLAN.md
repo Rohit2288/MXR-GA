@@ -449,7 +449,7 @@ item structure") was formed from FSSP-2 AFTER the results, so it needs fresh-dat
       fails for it and the paper says so.
 - [x] 12.5 Strong configurations: lattice uncapped at 60 s on dense n >= 500 (regime map); flsss_exact on
       the regime map, scale and hard corpora; cpsat_closest with 8 workers (run alone) on scale and hard.
-- [ ] 12.6 Timing robustness: hard-corpus dense cells, ma_xr and ktree, seed 0, 30 s, ONE worker. Criterion:
+- [x] 12.6 Timing robustness: hard-corpus dense cells, ma_xr and ktree, seed 0, 30 s, ONE worker. Criterion:
       each solver's success within +-10 points of its 6-worker value.
 - [ ] 12.7 Analysis only: bootstrap 95% CIs per regime cell; anytime curves from the traces.
 
@@ -469,4 +469,26 @@ item structure") was formed from FSSP-2 AFTER the results, so it needs fresh-dat
   n = 1000, 0.00. flsss_exact (whole budget on the alpha = 1 probe) is stronger than FLSSS: dense-32 0.75,
   scale-32 0.59, scale-39 0.26, hard dense 0.06; still below ma_xr. cpsat_closest with 8 workers: 0.00 on
   scale and on the hard corpus.
+
+### 12.6 outcome: FAILED (pre-registered criterion), with the cause found
+One worker vs the 6-worker runs, hard corpus seed 0: ma_xr dense 0.958 vs 0.688 (+27 pts); ma_xr critical
+0.600 vs 0.450 (+15); ktree critical 0.675 vs 0.450 (+22.5); ktree dense 1.000 vs 1.000.
+Cause: the machine is an Apple M1 with 4 performance + 4 efficiency cores (8 GB RAM). With 6-7 workers some
+runs land on efficiency cores and get roughly half the effective compute in the same wall-clock budget.
+This is noise, not a bias towards any solver, but it depresses absolute success and makes CLOSE comparisons
+unreliable. Large gaps (e.g. structured 1.00 vs 0.4) are not at risk; close ones are.
+
+## Phase 13 — Re-run the wall-clock headline experiments on performance cores only (PRE-REGISTERED)
+- [ ] 13.0 Gate: hard corpus, ma_xr and ktree, seed 0, 30 s, 4 workers vs the one-worker run (12.6). Each
+      solver within +-10 points in each block; otherwise drop to 3 workers and repeat.
+- [ ] 13.1 Gate G re-run (ma_xr / ma_rand / lns_mitm, 88 inst, 5 seeds, 30 s, 4 workers); same thresholds
+      as 9.7 (>= 10 points vs both, or time-to-optimum delta <= -0.147 vs both).
+- [ ] 13.2 Structured confirmation re-run (12.3 corpus and solvers, 4 workers); same R1 / R2 criteria.
+- [ ] 13.3 Regime map re-run (ma_xr, ktree, ckk, flsss, flsss_exact, cpsat, lattice uncapped; 5 seeds,
+      10 s, 4 workers; lattice 3 workers because BKZ is memory-heavy).
+- [ ] 13.4 Scale re-run (ma_xr, ktree, ckk, flsss_exact; 30 s, 5 seeds, 4 workers).
+- [ ] 13.5 CP-SAT sub-solver ablation re-run (ma_xr_cpsat vs ma_xr, 30 s, 5 seeds, 4 workers).
+Not re-run, stated in the paper: FSSP-2 main, Suite H and reconciliation (small magnitudes; almost all runs
+stop at the known optimum within milliseconds, so contention cannot change their outcome). Every paper
+number from Phase 13 replaces the corresponding earlier number. Hardware is reported: Apple M1, 4 P-cores used.
 
