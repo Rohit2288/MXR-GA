@@ -1,0 +1,18 @@
+{
+ "git_commit": "ca75cd4ee60e5eaeb051e07062c7973b3f5a2a63",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-03T20:28:16.985903+00:00",
+ "corpus": "benchmarks/fsspb_regime_scale",
+ "instances": 54,
+ "solvers": [
+  "ma_xr",
+  "ktree",
+  "ckk",
+  "flsss_exact"
+ ],
+ "seeds_new": 5,
+ "seeds_base": 5,
+ "wall": 30.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

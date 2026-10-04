@@ -483,10 +483,10 @@ unreliable. Large gaps (e.g. structured 1.00 vs 0.4) are not at risk; close ones
       solver within +-10 points in each block; otherwise drop to 3 workers and repeat.
 - [x] 13.1 Gate G re-run (ma_xr / ma_rand / lns_mitm, 88 inst, 5 seeds, 30 s, 4 workers); same thresholds
       as 9.7 (>= 10 points vs both, or time-to-optimum delta <= -0.147 vs both).
-- [ ] 13.2 Structured confirmation re-run (12.3 corpus and solvers, 4 workers); same R1 / R2 criteria.
-- [ ] 13.3 Regime map re-run (ma_xr, ktree, ckk, flsss, flsss_exact, cpsat, lattice uncapped; 5 seeds,
+- [x] 13.2 Structured confirmation re-run (12.3 corpus and solvers, 4 workers); same R1 / R2 criteria.
+- [x] 13.3 Regime map re-run (ma_xr, ktree, ckk, flsss, flsss_exact, cpsat, lattice uncapped; 5 seeds,
       10 s, 4 workers; lattice 3 workers because BKZ is memory-heavy).
-- [ ] 13.4 Scale re-run (ma_xr, ktree, ckk, flsss_exact; 30 s, 5 seeds, 4 workers).
+- [x] 13.4 Scale re-run (ma_xr, ktree, ckk, flsss_exact; 30 s, 5 seeds, 4 workers).
 - [x] 13.5 CP-SAT sub-solver ablation re-run (ma_xr_cpsat vs ma_xr, 30 s, 5 seeds, 4 workers).
 Not re-run, stated in the paper: FSSP-2 main, Suite H and reconciliation (small magnitudes; almost all runs
 stop at the known optimum within milliseconds, so contention cannot change their outcome). Every paper
@@ -499,4 +499,14 @@ number from Phase 13 replaces the corresponding earlier number. Hardware is repo
   in the dense cells (0.833 vs 0.667 / 0.633); critical ma_xr = ma_rand (0.610 vs 0.605). Report the
   success margin vs ma_rand honestly as +9.3 points, with the gate passing on time-to-optimum.
 - 13.5 CP-SAT sub-solver ablation: ma_xr_cpsat 0.000 / 0.000 (critical / dense) vs ma_xr 0.610 / 0.833.
+- 13.2 Structured confirmation (clean): R1 PASS on all six non-uniform distributions (ma_xr 1.000 on five,
+  0.979 on bimodal; best competitors 0.933 / 0.583 / 1.000 / 1.000 / 1.000 / 0.958); R2 PASS, +31.8 points
+  vs ktree. Uniform control: ktree 1.000, ma_xr 0.467. Parity: ma_xr success 1.000, gap 0.000; ktree 0.733
+  (gap 0.255); ckk 0.583; FLSSS / FLSSS-exact / CP-SAT 0.000.
+- 13.3 Regime map (clean, 10 s): dense 16-32 bits, ma_xr 1.00 everywhere (ktree 1.00; FLSSS-exact 0.33-1.00;
+  CKK 0.11-1.00). Dense 40 bits: ktree 1.00 vs ma_xr 0.56-0.71 (was 0.20-0.42 under contention). Critical:
+  lattice 1.00 everywhere; MITM 1.00 at n <= 40; ma_xr 0.97-1.00 at n <= 40, 0.10-0.87 at n = 46; ktree similar.
+- 13.4 Scale (clean, 30 s): ma_xr 0.98-1.00, ktree 1.00, FLSSS-exact 0.22-1.00, CKK 0.11-0.56.
+ALL EXPERIMENTS COMPLETE (2026-10-04). Paper numbers come from the Phase 13 runs wherever wall-clock
+matters; FSSP-2 / Suite H / reconciliation from Phase 10-11 (contention cannot change their outcomes).
 
