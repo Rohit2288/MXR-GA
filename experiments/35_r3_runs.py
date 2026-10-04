@@ -103,6 +103,8 @@ def main() -> int:
     ap.add_argument("--wall", type=float, default=None,
                     help="fixed wall budget (s); default: r3.wall_budget(n)")
     ap.add_argument("--workers", type=int, default=7)
+    ap.add_argument("--seed-offset", type=int, default=0,
+                    help="first seed (replications use seeds disjoint from earlier runs)")
     args = ap.parse_args()
 
     out_dir = REPO / args.out_dir if not args.out_dir.is_absolute() else args.out_dir
@@ -120,9 +122,9 @@ def main() -> int:
         for spec in args.solvers:
             base_name, _ = parse_spec(spec)
             if base_name in r3.NEW or base_name in r3.ABLATION:
-                seeds = range(args.seeds_new)
+                seeds = range(args.seed_offset, args.seed_offset + args.seeds_new)
             elif base_name in r3.BASE_STOCHASTIC:
-                seeds = range(args.seeds_base)
+                seeds = range(args.seed_offset, args.seed_offset + args.seeds_base)
             else:
                 seeds = [0]
             for seed in seeds:
@@ -134,7 +136,7 @@ def main() -> int:
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
         "corpus": args.corpus, "instances": len(paths),
         "solvers": args.solvers, "seeds_new": args.seeds_new,
-        "seeds_base": args.seeds_base,
+        "seeds_base": args.seeds_base, "seed_offset": args.seed_offset,
         "wall": args.wall or "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
         "stop_rule": "known certified optimum (r3.known_optimum)",
         "workers": args.workers,

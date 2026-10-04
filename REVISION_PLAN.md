@@ -510,3 +510,21 @@ number from Phase 13 replaces the corresponding earlier number. Hardware is repo
 ALL EXPERIMENTS COMPLETE (2026-10-04). Paper numbers come from the Phase 13 runs wherever wall-clock
 matters; FSSP-2 / Suite H / reconciliation from Phase 10-11 (contention cannot change their outcomes).
 
+## Phase 14 — Final replication (Rohit 2026-10-04: "run the tests one more time ... I don't want to leave
+## anything from our side"). PRE-REGISTERED before running.
+- [x] 14.1 Full test suite: 403 passed, 6 skipped.
+- [x] 14.2 Integrity audit of all 39 result directories (209,872 runs): 0 runs with mu above a certified
+      optimum (165,021 checked), 0 bad statuses, 0 duplicate (solver, instance, seed) rows, every directory
+      has a manifest.
+- [ ] 14.3 Independent-seed replication on the 4 performance cores (seeds 5-9, disjoint from all earlier runs):
+      (a) Gate G (ma_xr / ma_rand / lns_mitm, hard corpus, 30 s): same thresholds as 9.7;
+      (b) CP-SAT sub-solver ablation (ma_xr_cpsat vs ma_xr): replication passes if ma_xr exceeds it by
+          >= 50 points in both blocks;
+      (c) structured corpus, ma_xr and ktree, seeds 5-9: R1 and R2 recomputed with these seeds (single-run
+          competitors taken from 13.2).
+- [ ] 14.4 Second FRESH structured corpus `benchmarks/fsspb_structured_rep` (180 instances, seed base 123000),
+      all 13.2 solvers, seeds 0-4, 30 s, 4 workers: R1 and R2 must hold again.
+- [ ] 14.5 `experiments/38_headline_numbers.py`: recomputes every headline number from the raw CSVs into
+      results/headline_numbers.json. The manuscript is written from that file.
+If any replication criterion fails, it is reported as it is, and the corresponding claim is weakened.
+
