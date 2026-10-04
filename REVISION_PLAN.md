@@ -527,4 +527,10 @@ matters; FSSP-2 / Suite H / reconciliation from Phase 10-11 (contention cannot c
 - [ ] 14.5 `experiments/38_headline_numbers.py`: recomputes every headline number from the raw CSVs into
       results/headline_numbers.json. The manuscript is written from that file.
 If any replication criterion fails, it is reported as it is, and the corresponding claim is weakened.
+- 14.5 note (scoring bug found and fixed while building the script): some earlier hand analyses counted
+  success as mu >= mu* - 1e-9. In gap-8 cells (windows ~2^32 wide) an answer one unit off the optimum has
+  mu = 1 - 2^-32 and was wrongly counted as optimal. The script uses 1e-12 (floating-point noise only).
+  Unchanged under the strict rule: R1, R2 (+31.8), parity (1.000), Gate G, ablation (dense 0.833), scale.
+  Gap-8 regime-map cells move slightly. results/headline_numbers.json is authoritative; earlier hand-typed
+  numbers in this file are superseded wherever they differ.
 
