@@ -544,3 +544,24 @@ If any replication criterion fails, it is reported as it is, and the correspondi
 Source of every number: results/headline_numbers.json (experiments/38_headline_numbers.py). Experimental
 work is complete; next is the manuscript (pending Rohit: algorithm name, go-ahead).
 
+## Phase 15 — Gaps against the ORIGINAL reviewer requests, re-checked for the new algorithm (PRE-REGISTERED 2026-10-05)
+Rohit: "anything left what was asked by reviewers previously". Re-reading both rounds against the new
+method left four items that need data (everything else is writing):
+- [ ] 15.1 Component ablation (R2.8, R3.5: every component, mean / SD / worst case / significance):
+      ma_xr_noinit (random Bernoulli start instead of greedy) and ma_xr_nomove (no exact move after the
+      crossover) vs ma_xr, hard corpus, seeds 0-4, 30 s, 4 workers (ma_xr from p13_gateG). Together with
+      ma_rand / lns_mitm (population, recombination) and ma_xr_cpsat (sub-solver), every component is ablated.
+      Rule: a component counts as contributing if removing it lowers success by >= 5 points with a
+      Holm-adjusted Wilcoxon p < 0.05; otherwise the paper says it does not contribute measurably.
+- [ ] 15.2 Parameter sensitivity re-run on the 4 performance cores (R2.2, R3.m3: ranges, repetitions, error bars,
+      interactions): k in {16,24,32,36} x pop in {8,16,32} for ma_xr plus a k sweep for lns_mitm, hard corpus,
+      3 seeds, 10 s. Descriptive (replaces the contaminated 10.4 data).
+- [ ] 15.3 Fuzzy-asymmetry demonstration (R4.1, R4b.1, R2b.4), corpus `benchmarks/fsspb_asym` (42 instances,
+      7 distributions x n {200,1000,5000} x 2 reps; spacing-m construction, mu* = 0.4 certified, where the
+      nearer attainable sum lies outside the narrow right tolerance). Solvers: ma_xr and ma_xr_sym (same
+      algorithm minimising |S - T_M|, i.e. a crisp closest-sum objective), 5 seeds; ktree 5 seeds; ckk, kk,
+      flsss_exact, cpsat once; 30 s. Criterion: ma_xr success >= ma_xr_sym success + 50 points.
+- [ ] 15.4 Clean FSSP-2 runtime run (R2.9, R4.3: wall-clock AND evaluations per solver and suite): 866
+      instances, 3 seeds, ma_xr / ktree / ils_crisp + flsss / ckk / cpsat / dp_exact / mitm / lattice,
+      n-scaled budget, 4 workers. Descriptive (runtime table); quality numbers stay from 10.1.
+

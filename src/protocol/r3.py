@@ -31,7 +31,7 @@ V2 = dict(repair_mode="dp_window", uniform_xover=True, gamma=0.0,
 
 NEW = ["ma_xr", "ma_rand", "lns_mitm"]
 # Seeded like NEW when requested explicitly; not in the default list.
-ABLATION = ["ma_xr_cpsat"]
+ABLATION = ["ma_xr_cpsat", "ma_xr_noinit", "ma_xr_nomove", "ma_xr_sym"]
 BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
                    "vanilla_ga_crisp", "random_search", "ktree"]
 SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "kk", "ckk",
@@ -79,7 +79,7 @@ def known_optimum(inst: Instance) -> Optional[float]:
     if float(inst.witness.get("mu_value", 0.0)) >= 1.0:
         return 1.0 - 1e-12
     con = inst.metadata.get("construction", {})
-    if con.get("parity"):            # unreachable odd apex: mu* = 1 - 1/dL, proven
+    if con.get("parity") or con.get("mu_star_certified"):  # constructed, proven mu* < 1
         return float(con["mu_star"]) - 1e-12
     u = _suite_u_optima().get(inst.instance_id)
     if u is not None:
@@ -111,6 +111,9 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
         # CMSA-style ablation: same exact recombination, CP-SAT sub-solver.
         "ma_xr_cpsat": lambda: MAXR(k=k, pop_size=pop, recomb="exact",
                                     subsolver="cpsat"),
+        "ma_xr_noinit": lambda: MAXR(k=k, pop_size=pop, init="random", name="ma_xr_noinit"),
+        "ma_xr_nomove": lambda: MAXR(k=k, pop_size=pop, post_move=False, name="ma_xr_nomove"),
+        "ma_xr_sym": lambda: MAXR(k=k, pop_size=pop, symmetric=True, name="ma_xr_sym"),
         "kk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=False),
         "ckk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=True),
         "fhga_v2crisp": lambda: FHGACrisp(variant="thorough",

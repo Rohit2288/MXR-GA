@@ -72,7 +72,38 @@ def draw(dist, n, rng):
     return a
 
 
-def make(dist, n, card, gap, rep, seed, parity=False):
+def make_asym(dist, n, rep, seed, m=2 ** 20):
+    """Asymmetric-tolerance demonstration (R4b.1 / R2b.4). Items are multiples of m, so attainable sums
+    are spaced m apart. T_M = S + 0.6m (S = planted sum): the nearest attainable sum ABOVE is S + m
+    (0.4m away) but dR = 0.3m puts it outside the support (mu = 0); the nearest BELOW is S (0.6m away),
+    inside dL = m (mu = 0.4). No other attainable sum lies in the support, so mu* = 0.4 is certified.
+    A crisp closest-sum solver prefers S + m and scores 0; the fuzzy target selects S."""
+    rng = np.random.default_rng(seed)
+    a = m * np.maximum(1, draw(dist, n, rng) // m)
+    k = int(rng.integers(n // 4, 3 * n // 4 + 1))
+    planted = np.sort(rng.choice(n, size=k, replace=False))
+    s = int(a[planted].sum())
+    t_m, d_l, d_r = s + (6 * m) // 10, m, (3 * m) // 10
+    mu_star = 1.0 - ((6 * m) // 10) / d_l
+    assert int(a.sum()) + d_r < 2 ** 53
+    iid = f"fsspb-S-asymgap-{dist}-n{n}-r{rep}"
+    raw = {
+        "schema_version": "1.1", "instance_id": iid,
+        "metadata": {"n": n, "distribution": dist, "spread_ratio": float((d_l + d_r) / t_m),
+                     "asymmetry": d_l / d_r, "seed": seed,
+                     "construction": {"v2_suite": "S", "asymgap": True, "parity": False,
+                                      "generator": "experiments/37_generate_structured.py",
+                                      "spacing_m": m, "mu_star": mu_star, "mu_star_certified": True}},
+        "items": [int(x) for x in a],
+        "target": {"T_L": float(t_m - d_l), "T_M": float(t_m), "T_R": float(t_m + d_r)},
+        "witness": {"subset_indices": [int(i) for i in planted], "subset_sum": s, "mu_value": mu_star},
+        "difficulty": {"label": "asymmetric_tolerance_demo"},
+    }
+    raw["checksum_sha256"] = hashlib.sha256(json.dumps(raw, sort_keys=True).encode()).hexdigest()
+    return raw
+
+
+def make(dist, n, card, gap, rep, seed, parity=False, asym=None):
     rng = np.random.default_rng(seed)
     a = draw(dist, n, rng)
     if parity:
@@ -82,7 +113,7 @@ def make(dist, n, card, gap, rep, seed, parity=False):
     s = int(a[planted].sum())
     bits = int(a.max()).bit_length()
     w = 2.0 if gap == "exact" else max(2.0, 2.0 ** (bits - gap))
-    al, ar = ASYM[rep % 3]
+    al, ar = asym if asym is not None else ASYM[rep % 3]
     d_l = max(1, int(round(w * al / (al + ar))))
     d_r = max(1, int(round(w - d_l)))
     if parity:                                   # unreachable odd apex, dL >= dR
@@ -120,16 +151,25 @@ def main() -> int:
     ap.add_argument("--out-dir", type=Path, default=REPO / "benchmarks" / "fsspb_structured")
     ap.add_argument("--reps", type=int, default=2)
     ap.add_argument("--seed-base", type=int, default=440_000)
+    ap.add_argument("--profile", choices=["confirm", "asym"], default="confirm",
+                    help="asym: asymmetric-tolerance instances (see make_asym) showing that the fuzzy target "
+                         "changes which subset is optimal")
     args = ap.parse_args()
     inst_dir = args.out_dir / "instances"
     inst_dir.mkdir(parents=True, exist_ok=True)
     seed, ids = 0, []
-    cells = [(d, n, c, g, False) for d, n, c, g in itertools.product(DISTS, SIZES, CARDS, GAPS)]
-    cells += [(d, n, "half", 16, True) for d in ("uniform", "loguniform") for n in SIZES]
-    for dist, n, card, gap, parity in cells:
+    if args.profile == "confirm":
+        cells = [(d, n, c, g, False, None) for d, n, c, g in itertools.product(DISTS, SIZES, CARDS, GAPS)]
+        cells += [(d, n, "half", 16, True, None) for d in ("uniform", "loguniform") for n in SIZES]
+    else:
+        cells = [(d, n, None, None, None, "asymgap") for d in DISTS for n in SIZES]
+    for dist, n, card, gap, parity, asym in cells:
         for rep in range(args.reps):
             seed += 1
-            raw = make(dist, n, card, gap, rep, args.seed_base + seed, parity)
+            if asym == "asymgap":
+                raw = make_asym(dist, n, rep, args.seed_base + seed)
+            else:
+                raw = make(dist, n, card, gap, rep, args.seed_base + seed, parity, asym)
             path = inst_dir / f"{raw['instance_id']}.json"
             path.write_text(json.dumps(raw, indent=1))
             load_instance(path)

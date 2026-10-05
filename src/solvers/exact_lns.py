@@ -89,13 +89,18 @@ class _Core:
     """Shared state for one run: items, distance, the exact move."""
 
     def __init__(self, instance: Instance, objective: BudgetedObjective,
-                 rng: np.random.Generator, k: int, subsolver: str = "mitm"):
+                 rng: np.random.Generator, k: int, subsolver: str = "mitm",
+                 symmetric: bool = False):
         self.n = instance.n
         self.items = np.asarray(instance.items, dtype=np.int64)
         t = instance.target
         self.t_m = int(round(t.T_M))
         self.d_l = t.delta_L if t.delta_L > 0 else 1.0
         self.d_r = t.delta_R if t.delta_R > 0 else 1.0
+        if symmetric:
+            # Ablation "crisp closest sum": ignore the fuzzy target's asymmetric
+            # tolerances and minimise |S - T_M|. Reported quality is still mu.
+            self.d_l = self.d_r = 1.0
         self.objective = objective
         self.rng = rng
         self.k = min(k, self.n)
@@ -110,6 +115,11 @@ class _Core:
         """One counted evaluation of chrom; returns its distance d."""
         self.objective.evaluate(np.flatnonzero(chrom).tolist())
         return self.dist(int(self.items[chrom].sum()))
+
+    def random_init(self) -> np.ndarray:
+        """Ablation "no greedy start": Bernoulli(T_M / sum) inclusion."""
+        p = min(1.0, self.t_m / max(1, int(self.items.sum())))
+        return self.rng.random(self.n) < p
 
     def greedy(self) -> np.ndarray:
         """Randomised greedy: random order, add while the sum stays <= T_M."""
@@ -210,11 +220,13 @@ class MAXR(Solver):
 
     def __init__(self, k: int = 32, pop_size: int = 16,
                  recomb: str = "exact", name: Optional[str] = None,
-                 subsolver: str = "mitm"):
+                 subsolver: str = "mitm", init: str = "greedy",
+                 post_move: bool = True, symmetric: bool = False):
         if recomb not in ("exact", "random"):
             raise ValueError(recomb)
         self.k, self.pop_size, self.recomb = k, pop_size, recomb
         self.subsolver = subsolver
+        self.init, self.post_move, self.symmetric = init, post_move, symmetric
         default = "ma_xr" if recomb == "exact" else "ma_rand"
         if subsolver != "mitm":
             default += f"_{subsolver}"
@@ -223,14 +235,15 @@ class MAXR(Solver):
 
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
-        core = _Core(instance, objective, rng, self.k, self.subsolver)
+        core = _Core(instance, objective, rng, self.k, self.subsolver,
+                     symmetric=self.symmetric)
         stats = self.last_stats = {"moves": 0, "generations": 0,
                                    "accepted": 0, "mean_diff": 0.0}
         pop: List[np.ndarray] = []
         fit: List[float] = []
         seen = set()
         for _ in range(self.pop_size):
-            c = core.greedy()
+            c = core.greedy() if self.init == "greedy" else core.random_init()
             f = core.exact_move(c, core.random_free())
             key = c.tobytes()
             if key in seen:
@@ -260,7 +273,8 @@ class MAXR(Solver):
             else:
                 free = core.random_free()
             f = core.exact_move(child, free)
-            f = core.exact_move(child, core.random_free())
+            if self.post_move:
+                f = core.exact_move(child, core.random_free())
             stats["generations"] += 1
             stats["moves"] = core.moves
             stats["mean_diff"] = diff_total / stats["generations"]
