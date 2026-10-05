@@ -1,5 +1,5 @@
 {
- "git_commit": "6751a8e36999925ba09887bd1b3f2179cae9782e",
+ "git_commit": "84f9195efe40236c678e1c9f67529467d74afd26",
  "script": "experiments/38_headline_numbers.py",
  "gate_G_clean": {
   "success": {
@@ -23,6 +23,28 @@
   },
   "gate_met": true
  },
+ "gate_G_replication_seeds5_9": {
+  "success": {
+   "lns_mitm": 0.4705,
+   "ma_rand": 0.5,
+   "ma_xr": 0.6432
+  },
+  "vs_ma_rand": {
+   "points": 14.3,
+   "tto_cliff": -0.312,
+   "n_differ": 79,
+   "wilcoxon_p": 4.3845809847266834e-05,
+   "pass": true
+  },
+  "vs_lns_mitm": {
+   "points": 17.3,
+   "tto_cliff": -0.359,
+   "n_differ": 79,
+   "wilcoxon_p": 6.488728058229044e-06,
+   "pass": true
+  },
+  "gate_met": true
+ },
  "ablation_cpsat_subsolver_clean": {
   "ma_xr_cpsat": {
    "critical": 0.0,
@@ -31,6 +53,16 @@
   "ma_xr": {
    "critical": 0.61,
    "dense": 0.8333
+  }
+ },
+ "ablation_cpsat_subsolver_replication": {
+  "ma_xr_cpsat": {
+   "critical": 0.0,
+   "dense": 0.0
+  },
+  "ma_xr": {
+   "critical": 0.56,
+   "dense": 0.7125
   }
  },
  "structured_clean": {
@@ -182,6 +214,240 @@
   "ma_xr": {
    "success": 1.0,
    "mean_gap": 0.0
+  }
+ },
+ "structured_replication_seeds5_9": {
+  "R1": {
+   "avislai": {
+    "ma_xr": 1.0,
+    "best_other": 0.925,
+    "best_other_solver": "ktree",
+    "pass": true
+   },
+   "bimodal": {
+    "ma_xr": 0.9833,
+    "best_other": 0.5833,
+    "best_other_solver": "ckk",
+    "pass": true
+   },
+   "geometric": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "ckk",
+    "pass": true
+   },
+   "heavytail": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "flsss_exact",
+    "pass": true
+   },
+   "loguniform": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "ckk",
+    "pass": true
+   },
+   "nearequal": {
+    "ma_xr": 1.0,
+    "best_other": 0.95,
+    "best_other_solver": "ktree",
+    "pass": true
+   }
+  },
+  "R1_pass": true,
+  "R2_points": 32.4,
+  "R2_pass": true,
+  "success_by_distribution": {
+   "ckk": {
+    "avislai": 0.0,
+    "bimodal": 0.5417,
+    "geometric": 1.0,
+    "heavytail": 0.6667,
+    "loguniform": 1.0,
+    "nearequal": 0.0833,
+    "uniform": 0.125
+   },
+   "cpsat": {
+    "avislai": 0.125,
+    "bimodal": 0.0417,
+    "geometric": 0.5,
+    "heavytail": 0.0,
+    "loguniform": 0.5,
+    "nearequal": 0.0,
+    "uniform": 0.0
+   },
+   "flsss": {
+    "avislai": 0.0,
+    "bimodal": 0.4583,
+    "geometric": 0.9167,
+    "heavytail": 0.875,
+    "loguniform": 0.875,
+    "nearequal": 0.2083,
+    "uniform": 0.1667
+   },
+   "flsss_exact": {
+    "avislai": 0.0,
+    "bimodal": 0.4583,
+    "geometric": 1.0,
+    "heavytail": 1.0,
+    "loguniform": 0.9167,
+    "nearequal": 0.2917,
+    "uniform": 0.5
+   },
+   "kk": {
+    "avislai": 0.0,
+    "bimodal": 0.3333,
+    "geometric": 1.0,
+    "heavytail": 0.5417,
+    "loguniform": 0.9583,
+    "nearequal": 0.0417,
+    "uniform": 0.0833
+   },
+   "ktree": {
+    "avislai": 0.9167,
+    "bimodal": 0.2833,
+    "geometric": 0.4167,
+    "heavytail": 1.0,
+    "loguniform": 0.4667,
+    "nearequal": 0.95,
+    "uniform": 1.0
+   },
+   "lattice": {
+    "avislai": 0.3333,
+    "bimodal": 0.3333,
+    "geometric": 0.3333,
+    "heavytail": 0.1667,
+    "loguniform": 0.2083,
+    "nearequal": 0.1667,
+    "uniform": 0.0833
+   },
+   "ma_xr": {
+    "avislai": 1.0,
+    "bimodal": 0.9833,
+    "geometric": 1.0,
+    "heavytail": 1.0,
+    "loguniform": 1.0,
+    "nearequal": 0.9917,
+    "uniform": 0.4
+   }
+  }
+ },
+ "structured_second_corpus": {
+  "R1": {
+   "avislai": {
+    "ma_xr": 1.0,
+    "best_other": 0.9417,
+    "best_other_solver": "ktree",
+    "pass": true
+   },
+   "bimodal": {
+    "ma_xr": 0.9588,
+    "best_other": 0.6929,
+    "best_other_solver": "flsss",
+    "pass": true
+   },
+   "geometric": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "ckk",
+    "pass": true
+   },
+   "heavytail": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "flsss_exact",
+    "pass": true
+   },
+   "loguniform": {
+    "ma_xr": 1.0,
+    "best_other": 1.0,
+    "best_other_solver": "ckk",
+    "pass": true
+   },
+   "nearequal": {
+    "ma_xr": 0.9833,
+    "best_other": 0.9167,
+    "best_other_solver": "ktree",
+    "pass": true
+   }
+  },
+  "R1_pass": true,
+  "R2_points": 32.2,
+  "R2_pass": true,
+  "success_by_distribution": {
+   "ckk": {
+    "avislai": 0.0417,
+    "bimodal": 0.5,
+    "geometric": 1.0,
+    "heavytail": 0.5,
+    "loguniform": 1.0,
+    "nearequal": 0.0417,
+    "uniform": 0.375
+   },
+   "cpsat": {
+    "avislai": 0.125,
+    "bimodal": 0.0,
+    "geometric": 0.5,
+    "heavytail": 0.2083,
+    "loguniform": 0.4583,
+    "nearequal": 0.0,
+    "uniform": 0.0
+   },
+   "flsss": {
+    "avislai": 0.0,
+    "bimodal": 0.5833,
+    "geometric": 0.875,
+    "heavytail": 0.875,
+    "loguniform": 0.9167,
+    "nearequal": 0.1667,
+    "uniform": 0.0417
+   },
+   "flsss_exact": {
+    "avislai": 0.0,
+    "bimodal": 0.5833,
+    "geometric": 0.9583,
+    "heavytail": 1.0,
+    "loguniform": 1.0,
+    "nearequal": 0.2083,
+    "uniform": 0.4167
+   },
+   "kk": {
+    "avislai": 0.0,
+    "bimodal": 0.2917,
+    "geometric": 1.0,
+    "heavytail": 0.5,
+    "loguniform": 1.0,
+    "nearequal": 0.0417,
+    "uniform": 0.2917
+   },
+   "ktree": {
+    "avislai": 0.9417,
+    "bimodal": 0.2583,
+    "geometric": 0.4833,
+    "heavytail": 1.0,
+    "loguniform": 0.3917,
+    "nearequal": 0.9167,
+    "uniform": 1.0
+   },
+   "lattice": {
+    "avislai": 0.3333,
+    "bimodal": 0.3333,
+    "geometric": 0.3333,
+    "heavytail": 0.1667,
+    "loguniform": 0.3333,
+    "nearequal": 0.1667,
+    "uniform": 0.0833
+   },
+   "ma_xr": {
+    "avislai": 1.0,
+    "bimodal": 0.95,
+    "geometric": 1.0,
+    "heavytail": 1.0,
+    "loguniform": 1.0,
+    "nearequal": 0.975,
+    "uniform": 0.325
+   }
   }
  },
  "regime_map_clean_success": {

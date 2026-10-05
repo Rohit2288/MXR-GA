@@ -1,0 +1,23 @@
+{
+ "git_commit": "84f9195efe40236c678e1c9f67529467d74afd26",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-04T21:56:49.038189+00:00",
+ "corpus": "benchmarks/fsspb_structured_rep",
+ "instances": 180,
+ "solvers": [
+  "ma_xr",
+  "ktree",
+  "ckk",
+  "kk",
+  "flsss",
+  "flsss_exact",
+  "cpsat",
+  "lattice@max_n=250"
+ ],
+ "seeds_new": 5,
+ "seeds_base": 5,
+ "seed_offset": 0,
+ "wall": 30.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

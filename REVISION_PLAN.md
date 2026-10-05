@@ -516,15 +516,15 @@ matters; FSSP-2 / Suite H / reconciliation from Phase 10-11 (contention cannot c
 - [x] 14.2 Integrity audit of all 39 result directories (209,872 runs): 0 runs with mu above a certified
       optimum (165,021 checked), 0 bad statuses, 0 duplicate (solver, instance, seed) rows, every directory
       has a manifest.
-- [ ] 14.3 Independent-seed replication on the 4 performance cores (seeds 5-9, disjoint from all earlier runs):
+- [x] 14.3 Independent-seed replication on the 4 performance cores (seeds 5-9, disjoint from all earlier runs):
       (a) Gate G (ma_xr / ma_rand / lns_mitm, hard corpus, 30 s): same thresholds as 9.7;
       (b) CP-SAT sub-solver ablation (ma_xr_cpsat vs ma_xr): replication passes if ma_xr exceeds it by
           >= 50 points in both blocks;
       (c) structured corpus, ma_xr and ktree, seeds 5-9: R1 and R2 recomputed with these seeds (single-run
           competitors taken from 13.2).
-- [ ] 14.4 Second FRESH structured corpus `benchmarks/fsspb_structured_rep` (180 instances, seed base 123000),
+- [x] 14.4 Second FRESH structured corpus `benchmarks/fsspb_structured_rep` (180 instances, seed base 123000),
       all 13.2 solvers, seeds 0-4, 30 s, 4 workers: R1 and R2 must hold again.
-- [ ] 14.5 `experiments/38_headline_numbers.py`: recomputes every headline number from the raw CSVs into
+- [x] 14.5 `experiments/38_headline_numbers.py`: recomputes every headline number from the raw CSVs into
       results/headline_numbers.json. The manuscript is written from that file.
 If any replication criterion fails, it is reported as it is, and the corresponding claim is weakened.
 - 14.5 note (scoring bug found and fixed while building the script): some earlier hand analyses counted
@@ -533,4 +533,14 @@ If any replication criterion fails, it is reported as it is, and the correspondi
   Unchanged under the strict rule: R1, R2 (+31.8), parity (1.000), Gate G, ablation (dense 0.833), scale.
   Gap-8 regime-map cells move slightly. results/headline_numbers.json is authoritative; earlier hand-typed
   numbers in this file are superseded wherever they differ.
+
+### Phase 14 outcome (2026-10-05): EVERY pre-registered criterion REPLICATED
+- Gate G, seeds 5-9: MET. ma_xr 0.643 vs ma_rand 0.500 (+14.3 points, delta -0.312, p = 4.4e-5) and vs
+  lns_mitm 0.471 (+17.3, delta -0.359, p = 6.5e-6). Both criteria now pass vs ma_rand as well.
+- CP-SAT sub-solver ablation, seeds 5-9: ma_xr_cpsat 0.000 / 0.000 vs ma_xr 0.560 / 0.713 (critical /
+  dense): >= 50 points in both blocks, PASS.
+- Structured, seeds 5-9: R1 PASS (all six distributions), R2 +32.4 points, PASS.
+- Structured, second fresh corpus (180 new instances): R1 PASS (all six), R2 +32.2 points, PASS.
+Source of every number: results/headline_numbers.json (experiments/38_headline_numbers.py). Experimental
+work is complete; next is the manuscript (pending Rohit: algorithm name, go-ahead).
 
