@@ -1,0 +1,44 @@
+{
+ "git_commit": "1632d1c09f5625fe8b04a4f73abd1554884d46be",
+ "script": "experiments/37_generate_structured.py",
+ "date_utc": "2026-10-05T14:45:13.364758+00:00",
+ "count": 90,
+ "distributions": [
+  "uniform",
+  "loguniform",
+  "geometric",
+  "heavytail",
+  "bimodal",
+  "nearequal",
+  "avislai"
+ ],
+ "sizes": [
+  200,
+  1000,
+  5000
+ ],
+ "cardinalities": [
+  "small",
+  "half"
+ ],
+ "gaps": [
+  "exact",
+  16
+ ],
+ "asymmetry_rotation": [
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   20
+  ],
+  [
+   20,
+   1
+  ]
+ ],
+ "reps": 1,
+ "seed_base": 999000
+}

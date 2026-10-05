@@ -1,0 +1,31 @@
+{
+ "git_commit": "1632d1c09f5625fe8b04a4f73abd1554884d46be",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-05T07:28:25.508492+00:00",
+ "corpus": "benchmarks/fsspb_regime_confirm",
+ "instances": 88,
+ "solvers": [
+  "ma_xr@k=16,pop=8",
+  "ma_xr@k=16,pop=16",
+  "ma_xr@k=16,pop=32",
+  "ma_xr@k=24,pop=8",
+  "ma_xr@k=24,pop=16",
+  "ma_xr@k=24,pop=32",
+  "ma_xr@k=32,pop=8",
+  "ma_xr@k=32,pop=16",
+  "ma_xr@k=32,pop=32",
+  "ma_xr@k=36,pop=8",
+  "ma_xr@k=36,pop=16",
+  "ma_xr@k=36,pop=32",
+  "lns_mitm@k=16",
+  "lns_mitm@k=24",
+  "lns_mitm@k=32",
+  "lns_mitm@k=36"
+ ],
+ "seeds_new": 3,
+ "seeds_base": 10,
+ "seed_offset": 0,
+ "wall": 10.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

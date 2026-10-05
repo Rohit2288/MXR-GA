@@ -565,3 +565,27 @@ method left four items that need data (everything else is writing):
       instances, 3 seeds, ma_xr / ktree / ils_crisp + flsss / ckk / cpsat / dp_exact / mitm / lattice,
       n-scaled budget, 4 workers. Descriptive (runtime table); quality numbers stay from 10.1.
 
+### Phase 15 outcomes (2026-10-05)
+- 15.3 Fuzzy asymmetry: PASS. ma_xr success 1.000 (mean mu 0.400 = mu*) vs ma_xr_sym (crisp closest sum)
+  0.086 (+91.4 points); ktree 0.714, cpsat 0.429, ckk 0.048, kk 0.000, flsss_exact 0.000. The asymmetric fuzzy
+  target changes which subset is optimal; a crisp closest-sum objective lands outside the support.
+- 15.1 Component ablation: removing the greedy start RAISES success to 0.784 (full 0.732; +5.2 points; critical
+  0.660 vs 0.610, dense 0.888 vs 0.833; Holm p = 0.02); removing the post-crossover exact move ALSO raises it to
+  0.784 (0.655 / 0.892). Per the rule, neither contributes measurably on this corpus; both are slightly harmful.
+- 15.2 Sensitivity (10 s): k dominates. ma_xr success 0.00 / 0.06 / 0.41-0.47 / 0.65-0.77 at k = 16 / 24 / 32 /
+  36; pop 8 is slightly worse than 16-32. The a priori k = 32 is not the best setting.
+- 15.4 Clean FSSP-2 runtime: data in results/p15_fssp2_runtime (for the runtime table).
+
+## Phase 16 — Simplify and tune on SEPARATE data, then re-evaluate (decided 2026-10-05; Rohit's earlier
+## instruction: "do all tests needed ... very strong defense")
+Reason: R2b.1 / R4b.2 criticised keeping components without measurable effect and hand-set parameters.
+- [ ] 16.1 TUNING ONLY on `benchmarks/tuning_set` = hard corpus (88) + a NEW structured tuning corpus
+      (fsspb_tuning, 90 instances, seed base 999000; never used for evaluation). Grid: k in {32,36,40} x
+      greedy start {on,off} x post-move {on,off}; 3 seeds; 30 s; 4 workers.
+      Selection rule (fixed now): highest mean success over the tuning set; ties within 2 points go to
+      the simpler configuration (fewer components, then smaller k).
+- [ ] 16.2 Re-run every headline evaluation with the selected configuration on the EVALUATION sets (none of
+      them used in 16.1): Gate G (with its controls at the same k and components), CP-SAT sub-solver ablation,
+      structured (both corpora, R1/R2), asymmetry demo, regime map, scale, FSSP-2 quality, Suite H,
+      reconciliation. Same pre-registered criteria as before.
+

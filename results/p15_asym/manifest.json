@@ -1,0 +1,22 @@
+{
+ "git_commit": "1632d1c09f5625fe8b04a4f73abd1554884d46be",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-05T05:49:03.940761+00:00",
+ "corpus": "benchmarks/fsspb_asym",
+ "instances": 42,
+ "solvers": [
+  "ma_xr",
+  "ma_xr_sym",
+  "ktree",
+  "ckk",
+  "kk",
+  "flsss_exact",
+  "cpsat"
+ ],
+ "seeds_new": 5,
+ "seeds_base": 5,
+ "seed_offset": 0,
+ "wall": 30.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}
