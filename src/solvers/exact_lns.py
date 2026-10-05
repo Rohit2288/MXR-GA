@@ -198,8 +198,9 @@ class LNSMITM(Solver):
 
     name = "lns_mitm"
 
-    def __init__(self, k: int = 32, name: Optional[str] = None):
+    def __init__(self, k: int = 32, name: Optional[str] = None, init: str = "greedy"):
         self.k = k
+        self.init = init
         if name:
             self.name = name
         self.last_stats: dict = {}
@@ -208,7 +209,7 @@ class LNSMITM(Solver):
                rng: np.random.Generator) -> None:
         core = _Core(instance, objective, rng, self.k)
         self.last_stats = {"moves": 0}
-        chrom = core.greedy()
+        chrom = core.greedy() if self.init == "greedy" else core.random_init()
         core.commit(chrom)
         while True:
             core.exact_move(chrom, core.random_free())

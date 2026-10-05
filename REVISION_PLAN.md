@@ -579,7 +579,7 @@ method left four items that need data (everything else is writing):
 ## Phase 16 — Simplify and tune on SEPARATE data, then re-evaluate (decided 2026-10-05; Rohit's earlier
 ## instruction: "do all tests needed ... very strong defense")
 Reason: R2b.1 / R4b.2 criticised keeping components without measurable effect and hand-set parameters.
-- [ ] 16.1 TUNING ONLY on `benchmarks/tuning_set` = hard corpus (88) + a NEW structured tuning corpus
+- [x] 16.1 TUNING ONLY on `benchmarks/tuning_set` = hard corpus (88) + a NEW structured tuning corpus
       (fsspb_tuning, 90 instances, seed base 999000; never used for evaluation). Grid: k in {32,36,40} x
       greedy start {on,off} x post-move {on,off}; 3 seeds; 30 s; 4 workers.
       Selection rule (fixed now): highest mean success over the tuning set; ties within 2 points go to
@@ -588,4 +588,22 @@ Reason: R2b.1 / R4b.2 criticised keeping components without measurable effect an
       them used in 16.1): Gate G (with its controls at the same k and components), CP-SAT sub-solver ablation,
       structured (both corpora, R1/R2), asymmetry demo, regime map, scale, FSSP-2 quality, Suite H,
       reconciliation. Same pre-registered criteria as before.
+
+### 16.1 outcome (2026-10-05): selected configuration = k = 36, random start, NO post-crossover move
+Overall tuning success (hard 88 + structured-tuning 90, 3 seeds): best k=40/init0/move1 0.957; within 2 points:
+k36/0/0 0.946, k40/0/0 0.955, k40/0/1 0.957, k40/1/0 0.951, k40/1/1 0.951. Rule -> fewest components, then
+smallest k -> k = 36, init off, move off ("ma_final"). The original a priori setting (k32/1/1) scored 0.843.
+Final algorithm: population of random subsets; tournament selection; exact meet-in-the-middle recombination
+over the parents' disagreement set (topped up with random items to k = 36); replace-worst.
+
+### 16.2 PRE-REGISTERED re-evaluation of ma_final on evaluation data only (criteria fixed before running)
+- Gate G on a FRESH hard corpus `benchmarks/fsspb_hard_eval` (88 instances, seed base 202000; the old hard
+  corpus was part of the tuning set): ma_final vs ma_final_rand and lns_final (same k, start, no move),
+  5 seeds, 30 s. Same thresholds (>= 10 points or time-to-optimum delta <= -0.147, vs both).
+- CP-SAT sub-solver ablation, fresh hard corpus: ma_final_cpsat vs ma_final, >= 50 points in both blocks.
+- Structured R1 / R2 on BOTH evaluation corpora (fsspb_structured, fsspb_structured_rep): ma_final 5 seeds;
+  competitors' runs reused from 13.2 and 14.4 (clean, unchanged solvers). Same R1 / R2 criteria.
+- Asymmetry demo: ma_final vs ma_final_sym (5 seeds each): >= 50 points.
+- Descriptive (competitors reused from clean runs): regime map (p13), scale (p13), FSSP-2 (p15 clean,
+  3 seeds; ma_final 5 seeds), Suite H and reconciliation (ma_final 20 seeds).
 

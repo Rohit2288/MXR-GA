@@ -1,0 +1,27 @@
+{
+ "git_commit": "c0a78da573a5053b2d8f41580d8279fb82ca6e99",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-05T14:45:15.671880+00:00",
+ "corpus": "benchmarks/tuning_set",
+ "instances": 178,
+ "solvers": [
+  "ma_xr@k=32,init=1,move=1",
+  "ma_xr@k=32,init=0,move=1",
+  "ma_xr@k=32,init=1,move=0",
+  "ma_xr@k=32,init=0,move=0",
+  "ma_xr@k=36,init=1,move=1",
+  "ma_xr@k=36,init=0,move=1",
+  "ma_xr@k=36,init=1,move=0",
+  "ma_xr@k=36,init=0,move=0",
+  "ma_xr@k=40,init=1,move=1",
+  "ma_xr@k=40,init=0,move=1",
+  "ma_xr@k=40,init=1,move=0",
+  "ma_xr@k=40,init=0,move=0"
+ ],
+ "seeds_new": 3,
+ "seeds_base": 10,
+ "seed_offset": 0,
+ "wall": 30.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

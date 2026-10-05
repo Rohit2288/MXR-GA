@@ -31,7 +31,8 @@ V2 = dict(repair_mode="dp_window", uniform_xover=True, gamma=0.0,
 
 NEW = ["ma_xr", "ma_rand", "lns_mitm"]
 # Seeded like NEW when requested explicitly; not in the default list.
-ABLATION = ["ma_xr_cpsat", "ma_xr_noinit", "ma_xr_nomove", "ma_xr_sym"]
+ABLATION = ["ma_xr_cpsat", "ma_xr_noinit", "ma_xr_nomove", "ma_xr_sym",
+            "ma_final", "ma_final_rand", "lns_final", "ma_final_cpsat", "ma_final_sym"]
 BASE_STOCHASTIC = ["fhga_v2crisp", "ils_crisp", "sim_anneal_crisp",
                    "vanilla_ga_crisp", "random_search", "ktree"]
 SINGLE = ["dp_exact", "mitm", "cpsat", "flsss", "lattice", "kk", "ckk",
@@ -117,6 +118,17 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
         "ma_xr_noinit": lambda: MAXR(k=k, pop_size=pop, init="random", name="ma_xr_noinit"),
         "ma_xr_nomove": lambda: MAXR(k=k, pop_size=pop, post_move=False, name="ma_xr_nomove"),
         "ma_xr_sym": lambda: MAXR(k=k, pop_size=pop, symmetric=True, name="ma_xr_sym"),
+        # FINAL configuration (Phase 16.1 selection rule): k = 36, random start, exact recombination only.
+        # Controls at the identical configuration for Gate G and the sub-solver ablation.
+        "ma_final": lambda: MAXR(k=36, pop_size=16, recomb="exact", init="random",
+                                 post_move=False, name="ma_final"),
+        "ma_final_rand": lambda: MAXR(k=36, pop_size=16, recomb="random", init="random",
+                                      post_move=False, name="ma_final_rand"),
+        "lns_final": lambda: LNSMITM(k=36, init="random", name="lns_final"),
+        "ma_final_cpsat": lambda: MAXR(k=36, pop_size=16, recomb="exact", init="random",
+                                       post_move=False, subsolver="cpsat", name="ma_final_cpsat"),
+        "ma_final_sym": lambda: MAXR(k=36, pop_size=16, recomb="exact", init="random",
+                                     post_move=False, symmetric=True, name="ma_final_sym"),
         "kk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=False),
         "ckk": lambda: __import__("src.solvers.kk", fromlist=["CKK"]).CKK(complete=True),
         "fhga_v2crisp": lambda: FHGACrisp(variant="thorough",
