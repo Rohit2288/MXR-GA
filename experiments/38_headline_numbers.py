@@ -170,6 +170,66 @@ def main() -> int:
         d = load(*dirs)
         H[f"{name}_success"] = per_instance(d).groupby("solver")["hit"].mean().round(4).to_dict()
 
+    # ---- FINAL configuration (Phase 16): the algorithm the paper describes. Earlier ma_xr sections are
+    # kept above for the record (design history); the manuscript reports the "final" block.
+    F = {"configuration": "k = 36, population 16, random start, exact MITM recombination only (ma_final)"}
+    gf = load("p16_gateG")
+    if gf is not None:
+        gf = gf.replace({"solver": {"ma_final": "ma_xr", "ma_final_rand": "ma_rand", "lns_final": "lns_mitm"}})
+        F["gate_G_fresh_hard_corpus"] = gate_g(gf)
+        ab = load("p16_ablation")
+        ab["blk"] = ab["instance_id"].str.split("-").str[2]
+        gm = gf[gf["solver"] == "ma_xr"].copy()
+        gm["blk"] = gm["instance_id"].str.split("-").str[2]
+        F["ablation_cpsat_subsolver_fresh"] = {"ma_final_cpsat": ab.groupby("blk")["hit"].mean().round(4).to_dict(),
+                                               "ma_final": gm.groupby("blk")["hit"].mean().round(4).to_dict()}
+    for tag, mine, comp in (("structured_A", "p16_structured", "p13_structured"),
+                            ("structured_B", "p16_structured_rep", "p14_structured_rep")):
+        m, c = load(mine), load(comp)
+        if m is None:
+            continue
+        m = m.replace({"solver": {"ma_final": "ma_xr"}})
+        F[tag] = r1r2(pd.concat([m, c[c["solver"] != "ma_xr"]]))
+        pm = m[m["instance_id"].str.contains("parity")]
+        F[tag]["parity_success"] = round(float(pm["hit"].mean()), 4) if len(pm) else None
+    asy = load("p16_asym")
+    if asy is not None:
+        F["asymmetry_demo_success"] = per_instance(asy).groupby("solver")["hit"].mean().round(4).to_dict()
+        F["asymmetry_competitors_success"] = per_instance(load("p15_asym")).groupby("solver")["hit"].mean().round(4).to_dict()
+    rg = load("p16_regime", "p13_regime", "p13_regime_lattice")
+    if rg is not None:
+        rg = rg[rg["solver"] != "ma_xr"]
+        x = rg["instance_id"].str.extract(r"R-(\w+)-n(\d+)-b(\d+)")
+        rg["cell"] = x[0] + "-n" + x[1].str.zfill(4) + "-b" + x[2]
+        ri = per_instance(rg, ["cell"])
+        F["regime_map_success"] = ri.pivot_table(index="cell", columns="solver", values="hit").round(4).to_dict()
+        F["regime_map_ci_ma_final"] = {c: boot_ci(g[g["solver"] == "ma_final"]["hit"]) for c, g in ri.groupby("cell")}
+    scf = load("p16_scale", "p13_scale")
+    if scf is not None:
+        scf = scf[scf["solver"] != "ma_xr"]
+        scf["cell"] = scf["instance_id"].str.extract(r"(n\d+-b\d+)")[0]
+        F["scale_success"] = per_instance(scf, ["cell"]).pivot_table(index="cell", columns="solver", values="hit").round(4).to_dict()
+    ff = load("p16_fssp2", "p15_fssp2_runtime")
+    if ff is not None:
+        ff = ff[ff["solver"] != "ma_xr"]
+        pf = ff.groupby(["suite", "instance_id", "solver"])["mu0"].mean().unstack()
+        F["fssp2_mean_mu_clean"] = {s_: pf.loc[s_].mean().round(4).dropna().to_dict() for s_ in ("T", "A", "U")}
+        F["fssp2_wtl_ma_final_vs"] = {
+            s_: {c: [int((pf.loc[s_].ma_final - pf.loc[s_][c] > 1e-9).sum()),
+                     int(((pf.loc[s_].ma_final - pf.loc[s_][c]).abs() <= 1e-9).sum()),
+                     int((pf.loc[s_].ma_final - pf.loc[s_][c] < -1e-9).sum())]
+                 for c in pf.columns if c != "ma_final" and pf.loc[s_][c].notna().all()}
+            for s_ in ("T", "A", "U")}
+        rt = ff.groupby(["suite", "solver"]).agg(median_wall_s=("wall_time", "median"), median_evals=("evals_used", "median"))
+        F["fssp2_runtime_clean"] = {f"{a}|{b}": v for (a, b), v in rt.round(4).to_dict("index").items()}
+    for name, mine, comp in (("suite_H", "p16_hard", ("r3_hard", "r3_hard_ktree")),
+                             ("reconciliation", "p16_reconcile", ("r3_reconcile", "r3_reconcile_ktree"))):
+        d_ = load(mine, *comp)
+        if d_ is not None:
+            d_ = d_[d_["solver"] != "ma_xr"]
+            F[f"{name}_success"] = per_instance(d_).groupby("solver")["hit"].mean().round(4).to_dict()
+    H["final"] = F
+
     out = R / "headline_numbers.json"
     out.write_text(json.dumps(H, indent=1, default=float))
     print(f"wrote {out}")
@@ -179,6 +239,12 @@ def main() -> int:
     for k in ("structured_clean", "structured_replication_seeds5_9", "structured_second_corpus"):
         if k in H:
             print(k, "R1:", H[k]["R1_pass"], "R2:", H[k]["R2_points"], H[k]["R2_pass"])
+    if "final" in H:
+        f = H["final"]
+        print("FINAL gate G met:", f.get("gate_G_fresh_hard_corpus", {}).get("gate_met"))
+        for t in ("structured_A", "structured_B"):
+            if t in f:
+                print("FINAL", t, "R1:", f[t]["R1_pass"], "R2:", f[t]["R2_points"])
     return 0
 
 

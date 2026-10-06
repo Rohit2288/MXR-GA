@@ -584,7 +584,7 @@ Reason: R2b.1 / R4b.2 criticised keeping components without measurable effect an
       greedy start {on,off} x post-move {on,off}; 3 seeds; 30 s; 4 workers.
       Selection rule (fixed now): highest mean success over the tuning set; ties within 2 points go to
       the simpler configuration (fewer components, then smaller k).
-- [ ] 16.2 Re-run every headline evaluation with the selected configuration on the EVALUATION sets (none of
+- [x] 16.2 Re-run every headline evaluation with the selected configuration on the EVALUATION sets (none of
       them used in 16.1): Gate G (with its controls at the same k and components), CP-SAT sub-solver ablation,
       structured (both corpora, R1/R2), asymmetry demo, regime map, scale, FSSP-2 quality, Suite H,
       reconciliation. Same pre-registered criteria as before.
@@ -606,4 +606,19 @@ over the parents' disagreement set (topped up with random items to k = 36); repl
 - Asymmetry demo: ma_final vs ma_final_sym (5 seeds each): >= 50 points.
 - Descriptive (competitors reused from clean runs): regime map (p13), scale (p13), FSSP-2 (p15 clean,
   3 seeds; ma_final 5 seeds), Suite H and reconciliation (ma_final 20 seeds).
+
+### 16.2 outcome (2026-10-06): EVERY pre-registered criterion PASSES for the final configuration (ma_final)
+- Gate G on the fresh hard corpus: MET. ma_final 0.934 vs ma_final_rand 0.857 (+7.7 points; time-to-optimum
+  delta -0.399, p = 5.6e-4) and vs lns_final 0.825 (+10.9; delta -0.341, p = 7.4e-5). Dense 1.000 vs 0.883 / 0.871.
+- CP-SAT sub-solver ablation (fresh): 0.000 / 0.000 vs ma_final 0.855 / 1.000. PASS.
+- Structured A: R1 PASS (all six), R2 +31.7; structured B (second corpus): R1 PASS, R2 +33.1; parity 1.000 on both.
+- Asymmetry: ma_final 1.000 vs ma_final_sym 0.148. PASS.
+- Regime map (10 s): critical up to 40 bits 1.00; dense 16-32 bits 1.00, dense 40 bits 0.91 (ktree 1.00, lattice
+  0.36, FLSSS-exact 0.06, CKK 0.25); lattice 1.00 on critical 46-47 bits (ma_final 0.43-0.57).
+- Scale: ma_final 1.00 in every cell (= ktree); FLSSS-exact 0.22-1.00; CKK 0.11-0.56.
+- FSSP-2 (clean): mean mu T 1.0000 / A 0.9038 / U 0.7469 (best or tied in every suite); W/T/L vs FLSSS
+  T 0/122/0, A 159/179/22, U 11/373/0; vs ktree A 237/96/27, T 56/66/0.
+- Suite H: 1.000 (tied with ktree, CP-SAT, FLSSS, CKK). Reconciliation: 1.000 (tied with ktree, CKK).
+Single source for the manuscript: results/headline_numbers.json -> "final" block.
+EXPERIMENTAL WORK COMPLETE for the final algorithm. Pending Rohit: algorithm name; go-ahead to write.
 

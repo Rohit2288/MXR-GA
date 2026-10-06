@@ -1,5 +1,5 @@
 {
- "git_commit": "84f9195efe40236c678e1c9f67529467d74afd26",
+ "git_commit": "7637ee0a3c59c58d30db7551c2344148a7e1ca72",
  "script": "experiments/38_headline_numbers.py",
  "gate_G_clean": {
   "success": {
@@ -1195,5 +1195,983 @@
   "random_search": 0.0021,
   "sim_anneal_crisp": 0.0,
   "vanilla_ga_crisp": 0.0
+ },
+ "final": {
+  "configuration": "k = 36, population 16, random start, exact MITM recombination only (ma_final)",
+  "gate_G_fresh_hard_corpus": {
+   "success": {
+    "lns_mitm": 0.825,
+    "ma_rand": 0.8568,
+    "ma_xr": 0.9341
+   },
+   "vs_ma_rand": {
+    "points": 7.7,
+    "tto_cliff": -0.399,
+    "n_differ": 87,
+    "wilcoxon_p": 0.0005580151642670437,
+    "pass": true
+   },
+   "vs_lns_mitm": {
+    "points": 10.9,
+    "tto_cliff": -0.341,
+    "n_differ": 88,
+    "wilcoxon_p": 7.407089108087669e-05,
+    "pass": true
+   },
+   "gate_met": true
+  },
+  "ablation_cpsat_subsolver_fresh": {
+   "ma_final_cpsat": {
+    "critical": 0.0,
+    "dense": 0.0
+   },
+   "ma_final": {
+    "critical": 0.855,
+    "dense": 1.0
+   }
+  },
+  "structured_A": {
+   "R1": {
+    "avislai": {
+     "ma_xr": 1.0,
+     "best_other": 0.9333,
+     "best_other_solver": "ktree",
+     "pass": true
+    },
+    "bimodal": {
+     "ma_xr": 0.9831,
+     "best_other": 0.5833,
+     "best_other_solver": "ckk",
+     "pass": true
+    },
+    "geometric": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "ckk",
+     "pass": true
+    },
+    "heavytail": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "flsss_exact",
+     "pass": true
+    },
+    "loguniform": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "ckk",
+     "pass": true
+    },
+    "nearequal": {
+     "ma_xr": 1.0,
+     "best_other": 0.9583,
+     "best_other_solver": "ktree",
+     "pass": true
+    }
+   },
+   "R1_pass": true,
+   "R2_points": 31.7,
+   "R2_pass": true,
+   "success_by_distribution": {
+    "ckk": {
+     "avislai": 0.0,
+     "bimodal": 0.5417,
+     "geometric": 1.0,
+     "heavytail": 0.6667,
+     "loguniform": 1.0,
+     "nearequal": 0.0833,
+     "uniform": 0.125
+    },
+    "cpsat": {
+     "avislai": 0.125,
+     "bimodal": 0.0417,
+     "geometric": 0.5,
+     "heavytail": 0.0,
+     "loguniform": 0.5,
+     "nearequal": 0.0,
+     "uniform": 0.0
+    },
+    "flsss": {
+     "avislai": 0.0,
+     "bimodal": 0.4583,
+     "geometric": 0.9167,
+     "heavytail": 0.875,
+     "loguniform": 0.875,
+     "nearequal": 0.2083,
+     "uniform": 0.1667
+    },
+    "flsss_exact": {
+     "avislai": 0.0,
+     "bimodal": 0.4583,
+     "geometric": 1.0,
+     "heavytail": 1.0,
+     "loguniform": 0.9167,
+     "nearequal": 0.2917,
+     "uniform": 0.5
+    },
+    "kk": {
+     "avislai": 0.0,
+     "bimodal": 0.3333,
+     "geometric": 1.0,
+     "heavytail": 0.5417,
+     "loguniform": 0.9583,
+     "nearequal": 0.0417,
+     "uniform": 0.0833
+    },
+    "ktree": {
+     "avislai": 0.9333,
+     "bimodal": 0.2667,
+     "geometric": 0.4667,
+     "heavytail": 1.0,
+     "loguniform": 0.4417,
+     "nearequal": 0.9583,
+     "uniform": 1.0
+    },
+    "lattice": {
+     "avislai": 0.3333,
+     "bimodal": 0.3333,
+     "geometric": 0.3333,
+     "heavytail": 0.1667,
+     "loguniform": 0.2083,
+     "nearequal": 0.1667,
+     "uniform": 0.0833
+    },
+    "ma_xr": {
+     "avislai": 1.0,
+     "bimodal": 0.9667,
+     "geometric": 1.0,
+     "heavytail": 1.0,
+     "loguniform": 1.0,
+     "nearequal": 1.0,
+     "uniform": 0.6833
+    }
+   },
+   "parity_success": 1.0
+  },
+  "structured_B": {
+   "R1": {
+    "avislai": {
+     "ma_xr": 1.0,
+     "best_other": 0.9417,
+     "best_other_solver": "ktree",
+     "pass": true
+    },
+    "bimodal": {
+     "ma_xr": 0.9993,
+     "best_other": 0.6929,
+     "best_other_solver": "flsss",
+     "pass": true
+    },
+    "geometric": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "ckk",
+     "pass": true
+    },
+    "heavytail": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "flsss_exact",
+     "pass": true
+    },
+    "loguniform": {
+     "ma_xr": 1.0,
+     "best_other": 1.0,
+     "best_other_solver": "ckk",
+     "pass": true
+    },
+    "nearequal": {
+     "ma_xr": 1.0,
+     "best_other": 0.9167,
+     "best_other_solver": "ktree",
+     "pass": true
+    }
+   },
+   "R1_pass": true,
+   "R2_points": 33.1,
+   "R2_pass": true,
+   "success_by_distribution": {
+    "ckk": {
+     "avislai": 0.0417,
+     "bimodal": 0.5,
+     "geometric": 1.0,
+     "heavytail": 0.5,
+     "loguniform": 1.0,
+     "nearequal": 0.0417,
+     "uniform": 0.375
+    },
+    "cpsat": {
+     "avislai": 0.125,
+     "bimodal": 0.0,
+     "geometric": 0.5,
+     "heavytail": 0.2083,
+     "loguniform": 0.4583,
+     "nearequal": 0.0,
+     "uniform": 0.0
+    },
+    "flsss": {
+     "avislai": 0.0,
+     "bimodal": 0.5833,
+     "geometric": 0.875,
+     "heavytail": 0.875,
+     "loguniform": 0.9167,
+     "nearequal": 0.1667,
+     "uniform": 0.0417
+    },
+    "flsss_exact": {
+     "avislai": 0.0,
+     "bimodal": 0.5833,
+     "geometric": 0.9583,
+     "heavytail": 1.0,
+     "loguniform": 1.0,
+     "nearequal": 0.2083,
+     "uniform": 0.4167
+    },
+    "kk": {
+     "avislai": 0.0,
+     "bimodal": 0.2917,
+     "geometric": 1.0,
+     "heavytail": 0.5,
+     "loguniform": 1.0,
+     "nearequal": 0.0417,
+     "uniform": 0.2917
+    },
+    "ktree": {
+     "avislai": 0.9417,
+     "bimodal": 0.2583,
+     "geometric": 0.4833,
+     "heavytail": 1.0,
+     "loguniform": 0.3917,
+     "nearequal": 0.9167,
+     "uniform": 1.0
+    },
+    "lattice": {
+     "avislai": 0.3333,
+     "bimodal": 0.3333,
+     "geometric": 0.3333,
+     "heavytail": 0.1667,
+     "loguniform": 0.3333,
+     "nearequal": 0.1667,
+     "uniform": 0.0833
+    },
+    "ma_xr": {
+     "avislai": 1.0,
+     "bimodal": 0.975,
+     "geometric": 1.0,
+     "heavytail": 1.0,
+     "loguniform": 1.0,
+     "nearequal": 1.0,
+     "uniform": 0.65
+    }
+   },
+   "parity_success": 1.0
+  },
+  "asymmetry_demo_success": {
+   "ma_final": 1.0,
+   "ma_final_sym": 0.1476
+  },
+  "asymmetry_competitors_success": {
+   "ckk": 0.0476,
+   "cpsat": 0.4286,
+   "flsss_exact": 0.0,
+   "kk": 0.0,
+   "ktree": 0.7143,
+   "ma_xr": 1.0,
+   "ma_xr_sym": 0.0857
+  },
+  "regime_map_success": {
+   "ckk": {
+    "critical-n0032-b24": 0.8333,
+    "critical-n0032-b32": 0.0,
+    "critical-n0032-b38": 0.1667,
+    "critical-n0040-b32": 0.0,
+    "critical-n0040-b40": 0.0,
+    "critical-n0040-b46": 0.0,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.0,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 0.1111,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 0.8889,
+    "dense-n0200-b32": 0.3333,
+    "dense-n0200-b40": 0.2222,
+    "dense-n0500-b16": 0.7778,
+    "dense-n0500-b24": 0.2222,
+    "dense-n0500-b32": 0.6667,
+    "dense-n0500-b40": 0.4444,
+    "dense-n1000-b16": 0.3333,
+    "dense-n1000-b24": 0.4444,
+    "dense-n1000-b32": 0.4444,
+    "dense-n1000-b40": 0.3333
+   },
+   "cpsat": {
+    "critical-n0032-b24": 0.0,
+    "critical-n0032-b32": 0.0,
+    "critical-n0032-b38": 0.0,
+    "critical-n0040-b32": 0.0,
+    "critical-n0040-b40": 0.0,
+    "critical-n0040-b46": 0.0,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.0,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 0.0,
+    "dense-n0100-b32": 0.0,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 0.0,
+    "dense-n0200-b32": 0.0,
+    "dense-n0200-b40": 0.0,
+    "dense-n0500-b16": 0.6667,
+    "dense-n0500-b24": 0.0,
+    "dense-n0500-b32": 0.0,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 0.5556,
+    "dense-n1000-b24": 0.0,
+    "dense-n1000-b32": 0.0,
+    "dense-n1000-b40": 0.0
+   },
+   "dp_exact": {
+    "critical-n0032-b24": 0.0,
+    "critical-n0032-b32": 0.0,
+    "critical-n0032-b38": 0.0,
+    "critical-n0040-b32": 0.0,
+    "critical-n0040-b40": 0.0,
+    "critical-n0040-b46": 0.0,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.0,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 0.0,
+    "dense-n0100-b32": 0.0,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 0.0,
+    "dense-n0200-b32": 0.0,
+    "dense-n0200-b40": 0.0,
+    "dense-n0500-b16": 0.2222,
+    "dense-n0500-b24": 0.0,
+    "dense-n0500-b32": 0.0,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 0.0,
+    "dense-n1000-b24": 0.0,
+    "dense-n1000-b32": 0.0,
+    "dense-n1000-b40": 0.0
+   },
+   "flsss": {
+    "critical-n0032-b24": 0.8333,
+    "critical-n0032-b32": 0.6667,
+    "critical-n0032-b38": 0.5,
+    "critical-n0040-b32": 0.0,
+    "critical-n0040-b40": 0.1667,
+    "critical-n0040-b46": 0.0,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.1667,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 0.0,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 1.0,
+    "dense-n0200-b32": 0.6667,
+    "dense-n0200-b40": 0.0,
+    "dense-n0500-b16": 1.0,
+    "dense-n0500-b24": 1.0,
+    "dense-n0500-b32": 0.4444,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 1.0,
+    "dense-n1000-b24": 1.0,
+    "dense-n1000-b32": 0.7778,
+    "dense-n1000-b40": 0.0
+   },
+   "flsss_exact": {
+    "critical-n0032-b24": 1.0,
+    "critical-n0032-b32": 0.8333,
+    "critical-n0032-b38": 0.8333,
+    "critical-n0040-b32": 0.1667,
+    "critical-n0040-b40": 0.3333,
+    "critical-n0040-b46": 0.3333,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.1667,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 0.3333,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 1.0,
+    "dense-n0200-b32": 0.8889,
+    "dense-n0200-b40": 0.0,
+    "dense-n0500-b16": 1.0,
+    "dense-n0500-b24": 1.0,
+    "dense-n0500-b32": 1.0,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 1.0,
+    "dense-n1000-b24": 1.0,
+    "dense-n1000-b32": 1.0,
+    "dense-n1000-b40": 0.2222
+   },
+   "ktree": {
+    "critical-n0032-b24": 1.0,
+    "critical-n0032-b32": 1.0,
+    "critical-n0032-b38": 1.0,
+    "critical-n0040-b32": 1.0,
+    "critical-n0040-b40": 0.9,
+    "critical-n0040-b46": 0.9667,
+    "critical-n0046-b38": 0.6333,
+    "critical-n0046-b46": 0.1,
+    "critical-n0046-b47": 0.1667,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 1.0,
+    "dense-n0100-b40": 1.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 1.0,
+    "dense-n0200-b32": 1.0,
+    "dense-n0200-b40": 1.0,
+    "dense-n0500-b16": 1.0,
+    "dense-n0500-b24": 1.0,
+    "dense-n0500-b32": 1.0,
+    "dense-n0500-b40": 1.0,
+    "dense-n1000-b16": 1.0,
+    "dense-n1000-b24": 1.0,
+    "dense-n1000-b32": 1.0,
+    "dense-n1000-b40": 1.0
+   },
+   "lattice": {
+    "critical-n0032-b24": 1.0,
+    "critical-n0032-b32": 1.0,
+    "critical-n0032-b38": 1.0,
+    "critical-n0040-b32": 1.0,
+    "critical-n0040-b40": 1.0,
+    "critical-n0040-b46": 1.0,
+    "critical-n0046-b38": 1.0,
+    "critical-n0046-b46": 1.0,
+    "critical-n0046-b47": 1.0,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 1.0,
+    "dense-n0100-b40": 1.0,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 1.0,
+    "dense-n0200-b32": 1.0,
+    "dense-n0200-b40": 0.4444,
+    "dense-n0500-b16": 0.7778,
+    "dense-n0500-b24": 0.0,
+    "dense-n0500-b32": 0.0,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 0.0,
+    "dense-n1000-b24": 0.0,
+    "dense-n1000-b32": 0.0,
+    "dense-n1000-b40": 0.0
+   },
+   "ma_final": {
+    "critical-n0032-b24": 1.0,
+    "critical-n0032-b32": 1.0,
+    "critical-n0032-b38": 1.0,
+    "critical-n0040-b32": 1.0,
+    "critical-n0040-b40": 1.0,
+    "critical-n0040-b46": 1.0,
+    "critical-n0046-b38": 1.0,
+    "critical-n0046-b46": 0.1333,
+    "critical-n0046-b47": 0.4333,
+    "dense-n0100-b16": 1.0,
+    "dense-n0100-b24": 1.0,
+    "dense-n0100-b32": 1.0,
+    "dense-n0100-b40": 0.8222,
+    "dense-n0200-b16": 1.0,
+    "dense-n0200-b24": 1.0,
+    "dense-n0200-b32": 1.0,
+    "dense-n0200-b40": 0.9111,
+    "dense-n0500-b16": 1.0,
+    "dense-n0500-b24": 1.0,
+    "dense-n0500-b32": 1.0,
+    "dense-n0500-b40": 0.9333,
+    "dense-n1000-b16": 1.0,
+    "dense-n1000-b24": 1.0,
+    "dense-n1000-b32": 1.0,
+    "dense-n1000-b40": 0.9556
+   },
+   "mitm": {
+    "critical-n0032-b24": 1.0,
+    "critical-n0032-b32": 1.0,
+    "critical-n0032-b38": 1.0,
+    "critical-n0040-b32": 1.0,
+    "critical-n0040-b40": 1.0,
+    "critical-n0040-b46": 1.0,
+    "critical-n0046-b38": 0.0,
+    "critical-n0046-b46": 0.0,
+    "critical-n0046-b47": 0.0,
+    "dense-n0100-b16": 0.0,
+    "dense-n0100-b24": 0.0,
+    "dense-n0100-b32": 0.0,
+    "dense-n0100-b40": 0.0,
+    "dense-n0200-b16": 0.0,
+    "dense-n0200-b24": 0.0,
+    "dense-n0200-b32": 0.0,
+    "dense-n0200-b40": 0.0,
+    "dense-n0500-b16": 0.0,
+    "dense-n0500-b24": 0.0,
+    "dense-n0500-b32": 0.0,
+    "dense-n0500-b40": 0.0,
+    "dense-n1000-b16": 0.0,
+    "dense-n1000-b24": 0.0,
+    "dense-n1000-b32": 0.0,
+    "dense-n1000-b40": 0.0
+   }
+  },
+  "regime_map_ci_ma_final": {
+   "critical-n0032-b24": [
+    1.0,
+    1.0
+   ],
+   "critical-n0032-b32": [
+    1.0,
+    1.0
+   ],
+   "critical-n0032-b38": [
+    1.0,
+    1.0
+   ],
+   "critical-n0040-b32": [
+    1.0,
+    1.0
+   ],
+   "critical-n0040-b40": [
+    1.0,
+    1.0
+   ],
+   "critical-n0040-b46": [
+    1.0,
+    1.0
+   ],
+   "critical-n0046-b38": [
+    1.0,
+    1.0
+   ],
+   "critical-n0046-b46": [
+    0.0667,
+    0.2
+   ],
+   "critical-n0046-b47": [
+    0.1333,
+    0.8
+   ],
+   "dense-n0100-b16": [
+    1.0,
+    1.0
+   ],
+   "dense-n0100-b24": [
+    1.0,
+    1.0
+   ],
+   "dense-n0100-b32": [
+    1.0,
+    1.0
+   ],
+   "dense-n0100-b40": [
+    0.6889,
+    0.9333
+   ],
+   "dense-n0200-b16": [
+    1.0,
+    1.0
+   ],
+   "dense-n0200-b24": [
+    1.0,
+    1.0
+   ],
+   "dense-n0200-b32": [
+    1.0,
+    1.0
+   ],
+   "dense-n0200-b40": [
+    0.8444,
+    0.9778
+   ],
+   "dense-n0500-b16": [
+    1.0,
+    1.0
+   ],
+   "dense-n0500-b24": [
+    1.0,
+    1.0
+   ],
+   "dense-n0500-b32": [
+    1.0,
+    1.0
+   ],
+   "dense-n0500-b40": [
+    0.8667,
+    0.9778
+   ],
+   "dense-n1000-b16": [
+    1.0,
+    1.0
+   ],
+   "dense-n1000-b24": [
+    1.0,
+    1.0
+   ],
+   "dense-n1000-b32": [
+    1.0,
+    1.0
+   ],
+   "dense-n1000-b40": [
+    0.8889,
+    1.0
+   ]
+  },
+  "scale_success": {
+   "ckk": {
+    "n10000-b32": 0.1111,
+    "n10000-b39": 0.5556,
+    "n2000-b32": 0.4444,
+    "n2000-b39": 0.3333,
+    "n5000-b32": 0.1111,
+    "n5000-b39": 0.4444
+   },
+   "flsss_exact": {
+    "n10000-b32": 0.5556,
+    "n10000-b39": 0.2222,
+    "n2000-b32": 1.0,
+    "n2000-b39": 0.4444,
+    "n5000-b32": 0.7778,
+    "n5000-b39": 0.3333
+   },
+   "ktree": {
+    "n10000-b32": 1.0,
+    "n10000-b39": 1.0,
+    "n2000-b32": 1.0,
+    "n2000-b39": 1.0,
+    "n5000-b32": 1.0,
+    "n5000-b39": 1.0
+   },
+   "ma_final": {
+    "n10000-b32": 1.0,
+    "n10000-b39": 1.0,
+    "n2000-b32": 1.0,
+    "n2000-b39": 1.0,
+    "n5000-b32": 1.0,
+    "n5000-b39": 1.0
+   }
+  },
+  "fssp2_mean_mu_clean": {
+   "T": {
+    "ckk": 0.9988,
+    "cpsat": 0.8115,
+    "dp_exact": 1.0,
+    "flsss": 1.0,
+    "ils_crisp": 1.0,
+    "ktree": 0.6787,
+    "lattice": 0.0,
+    "ma_final": 1.0,
+    "mitm": 0.0
+   },
+   "A": {
+    "ckk": 0.8211,
+    "cpsat": 0.8967,
+    "dp_exact": 0.3932,
+    "flsss": 0.9031,
+    "ils_crisp": 0.9027,
+    "ktree": 0.7931,
+    "lattice": 0.1393,
+    "ma_final": 0.9038,
+    "mitm": 0.0
+   },
+   "U": {
+    "ckk": 0.7404,
+    "cpsat": 0.7469,
+    "dp_exact": 0.7469,
+    "flsss": 0.7468,
+    "ils_crisp": 0.7423,
+    "ktree": 0.7466,
+    "lattice": 0.0293,
+    "ma_final": 0.7469,
+    "mitm": 0.7469
+   }
+  },
+  "fssp2_wtl_ma_final_vs": {
+   "T": {
+    "ckk": [
+     1,
+     121,
+     0
+    ],
+    "cpsat": [
+     23,
+     99,
+     0
+    ],
+    "dp_exact": [
+     0,
+     122,
+     0
+    ],
+    "flsss": [
+     0,
+     122,
+     0
+    ],
+    "ils_crisp": [
+     0,
+     122,
+     0
+    ],
+    "ktree": [
+     56,
+     66,
+     0
+    ],
+    "lattice": [
+     122,
+     0,
+     0
+    ],
+    "mitm": [
+     122,
+     0,
+     0
+    ]
+   },
+   "A": {
+    "ckk": [
+     313,
+     36,
+     11
+    ],
+    "cpsat": [
+     176,
+     172,
+     12
+    ],
+    "dp_exact": [
+     216,
+     142,
+     2
+    ],
+    "flsss": [
+     159,
+     179,
+     22
+    ],
+    "ils_crisp": [
+     207,
+     153,
+     0
+    ],
+    "ktree": [
+     237,
+     96,
+     27
+    ],
+    "lattice": [
+     310,
+     49,
+     1
+    ],
+    "mitm": [
+     360,
+     0,
+     0
+    ]
+   },
+   "U": {
+    "ckk": [
+     15,
+     369,
+     0
+    ],
+    "cpsat": [
+     0,
+     384,
+     0
+    ],
+    "dp_exact": [
+     0,
+     384,
+     0
+    ],
+    "flsss": [
+     11,
+     373,
+     0
+    ],
+    "ils_crisp": [
+     9,
+     375,
+     0
+    ],
+    "ktree": [
+     1,
+     383,
+     0
+    ],
+    "lattice": [
+     344,
+     40,
+     0
+    ],
+    "mitm": [
+     0,
+     384,
+     0
+    ]
+   }
+  },
+  "fssp2_runtime_clean": {
+   "A|ckk": {
+    "median_wall_s": 2.0001,
+    "median_evals": 25470.0
+   },
+   "A|cpsat": {
+    "median_wall_s": 1.1318,
+    "median_evals": 1.0
+   },
+   "A|dp_exact": {
+    "median_wall_s": 0.0015,
+    "median_evals": 0.0
+   },
+   "A|flsss": {
+    "median_wall_s": 0.2761,
+    "median_evals": 4.0
+   },
+   "A|ils_crisp": {
+    "median_wall_s": 2.0,
+    "median_evals": 166494.0
+   },
+   "A|ktree": {
+    "median_wall_s": 2.0286,
+    "median_evals": 29.0
+   },
+   "A|lattice": {
+    "median_wall_s": 2.0027,
+    "median_evals": 2.0
+   },
+   "A|ma_final": {
+    "median_wall_s": 2.0085,
+    "median_evals": 59.0
+   },
+   "A|mitm": {
+    "median_wall_s": NaN,
+    "median_evals": 0.0
+   },
+   "T|ckk": {
+    "median_wall_s": 0.0019,
+    "median_evals": 1.0
+   },
+   "T|cpsat": {
+    "median_wall_s": 0.1299,
+    "median_evals": 1.0
+   },
+   "T|dp_exact": {
+    "median_wall_s": 0.0031,
+    "median_evals": 1.0
+   },
+   "T|flsss": {
+    "median_wall_s": 0.5598,
+    "median_evals": 1.0
+   },
+   "T|ils_crisp": {
+    "median_wall_s": 0.2025,
+    "median_evals": 3044.0
+   },
+   "T|ktree": {
+    "median_wall_s": 3.6279,
+    "median_evals": 14.0
+   },
+   "T|lattice": {
+    "median_wall_s": NaN,
+    "median_evals": 0.0
+   },
+   "T|ma_final": {
+    "median_wall_s": 0.063,
+    "median_evals": 2.0
+   },
+   "T|mitm": {
+    "median_wall_s": NaN,
+    "median_evals": 0.0
+   },
+   "U|ckk": {
+    "median_wall_s": 0.0001,
+    "median_evals": 2.0
+   },
+   "U|cpsat": {
+    "median_wall_s": 0.0025,
+    "median_evals": 1.0
+   },
+   "U|dp_exact": {
+    "median_wall_s": 0.0001,
+    "median_evals": 1.0
+   },
+   "U|flsss": {
+    "median_wall_s": 0.2762,
+    "median_evals": 2.0
+   },
+   "U|ils_crisp": {
+    "median_wall_s": 0.0013,
+    "median_evals": 286.0
+   },
+   "U|ktree": {
+    "median_wall_s": 0.0052,
+    "median_evals": 1.0
+   },
+   "U|lattice": {
+    "median_wall_s": 2.0002,
+    "median_evals": 966.5
+   },
+   "U|ma_final": {
+    "median_wall_s": 0.0002,
+    "median_evals": 1.0
+   },
+   "U|mitm": {
+    "median_wall_s": 0.0002,
+    "median_evals": 1.0
+   }
+  },
+  "suite_H_success": {
+   "alpha_cut": 0.0,
+   "ckk": 1.0,
+   "cpsat": 1.0,
+   "dp_exact": 0.9897,
+   "fhga_v2crisp": 0.934,
+   "flsss": 1.0,
+   "greedy_center": 0.0,
+   "ils_crisp": 0.9222,
+   "kk": 0.8351,
+   "ktree": 1.0,
+   "lattice": 0.6392,
+   "lns_mitm": 1.0,
+   "ma_final": 1.0,
+   "ma_rand": 1.0,
+   "mitm": 0.1237,
+   "random_search": 0.2108,
+   "sim_anneal_crisp": 0.3407,
+   "vanilla_ga_crisp": 0.1392
+  },
+  "reconciliation_success": {
+   "alpha_cut": 0.0,
+   "ckk": 1.0,
+   "cpsat": 0.2083,
+   "dp_exact": 0.0,
+   "fhga_v2crisp": 0.0073,
+   "flsss": 0.7083,
+   "greedy_center": 0.0,
+   "ils_crisp": 0.0135,
+   "kk": 0.9167,
+   "ktree": 1.0,
+   "lattice": 0.0,
+   "lns_mitm": 0.8135,
+   "ma_final": 1.0,
+   "ma_rand": 0.9042,
+   "mitm": 0.0,
+   "random_search": 0.0021,
+   "sim_anneal_crisp": 0.0,
+   "vanilla_ga_crisp": 0.0
+  }
  }
 }

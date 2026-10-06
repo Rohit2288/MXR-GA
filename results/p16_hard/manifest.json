@@ -1,0 +1,16 @@
+{
+ "git_commit": "7637ee0a3c59c58d30db7551c2344148a7e1ca72",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-05T21:44:32.166966+00:00",
+ "corpus": "hard",
+ "instances": 97,
+ "solvers": [
+  "ma_final"
+ ],
+ "seeds_new": 20,
+ "seeds_base": 10,
+ "seed_offset": 0,
+ "wall": "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}
