@@ -1,0 +1,21 @@
+12.3 structured confirmation Sat Oct  3 17:15:54 IST 2026
+2880 units (0 already done)
+  500/2880
+  1000/2880
+  1500/2880
+  2000/2880
+  2500/2880
+12.2 speed equalisation      Sat Oct  3 18:12:25 IST 2026
+156 units (0 already done)
+12.5 lattice 60 s            Sat Oct  3 18:46:35 IST 2026
+198 units (0 already done)
+12.5 flsss_exact             Sat Oct  3 19:04:48 IST 2026
+198 units (0 already done)
+54 units (0 already done)
+88 units (0 already done)
+12.5 cpsat_closest 8 workers Sat Oct  3 19:16:39 IST 2026
+54 units (0 already done)
+88 units (0 already done)
+12.6 timing, one worker      Sat Oct  3 20:23:39 IST 2026
+176 units (0 already done)
+queue6 done                  Sat Oct  3 20:53:32 IST 2026

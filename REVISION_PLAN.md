@@ -622,3 +622,9 @@ over the parents' disagreement set (topped up with random items to k = 36); repl
 Single source for the manuscript: results/headline_numbers.json -> "final" block.
 EXPERIMENTAL WORK COMPLETE for the final algorithm. Pending Rohit: algorithm name; go-ahead to write.
 
+## Phase 17 — Population-size sensitivity of the FINAL configuration (optional check; Rohit 2026-10-11)
+PRE-REGISTERED: ma_final with pop in {4, 8, 16, 32, 64} (k = 36, random start, no post-move), on the TUNING set
+only (benchmarks/tuning_set; evaluation sets untouched), 3 seeds, 30 s, 4 workers. Descriptive. The paper may
+call the method insensitive to population size if every pop in {8, 32} is within +-5 points of pop = 16;
+values outside are reported as they are.
+
