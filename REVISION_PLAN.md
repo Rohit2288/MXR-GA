@@ -627,4 +627,8 @@ PRE-REGISTERED: ma_final with pop in {4, 8, 16, 32, 64} (k = 36, random start, n
 only (benchmarks/tuning_set; evaluation sets untouched), 3 seeds, 30 s, 4 workers. Descriptive. The paper may
 call the method insensitive to population size if every pop in {8, 32} is within +-5 points of pop = 16;
 values outside are reported as they are.
+Phase 17 outcome (2026-10-11): PASS. Overall tuning-set success by population size: 4 -> 0.895, 8 -> 0.916,
+16 -> 0.948, 32 -> 0.946, 64 -> 0.951 (95% CI about +-0.03). pop 8 is -3.2 and pop 32 is -0.2 points from
+pop 16: insensitive from 8 upwards; pop 4 is -5.2 (report as degraded). Median wall time to stop rises with
+population size (1.05 s at 8 to 2.44 s at 64), so 16 is a reasonable speed/quality point.
 
