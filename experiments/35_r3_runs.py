@@ -29,7 +29,7 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO))
 
 from src.core.evaluate import evaluate  # noqa: E402
-from src.core.instance import FSSP2_DIR, iter_instance_paths, load_instance  # noqa: E402
+from src.core.instance import FSSP1_DIR, FSSP2_DIR, iter_instance_paths, load_instance  # noqa: E402
 from src.protocol import r3  # noqa: E402
 from src.protocol.runner import git_commit  # noqa: E402
 
@@ -41,6 +41,8 @@ FIELDS = ["solver", "instance_id", "suite", "n", "distribution", "seed",
 def corpus_paths(spec: str):
     if spec == "fssp2":
         return list(iter_instance_paths(FSSP2_DIR))
+    if spec == "fssp1":
+        return list(iter_instance_paths(FSSP1_DIR))
     if spec == "hard":
         return sorted((REPO / "benchmarks" / "fsspb_hard").glob("fsspb-H-*.json"))
     return list(iter_instance_paths(REPO / spec))

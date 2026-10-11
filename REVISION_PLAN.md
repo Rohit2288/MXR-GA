@@ -632,3 +632,15 @@ Phase 17 outcome (2026-10-11): PASS. Overall tuning-set success by population si
 pop 16: insensitive from 8 upwards; pop 4 is -5.2 (report as degraded). Median wall time to stop rises with
 population size (1.05 s at 8 to 2.44 s at 64), so 16 is a reasonable speed/quality point.
 
+## Phase 18 — Table-data completeness (Rohit 2026-10-11: "first ensure all the data is complete for tables")
+Audit: `experiments/39_table_audit.py` lists every planned table with its corpus, solvers and seed
+requirement, and accepts only CLEAN runs (<= 4 workers) covering every instance. First audit: 87 gaps.
+Complete and clean already: Gate G / ablation (fresh hard corpus), structured A and B, asymmetry.
+Gaps: the FSSP-2 main table (needs 20 clean seeds; SA, crisp GA, FH-GA v2, random search, FLSSS-exact, KK,
+alpha-cut and greedy have no clean data); Suite H and reconciliation (all competitors); regime map
+(metaheuristics, KK); scale (ILS, SA, random, CP-SAT, FLSSS, KK); fresh hard corpus vs competitors;
+beyond-MITM; speed equalisation (earlier run used 7 workers); FSSP-1 appendix.
+Note for writing: FSSP-1 has 3,238 instance files, but the round-2 manuscript said 3,118. Verify before quoting.
+- [ ] 18.1 Fill every gap with clean runs (`scripts/run_r3_queue14.sh`, 4 workers, same protocol and budgets).
+- [ ] 18.2 Re-run the audit: zero gaps required before any table is generated.
+
