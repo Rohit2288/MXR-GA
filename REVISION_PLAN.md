@@ -640,7 +640,9 @@ Gaps: the FSSP-2 main table (needs 20 clean seeds; SA, crisp GA, FH-GA v2, rando
 alpha-cut and greedy have no clean data); Suite H and reconciliation (all competitors); regime map
 (metaheuristics, KK); scale (ILS, SA, random, CP-SAT, FLSSS, KK); fresh hard corpus vs competitors;
 beyond-MITM; speed equalisation (earlier run used 7 workers); FSSP-1 appendix.
-Note for writing: FSSP-1 has 3,238 instance files, but the round-2 manuscript said 3,118. Verify before quoting.
+Note for writing: FSSP-1 has 3,238 instances; its own manifest (total_instances = 3238, by n: 600 / 598 / 520 /
+520 / 520 / 480) and the inventory agree. The round-2 manuscript's "3,118" does not match the corpus. The new
+paper quotes 3,238, and the FSSP-1 appendix table is computed on all 3,238 (p18_fssp1).
 - [ ] 18.1 Fill every gap with clean runs (`scripts/run_r3_queue14.sh`, 4 workers, same protocol and budgets).
 - [ ] 18.2 Re-run the audit: zero gaps required before any table is generated.
 
