@@ -222,10 +222,10 @@ def t_fssp2():
     for suite in ("T", "A", "U"):
         f = st[(st["suite"] == suite) & (st["vs"] == "FRIEDMAN")].iloc[0]
         rows.append(rf"\multicolumn{{7}}{{l}}{{\emph{{Suite {suite}}}: Friedman over {int(f.W)} full-coverage "
-                    rf"methods, $p={sci(f.p_holm)}$}} \\")
+                    rf"methods, $p$ = {sci(f.p_holm)}}} \\")
         for _, r_ in st[(st["suite"] == suite) & (st["vs"] != "FRIEDMAN")].iterrows():
             rows.append(f"{tex_name(r_.vs)} & {int(r_.n)} & {r_.delta_mean:+.4f} & {r_.cliff:+.3f} & "
-                        f"{r_.magnitude} & {r_.W}/{r_.T}/{r_.L} & {sci(r_.p_holm)} \\\\")
+                        f"{r_['magnitude']} & {r_['W']}/{r_['T']}/{r_['L']} & {sci(r_['p_holm'])} \\\\")
         if suite != "U":
             rows.append(r"\midrule")
     save_table("t_fssp2_stats", st,
@@ -356,7 +356,7 @@ def t_gate_and_ablation():
     d["block"] = d["instance_id"].str.split("-").str[2]
     d["tto"] = np.where(d["mu0"] >= d["known_opt"] - 1e-12, d["wall_time"], np.inf)
     keep = ["ma_final", "ma_final_rand", "lns_final", "ma_final_cpsat", "ktree", "lattice", "flsss_exact",
-            "ckk", "kk", "cpsat", "mitm"]
+            "ckk", "kk", "cpsat"]
     d = d[d["solver"].isin(keep)]
     inst = d.groupby(["instance_id", "solver"]).agg(hit=("hit", "mean"), mu=("mu0", "mean"), tto=("tto", "median")).reset_index()
     H = inst.pivot(index="instance_id", columns="solver", values="hit")
@@ -394,7 +394,8 @@ def t_gate_and_ablation():
                r"Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the "
                r"pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: "
                r"competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the "
-               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted.",
+               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. MITM is omitted: every instance "
+               r"exceeds its memory envelope ($n>44$), so it abstains rather than fails.",
                "tab:gate", "lrrrrrrrr",
                r"Method & Succ.\,\% & Critical & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ & $p_{\mathrm{Holm}}$",
                rows)

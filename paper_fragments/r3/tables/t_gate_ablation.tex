@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \centering
 \small
-\caption{Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the pair differs; Wilcoxon on per-instance success, Holm-adjusted.}
+\caption{Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the pair differs; Wilcoxon on per-instance success, Holm-adjusted. MITM is omitted: every instance exceeds its memory envelope ($n>44$), so it abstains rather than fails.}
 \label{tab:gate}
 \begin{tabular}{lrrrrrrrr}
 \toprule
@@ -10,15 +10,14 @@ Method & Succ.\,\% & Critical & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ &
 \algname & 93.4 & 85.5 & 100.0 & 0.9614 & 0.151 & 0.000 & -- & -- \\
 \algname, random free set & 85.7 & 82.5 & 88.3 & 0.9545 & 0.135 & 0.400 & -0.399 & 5.6e-04 \\
 \algname, no population & 82.5 & 77.0 & 87.1 & 0.9295 & 0.169 & 0.400 & -0.341 & 2.2e-04 \\
-\algname, CP-SAT sub-solver & 0.0 & 0.0 & 0.0 & 0.0000 & 0.000 & 0.000 & -0.988 & 2.4e-17 \\
+\algname, CP-SAT sub-solver & 0.0 & 0.0 & 0.0 & 0.0000 & 0.000 & 0.000 & -0.988 & 2.1e-17 \\
 \midrule
 k-tree & 81.4 & 59.0 & 100.0 & 0.9091 & 0.250 & 0.000 & +0.211 & 2.6e-04 \\
 Lattice (BKZ) & 59.1 & 100.0 & 25.0 & 0.5909 & 0.494 & 0.000 & -0.012 & 2.1e-06 \\
 FLSSS-exact & 5.7 & 5.0 & 6.2 & 0.4886 & 0.410 & 0.000 & -0.974 & 1.6e-16 \\
 CKK & 13.6 & 0.0 & 25.0 & 0.4885 & 0.503 & 0.000 & -0.783 & 4.2e-15 \\
 KK & 2.3 & 0.0 & 4.2 & 0.1529 & 0.354 & 0.000 & -0.942 & 4.4e-17 \\
-CP-SAT & 0.0 & 0.0 & 0.0 & 0.5055 & 0.468 & 0.000 & -0.988 & 2.4e-17 \\
-MITM (exact) & 0.0 & 0.0 & 0.0 & 0.0000 & 0.000 & 0.000 & -0.988 & 2.4e-17 \\
+CP-SAT & 0.0 & 0.0 & 0.0 & 0.5055 & 0.468 & 0.000 & -0.988 & 2.1e-17 \\
 \bottomrule
 \end{tabular}
 \end{table}

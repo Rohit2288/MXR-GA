@@ -7,506 +7,56 @@
 \toprule
 vs. & $n$ & $\Delta$ mean $\mu$ & Cliff's $\delta$ & Magnitude & W/T/L & $p_{\mathrm{Holm}}$ \\
 \midrule
-\multicolumn{7}{l}{\emph{Suite T}: Friedman over 15 full-coverage methods, $p=2.1e-221$} \\
-k-tree & 122 & +0.3275 & +0.623 & large & 76/suite                T
-vs               ktree
-n                  122
-delta_mean    0.327525
-cliff         0.622951
-W                   76
-T                   46
-L                    0
-p_holm             0.0
-magnitude        large
-Name: 0, dtype: object/0 & 3.7e-13 \\
-FLSSS & 122 & +0.0000 & +0.000 & negligible & 0/suite                  T
-vs                 flsss
-n                    122
-delta_mean           0.0
-cliff                0.0
-W                      0
-T                    122
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 1, dtype: object/0 & 1.000 \\
-FLSSS-exact & 122 & +0.0000 & +0.000 & negligible & 0/suite                   T
-vs            flsss_exact
-n                     122
-delta_mean            0.0
-cliff                 0.0
-W                       0
-T                     122
-L                       0
-p_holm                1.0
-magnitude      negligible
-Name: 2, dtype: object/0 & 1.000 \\
-CKK & 122 & +0.0012 & +0.008 & negligible & 1/suite                  T
-vs                   ckk
-n                    122
-delta_mean      0.001242
-cliff           0.008197
-W                      1
-T                    121
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 3, dtype: object/0 & 1.000 \\
-KK & 122 & +0.0017 & +0.008 & negligible & 1/suite                  T
-vs                    kk
-n                    122
-delta_mean      0.001739
-cliff           0.008197
-W                      1
-T                    121
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 4, dtype: object/0 & 1.000 \\
-CP-SAT & 122 & +0.1885 & +0.189 & small & 23/suite                T
-vs               cpsat
-n                  122
-delta_mean    0.188525
-cliff         0.188525
-W                   23
-T                   99
-L                    0
-p_holm        0.000016
-magnitude        small
-Name: 5, dtype: object/0 & 1.6e-05 \\
-DP (exact) & 122 & +0.0000 & +0.000 & negligible & 0/suite                  T
-vs              dp_exact
-n                    122
-delta_mean           0.0
-cliff                0.0
-W                      0
-T                    122
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 6, dtype: object/0 & 1.000 \\
-FH-GA (prior) & 122 & +0.0001 & +0.057 & negligible & 7/suite                    T
-vs            fhga_v2crisp
-n                      122
-delta_mean        0.000068
-cliff             0.057377
-W                        7
-T                      115
-L                        0
-p_holm                 1.0
-magnitude       negligible
-Name: 7, dtype: object/0 & 1.000 \\
-ILS (guided) & 122 & +0.0033 & +0.033 & negligible & 4/suite                  T
-vs             ils_crisp
-n                    122
-delta_mean      0.003279
-cliff           0.032787
-W                      4
-T                    118
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 8, dtype: object/0 & 1.000 \\
-SA (guided) & 122 & +0.0000 & +0.000 & negligible & 0/suite                        T
-vs            sim_anneal_crisp
-n                          122
-delta_mean                 0.0
-cliff                      0.0
-W                            0
-T                          122
-L                            0
-p_holm                     1.0
-magnitude           negligible
-Name: 9, dtype: object/0 & 1.000 \\
-GA (guided) & 122 & +0.0135 & +0.639 & large & 78/suite                        T
-vs            vanilla_ga_crisp
-n                          122
-delta_mean            0.013522
-cliff                 0.639344
-W                           78
-T                           44
-L                            0
-p_holm                     0.0
-magnitude                large
-Name: 10, dtype: object/0 & 2.0e-13 \\
-Random search & 122 & +0.0000 & +0.016 & negligible & 2/suite                     T
-vs            random_search
-n                       122
-delta_mean         0.000021
-cliff              0.016393
-W                         2
-T                       120
-L                         0
-p_holm                  1.0
-magnitude        negligible
-Name: 11, dtype: object/0 & 1.000 \\
-$\alpha$-cut FPTAS & 122 & +0.5656 & +0.566 & large & 69/suite                 T
-vs            alpha_cut
-n                   122
-delta_mean     0.565574
-cliff          0.565574
-W                    69
-T                    53
-L                     0
-p_holm              0.0
-magnitude         large
-Name: 12, dtype: object/0 & 1.3e-15 \\
-Greedy & 122 & +0.9448 & +0.984 & large & 120/suite                     T
-vs            greedy_center
-n                       122
-delta_mean         0.944832
-cliff              0.983607
-W                       120
-T                         2
-L                         0
-p_holm                  0.0
-magnitude             large
-Name: 13, dtype: object/0 & 6.1e-25 \\
+\multicolumn{7}{l}{\emph{Suite T}: Friedman over 15 full-coverage methods, $p$ = 2.1e-221} \\
+k-tree & 122 & +0.3275 & +0.623 & large & 76/46/0 & 3.7e-13 \\
+FLSSS & 122 & +0.0000 & +0.000 & negligible & 0/122/0 & 1.000 \\
+FLSSS-exact & 122 & +0.0000 & +0.000 & negligible & 0/122/0 & 1.000 \\
+CKK & 122 & +0.0012 & +0.008 & negligible & 1/121/0 & 1.000 \\
+KK & 122 & +0.0017 & +0.008 & negligible & 1/121/0 & 1.000 \\
+CP-SAT & 122 & +0.1885 & +0.189 & small & 23/99/0 & 1.6e-05 \\
+DP (exact) & 122 & +0.0000 & +0.000 & negligible & 0/122/0 & 1.000 \\
+FH-GA (prior) & 122 & +0.0001 & +0.057 & negligible & 7/115/0 & 1.000 \\
+ILS (guided) & 122 & +0.0033 & +0.033 & negligible & 4/118/0 & 1.000 \\
+SA (guided) & 122 & +0.0000 & +0.000 & negligible & 0/122/0 & 1.000 \\
+GA (guided) & 122 & +0.0135 & +0.639 & large & 78/44/0 & 2.0e-13 \\
+Random search & 122 & +0.0000 & +0.016 & negligible & 2/120/0 & 1.000 \\
+$\alpha$-cut FPTAS & 122 & +0.5656 & +0.566 & large & 69/53/0 & 1.3e-15 \\
+Greedy & 122 & +0.9448 & +0.984 & large & 120/2/0 & 6.1e-25 \\
 \midrule
-\multicolumn{7}{l}{\emph{Suite A}: Friedman over 14 full-coverage methods, $p=$<10^{-300}$$} \\
-k-tree & 360 & +0.1101 & +0.269 & small & 246/suite                A
-vs               ktree
-n                  360
-delta_mean    0.110137
-cliff         0.268688
-W                  246
-T                   81
-L                   33
-p_holm             0.0
-magnitude        small
-Name: 15, dtype: object/33 & 2.9e-43 \\
-Lattice (BKZ) & 216 & +0.6596 & +0.592 & large & 166/suite                A
-vs             lattice
-n                  216
-delta_mean    0.659644
-cliff         0.591757
-W                  166
-T                   48
-L                    2
-p_holm             0.0
-magnitude        large
-Name: 16, dtype: object/2 & 9.7e-29 \\
-FLSSS & 360 & +0.0008 & +0.039 & negligible & 159/suite                  A
-vs                 flsss
-n                    360
-delta_mean      0.000785
-cliff           0.038765
-W                    159
-T                    178
-L                     23
-p_holm               0.0
-magnitude     negligible
-Name: 17, dtype: object/23 & 6.8e-27 \\
-FLSSS-exact & 360 & +0.1496 & +0.284 & small & 214/suite                   A
-vs            flsss_exact
-n                     360
-delta_mean       0.149593
-cliff            0.284035
-W                     214
-T                     139
-L                       7
-p_holm                0.0
-magnitude           small
-Name: 18, dtype: object/7 & 2.1e-36 \\
-CKK & 360 & +0.0827 & +0.369 & medium & 312/suite                A
-vs                 ckk
-n                  360
-delta_mean    0.082724
-cliff         0.369336
-W                  312
-T                   33
-L                   15
-p_holm             0.0
-magnitude       medium
-Name: 19, dtype: object/15 & 9.1e-54 \\
-KK & 360 & +0.0901 & +0.423 & medium & 352/suite                A
-vs                  kk
-n                  360
-delta_mean    0.090123
-cliff         0.423488
-W                  352
-T                    6
-L                    2
-p_holm             0.0
-magnitude       medium
-Name: 20, dtype: object/2 & 1.3e-58 \\
-CP-SAT & 360 & +0.0071 & +0.074 & negligible & 176/suite                  A
-vs                 cpsat
-n                    360
-delta_mean      0.007139
-cliff           0.073804
-W                    176
-T                    172
-L                     12
-p_holm               0.0
-magnitude     negligible
-Name: 21, dtype: object/12 & 1.9e-26 \\
-DP (exact) & 144 & -0.0002 & -0.012 & negligible & 0/suite                  A
-vs              dp_exact
-n                    144
-delta_mean     -0.000221
-cliff          -0.012153
-W                      0
-T                    142
-L                      2
-p_holm               1.0
-magnitude     negligible
-Name: 22, dtype: object/2 & 1.000 \\
-FH-GA (prior) & 360 & +0.0005 & +0.148 & small & 126/suite                    A
-vs            fhga_v2crisp
-n                      360
-delta_mean        0.000514
-cliff              0.14777
-W                      126
-T                      196
-L                       38
-p_holm                 0.0
-magnitude            small
-Name: 23, dtype: object/38 & 4.6e-21 \\
-ILS (guided) & 360 & +0.0015 & +0.115 & negligible & 233/suite                  A
-vs             ils_crisp
-n                    360
-delta_mean      0.001492
-cliff           0.114985
-W                    233
-T                    126
-L                      1
-p_holm               0.0
-magnitude     negligible
-Name: 24, dtype: object/1 & 1.7e-38 \\
-SA (guided) & 360 & +0.0265 & +0.295 & small & 331/suite                        A
-vs            sim_anneal_crisp
-n                          360
-delta_mean            0.026479
-cliff                 0.295085
-W                          331
-T                           29
-L                            0
-p_holm                     0.0
-magnitude                small
-Name: 25, dtype: object/0 & 6.7e-55 \\
-GA (guided) & 360 & +0.0142 & +0.242 & small & 318/suite                        A
-vs            vanilla_ga_crisp
-n                          360
-delta_mean            0.014218
-cliff                  0.24189
-W                          318
-T                           42
-L                            0
-p_holm                     0.0
-magnitude                small
-Name: 26, dtype: object/0 & 4.3e-53 \\
-Random search & 360 & +0.0222 & +0.273 & small & 325/suite                     A
-vs            random_search
-n                       360
-delta_mean         0.022182
-cliff              0.272554
-W                       325
-T                        35
-L                         0
-p_holm                  0.0
-magnitude             small
-Name: 27, dtype: object/0 & 6.0e-54 \\
-$\alpha$-cut FPTAS & 360 & +0.1337 & +0.555 & large & 356/suite                 A
-vs            alpha_cut
-n                   360
-delta_mean     0.133746
-cliff           0.55466
-W                   356
-T                     4
-L                     0
-p_holm              0.0
-magnitude         large
-Name: 28, dtype: object/0 & 6.4e-59 \\
-Greedy & 360 & +0.5592 & +0.868 & large & 321/suite                     A
-vs            greedy_center
-n                       360
-delta_mean         0.559178
-cliff              0.867546
-W                       321
-T                        38
-L                         1
-p_holm                  0.0
-magnitude             large
-Name: 29, dtype: object/1 & 1.5e-53 \\
+\multicolumn{7}{l}{\emph{Suite A}: Friedman over 14 full-coverage methods, $p$ = $<10^{-300}$} \\
+k-tree & 360 & +0.1101 & +0.269 & small & 246/81/33 & 2.9e-43 \\
+Lattice (BKZ) & 216 & +0.6596 & +0.592 & large & 166/48/2 & 9.7e-29 \\
+FLSSS & 360 & +0.0008 & +0.039 & negligible & 159/178/23 & 6.8e-27 \\
+FLSSS-exact & 360 & +0.1496 & +0.284 & small & 214/139/7 & 2.1e-36 \\
+CKK & 360 & +0.0827 & +0.369 & medium & 312/33/15 & 9.1e-54 \\
+KK & 360 & +0.0901 & +0.423 & medium & 352/6/2 & 1.3e-58 \\
+CP-SAT & 360 & +0.0071 & +0.074 & negligible & 176/172/12 & 1.9e-26 \\
+DP (exact) & 144 & -0.0002 & -0.012 & negligible & 0/142/2 & 1.000 \\
+FH-GA (prior) & 360 & +0.0005 & +0.148 & small & 126/196/38 & 4.6e-21 \\
+ILS (guided) & 360 & +0.0015 & +0.115 & negligible & 233/126/1 & 1.7e-38 \\
+SA (guided) & 360 & +0.0265 & +0.295 & small & 331/29/0 & 6.7e-55 \\
+GA (guided) & 360 & +0.0142 & +0.242 & small & 318/42/0 & 4.3e-53 \\
+Random search & 360 & +0.0222 & +0.273 & small & 325/35/0 & 6.0e-54 \\
+$\alpha$-cut FPTAS & 360 & +0.1337 & +0.555 & large & 356/4/0 & 6.4e-59 \\
+Greedy & 360 & +0.5592 & +0.868 & large & 321/38/1 & 1.5e-53 \\
 \midrule
-\multicolumn{7}{l}{\emph{Suite U}: Friedman over 17 full-coverage methods, $p=$<10^{-300}$$} \\
-k-tree & 384 & +0.0003 & +0.000 & negligible & 5/suite                  U
-vs                 ktree
-n                    384
-delta_mean      0.000329
-cliff           0.000129
-W                      5
-T                    379
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 31, dtype: object/0 & 1.000 \\
-Lattice (BKZ) & 384 & +0.7176 & +0.880 & large & 344/suite                U
-vs             lattice
-n                  384
-delta_mean    0.717614
-cliff         0.880249
-W                  344
-T                   40
-L                    0
-p_holm             0.0
-magnitude        large
-Name: 32, dtype: object/0 & 5.8e-57 \\
-FLSSS & 384 & +0.0001 & +0.001 & negligible & 11/suite                  U
-vs                 flsss
-n                    384
-delta_mean      0.000066
-cliff           0.000895
-W                     11
-T                    373
-L                      0
-p_holm          0.006836
-magnitude     negligible
-Name: 33, dtype: object/0 & 0.007 \\
-FLSSS-exact & 384 & +0.1848 & +0.462 & medium & 268/suite                   U
-vs            flsss_exact
-n                     384
-delta_mean       0.184796
-cliff            0.461717
-W                     268
-T                     116
-L                       0
-p_holm                0.0
-magnitude          medium
-Name: 34, dtype: object/0 & 1.5e-44 \\
-CKK & 384 & +0.0065 & +0.009 & negligible & 15/suite                  U
-vs                   ckk
-n                    384
-delta_mean      0.006514
-cliff           0.009399
-W                     15
-T                    369
-L                      0
-p_holm          0.000549
-magnitude     negligible
-Name: 35, dtype: object/0 & 5.5e-04 \\
-KK & 384 & +0.2059 & +0.318 & small & 214/suite                U
-vs                  kk
-n                  384
-delta_mean    0.205948
-cliff         0.318278
-W                  214
-T                  170
-L                    0
-p_holm             0.0
-magnitude        small
-Name: 36, dtype: object/0 & 8.6e-36 \\
-CP-SAT & 384 & -0.0000 & -0.001 & negligible & 0/suite                  U
-vs                 cpsat
-n                    384
-delta_mean          -0.0
-cliff          -0.000671
-W                      0
-T                    384
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 37, dtype: object/0 & 1.000 \\
-DP (exact) & 384 & -0.0000 & -0.001 & negligible & 0/suite                  U
-vs              dp_exact
-n                    384
-delta_mean          -0.0
-cliff          -0.000671
-W                      0
-T                    384
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 38, dtype: object/0 & 1.000 \\
-MITM (exact) & 384 & -0.0000 & -0.001 & negligible & 0/suite                  U
-vs                  mitm
-n                    384
-delta_mean          -0.0
-cliff          -0.000671
-W                      0
-T                    384
-L                      0
-p_holm               1.0
-magnitude     negligible
-Name: 39, dtype: object/0 & 1.000 \\
-FH-GA (prior) & 384 & +0.0002 & +0.000 & negligible & 2/suite                    U
-vs            fhga_v2crisp
-n                      384
-delta_mean        0.000214
-cliff             0.000081
-W                        2
-T                      382
-L                        0
-p_holm                 1.0
-magnitude       negligible
-Name: 40, dtype: object/0 & 1.000 \\
-ILS (guided) & 384 & +0.0045 & +0.004 & negligible & 13/suite                  U
-vs             ils_crisp
-n                    384
-delta_mean      0.004541
-cliff           0.004232
-W                     13
-T                    371
-L                      0
-p_holm          0.001953
-magnitude     negligible
-Name: 41, dtype: object/0 & 0.002 \\
-SA (guided) & 384 & +0.0005 & +0.000 & negligible & 7/suite                        U
-vs            sim_anneal_crisp
-n                          384
-delta_mean            0.000533
-cliff                 0.000326
-W                            7
-T                          377
-L                            0
-p_holm                     1.0
-magnitude           negligible
-Name: 42, dtype: object/0 & 1.000 \\
-GA (guided) & 384 & +0.0054 & +0.009 & negligible & 27/suite                        U
-vs            vanilla_ga_crisp
-n                          384
-delta_mean            0.005359
-cliff                 0.008538
-W                           27
-T                          357
-L                            0
-p_holm                     0.0
-magnitude           negligible
-Name: 43, dtype: object/0 & 1.5e-07 \\
-Random search & 384 & +0.0423 & +0.053 & negligible & 50/suite                     U
-vs            random_search
-n                       384
-delta_mean         0.042317
-cliff              0.053399
-W                        50
-T                       334
-L                         0
-p_holm                  0.0
-magnitude        negligible
-Name: 44, dtype: object/0 & 2.0e-14 \\
-$\alpha$-cut FPTAS & 384 & +0.2497 & +0.490 & large & 218/suite                 U
-vs            alpha_cut
-n                   384
-delta_mean      0.24975
-cliff          0.490099
-W                   218
-T                   166
-L                     0
-p_holm              0.0
-magnitude         large
-Name: 45, dtype: object/0 & 2.1e-36 \\
-Greedy & 384 & +0.7126 & +0.894 & large & 347/suite                     U
-vs            greedy_center
-n                       384
-delta_mean         0.712572
-cliff              0.894463
-W                       347
-T                        37
-L                         0
-p_holm                  0.0
-magnitude             large
-Name: 46, dtype: object/0 & 2.0e-57 \\
+\multicolumn{7}{l}{\emph{Suite U}: Friedman over 17 full-coverage methods, $p$ = $<10^{-300}$} \\
+k-tree & 384 & +0.0003 & +0.000 & negligible & 5/379/0 & 1.000 \\
+Lattice (BKZ) & 384 & +0.7176 & +0.880 & large & 344/40/0 & 5.8e-57 \\
+FLSSS & 384 & +0.0001 & +0.001 & negligible & 11/373/0 & 0.007 \\
+FLSSS-exact & 384 & +0.1848 & +0.462 & medium & 268/116/0 & 1.5e-44 \\
+CKK & 384 & +0.0065 & +0.009 & negligible & 15/369/0 & 5.5e-04 \\
+KK & 384 & +0.2059 & +0.318 & small & 214/170/0 & 8.6e-36 \\
+CP-SAT & 384 & -0.0000 & -0.001 & negligible & 0/384/0 & 1.000 \\
+DP (exact) & 384 & -0.0000 & -0.001 & negligible & 0/384/0 & 1.000 \\
+MITM (exact) & 384 & -0.0000 & -0.001 & negligible & 0/384/0 & 1.000 \\
+FH-GA (prior) & 384 & +0.0002 & +0.000 & negligible & 2/382/0 & 1.000 \\
+ILS (guided) & 384 & +0.0045 & +0.004 & negligible & 13/371/0 & 0.002 \\
+SA (guided) & 384 & +0.0005 & +0.000 & negligible & 7/377/0 & 1.000 \\
+GA (guided) & 384 & +0.0054 & +0.009 & negligible & 27/357/0 & 1.5e-07 \\
+Random search & 384 & +0.0423 & +0.053 & negligible & 50/334/0 & 2.0e-14 \\
+$\alpha$-cut FPTAS & 384 & +0.2497 & +0.490 & large & 218/166/0 & 2.1e-36 \\
+Greedy & 384 & +0.7126 & +0.894 & large & 347/37/0 & 2.0e-57 \\
 \bottomrule
 \end{tabular}
 \end{table}
