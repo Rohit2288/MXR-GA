@@ -1,0 +1,19 @@
+{
+ "git_commit": "dbc0f6f50726ecbe11fb3eaca7af77ac76fab6e8",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-11T10:42:10.315421+00:00",
+ "corpus": "fssp2",
+ "instances": 866,
+ "solvers": [
+  "sim_anneal_crisp",
+  "vanilla_ga_crisp",
+  "fhga_v2crisp",
+  "random_search"
+ ],
+ "seeds_new": 20,
+ "seeds_base": 20,
+ "seed_offset": 0,
+ "wall": "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

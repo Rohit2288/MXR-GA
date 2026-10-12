@@ -1,0 +1,22 @@
+{
+ "git_commit": "dbc0f6f50726ecbe11fb3eaca7af77ac76fab6e8",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-12T04:34:36.312377+00:00",
+ "corpus": "benchmarks/subset_speed",
+ "instances": 26,
+ "solvers": [
+  "ktree",
+  "ils_crisp",
+  "sim_anneal_crisp",
+  "vanilla_ga_crisp",
+  "fhga_v2crisp",
+  "random_search",
+  "ckk"
+ ],
+ "seeds_new": 20,
+ "seeds_base": 1,
+ "seed_offset": 0,
+ "wall": 120.0,
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}

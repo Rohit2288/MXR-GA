@@ -643,6 +643,19 @@ beyond-MITM; speed equalisation (earlier run used 7 workers); FSSP-1 appendix.
 Note for writing: FSSP-1 has 3,238 instances; its own manifest (total_instances = 3238, by n: 600 / 598 / 520 /
 520 / 520 / 480) and the inventory agree. The round-2 manuscript's "3,118" does not match the corpus. The new
 paper quotes 3,238, and the FSSP-1 appendix table is computed on all 3,238 (p18_fssp1).
-- [ ] 18.1 Fill every gap with clean runs (`scripts/run_r3_queue14.sh`, 4 workers, same protocol and budgets).
-- [ ] 18.2 Re-run the audit: zero gaps required before any table is generated.
+- [x] 18.1 Fill every gap with clean runs (`scripts/run_r3_queue14.sh`, 4 workers, same protocol and budgets).
+- [x] 18.2 Re-run the audit: zero gaps required before any table is generated.
+
+### Phase 18 outcome (2026-10-12): TABLE DATA COMPLETE. Audit: 0 gaps across all 13 planned tables
+Integrity over all clean (<= 4-worker) runs: 232,986 runs, 0 overshoots, 0 bad statuses, 0 duplicates.
+Notes for the tables (not problems):
+- FSSP-2 (20 clean seeds for every stochastic solver): ma_final mean mu A 0.9038 / T 1.0000 / U 0.7469, best or
+  tied; the old FH-GA v2-crisp is close (0.9033 / 0.9999 / 0.7467) because FSSP-2 magnitudes are small. FSSP-2
+  shows no weak suite; it does not separate the strong methods.
+- FLSSS-exact is low on FSSP-2 A / U (0.754 / 0.562) by design: it spends its budget on the exact-hit probe, so
+  it is weak where mu* < 1. Say so in the table note.
+- Speed equalisation (clean, 120 s): ktree 1.00 on dense / scale, but 0.38 on structured geometric (0.22 at 30 s);
+  CKK 0.44 / 0.11 / 1.00; ILS and FH-GA v2 0.0 / 0.0 / 0.5; SA, crisp GA, random 0.
+- Fresh hard corpus: critical, lattice 1.000 > ma_final 0.855 > ktree 0.590; dense, ma_final = ktree = 1.000.
+- Beyond-MITM: ktree 0.683, lattice 0.667, ma_final 0.083 (a stated limitation).
 

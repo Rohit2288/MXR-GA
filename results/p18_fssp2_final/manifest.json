@@ -1,0 +1,16 @@
+{
+ "git_commit": "bc0a8356535d43e25eb9d80d908aac0b3f47301c",
+ "script": "experiments/35_r3_runs.py",
+ "date_utc": "2026-10-11T06:52:14.998367+00:00",
+ "corpus": "fssp2",
+ "instances": 866,
+ "solvers": [
+  "ma_final"
+ ],
+ "seeds_new": 15,
+ "seeds_base": 10,
+ "seed_offset": 5,
+ "wall": "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
+ "stop_rule": "known certified optimum (r3.known_optimum)",
+ "workers": 4
+}
