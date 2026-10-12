@@ -1,0 +1,65 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Cost per run on Benchmark-FSSP-2 under the shared protocol: median and 90th-percentile wall-clock seconds, and median counted evaluations. Runs stop at the budget or at a certified optimum (identical rule for every method). Exact and sub-solver-based methods do uncounted internal work, so wall-clock is the comparable cost; hardware: Apple M1, 4 performance cores.}
+\label{tab:runtime}
+\begin{tabular}{lrrr}
+\toprule
+Method & Median s & 90th pct.\ s & Median evals \\
+\midrule
+\multicolumn{4}{l}{\emph{Suite T}} \\
+\algname & 0.058 & 0.473 & 2 \\
+k-tree & 3.129 & 10.108 & 12 \\
+FLSSS & 0.560 & 0.862 & 1 \\
+FLSSS-exact & 0.369 & 0.452 & 1 \\
+CKK & 0.002 & 0.003 & 1 \\
+KK & 0.002 & 0.002 & 1 \\
+CP-SAT & 0.130 & 0.402 & 1 \\
+DP (exact) & 0.003 & 0.012 & 1 \\
+FH-GA (prior) & 0.594 & 5.590 & 1208 \\
+ILS (guided) & 0.201 & 1.002 & 3006 \\
+SA (guided) & 0.241 & 2.003 & 3412 \\
+GA (guided) & 1.892 & 10.003 & 3982 \\
+Random search & 0.322 & 2.198 & 4656 \\
+$\alpha$-cut FPTAS & 0.010 & 0.044 & 6 \\
+Greedy & 0.000 & 0.001 & 1 \\
+\midrule
+\multicolumn{4}{l}{\emph{Suite A}} \\
+\algname & 2.008 & 5.016 & 59 \\
+k-tree & 2.030 & 5.136 & 28 \\
+Lattice (BKZ) & 2.003 & 2.022 & 15 \\
+FLSSS & 0.276 & 0.496 & 4 \\
+FLSSS-exact & 0.279 & 1.978 & 1 \\
+CKK & 2.000 & 5.000 & 25470 \\
+KK & 0.000 & 0.001 & 1 \\
+CP-SAT & 1.132 & 4.755 & 1 \\
+DP (exact) & 0.002 & 0.017 & 1 \\
+FH-GA (prior) & 2.000 & 5.002 & 103684 \\
+ILS (guided) & 2.000 & 5.000 & 162508 \\
+SA (guided) & 2.000 & 5.000 & 171635 \\
+GA (guided) & 2.000 & 5.001 & 21989 \\
+Random search & 2.000 & 5.000 & 157551 \\
+$\alpha$-cut FPTAS & 0.001 & 0.012 & 7 \\
+Greedy & 0.000 & 0.000 & 1 \\
+\midrule
+\multicolumn{4}{l}{\emph{Suite U}} \\
+\algname & 0.000 & 0.000 & 1 \\
+k-tree & 0.005 & 0.263 & 1 \\
+Lattice (BKZ) & 2.000 & 2.001 & 966 \\
+FLSSS & 0.276 & 0.283 & 2 \\
+FLSSS-exact & 0.281 & 0.285 & 1 \\
+CKK & 0.000 & 0.000 & 2 \\
+KK & 0.000 & 0.000 & 1 \\
+CP-SAT & 0.002 & 0.004 & 1 \\
+DP (exact) & 0.000 & 0.000 & 1 \\
+MITM (exact) & 0.000 & 0.000 & 1 \\
+FH-GA (prior) & 0.003 & 0.083 & 218 \\
+ILS (guided) & 0.001 & 0.406 & 274 \\
+SA (guided) & 0.267 & 0.980 & 40606 \\
+GA (guided) & 0.011 & 2.000 & 424 \\
+Random search & 0.006 & 2.000 & 870 \\
+$\alpha$-cut FPTAS & 0.000 & 0.000 & 4 \\
+Greedy & 0.000 & 0.000 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

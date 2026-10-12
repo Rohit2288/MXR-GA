@@ -1,0 +1,9 @@
+solver,dense n1000 b32,scale n5000 b32,structured geometric
+ma_final,1.0,1.0,1.0
+ktree,1.0,1.0,0.375
+ckk,0.4444444444444444,0.1111111111111111,1.0
+fhga_v2crisp,0.0,0.0,0.5
+ils_crisp,0.0,0.0,0.5
+sim_anneal_crisp,0.0,0.0,0.0
+vanilla_ga_crisp,0.0,0.0,0.0
+random_search,0.0,0.0,0.0

@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Very large instances ($n=2000$--$10000$, 32/39-bit items; 30\,s).}
+\label{tab:scale}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
+\midrule
+\algname & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 5 \\
+k-tree & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 5 \\
+FLSSS & 100.0 & 0.4736 & 0.439 & 0.000 & 0.000 & 18.5 & 40.7 & 1 \\
+FLSSS-exact & 100.0 & 0.7264 & 0.422 & 0.000 & 0.000 & 55.6 & 24.1 & 1 \\
+CKK & 100.0 & 0.3333 & 0.476 & 0.000 & 0.000 & 33.3 & 66.7 & 1 \\
+KK & 100.0 & 0.3333 & 0.476 & 0.000 & 0.000 & 33.3 & 66.7 & 1 \\
+CP-SAT & 100.0 & 0.3459 & 0.464 & 0.000 & 0.000 & 0.0 & 63.0 & 1 \\
+ILS (guided) & 100.0 & 0.2477 & 0.357 & 0.000 & 0.000 & 0.0 & 72.2 & 5 \\
+SA (guided) & 100.0 & 0.1047 & 0.203 & 0.000 & 0.000 & 0.0 & 82.2 & 5 \\
+Random search & 100.0 & 0.2328 & 0.356 & 0.000 & 0.000 & 0.0 & 70.7 & 5 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Lattice reduction declines $n>150$; population-based GA baselines exceed memory at this size.
+\end{table}

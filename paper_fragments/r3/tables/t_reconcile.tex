@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Payment reconciliation (48 synthetic instances; amounts in cents; 5--40 invoices per payment; asymmetric fee tolerance).}
+\label{tab:reconcile}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
+\midrule
+\algname & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+k-tree & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+Lattice (BKZ) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+FLSSS & 100.0 & 0.8631 & 0.275 & 0.000 & 0.000 & 70.8 & 6.2 & 1 \\
+FLSSS-exact & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+CKK & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+KK & 100.0 & 0.9583 & 0.202 & 0.000 & 0.000 & 91.7 & 4.2 & 1 \\
+CP-SAT & 100.0 & 0.9807 & 0.037 & 0.830 & 0.830 & 27.1 & 0.0 & 1 \\
+DP (exact) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+MITM (exact) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+FH-GA (prior) & 100.0 & 0.5241 & 0.420 & 0.000 & 0.000 & 1.8 & 38.3 & 20 \\
+ILS (guided) & 100.0 & 0.7044 & 0.335 & 0.000 & 0.000 & 1.7 & 18.8 & 20 \\
+SA (guided) & 100.0 & 0.4075 & 0.433 & 0.000 & 0.000 & 0.0 & 52.4 & 20 \\
+GA (guided) & 100.0 & 0.2116 & 0.327 & 0.000 & 0.000 & 0.0 & 71.7 & 20 \\
+Random search & 100.0 & 0.5204 & 0.429 & 0.000 & 0.000 & 0.3 & 40.8 & 20 \\
+$\alpha$-cut FPTAS & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
+Greedy & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Very dense, few items per payment: CKK and k-tree are as accurate and faster here.
+\end{table}

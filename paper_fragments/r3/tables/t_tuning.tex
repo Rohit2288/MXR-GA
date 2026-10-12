@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Design choices, decided on a separate tuning set (88 hard + 90 structured instances, never used for evaluation; 3 seeds; 30\,s). Pre-registered rule: highest mean success; configurations within 2 points go to the simplest (fewer components, then smaller $k$).}
+\label{tab:tuning}
+\begin{tabular}{rllrrrl}
+\toprule
+$k$ & Greedy start & Post-move & Hard \% & Structured \% & Overall \% (95\% CI) &  \\
+\midrule
+32 & no & no & 75.4 & 93.7 & 84.6 $\pm$ 4.5 &  \\
+32 & no & yes & 78.8 & 93.7 & 86.3 $\pm$ 3.9 &  \\
+32 & yes & no & 79.2 & 93.7 & 86.5 $\pm$ 4.2 &  \\
+32 & yes & yes & 75.0 & 93.3 & 84.3 $\pm$ 4.6 &  \\
+36 & no & no & 93.9 & 95.2 & 94.6 $\pm$ 2.9 & \textbf{selected} \\
+36 & no & yes & 89.8 & 93.7 & 91.8 $\pm$ 3.4 &  \\
+36 & yes & no & 90.5 & 95.2 & 92.9 $\pm$ 3.4 &  \\
+36 & yes & yes & 92.0 & 94.1 & 93.1 $\pm$ 3.3 &  \\
+40 & no & no & 96.6 & 94.4 & 95.5 $\pm$ 2.7 &  \\
+40 & no & yes & 98.5 & 93.0 & 95.7 $\pm$ 2.8 &  \\
+40 & yes & no & 97.0 & 93.3 & 95.1 $\pm$ 2.8 &  \\
+40 & yes & yes & 97.3 & 93.0 & 95.1 $\pm$ 2.9 &  \\
+\bottomrule
+\end{tabular}
+\end{table}

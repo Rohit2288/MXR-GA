@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Suite H (97 difficulty-targeted instances, planted optimum; 20 seeds for stochastic methods).}
+\label{tab:suiteH}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
+\midrule
+\algname & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+k-tree & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+Lattice (BKZ) & 63.9 & 1.0000 & 0.000 & 1.000 & 1.000 & 63.9 & 0.0 & 1 \\
+FLSSS & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+FLSSS-exact & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+CKK & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+KK & 100.0 & 0.9211 & 0.243 & 0.000 & 0.000 & 83.5 & 4.1 & 1 \\
+CP-SAT & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+DP (exact) & 99.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 99.0 & 0.0 & 1 \\
+MITM (exact) & 12.4 & 1.0000 & 0.000 & 1.000 & 1.000 & 12.4 & 0.0 & 1 \\
+FH-GA (prior) & 100.0 & 0.9985 & 0.004 & 0.977 & 0.535 & 96.6 & 0.0 & 20 \\
+ILS (guided) & 100.0 & 0.9909 & 0.038 & 0.700 & 0.000 & 94.0 & 0.3 & 20 \\
+SA (guided) & 100.0 & 0.7390 & 0.339 & 0.000 & 0.000 & 42.0 & 19.1 & 20 \\
+GA (guided) & 100.0 & 0.6734 & 0.299 & 0.000 & 0.000 & 18.3 & 18.6 & 20 \\
+Random search & 100.0 & 0.7594 & 0.292 & 0.000 & 0.000 & 28.6 & 13.9 & 20 \\
+$\alpha$-cut FPTAS & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
+Greedy & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Small magnitudes: every strong method solves it; it separates blind and plain-GA search.
+\end{table}

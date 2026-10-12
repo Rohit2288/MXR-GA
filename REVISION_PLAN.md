@@ -659,3 +659,13 @@ Notes for the tables (not problems):
 - Fresh hard corpus: critical, lattice 1.000 > ma_final 0.855 > ktree 0.590; dense, ma_final = ktree = 1.000.
 - Beyond-MITM: ktree 0.683, lattice 0.667, ma_final 0.083 (a stated limitation).
 
+## Phase 19 — Tables and figures generated (2026-10-12)
+`experiments/40_tables_figures.py` -> paper_fragments/r3/: 16 LaTeX tables (booktabs; method name as the macro
+\algname, defined in tables/algname.tex, currently "Proposed"), 5 vector figures (regime heat-map, structured bars,
+anytime curves, FSSP-2 log residuals, tuning/population), CSVs behind every table, and review.html. Clean runs only;
+strict success. Every figure inspected after rendering (fixed: tuning-axis label overlap, residual footnote collision,
+invisible zero bars). Cross-checked against results/headline_numbers.json: Gate G 0.9341 / 0.8568 / 0.8250, R2
++31.7 / +33.1, FSSP-2 means 1.0000 / 0.9038 / 0.7469 at 20 seeds: all identical.
+Statistical note for the text: on FSSP-2 most effects vs the strong methods are negligible (Cliff); the large effects
+are vs k-tree on T (+0.623), conventional baselines, and the structured / large-magnitude suites.
+

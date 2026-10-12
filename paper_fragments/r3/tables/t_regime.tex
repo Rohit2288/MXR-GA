@@ -1,0 +1,38 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Regime map: success (\%) per cell (block, $n$, item bits), 10\,s per run, 5 seeds for stochastic methods. Best per row in bold. \emph{dense}: $n\gg$ bits; \emph{critical}: $n\approx$ bits.}
+\label{tab:regime}
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+Block & $n$ & Bits & \algname & k-tree & Lattice (BKZ) & FLSSS-exact & CKK & CP-SAT & MITM (exact) & FH-GA (prior) & ILS (guided) \\
+\midrule
+critical & 32 & 24 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 83.3 & 0.0 & \textbf{100.0} & 23.3 & 0.0 \\
+critical & 32 & 32 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 83.3 & 0.0 & 0.0 & \textbf{100.0} & 3.3 & 0.0 \\
+critical & 32 & 38 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 83.3 & 16.7 & 0.0 & \textbf{100.0} & 3.3 & 0.0 \\
+critical & 40 & 32 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 16.7 & 0.0 & 0.0 & \textbf{100.0} & 0.0 & 0.0 \\
+critical & 40 & 40 & \textbf{100.0} & 90.0 & \textbf{100.0} & 33.3 & 0.0 & 0.0 & \textbf{100.0} & 0.0 & 0.0 \\
+critical & 40 & 46 & \textbf{100.0} & 96.7 & \textbf{100.0} & 33.3 & 0.0 & 0.0 & \textbf{100.0} & 0.0 & 0.0 \\
+critical & 46 & 38 & \textbf{100.0} & 63.3 & \textbf{100.0} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+critical & 46 & 46 & 13.3 & 10.0 & \textbf{100.0} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+critical & 46 & 47 & 43.3 & 16.7 & \textbf{100.0} & 16.7 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 100 & 16 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & \textbf{100.0} \\
+dense & 100 & 24 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 0.0 & 0.0 & 15.6 & 17.8 \\
+dense & 100 & 32 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 33.3 & 11.1 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 100 & 40 & 82.2 & \textbf{100.0} & \textbf{100.0} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 200 & 16 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & \textbf{100.0} \\
+dense & 200 & 24 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 88.9 & 0.0 & 0.0 & 2.2 & 11.1 \\
+dense & 200 & 32 & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & 88.9 & 33.3 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 200 & 40 & 91.1 & \textbf{100.0} & 44.4 & 0.0 & 22.2 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 500 & 16 & \textbf{100.0} & \textbf{100.0} & 77.8 & \textbf{100.0} & 77.8 & 66.7 & 0.0 & 91.1 & \textbf{100.0} \\
+dense & 500 & 24 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 22.2 & 0.0 & 0.0 & 0.0 & 6.7 \\
+dense & 500 & 32 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 66.7 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 500 & 40 & 93.3 & \textbf{100.0} & 0.0 & 0.0 & 44.4 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 1000 & 16 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 33.3 & 55.6 & 0.0 & 42.2 & 86.7 \\
+dense & 1000 & 24 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 44.4 & 0.0 & 0.0 & 0.0 & 2.2 \\
+dense & 1000 & 32 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 44.4 & 0.0 & 0.0 & 0.0 & 0.0 \\
+dense & 1000 & 40 & 95.6 & \textbf{100.0} & 0.0 & 22.2 & 33.3 & 0.0 & 0.0 & 0.0 & 0.0 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize Full table with every method in the CSV. SA, guided GA and random search solve at most the 16-bit dense cells.
+\end{table}

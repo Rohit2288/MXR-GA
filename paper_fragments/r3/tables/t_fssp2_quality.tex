@@ -1,0 +1,69 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Benchmark-FSSP-2, per sub-suite. Mean $\mu$ and SD over instances of the per-instance seed mean; worst instance (lowest seed mean) and worst single run; success = share of instances whose seed-mean run reaches the certified optimum (instances with a certified optimum only); coverage = share of instances on which the method returns a subset. Every run under the shared protocol (certified scoring, equal wall-clock budget by size, 4 performance cores).}
+\label{tab:fssp2}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
+\midrule
+\multicolumn{9}{l}{\emph{Suite T} (122 instances)} \\
+\algname & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+k-tree & 100.0 & 0.6725 & 0.447 & 0.000 & 0.000 & 62.3 & 32.1 & 20 \\
+Lattice (BKZ) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+FLSSS & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+FLSSS-exact & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+CKK & 100.0 & 0.9988 & 0.014 & 0.848 & 0.848 & 99.2 & 0.0 & 1 \\
+KK & 100.0 & 0.9983 & 0.019 & 0.788 & 0.788 & 99.2 & 0.0 & 1 \\
+CP-SAT & 100.0 & 0.8115 & 0.393 & 0.000 & 0.000 & 81.1 & 18.9 & 1 \\
+DP (exact) & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 1 \\
+MITM (exact) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+FH-GA (prior) & 100.0 & 0.9999 & 0.000 & 0.998 & 0.960 & 99.7 & 0.0 & 20 \\
+ILS (guided) & 100.0 & 0.9967 & 0.019 & 0.850 & 0.000 & 99.7 & 0.3 & 20 \\
+SA (guided) & 100.0 & 1.0000 & 0.000 & 1.000 & 1.000 & 100.0 & 0.0 & 20 \\
+GA (guided) & 100.0 & 0.9865 & 0.022 & 0.887 & 0.400 & 80.5 & 0.0 & 20 \\
+Random search & 100.0 & 1.0000 & 0.000 & 0.998 & 0.966 & 99.9 & 0.0 & 20 \\
+$\alpha$-cut FPTAS & 100.0 & 0.4344 & 0.498 & 0.000 & 0.000 & 43.4 & 56.6 & 1 \\
+Greedy & 100.0 & 0.0552 & 0.191 & 0.000 & 0.000 & 1.6 & 90.2 & 1 \\
+\midrule
+\multicolumn{9}{l}{\emph{Suite A} (360 instances)} \\
+\algname & 100.0 & 0.9038 & 0.188 & 0.002 & 0.002 & 99.0 & 0.0 & 20 \\
+k-tree & 100.0 & 0.7937 & 0.307 & 0.000 & 0.000 & 45.2 & 7.1 & 20 \\
+Lattice (BKZ) & 60.0 & 0.2322 & 0.422 & 0.000 & 0.000 & 29.9 & 76.4 & 1 \\
+FLSSS & 100.0 & 0.9031 & 0.188 & 0.000 & 0.000 & 92.4 & 0.3 & 1 \\
+FLSSS-exact & 100.0 & 0.7543 & 0.268 & 0.000 & 0.000 & 82.6 & 6.4 & 1 \\
+CKK & 100.0 & 0.8211 & 0.252 & 0.000 & 0.000 & 10.4 & 2.2 & 1 \\
+KK & 100.0 & 0.8137 & 0.258 & 0.000 & 0.000 & 4.2 & 2.5 & 1 \\
+CP-SAT & 100.0 & 0.8967 & 0.199 & 0.000 & 0.000 & 88.2 & 0.6 & 1 \\
+DP (exact) & 40.0 & 0.9830 & 0.050 & 0.646 & 0.646 & 100.0 & 0.0 & 1 \\
+MITM (exact) & 0.0 & -- & 0.000 & -- & -- & 0.0 & -- & 1 \\
+FH-GA (prior) & 100.0 & 0.9033 & 0.188 & 0.002 & 0.002 & 80.9 & 0.0 & 20 \\
+ILS (guided) & 100.0 & 0.9024 & 0.187 & 0.002 & 0.002 & 83.6 & 0.0 & 20 \\
+SA (guided) & 100.0 & 0.8774 & 0.190 & 0.002 & 0.002 & 27.3 & 0.0 & 20 \\
+GA (guided) & 100.0 & 0.8896 & 0.187 & 0.002 & 0.002 & 41.5 & 0.0 & 20 \\
+Random search & 100.0 & 0.8817 & 0.189 & 0.002 & 0.002 & 30.4 & 0.0 & 20 \\
+$\alpha$-cut FPTAS & 100.0 & 0.7701 & 0.254 & 0.000 & 0.000 & 2.8 & 2.8 & 1 \\
+Greedy & 100.0 & 0.3447 & 0.314 & 0.000 & 0.000 & 2.8 & 10.6 & 1 \\
+\midrule
+\multicolumn{9}{l}{\emph{Suite U} (384 instances)} \\
+\algname & 100.0 & 0.7469 & 0.310 & 0.000 & 0.000 & 100.0 & 8.1 & 20 \\
+k-tree & 100.0 & 0.7466 & 0.311 & 0.000 & 0.000 & 99.6 & 8.1 & 20 \\
+Lattice (BKZ) & 100.0 & 0.0293 & 0.163 & 0.000 & 0.000 & 2.5 & 96.9 & 1 \\
+FLSSS & 100.0 & 0.7468 & 0.310 & 0.000 & 0.000 & 96.9 & 8.1 & 1 \\
+FLSSS-exact & 100.0 & 0.5621 & 0.288 & 0.000 & 0.000 & 24.1 & 17.4 & 1 \\
+CKK & 100.0 & 0.7404 & 0.316 & 0.000 & 0.000 & 95.8 & 8.9 & 1 \\
+KK & 100.0 & 0.5409 & 0.400 & 0.000 & 0.000 & 39.4 & 28.4 & 1 \\
+CP-SAT & 100.0 & 0.7469 & 0.310 & 0.000 & 0.000 & 100.0 & 8.1 & 1 \\
+DP (exact) & 100.0 & 0.7469 & 0.310 & 0.000 & 0.000 & 100.0 & 8.1 & 1 \\
+MITM (exact) & 100.0 & 0.7469 & 0.310 & 0.000 & 0.000 & 100.0 & 8.1 & 1 \\
+FH-GA (prior) & 100.0 & 0.7467 & 0.310 & 0.000 & 0.000 & 99.9 & 8.2 & 20 \\
+ILS (guided) & 100.0 & 0.7423 & 0.315 & 0.000 & 0.000 & 98.1 & 8.6 & 20 \\
+SA (guided) & 100.0 & 0.7463 & 0.311 & 0.000 & 0.000 & 99.6 & 8.2 & 20 \\
+GA (guided) & 100.0 & 0.7415 & 0.315 & 0.000 & 0.000 & 97.7 & 8.9 & 20 \\
+Random search & 100.0 & 0.7046 & 0.347 & 0.000 & 0.000 & 88.8 & 12.4 & 20 \\
+$\alpha$-cut FPTAS & 100.0 & 0.4971 & 0.345 & 0.000 & 0.000 & 38.2 & 20.3 & 1 \\
+Greedy & 100.0 & 0.0343 & 0.138 & 0.000 & 0.000 & 1.7 & 92.7 & 1 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\footnotesize FLSSS-exact spends its budget on the exact-hit probe and is therefore weak where $\mu^\star<1$ (Suites A, U). DP and MITM abstain where their memory envelope is exceeded (coverage).
+\end{table}

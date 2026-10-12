@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Speed equalisation: success (\%) of the Python-implemented baselines with 120\,s per run (4--12$\times$ their main-experiment budgets), against \algname{} at its main budget (10--30\,s). If slowness explained the gaps, the baselines would close them here.}
+\label{tab:speed}
+\begin{tabular}{lrrr}
+\toprule
+Method & dense n1000 b32 & scale n5000 b32 & structured geometric \\
+\midrule
+\algname & 100.0 & 100.0 & 100.0 \\
+k-tree & 100.0 & 100.0 & 37.5 \\
+CKK & 44.4 & 11.1 & 100.0 \\
+FH-GA (prior) & 0.0 & 0.0 & 50.0 \\
+ILS (guided) & 0.0 & 0.0 & 50.0 \\
+SA (guided) & 0.0 & 0.0 & 0.0 \\
+GA (guided) & 0.0 & 0.0 & 0.0 \\
+Random search & 0.0 & 0.0 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
