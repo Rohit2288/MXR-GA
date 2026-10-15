@@ -669,3 +669,8 @@ invisible zero bars). Cross-checked against results/headline_numbers.json: Gate 
 Statistical note for the text: on FSSP-2 most effects vs the strong methods are negligible (Cliff); the large effects
 are vs k-tree on T (+0.623), conventional baselines, and the structured / large-magnitude suites.
 
+## Author decision (Rohit, 2026-10-15): Option A
+Keep FH-GA ("FH-GA (prior)") as a baseline in every comparison and state the lineage openly in the cover letter and
+introduction: the method was redesigned around the two mechanisms the ablation validated, in response to the reviewers.
+No reviewer asked for an FH-GA vs new-method comparison; it is included for transparency.
+
