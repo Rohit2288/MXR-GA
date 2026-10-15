@@ -683,7 +683,10 @@ No reviewer asked for an FH-GA vs new-method comparison; it is included for tran
   Fuzzy Subset Sum Problem".
 
 ## Phase 20 — Writing (started 2026-10-15): overleaf_r3/ (main.tex, refs.bib, tables/, figures/)
-- [ ] 20.1 Replicate Gate G and the sub-solver ablation for the FINAL configuration with disjoint seeds (5-9) on
+- [x] 20.1 Replicate Gate G and the sub-solver ablation for the FINAL configuration with disjoint seeds (5-9) on
       the fresh hard corpus. Same criteria as 16.2. Needed so the manuscript's "replicated" statement covers
       ma_final (Phase 14 replicated the earlier ma_xr configuration).
+- 20.1 outcome (2026-10-16): REPLICATED. Seeds 5-9 on the fresh hard corpus: ma_final 0.9136 vs ma_final_rand 0.8227
+  (+9.1 points, TTO delta -0.237, Holm p 5.0e-4, PASS) and vs lns_final 0.7886 (+12.5, delta -0.300, p 2.7e-5, PASS);
+  CP-SAT sub-solver 0.000 / 0.000. Dense: ma_final 1.000 in both seed sets. Appendix C filled.
 
