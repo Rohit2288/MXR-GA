@@ -663,7 +663,7 @@ def review_page():
 def main() -> int:
     global ALG
     ap = argparse.ArgumentParser()
-    ap.add_argument("--name", default="Proposed")
+    ap.add_argument("--name", default="MXR-GA")
     args = ap.parse_args()
     ALG = args.name
     style()

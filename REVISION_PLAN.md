@@ -674,3 +674,10 @@ Keep FH-GA ("FH-GA (prior)") as a baseline in every comparison and state the lin
 introduction: the method was redesigned around the two mechanisms the ablation validated, in response to the reviewers.
 No reviewer asked for an FH-GA vs new-method comparison; it is included for transparency.
 
+## Author decisions (Rohit, 2026-10-15)
+- Method name: **MXR-GA** (Meet-in-the-middle eXact-Recombination Genetic Algorithm). OpenAlex check: 0 prior uses.
+  Tables use the macro \algname (paper_fragments/r3/tables/algname.tex = MXR-GA); figures regenerated with the name.
+- Old FH-GA paper: kept as SUPPLEMENTARY material (supervisor). Check GPEM's rules on supplementing with a rejected
+  manuscript; fallback is a short "design history" supplement (FH-GA, ablation, redesign rationale).
+- Title: conventional (not catchy); to be chosen.
+
