@@ -507,7 +507,6 @@ def f_regime(cell):
                         color="white" if v > 0.6 else INK)
     cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
     cb.set_label("success (share of instances at the certified optimum)")
-    ax.set_title("Regime map: who solves what (10 s per run)", loc="left", color=INK)
     savefig(fig, "fig_regime_map")
 
 
@@ -531,7 +530,6 @@ def f_structured(out):
     ax.axvline(len(dists) - 1.5, color=INK2, lw=0.6, ls=":")
     ax.text(len(dists) - 1.45, 1.0, "control", fontsize=7, color=INK2)
     ax.legend(ncol=4, loc="upper left", bbox_to_anchor=(0, 1.18))
-    ax.set_title("Structured item distributions (fresh corpus A, 30 s)", loc="left", color=INK, pad=22)
     savefig(fig, "fig_structured")
 
 
@@ -597,8 +595,7 @@ def f_residual(fd):
         ax.set_title(f"Suite {suite}", loc="left", fontsize=8, color=INK)
         ax.set_xlabel("gap to optimum" if suite == "U" else "residual 1 - mu")
     axes[0].set_yticks(range(1, len(show) + 1), [fig_name(s_) for s_ in show])
-    fig.suptitle("Benchmark-FSSP-2: distance to the optimum per instance (log scale; values below 1e-7, "
-                 "i.e. exact, drawn at 1e-7)", x=0.01, ha="left", fontsize=7, color=INK2, y=1.04)
+
     savefig(fig, "fig_fssp2_residual")
 
 
@@ -620,8 +617,7 @@ def f_tuning(g, pg):
             a1.axvline(4 * j - 0.5, color=INK2, lw=0.5, ls=":")
     a1.set_ylim(0.7, 1.0)
     a1.set_ylabel("tuning-set success")
-    a1.set_title("Configuration grid (G greedy start, M post-move); selected in blue", loc="left",
-                 fontsize=7, color=INK)
+
     a2.errorbar(pg["pop"], pg["mean"], yerr=pg["ci95"], color=C_PROP, marker="o", ms=4, lw=1.6, capsize=2)
     a2.set_xscale("log", base=2)
     a2.set_xticks(pg["pop"], [str(p) for p in pg["pop"]])
