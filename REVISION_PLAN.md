@@ -682,3 +682,8 @@ No reviewer asked for an FH-GA vs new-method comparison; it is included for tran
 - Title (Rohit, 2026-10-15): "MXR-GA: A Genetic Algorithm with Exact Meet-in-the-Middle Recombination for the
   Fuzzy Subset Sum Problem".
 
+## Phase 20 — Writing (started 2026-10-15): overleaf_r3/ (main.tex, refs.bib, tables/, figures/)
+- [ ] 20.1 Replicate Gate G and the sub-solver ablation for the FINAL configuration with disjoint seeds (5-9) on
+      the fresh hard corpus. Same criteria as 16.2. Needed so the manuscript's "replicated" statement covers
+      ma_final (Phase 14 replicated the earlier ma_xr configuration).
+
