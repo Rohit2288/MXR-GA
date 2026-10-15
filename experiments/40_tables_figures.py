@@ -126,9 +126,10 @@ def save_table(key, df, caption, label, colspec, header, rows_tex, note=""):
     df.to_csv(OUT / "csv" / f"{key}.csv", index=False)
     lines = [r"\begin{table}[htbp]", r"\centering", r"\small",
              rf"\caption{{{caption}}}", rf"\label{{{label}}}",
+             r"\begin{adjustbox}{max width=\textwidth}",
              rf"\begin{{tabular}}{{{colspec}}}", r"\toprule", header + r" \\", r"\midrule"]
     lines += rows_tex
-    lines += [r"\bottomrule", r"\end{tabular}"]
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}"]
     if note:
         lines.append(rf"\par\smallskip\footnotesize {note}")
     lines.append(r"\end{table}")
@@ -394,7 +395,8 @@ def t_gate_and_ablation():
                r"Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the "
                r"pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: "
                r"competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the "
-               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. MITM is omitted: every instance "
+               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. Lattice reduction runs for $n\le150$ only "
+               r"(dense cells with $n>150$ count as unsolved). MITM is omitted: every instance "
                r"exceeds its memory envelope ($n>44$), so it abstains rather than fails.",
                "tab:gate", "lrrrrrrrr",
                r"Method & Succ.\,\% & Critical & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ & $p_{\mathrm{Holm}}$",

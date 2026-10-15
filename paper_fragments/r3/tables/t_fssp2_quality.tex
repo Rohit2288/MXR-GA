@@ -3,6 +3,7 @@
 \small
 \caption{Benchmark-FSSP-2, per sub-suite. Mean $\mu$ and SD over instances of the per-instance seed mean; worst instance (lowest seed mean) and worst single run; success = share of instances whose seed-mean run reaches the certified optimum (instances with a certified optimum only); coverage = share of instances on which the method returns a subset. Every run under the shared protocol (certified scoring, equal wall-clock budget by size, 4 performance cores).}
 \label{tab:fssp2}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -65,5 +66,6 @@ $\alpha$-cut FPTAS & 100.0 & 0.4971 & 0.345 & 0.000 & 0.000 & 38.2 & 20.3 & 1 \\
 Greedy & 100.0 & 0.0343 & 0.138 & 0.000 & 0.000 & 1.7 & 92.7 & 1 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \par\smallskip\footnotesize FLSSS-exact spends its budget on the exact-hit probe and is therefore weak where $\mu^\star<1$ (Suites A, U). DP and MITM abstain where their memory envelope is exceeded (coverage).
 \end{table}

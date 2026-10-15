@@ -3,6 +3,7 @@
 \small
 \caption{Payment reconciliation (48 synthetic instances; amounts in cents; 5--40 invoices per payment; asymmetric fee tolerance).}
 \label{tab:reconcile}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -26,5 +27,6 @@ $\alpha$-cut FPTAS & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
 Greedy & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \par\smallskip\footnotesize Very dense, few items per payment: CKK and k-tree are as accurate and faster here.
 \end{table}

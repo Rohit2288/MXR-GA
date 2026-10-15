@@ -3,6 +3,7 @@
 \small
 \caption{Pre-registered confirmation on structured item distributions (two fresh corpora, 30\,s, 5 seeds for stochastic methods). R1: on every non-uniform distribution \algname's mean $\mu$ is within 0.01 of the best competitor. R2: \algname{} exceeds k-tree's success by $\geq 20$ points on average.}
 \label{tab:structured}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrlrl}
 \toprule
 Distribution & \algname{} $\mu$ & \algname{} succ.\,\% & Best other $\mu$ & k-tree succ.\,\% & R1 \\
@@ -28,4 +29,5 @@ uniform & 0.8333 & 65.0 & 1.0000 (k-tree) & 100.0 & (control) \\
 \multicolumn{6}{l}{R2: \algname{} minus k-tree success over the six structured distributions $= +33.1$ points (criterion $\geq 20$)} \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}

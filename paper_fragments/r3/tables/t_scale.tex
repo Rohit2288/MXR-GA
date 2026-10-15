@@ -3,6 +3,7 @@
 \small
 \caption{Very large instances ($n=2000$--$10000$, 32/39-bit items; 30\,s).}
 \label{tab:scale}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -19,5 +20,6 @@ SA (guided) & 100.0 & 0.1047 & 0.203 & 0.000 & 0.000 & 0.0 & 82.2 & 5 \\
 Random search & 100.0 & 0.2328 & 0.356 & 0.000 & 0.000 & 0.0 & 70.7 & 5 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \par\smallskip\footnotesize Lattice reduction declines $n>150$; population-based GA baselines exceed memory at this size.
 \end{table}

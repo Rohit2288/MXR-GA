@@ -3,6 +3,7 @@
 \small
 \caption{Benchmark-FSSP-2: \algname{} against every method (per-instance seed means, common instances). $\Delta$ = mean difference in $\mu$; Cliff's $\delta$ with magnitude; win/tie/loss (tie: $|\Delta|\le10^{-9}$); Wilcoxon signed-rank, Holm-adjusted within each sub-suite. Positive values favour \algname.}
 \label{tab:fssp2stats}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrlrr}
 \toprule
 vs. & $n$ & $\Delta$ mean $\mu$ & Cliff's $\delta$ & Magnitude & W/T/L & $p_{\mathrm{Holm}}$ \\
@@ -59,4 +60,5 @@ $\alpha$-cut FPTAS & 384 & +0.2497 & +0.490 & large & 218/166/0 & 2.1e-36 \\
 Greedy & 384 & +0.7126 & +0.894 & large & 347/37/0 & 2.0e-57 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}

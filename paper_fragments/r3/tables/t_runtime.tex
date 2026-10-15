@@ -3,6 +3,7 @@
 \small
 \caption{Cost per run on Benchmark-FSSP-2 under the shared protocol: median and 90th-percentile wall-clock seconds, and median counted evaluations. Runs stop at the budget or at a certified optimum (identical rule for every method). Exact and sub-solver-based methods do uncounted internal work, so wall-clock is the comparable cost; hardware: Apple M1, 4 performance cores.}
 \label{tab:runtime}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrr}
 \toprule
 Method & Median s & 90th pct.\ s & Median evals \\
@@ -62,4 +63,5 @@ $\alpha$-cut FPTAS & 0.000 & 0.000 & 4 \\
 Greedy & 0.000 & 0.000 & 1 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}

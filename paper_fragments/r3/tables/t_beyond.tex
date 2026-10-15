@@ -3,6 +3,7 @@
 \small
 \caption{Limits: $n=56$--$80$ at 46--47-bit items, just beyond meet-in-the-middle's memory reach (30\,s).}
 \label{tab:beyond}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -16,5 +17,6 @@ KK & 100.0 & 0.0763 & 0.227 & 0.000 & 0.000 & 0.0 & 87.5 & 1 \\
 CP-SAT & 100.0 & 0.4617 & 0.474 & 0.000 & 0.000 & 0.0 & 50.0 & 1 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \par\smallskip\footnotesize k-tree and lattice reduction lead here; stated as a limitation of \algname.
 \end{table}
