@@ -679,5 +679,6 @@ No reviewer asked for an FH-GA vs new-method comparison; it is included for tran
   Tables use the macro \algname (paper_fragments/r3/tables/algname.tex = MXR-GA); figures regenerated with the name.
 - Old FH-GA paper: kept as SUPPLEMENTARY material (supervisor). Check GPEM's rules on supplementing with a rejected
   manuscript; fallback is a short "design history" supplement (FH-GA, ablation, redesign rationale).
-- Title: conventional (not catchy); to be chosen.
+- Title (Rohit, 2026-10-15): "MXR-GA: A Genetic Algorithm with Exact Meet-in-the-Middle Recombination for the
+  Fuzzy Subset Sum Problem".
 
