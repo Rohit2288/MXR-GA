@@ -291,8 +291,8 @@ def t_regime():
                r"methods. Best per row in bold. \emph{dense}: $n\gg$ bits; \emph{critical}: $n\approx$ bits.",
                "tab:regime", "lrr" + "r" * len(show),
                "Block & $n$ & Bits & " + " & ".join(tex_name(c) for c in show), rows,
-               r"Full table with every method in the CSV. SA, guided GA and random search solve at most the "
-               r"16-bit dense cells.")
+               r"Full table with every method in the CSV. SA, the guided GA and random search succeed almost only on "
+               r"the 16-bit dense cells (at most 3.3\% elsewhere).")
     return d, cell
 
 
@@ -346,7 +346,7 @@ def t_structured():
         prow.append(f"{tex_name(s_)} & {pct(pdf.loc[s_, ('success', 'A')])} & {fmt(pdf.loc[s_, ('mean_gap', 'A')], 4)} & "
                     f"{pct(pdf.loc[s_, ('success', 'B')])} & {fmt(pdf.loc[s_, ('mean_gap', 'B')], 4)} \\\\")
     save_table("t_parity", pd.DataFrame(precs),
-               r"Unreachable apex: parity instances (even items, odd $T_M$), whose optimum $\mu^\star=1-1/\delta_L$ is "
+               r"Unreachable apex: parity instances (even items, odd $T^M$), whose optimum $\mu^\star=1-1/\delta_L$ is "
                r"proven. Success = reaching $\mu^\star$; gap = mean $\mu^\star-\mu$.",
                "tab:parity", "lrrrr", r"Method & Succ.\,\% (A) & Gap (A) & Succ.\,\% (B) & Gap (B)", prow)
     return out
@@ -449,8 +449,8 @@ def t_asym():
     s = per_solver_summary(d)
     save_table("t_asym", s,
                r"Asymmetric-tolerance instances (42; certified $\mu^\star=0.4$): the nearest attainable sum lies "
-               r"above $T_M$ but outside the narrow right tolerance, so a crisp closest-sum objective lands on "
-               r"$\mu=0$. \algname, crisp closest sum: the same algorithm minimising $|S-T_M|$.",
+               r"above $T^M$ but outside the narrow excess tolerance, so a crisp closest-sum objective lands on "
+               r"$\mu=0$. \algname, crisp closest sum: the same algorithm minimising $|\sigma-T^M|$.",
                "tab:asym", "lrrrrrrrr", SUM_HDR, summary_rows(s))
     return s
 
