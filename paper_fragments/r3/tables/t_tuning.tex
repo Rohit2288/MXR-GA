@@ -1,9 +1,6 @@
 \begin{table}[htbp]
-\centering
-\small
 \caption{Design choices, decided on a separate tuning set (88 hard + 90 structured instances, never used for evaluation; 3 seeds; 30\,s). Pre-registered rule: highest mean success; configurations within 2 points go to the simplest (fewer components, then smaller $k$).}
 \label{tab:tuning}
-\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{rllrrrl}
 \toprule
 $k$ & Greedy start & Post-move & Hard \% & Structured \% & Overall \% (95\% CI) &  \\
@@ -20,7 +17,6 @@ $k$ & Greedy start & Post-move & Hard \% & Structured \% & Overall \% (95\% CI) 
 40 & no & yes & 98.5 & 93.0 & 95.7 $\pm$ 2.8 &  \\
 40 & yes & no & 97.0 & 93.3 & 95.1 $\pm$ 2.8 &  \\
 40 & yes & yes & 97.3 & 93.0 & 95.1 $\pm$ 2.9 &  \\
-\bottomrule
+\botrule
 \end{tabular}
-\end{adjustbox}
 \end{table}

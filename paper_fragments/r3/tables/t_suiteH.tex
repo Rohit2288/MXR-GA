@@ -1,9 +1,6 @@
 \begin{table}[htbp]
-\centering
-\small
 \caption{Suite H (97 difficulty-targeted instances, planted optimum; 20 seeds for stochastic methods).}
 \label{tab:suiteH}
-\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -25,8 +22,7 @@ GA (guided) & 100.0 & 0.6734 & 0.299 & 0.000 & 0.000 & 18.3 & 18.6 & 20 \\
 Random search & 100.0 & 0.7594 & 0.292 & 0.000 & 0.000 & 28.6 & 13.9 & 20 \\
 $\alpha$-cut FPTAS & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
 Greedy & 100.0 & 0.0000 & 0.000 & 0.000 & 0.000 & 0.0 & 100.0 & 1 \\
-\bottomrule
+\botrule
 \end{tabular}
-\end{adjustbox}
-\par\smallskip\footnotesize Small magnitudes: every strong method solves it; it separates blind and plain-GA search.
+\footnotetext{Small magnitudes: every strong method solves it; it separates blind and plain-GA search.}
 \end{table}

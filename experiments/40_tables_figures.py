@@ -37,7 +37,7 @@ ALG = "Proposed"
 # Display names; the proposed method is \algname in LaTeX and ALG in figures.
 NAMES = {
     "ma_final": "PROPOSED", "ma_final_rand": "PROPOSED, random free set", "lns_final": "PROPOSED, no population",
-    "ma_final_cpsat": "PROPOSED, CP-SAT sub-solver", "ma_final_sym": "PROPOSED, crisp closest sum",
+    "ma_final_cpsat": "PROPOSED, CP-SAT sub-solver", "ma_final_sym": "PROPOSED, crisp",
     "ktree": "k-tree", "lattice": "Lattice (BKZ)", "flsss": "FLSSS", "flsss_exact": "FLSSS-exact",
     "ckk": "CKK", "kk": "KK", "cpsat": "CP-SAT", "dp_exact": "DP (exact)", "mitm": "MITM (exact)",
     "ils_crisp": "ILS (guided)", "sim_anneal_crisp": "SA (guided)", "vanilla_ga_crisp": "GA (guided)",
@@ -120,19 +120,22 @@ def sci(p):
 TABLES = {}
 
 
-def save_table(key, df, caption, label, colspec, header, rows_tex, note=""):
+def save_table(key, df, caption, label, colspec, header, rows_tex, note="", env="table", colsep=None, compact=False):
     (OUT / "csv").mkdir(parents=True, exist_ok=True)
     (OUT / "tables").mkdir(parents=True, exist_ok=True)
     df.to_csv(OUT / "csv" / f"{key}.csv", index=False)
-    lines = [r"\begin{table}[htbp]", r"\centering", r"\small",
+    # sn-jnl wraps every table in threeparttable and redefines the booktabs rules;
+    # box wrappers such as adjustbox break that, so tables are plain tabulars.
+    lines = [rf"\begin{{{env}}}" + ("[htbp]" if env == "table" else ""),
              rf"\caption{{{caption}}}", rf"\label{{{label}}}",
-             r"\begin{adjustbox}{max width=\textwidth}",
+             *([rf"\setlength{{\tabcolsep}}{{{colsep}}}"] if colsep else []),
+             *([r"\fontsize{7.5bp}{8.5bp}\selectfont\renewcommand{\arraystretch}{0.88}"] if compact else []),
              rf"\begin{{tabular}}{{{colspec}}}", r"\toprule", header + r" \\", r"\midrule"]
     lines += rows_tex
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}"]
+    lines += [r"\botrule", r"\end{tabular}"]
     if note:
-        lines.append(rf"\par\smallskip\footnotesize {note}")
-    lines.append(r"\end{table}")
+        lines.append(rf"\footnotetext{{{note}}}")
+    lines.append(rf"\end{{{env}}}")
     (OUT / "tables" / f"{key}.tex").write_text("\n".join(lines) + "\n")
     TABLES[key] = (caption, df, note)
 
@@ -217,7 +220,7 @@ def t_fssp2():
                r"protocol (certified scoring, equal wall-clock budget by size, 4 performance cores).",
                "tab:fssp2", "lrrrrrrrr", SUM_HDR, rows,
                r"FLSSS-exact spends its budget on the exact-hit probe and is therefore weak where $\mu^\star<1$ "
-               r"(Suites A, U). DP and MITM abstain where their memory envelope is exceeded (coverage).")
+               r"(Suites A, U). DP and MITM abstain where their memory envelope is exceeded (coverage).", compact=True)
     st = pd.DataFrame(stat_rows)
     rows = []
     for suite in ("T", "A", "U"):
@@ -254,7 +257,7 @@ def t_fssp2():
                r"wall-clock seconds, and median counted evaluations. Runs stop at the budget or at a certified "
                r"optimum (identical rule for every method). Exact and sub-solver-based methods do uncounted "
                r"internal work, so wall-clock is the comparable cost; hardware: Apple M1, 4 performance cores.",
-               "tab:runtime", "lrrr", r"Method & Median s & 90th pct.\ s & Median evals", rows)
+               "tab:runtime", "lrrr", r"Method & Median s & 90th pct.\ s & Median evals", rows, compact=True)
     return d
 
 
@@ -292,7 +295,7 @@ def t_regime():
                "tab:regime", "lrr" + "r" * len(show),
                "Block & $n$ & Bits & " + " & ".join(tex_name(c) for c in show), rows,
                r"Full table with every method in the CSV. SA, the guided GA and random search succeed almost only on "
-               r"the 16-bit dense cells (at most 3.3\% elsewhere).")
+               r"the 16-bit dense cells (at most 3.3\% elsewhere).", env="sidewaystable")
     return d, cell
 
 
@@ -325,8 +328,8 @@ def t_structured():
                         f"{fmt(best)} ({tex_name(who)}) & {pct(hit.loc[dist, 'ktree'])} & {mark} \\\\")
         st = [x for x in hit.index if x != "uniform"]
         r2 = 100 * (hit.loc[st, "ma_final"] - hit.loc[st, "ktree"]).mean()
-        rows.append(rf"\multicolumn{{6}}{{l}}{{R2: \algname{{}} minus k-tree success over the six structured "
-                    rf"distributions $= {r2:+.1f}$ points (criterion $\geq 20$)}} \\")
+        rows.append(rf"\multicolumn{{6}}{{l}}{{R2: \algname{{}} $-$ k-tree success, six structured distributions: "
+                    rf"${r2:+.1f}$ points (criterion $\geq 20$)}} \\")
         if tag == "A":
             rows.append(r"\midrule")
     save_table("t_structured", pd.DataFrame(recs),
@@ -399,8 +402,8 @@ def t_gate_and_ablation():
                r"(dense cells with $n>150$ count as unsolved). MITM is omitted: every instance "
                r"exceeds its memory envelope ($n>44$), so it abstains rather than fails.",
                "tab:gate", "lrrrrrrrr",
-               r"Method & Succ.\,\% & Critical & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ & $p_{\mathrm{Holm}}$",
-               rows)
+               r"Method & Succ.\,\% & Crit. & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ & $p_{\mathrm{Holm}}$",
+               rows, colsep="3pt")
     return d
 
 
@@ -450,7 +453,7 @@ def t_asym():
     save_table("t_asym", s,
                r"Asymmetric-tolerance instances (42; certified $\mu^\star=0.4$): the nearest attainable sum lies "
                r"above $T^M$ but outside the narrow excess tolerance, so a crisp closest-sum objective lands on "
-               r"$\mu=0$. \algname, crisp closest sum: the same algorithm minimising $|\sigma-T^M|$.",
+               r"$\mu=0$. \algname, crisp: the same algorithm minimising $|\sigma-T^M|$.",
                "tab:asym", "lrrrrrrrr", SUM_HDR, summary_rows(s))
     return s
 

@@ -1,9 +1,6 @@
 \begin{table}[htbp]
-\centering
-\small
 \caption{Benchmark-FSSP-1 (3{,}238 instances), sanity check (3 seeds).}
 \label{tab:fssp1}
-\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrr}
 \toprule
 Method & Cov.\,\% & Mean $\mu$ & SD & Worst inst. & Worst run & Success\,\% & $\mu{=}0$\,\% & Seeds \\
@@ -13,8 +10,7 @@ k-tree & 100.0 & 0.9751 & 0.119 & 0.000 & 0.000 & 71.4 & 1.2 & 3 \\
 FLSSS & 100.0 & 0.9997 & 0.001 & 0.984 & 0.984 & 100.0 & 0.0 & 1 \\
 DP (exact) & 92.6 & 1.0000 & 0.000 & 0.984 & 0.984 & 100.0 & 0.0 & 1 \\
 Random search & 100.0 & 1.0000 & 0.000 & 0.984 & 0.984 & 100.0 & 0.0 & 3 \\
-\bottomrule
+\botrule
 \end{tabular}
-\end{adjustbox}
-\par\smallskip\footnotesize Saturated: most methods reach $\mu=1$; reported for completeness only.
+\footnotetext{Saturated: most methods reach $\mu=1$; reported for completeness only.}
 \end{table}

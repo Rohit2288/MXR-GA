@@ -1,9 +1,6 @@
 \begin{table}[htbp]
-\centering
-\small
 \caption{Pre-registered confirmation on structured item distributions (two fresh corpora, 30\,s, 5 seeds for stochastic methods). R1: on every non-uniform distribution \algname's mean $\mu$ is within 0.01 of the best competitor. R2: \algname{} exceeds k-tree's success by $\geq 20$ points on average.}
 \label{tab:structured}
-\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrlrl}
 \toprule
 Distribution & \algname{} $\mu$ & \algname{} succ.\,\% & Best other $\mu$ & k-tree succ.\,\% & R1 \\
@@ -16,7 +13,7 @@ heavytail & 1.0000 & 100.0 & 1.0000 (k-tree) & 100.0 & pass \\
 loguniform & 1.0000 & 100.0 & 1.0000 (CKK) & 44.2 & pass \\
 nearequal & 1.0000 & 100.0 & 0.9583 (k-tree) & 95.8 & pass \\
 uniform & 0.8583 & 68.3 & 1.0000 (k-tree) & 100.0 & (control) \\
-\multicolumn{6}{l}{R2: \algname{} minus k-tree success over the six structured distributions $= +31.7$ points (criterion $\geq 20$)} \\
+\multicolumn{6}{l}{R2: \algname{} $-$ k-tree success, six structured distributions: $+31.7$ points (criterion $\geq 20$)} \\
 \midrule
 \multicolumn{6}{l}{\emph{Corpus B} (fresh, seed base 123000)} \\
 avislai & 1.0000 & 100.0 & 0.9417 (k-tree) & 94.2 & pass \\
@@ -26,8 +23,7 @@ heavytail & 1.0000 & 100.0 & 1.0000 (k-tree) & 100.0 & pass \\
 loguniform & 1.0000 & 100.0 & 1.0000 (CKK) & 39.2 & pass \\
 nearequal & 1.0000 & 100.0 & 0.9167 (k-tree) & 91.7 & pass \\
 uniform & 0.8333 & 65.0 & 1.0000 (k-tree) & 100.0 & (control) \\
-\multicolumn{6}{l}{R2: \algname{} minus k-tree success over the six structured distributions $= +33.1$ points (criterion $\geq 20$)} \\
-\bottomrule
+\multicolumn{6}{l}{R2: \algname{} $-$ k-tree success, six structured distributions: $+33.1$ points (criterion $\geq 20$)} \\
+\botrule
 \end{tabular}
-\end{adjustbox}
 \end{table}

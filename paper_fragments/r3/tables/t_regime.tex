@@ -1,9 +1,6 @@
-\begin{table}[htbp]
-\centering
-\small
+\begin{sidewaystable}
 \caption{Regime map: success (\%) per cell (block, $n$, item bits), 10\,s per run, 5 seeds for stochastic methods. Best per row in bold. \emph{dense}: $n\gg$ bits; \emph{critical}: $n\approx$ bits.}
 \label{tab:regime}
-\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{lrrrrrrrrrrr}
 \toprule
 Block & $n$ & Bits & \algname & k-tree & Lattice (BKZ) & FLSSS-exact & CKK & CP-SAT & MITM (exact) & FH-GA (prior) & ILS (guided) \\
@@ -33,8 +30,7 @@ dense & 1000 & 16 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 33.
 dense & 1000 & 24 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 44.4 & 0.0 & 0.0 & 0.0 & 2.2 \\
 dense & 1000 & 32 & \textbf{100.0} & \textbf{100.0} & 0.0 & \textbf{100.0} & 44.4 & 0.0 & 0.0 & 0.0 & 0.0 \\
 dense & 1000 & 40 & 95.6 & \textbf{100.0} & 0.0 & 22.2 & 33.3 & 0.0 & 0.0 & 0.0 & 0.0 \\
-\bottomrule
+\botrule
 \end{tabular}
-\end{adjustbox}
-\par\smallskip\footnotesize Full table with every method in the CSV. SA, the guided GA and random search succeed almost only on the 16-bit dense cells (at most 3.3\% elsewhere).
-\end{table}
+\footnotetext{Full table with every method in the CSV. SA, the guided GA and random search succeed almost only on the 16-bit dense cells (at most 3.3\% elsewhere).}
+\end{sidewaystable}
