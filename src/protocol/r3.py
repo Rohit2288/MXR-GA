@@ -109,7 +109,9 @@ def make_solver(name: str, wall_s: float, flsss_eps: float = 0.01, **kw):
         # init=0 -> random start, move=0 -> no exact move after the crossover (tuning, Phase 16).
         "ma_xr": lambda: MAXR(k=k, pop_size=pop, recomb="exact",
                               init="greedy" if kw.get("init", 1) else "random",
-                              post_move=bool(kw.get("move", 1))),
+                              post_move=bool(kw.get("move", 1)),
+                              init_move=bool(kw.get("imove", 1)),
+                              selection="tournament" if kw.get("sel", 1) else "uniform"),
         "ma_rand": lambda: MAXR(k=k, pop_size=pop, recomb="random"),
         "lns_mitm": lambda: LNSMITM(k=k),
         # CMSA-style ablation: same exact recombination, CP-SAT sub-solver.

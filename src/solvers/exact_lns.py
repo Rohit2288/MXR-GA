@@ -222,9 +222,15 @@ class MAXR(Solver):
     def __init__(self, k: int = 32, pop_size: int = 16,
                  recomb: str = "exact", name: Optional[str] = None,
                  subsolver: str = "mitm", init: str = "greedy",
-                 post_move: bool = True, symmetric: bool = False):
+                 post_move: bool = True, symmetric: bool = False,
+                 init_move: bool = True, selection: str = "tournament"):
         if recomb not in ("exact", "random"):
             raise ValueError(recomb)
+        if selection not in ("tournament", "uniform"):
+            raise ValueError(selection)
+        # Post-hoc component checks: init_move=False skips the exact move on each
+        # initial subset; selection="uniform" picks parents uniformly at random.
+        self.init_move, self.selection = init_move, selection
         self.k, self.pop_size, self.recomb = k, pop_size, recomb
         self.subsolver = subsolver
         self.init, self.post_move, self.symmetric = init, post_move, symmetric
@@ -245,7 +251,10 @@ class MAXR(Solver):
         seen = set()
         for _ in range(self.pop_size):
             c = core.greedy() if self.init == "greedy" else core.random_init()
-            f = core.exact_move(c, core.random_free())
+            if self.init_move:
+                f = core.exact_move(c, core.random_free())
+            else:
+                f = core.commit(c)
             key = c.tobytes()
             if key in seen:
                 continue
@@ -254,6 +263,8 @@ class MAXR(Solver):
             fit.append(f)
 
         def pick() -> int:
+            if self.selection == "uniform":
+                return int(rng.integers(len(pop)))
             a, b = rng.integers(len(pop), size=2)
             return int(a) if fit[a] <= fit[b] else int(b)
 
