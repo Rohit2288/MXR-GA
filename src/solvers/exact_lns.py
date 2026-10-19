@@ -90,7 +90,7 @@ class _Core:
 
     def __init__(self, instance: Instance, objective: BudgetedObjective,
                  rng: np.random.Generator, k: int, subsolver: str = "mitm",
-                 symmetric: bool = False):
+                 symmetric: bool = False, cpsat_cap_s: float = 0.2):
         self.n = instance.n
         self.items = np.asarray(instance.items, dtype=np.int64)
         t = instance.target
@@ -101,6 +101,7 @@ class _Core:
             # Ablation "crisp closest sum": ignore the fuzzy target's asymmetric
             # tolerances and minimise |S - T_M|. Reported quality is still mu.
             self.d_l = self.d_r = 1.0
+        self.cpsat_cap_s = cpsat_cap_s     # per-move time limit of the CP-SAT sub-solver
         self.objective = objective
         self.rng = rng
         self.k = min(k, self.n)
@@ -171,7 +172,7 @@ class _Core:
         solver = cp_model.CpSolver()
         solver.parameters.num_workers = 1
         solver.parameters.max_time_in_seconds = max(
-            0.01, min(0.2, self.objective.time_left()))
+            0.01, min(self.cpsat_cap_s, self.objective.time_left()))
         solver.parameters.random_seed = int(self.rng.integers(1, 2**31 - 1))
         st = solver.solve(m)
         if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
@@ -223,7 +224,8 @@ class MAXR(Solver):
                  recomb: str = "exact", name: Optional[str] = None,
                  subsolver: str = "mitm", init: str = "greedy",
                  post_move: bool = True, symmetric: bool = False,
-                 init_move: bool = True, selection: str = "tournament"):
+                 init_move: bool = True, selection: str = "tournament",
+                 cpsat_cap_s: float = 0.2):
         if recomb not in ("exact", "random"):
             raise ValueError(recomb)
         if selection not in ("tournament", "uniform"):
@@ -231,6 +233,7 @@ class MAXR(Solver):
         # Post-hoc component checks: init_move=False skips the exact move on each
         # initial subset; selection="uniform" picks parents uniformly at random.
         self.init_move, self.selection = init_move, selection
+        self.cpsat_cap_s = cpsat_cap_s
         self.k, self.pop_size, self.recomb = k, pop_size, recomb
         self.subsolver = subsolver
         self.init, self.post_move, self.symmetric = init, post_move, symmetric
@@ -243,7 +246,7 @@ class MAXR(Solver):
     def search(self, instance: Instance, objective: BudgetedObjective,
                rng: np.random.Generator) -> None:
         core = _Core(instance, objective, rng, self.k, self.subsolver,
-                     symmetric=self.symmetric)
+                     symmetric=self.symmetric, cpsat_cap_s=self.cpsat_cap_s)
         stats = self.last_stats = {"moves": 0, "generations": 0,
                                    "accepted": 0, "mean_diff": 0.0}
         pop: List[np.ndarray] = []
