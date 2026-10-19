@@ -333,7 +333,7 @@ def t_structured():
         if tag == "A":
             rows.append(r"\midrule")
     save_table("t_structured", pd.DataFrame(recs),
-               r"Pre-registered confirmation on structured item distributions (two fresh corpora, 30\,s, 5 seeds "
+               r"Pre-registered confirmation on structured item distributions (two corpora not used for tuning, 30\,s, 5 seeds "
                r"for stochastic methods). R1: on every non-uniform distribution \algname's mean $\mu$ is within "
                r"0.01 of the best competitor. R2: \algname{} exceeds k-tree's success by $\geq 20$ points on average.",
                "tab:structured", "lrrlrl",
@@ -356,7 +356,9 @@ def t_structured():
 
 
 def t_gate_and_ablation():
-    d = load("p16_gateG", "p16_ablation", "p18_hard_eval", drop=())
+    # p19_lattice_uncapped is loaded before p18_hard_eval: load() keeps the first copy of each run,
+    # so the uncapped lattice run replaces the capped one.
+    d = load("p16_gateG", "p16_ablation", "p19_lattice_uncapped", "p18_hard_eval", drop=())
     d["block"] = d["instance_id"].str.split("-").str[2]
     d["tto"] = np.where(d["mu0"] >= d["known_opt"] - 1e-12, d["wall_time"], np.inf)
     keep = ["ma_final", "ma_final_rand", "lns_final", "ma_final_cpsat", "ktree", "lattice", "flsss_exact",
@@ -398,13 +400,32 @@ def t_gate_and_ablation():
                r"Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the "
                r"pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: "
                r"competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the "
-               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. Lattice reduction runs for $n\le150$ only "
-               r"(dense cells with $n>150$ count as unsolved). MITM is omitted: every instance "
+               r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. Lattice reduction runs without a size cap here. "
+               r"MITM is omitted: every instance "
                r"exceeds its memory envelope ($n>44$), so it abstains rather than fails.",
                "tab:gate", "lrrrrrrrr",
                r"Method & Succ.\,\% & Crit. & Dense & Mean $\mu$ & SD & Worst & TTO $\delta$ & $p_{\mathrm{Holm}}$",
                rows, colsep="3pt")
     return d
+
+
+def components_posthoc():
+    """Post-hoc check of two choices fixed before the tuning study (initial exact move, tournament
+    selection), on the tuning set with the tuning protocol. CSV only; the numbers are quoted in Section 4.3."""
+    d = load("p19_components", drop=())
+    base = "ma_xr@k=36,init=0,move=0"
+    H = d.groupby(["instance_id", "solver"])["hit"].mean().unstack()
+    rows = [{"variant": base, "success": float(H[base].mean()), "points_vs_base": 0.0, "n_differ": 0,
+             "wilcoxon_p": np.nan}]
+    for c in [c for c in H.columns if c != base]:
+        x = H[base] - H[c]
+        nz = x[x.abs() > 1e-12]
+        rows.append({"variant": c, "success": float(H[c].mean()), "points_vs_base": float(-100 * x.mean()),
+                     "n_differ": int(len(nz)), "wilcoxon_p": float(wilcoxon(nz).pvalue) if len(nz) >= 10 else np.nan})
+    out = pd.DataFrame(rows)
+    (OUT / "csv").mkdir(parents=True, exist_ok=True)
+    out.to_csv(OUT / "csv" / "components_posthoc.csv", index=False)
+    return out
 
 
 def t_tuning():
@@ -537,7 +558,7 @@ def f_structured(out):
 
 
 def f_anytime():
-    d = load("p16_gateG", "p18_hard_eval", "p16_structured", "p13_structured", drop=())
+    d = load("p16_gateG", "p19_lattice_uncapped", "p18_hard_eval", "p16_structured", "p13_structured", drop=())
     keep = {"ma_final": (C_PROP, "-"), "ktree": (C2, "--"), "lattice": (C3, "-."), "flsss_exact": (C_GRAY, ":")}
     d = d[d["solver"].isin(keep)]
     d["panel"] = np.where(d["instance_id"].str.contains("critical"), "hard corpus: critical",
@@ -683,6 +704,7 @@ def main() -> int:
     out = t_structured()
     t_gate_and_ablation()
     g, pg = t_tuning()
+    components_posthoc()
     t_asym()
     t_simple("t_beyond", ("p18_beyond",),
              r"Limits: $n=56$--$80$ at 46--47-bit items, just beyond meet-in-the-middle's memory reach (30\,s).",
