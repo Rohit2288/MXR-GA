@@ -19,6 +19,8 @@ import argparse
 import csv
 import datetime as _dt
 import json
+import os
+import subprocess
 import sys
 from multiprocessing import Pool
 from pathlib import Path
@@ -36,6 +38,22 @@ from src.protocol.runner import git_commit  # noqa: E402
 FIELDS = ["solver", "instance_id", "suite", "n", "distribution", "seed",
           "status", "mu", "known_opt", "subset_sum", "evals_used",
           "wall_time", "budget_s", "stop_reason", "extra"]
+
+
+def power_state() -> dict:
+    """macOS power source and Low Power Mode (wall-clock budgets are only comparable on mains power,
+    with Low Power Mode off and the machine awake). Empty dict where pmset is unavailable."""
+    try:
+        batt = subprocess.run(["pmset", "-g", "batt"], capture_output=True, text=True).stdout
+        cur = subprocess.run(["pmset", "-g"], capture_output=True, text=True).stdout
+    except OSError:
+        return {}
+    low = [ln.split()[-1] for ln in cur.splitlines() if ln.strip().startswith("lowpowermode")]
+    return {"ac_power": "AC Power" in batt, "low_power_mode": bool(low and low[0] == "1")}
+
+
+def power_ok(st: dict) -> bool:
+    return not st or (st["ac_power"] and not st["low_power_mode"])
 
 
 def corpus_paths(spec: str):
@@ -105,6 +123,8 @@ def main() -> int:
     ap.add_argument("--wall", type=float, default=None,
                     help="fixed wall budget (s); default: r3.wall_budget(n)")
     ap.add_argument("--workers", type=int, default=7)
+    ap.add_argument("--allow-battery", action="store_true",
+                    help="run even on battery / Low Power Mode (timings then not comparable)")
     ap.add_argument("--seed-offset", type=int, default=0,
                     help="first seed (replications use seeds disjoint from earlier runs)")
     args = ap.parse_args()
@@ -133,6 +153,12 @@ def main() -> int:
                 if (spec, iid, seed) not in done:
                     units.append((spec, str(p), seed, args.wall))
     units.sort(key=lambda u: (u[2], u[1], u[0]))
+    power = power_state()
+    if not args.allow_battery and not power_ok(power):
+        print(f"refusing to start: power state {power} (needs mains power, Low Power Mode off)", flush=True)
+        return 2
+    if power:   # keep the machine from idle/system sleep while this process lives
+        subprocess.Popen(["caffeinate", "-i", "-s", "-w", str(os.getpid())])
     (out_dir / "manifest.json").write_text(json.dumps({
         "git_commit": git_commit(), "script": "experiments/35_r3_runs.py",
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
@@ -141,7 +167,7 @@ def main() -> int:
         "seeds_base": args.seeds_base, "seed_offset": args.seed_offset,
         "wall": args.wall or "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
         "stop_rule": "known certified optimum (r3.known_optimum)",
-        "workers": args.workers,
+        "workers": args.workers, "power_at_start": power,
     }, indent=1))
     print(f"{len(units)} units ({len(done)} already done)", flush=True)
     new = not out.exists()
@@ -154,6 +180,11 @@ def main() -> int:
             fh.flush()
             if i % 500 == 0:
                 print(f"  {i}/{len(units)}", flush=True)
+            if not args.allow_battery and not power_ok(power_state()):
+                # Stop instead of continuing under throttling; finished rows are kept and a rerun resumes.
+                print(f"power changed to {power_state()} after {i} units; stopping", flush=True)
+                pool.terminate()
+                return 3
     return 0
 
 

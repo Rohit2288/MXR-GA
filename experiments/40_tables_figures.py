@@ -301,8 +301,11 @@ def t_regime():
 
 def t_structured():
     out = {}
-    for tag, mine, comp in (("A", "p16_structured", "p13_structured"), ("B", "p16_structured_rep", "p14_structured_rep")):
-        d = load(mine, comp)
+    # Corpus A: seed-0 competitor runs of p13_structured partly ran throttled (Low Power Mode); the
+    # p20_structured_seed0 rerun is loaded first and replaces them (load() keeps the first copy of each run).
+    for tag, mine, comp in (("A", "p16_structured", ("p20_structured_seed0", "p13_structured")),
+                            ("B", "p16_structured_rep", ("p14_structured_rep",))):
+        d = load(mine, *comp)
         dn = d[~d["instance_id"].str.contains("parity")]
         inst = dn.groupby(["distribution", "instance_id", "solver"]).agg(mu=("mu0", "mean"), hit=("hit", "mean")).reset_index()
         mu = inst.pivot_table(index="distribution", columns="solver", values="mu")
@@ -356,9 +359,9 @@ def t_structured():
 
 
 def t_gate_and_ablation():
-    # p19_lattice_uncapped is loaded before p18_hard_eval: load() keeps the first copy of each run,
+    # p20_lattice_uncapped is loaded before p18_hard_eval: load() keeps the first copy of each run,
     # so the uncapped lattice run replaces the capped one.
-    d = load("p16_gateG", "p16_ablation", "p19_lattice_uncapped", "p18_hard_eval", drop=())
+    d = load("p16_gateG", "p16_ablation", "p20_lattice_uncapped", "p18_hard_eval", drop=())
     d["block"] = d["instance_id"].str.split("-").str[2]
     d["tto"] = np.where(d["mu0"] >= d["known_opt"] - 1e-12, d["wall_time"], np.inf)
     keep = ["ma_final", "ma_final_rand", "lns_final", "ma_final_cpsat", "ktree", "lattice", "flsss_exact",
@@ -412,7 +415,7 @@ def t_gate_and_ablation():
 def components_posthoc():
     """Post-hoc check of two choices fixed before the tuning study (initial exact move, tournament
     selection), on the tuning set with the tuning protocol. CSV only; the numbers are quoted in Section 4.3."""
-    d = load("p19_components", drop=())
+    d = load("p20_components", drop=())
     base = "ma_xr@k=36,init=0,move=0"
     H = d.groupby(["instance_id", "solver"])["hit"].mean().unstack()
     rows = [{"variant": base, "success": float(H[base].mean()), "points_vs_base": 0.0, "n_differ": 0,
@@ -558,7 +561,7 @@ def f_structured(out):
 
 
 def f_anytime():
-    d = load("p16_gateG", "p19_lattice_uncapped", "p18_hard_eval", "p16_structured", "p13_structured", drop=())
+    d = load("p16_gateG", "p20_lattice_uncapped", "p18_hard_eval", "p16_structured", "p20_structured_seed0", "p13_structured", drop=())
     keep = {"ma_final": (C_PROP, "-"), "ktree": (C2, "--"), "lattice": (C3, "-."), "flsss_exact": (C_GRAY, ":")}
     d = d[d["solver"].isin(keep)]
     d["panel"] = np.where(d["instance_id"].str.contains("critical"), "hard corpus: critical",
@@ -710,7 +713,7 @@ def main() -> int:
              r"Limits: $n=56$--$80$ at 46--47-bit items, just beyond meet-in-the-middle's memory reach (30\,s).",
              "tab:beyond", r"k-tree and lattice reduction lead here; stated as a limitation of \algname.")
     t_speed()
-    t_simple("t_fssp1", ("p18_fssp1",), r"Benchmark-FSSP-1 (3{,}238 instances), sanity check (3 seeds).",
+    t_simple("t_fssp1", ("p20_fssp1",), r"Benchmark-FSSP-1 (3{,}238 instances), sanity check (3 seeds).",
              "tab:fssp1", r"Saturated: most methods reach $\mu=1$; reported for completeness only.")
     f_regime(cell)
     f_structured(out)

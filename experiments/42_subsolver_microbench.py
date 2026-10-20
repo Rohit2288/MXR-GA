@@ -7,7 +7,7 @@ the model of the CP-SAT sub-solver (src/solvers/exact_lns.py, _cpsat_closest): o
 assignment as hint, objective w_l * under + w_r * over. CP-SAT gets up to --cap seconds; the time at
 which its incumbent first matches the meet-in-the-middle optimum is recorded (inf if never).
 
-Output: results/p19_subsolver_microbench/results.csv and manifest.json.
+Output: results/p20_subsolver_microbench/results.csv and manifest.json.
 Usage: .venv/bin/python experiments/42_subsolver_microbench.py [--n-inst 40] [--cap 30] [--workers 4]
 """
 from __future__ import annotations
@@ -98,6 +98,16 @@ def main() -> int:
     ap.add_argument("--cap", type=float, default=30.0)
     ap.add_argument("--workers", type=int, default=4)
     a = ap.parse_args()
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("runner", REPO / "experiments" / "35_r3_runs.py")
+    runner = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(runner)
+    power = runner.power_state()
+    if not runner.power_ok(power):
+        print(f"refusing to start: power state {power} (needs mains power, Low Power Mode off)")
+        return 2
+    import os
+    subprocess.Popen(["caffeinate", "-i", "-s", "-w", str(os.getpid())])
     paths = sorted(glob.glob(str(REPO / "benchmarks/fsspb_hard_eval/instances/*.json")))
     rng = np.random.default_rng(20261020)
     pick = sorted(rng.choice(len(paths), size=min(a.n_inst, len(paths)), replace=False))
@@ -105,7 +115,7 @@ def main() -> int:
     with ProcessPoolExecutor(a.workers) as ex:
         rows = list(ex.map(one, jobs))
     import pandas as pd
-    out = REPO / "results" / "p19_subsolver_microbench"
+    out = REPO / "results" / "p20_subsolver_microbench"
     out.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(rows)
     df.to_csv(out / "results.csv", index=False)
@@ -113,7 +123,7 @@ def main() -> int:
     (out / "manifest.json").write_text(json.dumps({
         "git_commit": commit, "script": "experiments/42_subsolver_microbench.py",
         "date_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "corpus": "benchmarks/fsspb_hard_eval",
-        "n_inst": len(jobs), "k": K, "cpsat_cap_s": a.cap, "cpsat_workers": 1, "workers": a.workers}, indent=1))
+        "n_inst": len(jobs), "k": K, "power_at_start": power, "cpsat_cap_s": a.cap, "cpsat_workers": 1, "workers": a.workers}, indent=1))
     within = lambda s: float((df["cpsat_t_match_s"] <= s).mean())
     print(f"subproblems {len(df)}; MITM median {1000 * df.t_mitm_s.median():.1f} ms (max {1000 * df.t_mitm_s.max():.1f})")
     print(f"CP-SAT matched MITM optimum within 0.2 s: {within(0.2):.3f}, 2 s: {within(2):.3f}, {a.cap:g} s: {within(a.cap):.3f}")
