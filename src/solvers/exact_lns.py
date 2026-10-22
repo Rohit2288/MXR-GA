@@ -104,8 +104,8 @@ class _Core:
             # tolerances and minimise |S - T_M|. Reported quality is still mu.
             self.d_l = self.d_r = 1.0
         self.cpsat_cap_s = cpsat_cap_s     # per-move time limit of the CP-SAT sub-solver
-        self.cpsat_status: dict = {}       # CP-SAT status counts over all sub-solver calls
-        self.cpsat_scaled = 0
+        # CP-SAT sub-solver bookkeeping: status counts over all calls and the number of pre-scaled calls.
+        self.cpsat_info: dict = {"status": {}, "scaled_calls": 0}
         self.objective = objective
         self.rng = rng
         self.k = min(k, self.n)
@@ -194,8 +194,9 @@ class _Core:
         solver.parameters.random_seed = int(self.rng.integers(1, 2**31 - 1))
         st = solver.solve(m)
         name = solver.status_name(st)
-        self.cpsat_status[name] = self.cpsat_status.get(name, 0) + 1
-        self.cpsat_scaled += scale > 1
+        st_counts = self.cpsat_info["status"]
+        st_counts[name] = st_counts.get(name, 0) + 1
+        self.cpsat_info["scaled_calls"] += int(scale > 1)
         if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             return current.copy()
         vals = [int(v) for v in self.items[free]]
@@ -271,6 +272,8 @@ class MAXR(Solver):
                      symmetric=self.symmetric, cpsat_cap_s=self.cpsat_cap_s)
         stats = self.last_stats = {"moves": 0, "generations": 0,
                                    "accepted": 0, "mean_diff": 0.0}
+        if self.subsolver != "mitm":
+            stats["cpsat"] = core.cpsat_info   # live reference: complete even when the budget ends a run early
         pop: List[np.ndarray] = []
         fit: List[float] = []
         seen = set()
@@ -314,9 +317,6 @@ class MAXR(Solver):
                 f = core.exact_move(child, core.random_free())
             stats["generations"] += 1
             stats["moves"] = core.moves
-            if core.subsolver != "mitm":
-                stats["cpsat_status"] = core.cpsat_status
-                stats["cpsat_scaled"] = core.cpsat_scaled
             stats["mean_diff"] = diff_total / stats["generations"]
             key = child.tobytes()
             if key in seen:
