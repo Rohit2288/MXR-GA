@@ -58,29 +58,42 @@ def one(args):
     wl = max(1, int(round(d_r)))
     wr = max(1, int(round(d_l)))
     g = math.gcd(wl, wr)
-    wl, wr = wl // g, wr // g          # same weights as the CP-SAT sub-solver (no 64-bit overflow)
-    s_m = int(vals[mask].sum())
-    target_obj = wl * max(0, r - s_m) + wr * max(0, s_m - r)
-    assert (int(vals.sum()) + abs(r)) * max(wl, wr) <= 2 ** 60, "model would need pre-scaling"
+    wl, wr = wl // g, wr // g          # same weights and pre-scaling as the CP-SAT sub-solver
+    scale = 1
+    while (int(vals.sum()) + abs(r)) // scale * max(wl, wr) > 2 ** 60:
+        scale *= 2
+    vals_m = [max(1, int(v) // scale) for v in vals]
+    r_m = r // scale
+    true_vals = [int(v) for v in vals]
+
+    def true_d(s):
+        u = r - s
+        return u / d_l if u >= 0 else -u / d_r
 
     m = cp_model.CpModel()
-    x = [m.new_bool_var(f"x{i}") for i in range(len(vals))]
-    hi = int(vals.sum()) + abs(r)
+    x = [m.new_bool_var(f"x{i}") for i in range(len(vals_m))]
+    hi = sum(vals_m) + abs(r_m)
     under = m.new_int_var(0, hi, "u")
     over = m.new_int_var(0, hi, "o")
-    m.add(sum(int(v) * xi for v, xi in zip(vals, x)) + under - over == r)
+    m.add(sum(v * xi for v, xi in zip(vals_m, x)) + under - over == r_m)
     m.minimize(wl * under + wr * over)
     for xi, c in zip(x, chrom[free]):
         m.add_hint(xi, bool(c))
+    assert not m.validate(), m.validate()[:200]
 
     class CB(cp_model.CpSolverSolutionCallback):
+        """Judges every incumbent on TRUE values: matched when its true d reaches the MITM optimum."""
         def __init__(self):
             super().__init__()
             self.t_hit = float("inf")
+            self.best_d = float("inf")
             self.start = time.perf_counter()
 
         def on_solution_callback(self):
-            if self.objective_value <= target_obj and self.t_hit == float("inf"):
+            s = sum(v for v, xi in zip(true_vals, x) if self.Value(xi))
+            d = true_d(s)
+            self.best_d = min(self.best_d, d)
+            if d <= d_mitm + 1e-12 and self.t_hit == float("inf"):
                 self.t_hit = time.perf_counter() - self.start
 
     solver = cp_model.CpSolver()
@@ -88,11 +101,9 @@ def one(args):
     solver.parameters.max_time_in_seconds = cap
     solver.parameters.random_seed = seed + 1
     cb = CB()
-    assert not m.validate(), m.validate()[:200]
     st = solver.solve(m, cb)
     return {"instance_id": inst.instance_id, "seed": seed, "n": inst.n, "bits": int(items.max()).bit_length(),
-            "t_mitm_s": t_mitm, "mitm_obj": int(target_obj), "d_mitm": float(d_mitm),
-            "cpsat_best_obj": float(solver.objective_value) if st in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
+            "t_mitm_s": t_mitm, "d_mitm": float(d_mitm), "scale": scale, "cpsat_best_true_d": cb.best_d,
             "cpsat_status": solver.status_name(st), "cpsat_t_match_s": cb.t_hit,
             "cpsat_wall_s": solver.wall_time}
 
@@ -132,6 +143,9 @@ def main() -> int:
     within = lambda s: float((df["cpsat_t_match_s"] <= s).mean())
     print(f"subproblems {len(df)}; MITM median {1000 * df.t_mitm_s.median():.1f} ms (max {1000 * df.t_mitm_s.max():.1f})")
     print(f"CP-SAT matched MITM optimum within 0.2 s: {within(0.2):.3f}, 2 s: {within(2):.3f}, {a.cap:g} s: {within(a.cap):.3f}")
+    for tag, g in (("unscaled", df[df["scale"] == 1]), ("pre-scaled", df[df["scale"] > 1])):
+        if len(g):
+            print(f"  {tag}: {len(g)} sub-problems; matched within {a.cap:g} s: {float((g.cpsat_t_match_s <= a.cap).mean()):.3f}")
     return 0
 
 
