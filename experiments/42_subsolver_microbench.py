@@ -54,10 +54,14 @@ def one(args):
     d_mitm, mask = closest_subset(vals, r, d_l, d_r)
     t_mitm = time.perf_counter() - t0
 
+    import math
     wl = max(1, int(round(d_r)))
     wr = max(1, int(round(d_l)))
+    g = math.gcd(wl, wr)
+    wl, wr = wl // g, wr // g          # same weights as the CP-SAT sub-solver (no 64-bit overflow)
     s_m = int(vals[mask].sum())
     target_obj = wl * max(0, r - s_m) + wr * max(0, s_m - r)
+    assert (int(vals.sum()) + abs(r)) * max(wl, wr) <= 2 ** 60, "model would need pre-scaling"
 
     m = cp_model.CpModel()
     x = [m.new_bool_var(f"x{i}") for i in range(len(vals))]
@@ -84,6 +88,7 @@ def one(args):
     solver.parameters.max_time_in_seconds = cap
     solver.parameters.random_seed = seed + 1
     cb = CB()
+    assert not m.validate(), m.validate()[:200]
     st = solver.solve(m, cb)
     return {"instance_id": inst.instance_id, "seed": seed, "n": inst.n, "bits": int(items.max()).bit_length(),
             "t_mitm_s": t_mitm, "mitm_obj": int(target_obj), "d_mitm": float(d_mitm),

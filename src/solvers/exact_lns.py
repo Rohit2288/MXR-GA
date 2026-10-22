@@ -36,6 +36,8 @@ which uncounted internal work is paid for in time.
 
 from __future__ import annotations
 
+import math
+
 from typing import List, Optional, Tuple
 
 import numpy as np
@@ -102,6 +104,8 @@ class _Core:
             # tolerances and minimise |S - T_M|. Reported quality is still mu.
             self.d_l = self.d_r = 1.0
         self.cpsat_cap_s = cpsat_cap_s     # per-move time limit of the CP-SAT sub-solver
+        self.cpsat_status: dict = {}       # CP-SAT status counts over all sub-solver calls
+        self.cpsat_scaled = 0
         self.objective = objective
         self.rng = rng
         self.k = min(k, self.n)
@@ -160,12 +164,26 @@ class _Core:
         vals = [int(v) for v in self.items[free]]
         wl = max(1, int(round(self.d_r)))      # weights: dist/dL ~ wl*under
         wr = max(1, int(round(self.d_l)))      # cross-multiplied by dL*dR
+        g = math.gcd(wl, wr)
+        wl, wr = wl // g, wr // g
+        # CP-SAT works in 64-bit integers and rejects models whose objective could overflow
+        # (MODEL_INVALID). As in the CP-SAT baseline, values are then pre-scaled; the model becomes
+        # approximate, the returned assignment is real and is kept only if it is not worse (below).
+        limit = 2 ** 60
+        scale = 1
+        while (sum(vals) + abs(r)) // scale * max(wl, wr) > limit:
+            scale *= 2
+        if scale > 1:
+            vals = [max(1, v // scale) for v in vals]
+            r_m = r // scale
+        else:
+            r_m = r
         m = cp_model.CpModel()
         x = [m.new_bool_var(f"x{i}") for i in range(len(vals))]
-        hi = sum(vals) + abs(r)
+        hi = sum(vals) + abs(r_m)
         under = m.new_int_var(0, hi, "u")
         over = m.new_int_var(0, hi, "o")
-        m.add(sum(v * xi for v, xi in zip(vals, x)) + under - over == r)
+        m.add(sum(v * xi for v, xi in zip(vals, x)) + under - over == r_m)
         m.minimize(wl * under + wr * over)
         for xi, c in zip(x, current):
             m.add_hint(xi, bool(c))
@@ -175,8 +193,12 @@ class _Core:
             0.01, min(self.cpsat_cap_s, self.objective.time_left()))
         solver.parameters.random_seed = int(self.rng.integers(1, 2**31 - 1))
         st = solver.solve(m)
+        name = solver.status_name(st)
+        self.cpsat_status[name] = self.cpsat_status.get(name, 0) + 1
+        self.cpsat_scaled += scale > 1
         if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             return current.copy()
+        vals = [int(v) for v in self.items[free]]
         mask = np.array([bool(solver.value(xi)) for xi in x])
 
         def dist(msk):
@@ -292,6 +314,9 @@ class MAXR(Solver):
                 f = core.exact_move(child, core.random_free())
             stats["generations"] += 1
             stats["moves"] = core.moves
+            if core.subsolver != "mitm":
+                stats["cpsat_status"] = core.cpsat_status
+                stats["cpsat_scaled"] = core.cpsat_scaled
             stats["mean_diff"] = diff_total / stats["generations"]
             key = child.tobytes()
             if key in seen:
