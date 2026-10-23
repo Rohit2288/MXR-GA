@@ -317,7 +317,7 @@ def t_structured():
     rows, recs = [], []
     for tag in ("A", "B"):
         mu, hit, _ = out[tag]
-        rows.append(rf"\multicolumn{{6}}{{l}}{{\emph{{Corpus {tag}}} (fresh, {'seed base 440000' if tag == 'A' else 'seed base 123000'})}} \\")
+        rows.append(rf"\multicolumn{{6}}{{l}}{{\emph{{Corpus {tag}}} ({'seed base 440000' if tag == 'A' else 'seed base 123000'})}} \\")
         for dist in [x for x in mu.index if x != "uniform"] + ["uniform"]:
             comp = [c for c in comp_cols if c in mu.columns]
             best = mu.loc[dist, comp].max()
@@ -527,7 +527,8 @@ def t_tuning():
     rows = [f"{int(r_['pop'])} & {pct(r_['mean'])} $\\pm$ {100 * r_['ci95']:.1f} & {r_['med_wall_s']:.2f} \\\\"
             for _, r_ in pg.iterrows()]
     save_table("t_popsize", pg,
-               r"Population-size sensitivity of the final configuration (tuning set, 3 seeds, 30\,s).",
+               r"Population-size sensitivity of the final configuration (tuning set, 3 seeds, 30\,s; a separate run from "
+               r"Table~\ref{tab:tuning}, so the $P=16$ row repeats the selected configuration).",
                "tab:pop", "rrr", r"Population & Success \% (95\% CI) & Median s", rows)
     return g, pg
 
@@ -760,7 +761,7 @@ def main() -> int:
     t_simple("t_reconcile", ("p16_reconcile", "p18_reconcile"),
              r"Payment reconciliation (48 synthetic instances; amounts in cents; 5--40 invoices per payment; "
              r"asymmetric fee tolerance).", "tab:reconcile",
-             r"Very dense, few items per payment: CKK and k-tree are as accurate and faster here.")
+             r"Very dense, few items per payment: CKK is as accurate and faster here.")
     _, cell = t_regime()
     t_simple("t_scale", ("p16_scale", "p13_scale", "p18_scale"),
              r"Very large instances ($n=2000$--$10000$, 32/39-bit items; 30\,s).", "tab:scale",
