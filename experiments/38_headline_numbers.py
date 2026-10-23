@@ -46,7 +46,9 @@ def load(*paths):
     # Strict: an answer one unit off the optimum inside a 2^32-wide window has mu = 1 - 2^-32, which a
     # 1e-9 tolerance would wrongly count as optimal. 1e-12 admits only floating-point noise.
     d["hit"] = (d["known_opt"].notna() & (d["mu0"] >= d["known_opt"] - 1e-12)).astype(float)
-    return d
+    # Same rule as experiments/40_tables_figures.py: the first listed run set wins for a (solver, instance,
+    # seed), so a rerun listed first replaces the run it supersedes.
+    return d.drop_duplicates(["solver", "instance_id", "seed"])
 
 
 def cliff(a, b):
@@ -177,15 +179,15 @@ def main() -> int:
     if gf is not None:
         gf = gf.replace({"solver": {"ma_final": "ma_xr", "ma_final_rand": "ma_rand", "lns_final": "lns_mitm"}})
         F["gate_G_fresh_hard_corpus"] = gate_g(gf)
-        ab = load("p16_ablation")
+        ab = load("p21_cpsat_sub")   # overflow-fixed CP-SAT sub-solver (p16_ablation hit MODEL_INVALID)
         ab["blk"] = ab["instance_id"].str.split("-").str[2]
         gm = gf[gf["solver"] == "ma_xr"].copy()
         gm["blk"] = gm["instance_id"].str.split("-").str[2]
         F["ablation_cpsat_subsolver_fresh"] = {"ma_final_cpsat": ab.groupby("blk")["hit"].mean().round(4).to_dict(),
                                                "ma_final": gm.groupby("blk")["hit"].mean().round(4).to_dict()}
-    for tag, mine, comp in (("structured_A", "p16_structured", "p13_structured"),
-                            ("structured_B", "p16_structured_rep", "p14_structured_rep")):
-        m, c = load(mine), load(comp)
+    for tag, mine, comp in (("structured_A", "p16_structured", ("p20_structured_seed0", "p13_structured")),
+                            ("structured_B", "p16_structured_rep", ("p14_structured_rep",))):
+        m, c = load(mine), load(*comp)
         if m is None:
             continue
         m = m.replace({"solver": {"ma_final": "ma_xr"}})
@@ -196,7 +198,7 @@ def main() -> int:
     if asy is not None:
         F["asymmetry_demo_success"] = per_instance(asy).groupby("solver")["hit"].mean().round(4).to_dict()
         F["asymmetry_competitors_success"] = per_instance(load("p15_asym")).groupby("solver")["hit"].mean().round(4).to_dict()
-    rg = load("p16_regime", "p13_regime", "p13_regime_lattice")
+    rg = load("p16_regime", "p13_regime", "p13_regime_lattice", "p18_regime")
     if rg is not None:
         rg = rg[rg["solver"] != "ma_xr"]
         x = rg["instance_id"].str.extract(r"R-(\w+)-n(\d+)-b(\d+)")
@@ -209,7 +211,7 @@ def main() -> int:
         scf = scf[scf["solver"] != "ma_xr"]
         scf["cell"] = scf["instance_id"].str.extract(r"(n\d+-b\d+)")[0]
         F["scale_success"] = per_instance(scf, ["cell"]).pivot_table(index="cell", columns="solver", values="hit").round(4).to_dict()
-    ff = load("p16_fssp2", "p15_fssp2_runtime")
+    ff = load("p16_fssp2", "p18_fssp2_final", "p15_fssp2_runtime", "p18_fssp2_kt_ils", "p18_fssp2_meta", "p18_fssp2_single")
     if ff is not None:
         ff = ff[ff["solver"] != "ma_xr"]
         pf = ff.groupby(["suite", "instance_id", "solver"])["mu0"].mean().unstack()
@@ -222,12 +224,27 @@ def main() -> int:
             for s_ in ("T", "A", "U")}
         rt = ff.groupby(["suite", "solver"]).agg(median_wall_s=("wall_time", "median"), median_evals=("evals_used", "median"))
         F["fssp2_runtime_clean"] = {f"{a}|{b}": v for (a, b), v in rt.round(4).to_dict("index").items()}
-    for name, mine, comp in (("suite_H", "p16_hard", ("r3_hard", "r3_hard_ktree")),
-                             ("reconciliation", "p16_reconcile", ("r3_reconcile", "r3_reconcile_ktree"))):
+    for name, mine, comp in (("suite_H", "p16_hard", ("p18_hard",)),
+                             ("reconciliation", "p16_reconcile", ("p18_reconcile",))):
         d_ = load(mine, *comp)
         if d_ is not None:
             d_ = d_[d_["solver"] != "ma_xr"]
             F[f"{name}_success"] = per_instance(d_).groupby("solver")["hit"].mean().round(4).to_dict()
+    rep = load("p21_gateG_rep")
+    if rep is not None:
+        F["gate_G_replication_seeds5_9"] = gate_g(rep.replace({"solver": {"ma_final": "ma_xr", "ma_final_rand": "ma_rand",
+                                                                       "lns_final": "lns_mitm"}}))
+        F["cpsat_subsolver_replication_mean_mu"] = round(float(rep[rep["solver"] == "ma_final_cpsat"]["mu0"].mean()), 4)
+    cap = load("p21_cpsat_sub_cap2s")
+    if cap is not None:
+        F["cpsat_subsolver_2s_per_move"] = {"success": round(float(cap["hit"].mean()), 4),
+                                           "mean_mu": round(float(cap["mu0"].mean()), 4)}
+    lat = load("p20_lattice_uncapped")
+    if lat is not None:
+        F["lattice_uncapped_hard_corpus_success"] = round(float(lat["hit"].mean()), 4)
+    f1 = load("p20_fssp1")
+    if f1 is not None:
+        F["fssp1_success"] = per_instance(f1[f1["known_opt"].notna()]).groupby("solver")["hit"].mean().round(4).to_dict()
     H["final"] = F
 
     out = R / "headline_numbers.json"

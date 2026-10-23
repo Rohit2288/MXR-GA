@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+\caption{Replication of the pre-registered ablation (88 hard instances generated after the tuning runs, 30\,s): success (\%) with seeds 0--4 (main text) and with disjoint seeds 5--9. TTO $\delta$: time-to-optimum Cliff's $\delta$ of \algname{} against the variant (negative = \algname{} faster); $p$: Wilcoxon on per-instance success, Holm-adjusted over these two comparisons (the main-text table adjusts over all comparisons, hence its slightly larger values).}
+\label{tab:replication}
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{Seeds 0--4} & \multicolumn{3}{c}{Seeds 5--9} \\ Variant & Succ.\,\% & TTO $\delta$ & $p$ & Succ.\,\% & TTO $\delta$ & $p$ \\
+\midrule
+\algname & 93.4 & -- & -- & 92.7 & -- & -- \\
+\algname, random free set & 85.7 & $-0.399$ & $5.6\times10^{-4}$ & 83.2 & $-0.242$ & $2.0\times10^{-4}$ \\
+\algname, no population & 82.5 & $-0.341$ & $1.5\times10^{-4}$ & 80.0 & $-0.315$ & $4.3\times10^{-5}$ \\
+\algname, CP-SAT sub-solver & 0.0 &  &  & 0.0 &  &  \\
+\botrule
+\end{tabular}
+\end{table}

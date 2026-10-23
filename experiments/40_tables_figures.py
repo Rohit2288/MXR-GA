@@ -358,10 +358,68 @@ def t_structured():
     return out
 
 
+def _gate_stats(d, controls=("ma_final_rand", "lns_final")):
+    """Gate G statistics as pre-registered: per-instance seed means; time-to-optimum (unsolved = inf)
+    Cliff's delta on instances where the pair differs; Wilcoxon on per-instance success, Holm over the controls."""
+    d = d.copy()
+    d["tto"] = np.where(d["mu0"] >= 1 - 1e-12, d["wall_time"].astype(float), np.inf)
+    inst = d.groupby(["instance_id", "solver"]).agg(hit=("hit", "mean"), tto=("tto", "median")).reset_index()
+    H = inst.pivot(index="instance_id", columns="solver", values="hit")
+    T = inst.pivot(index="instance_id", columns="solver", values="tto")
+    out, ps = {}, []
+    for c in controls:
+        diff = (H["ma_final"] != H[c]) | (T["ma_final"] != T[c])
+        cd = cliff(T["ma_final"][diff].replace(np.inf, 1e9), T[c][diff].replace(np.inf, 1e9))
+        x = H["ma_final"] - H[c]
+        ps.append(float(wilcoxon(x[x != 0]).pvalue))
+        out[c] = {"tto_cliff": cd}
+    for c, pa in zip(controls, holm(ps)):
+        out[c]["p_holm"] = float(pa)
+    succ = {c: 100 * float(H[c].mean()) for c in H.columns}
+    mu = d.groupby("solver")["mu0"].mean().to_dict()
+    return succ, out, mu
+
+
+def t_replication():
+    """Appendix C: the pre-registered ablation with seeds 0-4 (main text) and disjoint seeds 5-9."""
+    a = load("p16_gateG", "p21_cpsat_sub", drop=())
+    b = load("p21_gateG_rep", drop=())
+    rows, recs = [], []
+    sa, ga, ma = _gate_stats(a)
+    sb, gb, mb = _gate_stats(b)
+    names = [("ma_final", r"\algname"), ("ma_final_rand", r"\algname, random free set"),
+             ("lns_final", r"\algname, no population"), ("ma_final_cpsat", r"\algname, CP-SAT sub-solver")]
+
+    def p_tex(p):
+        m, e = f"{p:.1e}".split("e")
+        return rf"${m}\times10^{{{int(e)}}}$"
+    for key, label in names:
+        cells = []
+        for succ, gate in ((sa, ga), (sb, gb)):
+            if key in gate:
+                cells += [f"{succ[key]:.1f}", f"${gate[key]['tto_cliff']:+.3f}$".replace("+", "+"), p_tex(gate[key]["p_holm"])]
+            else:
+                cells += [f"{succ[key]:.1f}", "--" if key == "ma_final" else "", "--" if key == "ma_final" else ""]
+        rows.append(label + " & " + " & ".join(cells) + r" \\")
+        recs.append({"variant": key, "succ_0_4": sa[key], "succ_5_9": sb[key], "mean_mu_0_4": ma[key],
+                     "mean_mu_5_9": mb[key], **{f"{k}_0_4": v for k, v in ga.get(key, {}).items()},
+                     **{f"{k}_5_9": v for k, v in gb.get(key, {}).items()}})
+    save_table("t_replication", pd.DataFrame(recs),
+               r"Replication of the pre-registered ablation (88 hard instances generated after the tuning runs, 30\,s): "
+               r"success (\%) with seeds 0--4 (main text) and with disjoint seeds 5--9. TTO $\delta$: time-to-optimum "
+               r"Cliff's $\delta$ of \algname{} against the variant (negative = \algname{} faster); $p$: Wilcoxon on "
+               r"per-instance success, Holm-adjusted over these two comparisons (the main-text table adjusts over all "
+               r"comparisons, hence its slightly larger values).",
+               "tab:replication", "lrrrrrr",
+               r" & \multicolumn{3}{c}{Seeds 0--4} & \multicolumn{3}{c}{Seeds 5--9} \\ "
+               r"Variant & Succ.\,\% & TTO $\delta$ & $p$ & Succ.\,\% & TTO $\delta$ & $p$", rows)
+
+
 def t_gate_and_ablation():
+    # p21_cpsat_sub: CP-SAT sub-solver with the overflow-fixed model (p16_ablation hit MODEL_INVALID).
     # p20_lattice_uncapped is loaded before p18_hard_eval: load() keeps the first copy of each run,
     # so the uncapped lattice run replaces the capped one.
-    d = load("p16_gateG", "p16_ablation", "p20_lattice_uncapped", "p18_hard_eval", drop=())
+    d = load("p16_gateG", "p21_cpsat_sub", "p20_lattice_uncapped", "p18_hard_eval", drop=())
     d["block"] = d["instance_id"].str.split("-").str[2]
     d["tto"] = np.where(d["mu0"] >= d["known_opt"] - 1e-12, d["wall_time"], np.inf)
     keep = ["ma_final", "ma_final_rand", "lns_final", "ma_final_cpsat", "ktree", "lattice", "flsss_exact",
@@ -400,7 +458,7 @@ def t_gate_and_ablation():
         if rec["solver"] == "ma_final_cpsat":
             rows.append(r"\midrule")
     save_table("t_gate_ablation", pd.DataFrame(recs),
-               r"Fresh hard corpus (88 instances never used for tuning; 30\,s; 5 seeds). Upper block: the "
+               r"Hard corpus (88 instances generated after the tuning runs; 30\,s; 5 seeds). Upper block: the "
                r"pre-registered ablation (Gate G: population and exact recombination; sub-solver). Lower block: "
                r"competitors. Time-to-optimum Cliff's $\delta$ (negative = \algname{} faster) on instances where the "
                r"pair differs; Wilcoxon on per-instance success, Holm-adjusted. Lattice reduction runs without a size cap here. "
@@ -415,7 +473,10 @@ def t_gate_and_ablation():
 def components_posthoc():
     """Post-hoc check of two choices fixed before the tuning study (initial exact move, tournament
     selection), on the tuning set with the tuning protocol. CSV only; the numbers are quoted in Section 4.3."""
-    d = load("p20_components", drop=())
+    # Read directly: load() strips "@..." from solver names, which would merge the three variants.
+    d = pd.read_csv(R / "p20_components" / "results.csv")
+    d["mu0"] = d["mu"].fillna(0.0)
+    d["hit"] = (d["known_opt"].notna() & (d["mu0"] >= d["known_opt"] - 1e-12)).astype(float)
     base = "ma_xr@k=36,init=0,move=0"
     H = d.groupby(["instance_id", "solver"])["hit"].mean().unstack()
     rows = [{"variant": base, "success": float(H[base].mean()), "points_vs_base": 0.0, "n_differ": 0,
@@ -706,6 +767,7 @@ def main() -> int:
              r"Lattice reduction declines $n>150$; population-based GA baselines exceed memory at this size.")
     out = t_structured()
     t_gate_and_ablation()
+    t_replication()
     g, pg = t_tuning()
     components_posthoc()
     t_asym()

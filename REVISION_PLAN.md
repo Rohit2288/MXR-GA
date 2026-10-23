@@ -690,3 +690,22 @@ No reviewer asked for an FH-GA vs new-method comparison; it is included for tran
   (+9.1 points, TTO delta -0.237, Holm p 5.0e-4, PASS) and vs lns_final 0.7886 (+12.5, delta -0.300, p 2.7e-5, PASS);
   CP-SAT sub-solver 0.000 / 0.000. Dense: ma_final 1.000 in both seed sets. Appendix C filled.
 
+
+## Phase 19–21 — Pre-submission accuracy audit and clean reruns (2026-10-19 … 2026-10-23)
+Trigger: Rohit asked for "totally accurate" content after the round-2 ablation criticism.
+- [x] 19.1 Code-version audit: no competitor solver changed after its runs; all stored optima match current certification.
+- [x] 19.2 Throttling audit (evaluations/s per run): the Mac runs Low Power Mode on battery (≈60% throughput).
+      Affected: p13_structured seed-0 runs (first ~575 rows), p18_fssp1 (~35%), p20_gateG_rep (first ~10%),
+      and the first p19 reruns (battery / asleep). All other run sets unthrottled; no run sets overlapped.
+      Runner now refuses to start / stops on battery or Low Power Mode, uses caffeinate, records power in manifests.
+- [x] 19.3 CP-SAT sub-solver BUG: objective overflowed CP-SAT's 64-bit bound on 38-47-bit values (MODEL_INVALID),
+      so the earlier "CP-SAT sub-solver solves 0%" measured no solving. Fixed (gcd weights, pre-scaling as in
+      the baseline, statuses recorded); regression test tests/test_cpsat_subsolver_valid.py.
+- [x] 21 Clean reruns (mains power): fixed CP-SAT sub-solver 0.2 s (0% success, mean mu 0.586 vs 0.961; 1.2% of
+      calls proven optimal) and 2 s (0%, 0.581); micro-benchmark (MITM 37 ms/move; CP-SAT matches its optimum on
+      10% of 36-item sub-problems, none more within 30 s); replication seeds 5-9 (92.7 / 83.2 / 80.0 / 0.0; Gate G
+      met again); post-hoc components (initial move 94.2 vs 94.4, p=0.90; uniform selection 94.0, p=0.42);
+      uncapped lattice on the hard corpus 70.5%; structured A seed 0 (R2 +31.7 -> +31.1); FSSP-1 (k-tree 72.4%).
+- [x] 21.x Text: Gate G / sub-solver / R1-R2 / asymmetry criteria stated exactly; asymmetry framed as a
+      demonstration; "population essential" -> "contributes"; CP-SAT scaling and invalid-model runs disclosed;
+      lattice caps as run; Appendix C table generated from data; headline_numbers.json uses the table sources.

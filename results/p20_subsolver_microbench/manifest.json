@@ -1,0 +1,15 @@
+{
+ "git_commit": "5824414a465d6ba629bcef69f1c1c08fc107b3f1",
+ "script": "experiments/42_subsolver_microbench.py",
+ "date_utc": "2026-10-22T16:33:30.980413+00:00",
+ "corpus": "benchmarks/fsspb_hard_eval",
+ "n_inst": 40,
+ "k": 36,
+ "power_at_start": {
+  "ac_power": true,
+  "low_power_mode": false
+ },
+ "cpsat_cap_s": 30.0,
+ "cpsat_workers": 1,
+ "workers": 4
+}

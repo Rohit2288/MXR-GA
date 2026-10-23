@@ -1,0 +1,136 @@
+== 2026-10-22 18:16:06 A
+440 units (0 already done)
+== 2026-10-22 19:11:08 B
+1760 units (0 already done)
+  500/1760
+  1000/1760
+  1500/1760
+== 2026-10-22 21:01:03 C
+440 units (0 already done)
+== 2026-10-22 21:56:04 D
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/process.py", line 254, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/process.py", line 203, in _process_chunk
+    return [fn(*args) for args in chunk]
+            ~~^^^^^^^
+  File "/Users/rohitsharma/fhga-revision/experiments/42_subsolver_microbench.py", line 64, in one
+    assert (int(vals.sum()) + abs(r)) * max(wl, wr) <= 2 ** 60, "model would need pre-scaling"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: model would need pre-scaling
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/rohitsharma/fhga-revision/experiments/42_subsolver_microbench.py", line 139, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/rohitsharma/fhga-revision/experiments/42_subsolver_microbench.py", line 121, in main
+    rows = list(ex.map(one, jobs))
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/process.py", line 617, in _chain_from_iterable_of_lists
+    for element in iterable:
+                   ^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+AssertionError: model would need pre-scaling
+== 2026-10-22 21:58:58 A
+0 units (440 already done)
+== 2026-10-22 21:58:58 B
+0 units (1760 already done)
+== 2026-10-22 21:58:59 C
+0 units (440 already done)
+== 2026-10-22 21:58:59 D
+subproblems 40; MITM median 37.1 ms (max 43.6)
+CP-SAT matched MITM optimum within 0.2 s: 0.100, 2 s: 0.100, 30 s: 0.100
+  unscaled: 28 sub-problems; matched within 30 s: 0.107
+  pre-scaled: 12 sub-problems; matched within 30 s: 0.083
+== 2026-10-22 22:03:31 E
+1255 units (5 already done)
+  500/1255
+  1000/1255
+== 2026-10-22 22:51:42 F
+35618 units (0 already done)
+  500/35618
+  1000/35618
+  1500/35618
+  2000/35618
+  2500/35618
+  3000/35618
+  3500/35618
+  4000/35618
+  4500/35618
+  5000/35618
+  5500/35618
+  6000/35618
+  6500/35618
+  7000/35618
+  7500/35618
+  8000/35618
+  8500/35618
+  9000/35618
+  9500/35618
+  10000/35618
+  10500/35618
+  11000/35618
+  11500/35618
+  12000/35618
+  12500/35618
+  13000/35618
+  13500/35618
+  14000/35618
+  14500/35618
+  15000/35618
+  15500/35618
+  16000/35618
+  16500/35618
+  17000/35618
+  17500/35618
+  18000/35618
+  18500/35618
+  19000/35618
+  19500/35618
+  20000/35618
+  20500/35618
+  21000/35618
+  21500/35618
+  22000/35618
+  22500/35618
+  23000/35618
+  23500/35618
+  24000/35618
+  24500/35618
+  25000/35618
+  25500/35618
+  26000/35618
+  26500/35618
+  27000/35618
+  27500/35618
+  28000/35618
+  28500/35618
+  29000/35618
+  29500/35618
+  30000/35618
+  30500/35618
+  31000/35618
+  31500/35618
+  32000/35618
+  32500/35618
+  33000/35618
+  33500/35618
+  34000/35618
+  34500/35618
+  35000/35618
+  35500/35618
+== 2026-10-23 07:16:31 done
