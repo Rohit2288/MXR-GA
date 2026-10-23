@@ -35,6 +35,10 @@ OUT = REPO / "paper_fragments" / "r3"
 ALG = "Proposed"
 
 # Display names; the proposed method is \algname in LaTeX and ALG in figures.
+# Display names of the structured distributions (CSV files keep the code names).
+DIST_FIG = {"avislai": "Avis\u2013Lai", "bimodal": "bimodal", "geometric": "geometric", "heavytail": "heavy-tailed",
+            "loguniform": "log-uniform", "nearequal": "near-equal", "uniform": "uniform"}
+DIST_TEX = {k: v.replace("\u2013", "--") for k, v in DIST_FIG.items()}
 NAMES = {
     "ma_final": "PROPOSED", "ma_final_rand": "PROPOSED, random free set", "lns_final": "PROPOSED, no population",
     "ma_final_cpsat": "PROPOSED, CP-SAT sub-solver", "ma_final_sym": "PROPOSED, crisp",
@@ -327,7 +331,7 @@ def t_structured():
                          "proposed_success": hit.loc[dist, "ma_final"], "best_other_mu": best, "best_other": who,
                          "ktree_success": hit.loc[dist, "ktree"], "R1_pass": bool(r1) if dist != "uniform" else None})
             mark = ("pass" if r1 else "fail") if dist != "uniform" else "(control)"
-            rows.append(f"{dist} & {fmt(mu.loc[dist, 'ma_final'])} & {pct(hit.loc[dist, 'ma_final'])} & "
+            rows.append(f"{DIST_TEX.get(dist, dist)} & {fmt(mu.loc[dist, 'ma_final'])} & {pct(hit.loc[dist, 'ma_final'])} & "
                         f"{fmt(best)} ({tex_name(who)}) & {pct(hit.loc[dist, 'ktree'])} & {mark} \\\\")
         st = [x for x in hit.index if x != "uniform"]
         r2 = 100 * (hit.loc[st, "ma_final"] - hit.loc[st, "ktree"]).mean()
@@ -613,7 +617,7 @@ def f_structured(out):
         for x_, v_ in zip(xs, vals_):
             if v_ < 0.005:
                 ax.text(x_, 0.01, "0", ha="center", va="bottom", fontsize=6, color=INK2)
-    ax.set_xticks(range(len(dists)), dists)
+    ax.set_xticks(range(len(dists)), [DIST_FIG.get(d_, d_) for d_ in dists], fontsize=7)
     ax.set_ylabel("success")
     ax.set_ylim(0, 1.05)
     ax.axvline(len(dists) - 1.5, color=INK2, lw=0.6, ls=":")
@@ -682,7 +686,7 @@ def f_residual(fd):
         ax.set_xscale("log")
         ax.set_xlim(5e-8, 1.5)
         ax.set_title(f"Suite {suite}", loc="left", fontsize=8, color=INK)
-        ax.set_xlabel("gap to optimum" if suite == "U" else "residual 1 - mu")
+        ax.set_xlabel(r"gap to optimum $\mu^\star-\mu$" if suite == "U" else r"residual $1-\mu$")
     axes[0].set_yticks(range(1, len(show) + 1), [fig_name(s_) for s_ in show])
 
     savefig(fig, "fig_fssp2_residual")
