@@ -126,7 +126,7 @@ def save_table(key, df, caption, label, colspec, header, rows_tex, note="", env=
     df.to_csv(OUT / "csv" / f"{key}.csv", index=False)
     # sn-jnl wraps every table in threeparttable and redefines the booktabs rules;
     # box wrappers such as adjustbox break that, so tables are plain tabulars.
-    lines = [rf"\begin{{{env}}}" + ("[htbp]" if env == "table" else ""),
+    lines = [rf"\begin{{{env}}}" + ("[htbp]" if env == "table" else "[p]"),
              rf"\caption{{{caption}}}", rf"\label{{{label}}}",
              *([rf"\setlength{{\tabcolsep}}{{{colsep}}}"] if colsep else []),
              *([r"\fontsize{7.5bp}{8.5bp}\selectfont\renewcommand{\arraystretch}{0.88}"] if compact else []),
