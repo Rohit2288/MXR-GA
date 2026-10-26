@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "MXR-GA: code, benchmarks and raw results for 'MXR-GA: A Genetic Algorithm with Exact Meet-in-the-Middle Recombination for the Fuzzy Subset Sum Problem'"
+version: 2.0.0
+date-released: 2026-10-26
+license: MIT
+doi: 10.5281/zenodo.20312050
+repository-code: "https://github.com/Rohit2288/benchmark-fsspb"
+authors:
+  - family-names: Sharma
+    given-names: Rohit
+    affiliation: "Motilal Nehru National Institute of Technology Allahabad"
+  - family-names: Kumar
+    given-names: Atul
+    affiliation: "Motilal Nehru National Institute of Technology Allahabad"
+  - family-names: Kumar
+    given-names: Divya
+    affiliation: "Motilal Nehru National Institute of Technology Allahabad"
