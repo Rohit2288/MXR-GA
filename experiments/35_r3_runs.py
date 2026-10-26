@@ -159,7 +159,7 @@ def main() -> int:
         return 2
     if power:   # keep the machine from idle/system sleep while this process lives
         subprocess.Popen(["caffeinate", "-i", "-s", "-w", str(os.getpid())])
-    (out_dir / "manifest.json").write_text(json.dumps({
+    manifest = {
         "git_commit": git_commit(), "script": "experiments/35_r3_runs.py",
         "date_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(),
         "corpus": args.corpus, "instances": len(paths),
@@ -168,7 +168,15 @@ def main() -> int:
         "wall": args.wall or "r3.wall_budget(n): 2 s (n<=100), 5 s (<=500), 10 s",
         "stop_rule": "known certified optimum (r3.known_optimum)",
         "workers": args.workers, "power_at_start": power,
-    }, indent=1))
+    }
+    mpath = out_dir / "manifest.json"
+    if mpath.exists():
+        # Resuming: keep the original manifest (first run's commit, date and settings) and log the resume.
+        old = json.loads(mpath.read_text())
+        old.setdefault("resumes", []).append({"git_commit": manifest["git_commit"], "date_utc": manifest["date_utc"],
+                                              "units_remaining": len(units), "power_at_start": power})
+        manifest = old
+    mpath.write_text(json.dumps(manifest, indent=1))
     print(f"{len(units)} units ({len(done)} already done)", flush=True)
     new = not out.exists()
     with open(out, "a", newline="") as fh, Pool(args.workers) as pool:

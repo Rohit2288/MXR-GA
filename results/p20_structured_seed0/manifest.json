@@ -22,5 +22,6 @@
  "power_at_start": {
   "ac_power": true,
   "low_power_mode": false
- }
+ },
+ "note": "Started in the phase-20 campaign (2026-10-22, commit 6bb0083): 5 runs were completed there before the campaign was stopped; the remaining 1255 ran in the phase-21 campaign recorded above. The baseline solvers used here did not change between the two commits."
 }
